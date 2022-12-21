@@ -1,0 +1,997 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="generator" content="MarkBind 4.0.2">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>TEE3201 - Python Basics: Files</title>
+    <link rel="stylesheet" href="../../markbind/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../markbind/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="../../markbind/glyphicons/css/bootstrap-glyphicons.min.css">
+    <link rel="stylesheet" href="../../markbind/css/octicons.css">
+    <link rel="stylesheet" href="../../markbind/material-icons/material-icons.css">
+    <link rel="stylesheet" href="../../markbind/css/codeblock-light.min.css"><link rel="stylesheet" href="../../markbind/css/markbind.min.css"><script src="../../markbind/js/polyfill.min.js"></script>
+    <script src="../../markbind/js/vue.min.js"></script>
+    <script src="../../markbind/js/markbind.min.js"></script>
+    <script src="files.page-vue-render.js"></script>
+    <script src="../../markbind/js/jquery.min.js"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3.2.0/dist/style.css"><link rel="stylesheet" href="/2023/plugins/markbind-plugin-anchors/markbind-plugin-anchors.css"><link rel="stylesheet" href="/2023/plugins/markbind-plugin-tree/markbind-plugin-tree.css">
+    
+<link rel="stylesheet" href="/2023/css/main.css">
+<link rel="icon" href="/2023/favicon.ico"></head>
+<script>
+  const baseUrl = '/2023'
+</script>
+<body  data-bs-spy="scroll" data-bs-target="#mb-page-nav" data-bs-offset="100" >
+<div id="app" data-server-rendered="true"><div class="w-100 p-1 bg-warning text-center d-print-none"><span><strong>This is a draft version of the website! The final version will be available near the start of the semester.</strong></span></div> <div class="w-100 p-1 bg-success text-white text-center d-print-none"><span>This module will be delivered in <em>blended learning</em> mode (i.e., a mix of online and F2F activities) this semester.</span></div> <header sticky=""><div placement="top" data-v-15113a2f><nav class="navbar navbar-expand-md d-print-none navbar-dark bg-dark" data-v-15113a2f><div class="container-fluid" data-v-15113a2f><div class="navbar-left" data-v-15113a2f><a href="/2023/index.html" title="Home" class="navbar-brand" data-v-15113a2f><span class="badge rounded-pill bg-danger" data-v-15113a2f>TEE3201 <small data-v-15113a2f>2023</small></span></a></div> <div class="navbar-default" data-v-15113a2f><ul class="navbar-nav me-auto mt-2 mt-lg-0" data-v-15113a2f> <li class="nav-link algolia-no-index dropdown" data-v-2e98b3f0><a role="button" data-bs-toggle="dropdown" class="dropdown-toggle" data-v-2e98b3f0><strong data-v-2e98b3f0>Schedule</strong></a> <ul class="dropdown-menu" data-v-2e98b3f0> <li data-v-2e98b3f0><a href="/2023/schedule/timeline.html" class="dropdown-item" data-v-2e98b3f0><span data-v-2e98b3f0><strong data-v-2e98b3f0>Full Timeline</strong></span></a></li> <li data-v-2e98b3f0><a href="/2023/schedule/week1/index.html" class="dropdown-item" data-v-2e98b3f0><span data-v-2e98b3f0><strong data-v-2e98b3f0>Week 1</strong> [Sun, Jan 9th] </span></a></li> <li data-v-2e98b3f0><a href="/2023/schedule/week2/index.html" class="dropdown-item" data-v-2e98b3f0><span data-v-2e98b3f0><strong data-v-2e98b3f0>Week 2</strong> [Sun, Jan 16th] </span></a></li> <li data-v-2e98b3f0><a href="/2023/schedule/week3/index.html" class="dropdown-item" data-v-2e98b3f0><span data-v-2e98b3f0><strong data-v-2e98b3f0>Week 3</strong> [Sun, Jan 23rd] </span></a></li> <li data-v-2e98b3f0><a href="/2023/schedule/week4/index.html" class="dropdown-item" data-v-2e98b3f0><span data-v-2e98b3f0><strong data-v-2e98b3f0>Week 4</strong> [Sun, Jan 30th] </span></a></li> <li data-v-2e98b3f0><a href="/2023/schedule/week5/index.html" class="dropdown-item" data-v-2e98b3f0><span data-v-2e98b3f0><strong data-v-2e98b3f0>Week 5</strong> [Sun, Feb 6th] </span></a></li> <li data-v-2e98b3f0><a href="/2023/schedule/week6/index.html" class="dropdown-item" data-v-2e98b3f0><span data-v-2e98b3f0><strong data-v-2e98b3f0>Week 6</strong> [Sun, Feb 13th] </span></a></li> <li data-v-2e98b3f0><a href="/2023/schedule/week7/index.html" class="dropdown-item" data-v-2e98b3f0><span data-v-2e98b3f0><strong data-v-2e98b3f0>Week 7</strong> [Sun, Feb 20th] </span></a></li> <li data-v-2e98b3f0><a href="/2023/schedule/week8/index.html" class="dropdown-item" data-v-2e98b3f0><span data-v-2e98b3f0><strong data-v-2e98b3f0>Week 8</strong> [Sun, Mar 6th] </span></a></li> <li data-v-2e98b3f0><a href="/2023/schedule/week9/index.html" class="dropdown-item" data-v-2e98b3f0><span data-v-2e98b3f0><strong data-v-2e98b3f0>Week 9</strong> [Sun, Mar 13th] </span></a></li> <li data-v-2e98b3f0><a href="/2023/schedule/week10/index.html" class="dropdown-item" data-v-2e98b3f0><span data-v-2e98b3f0><strong data-v-2e98b3f0>Week 10</strong> [Sun, Mar 20th] </span></a></li> <li data-v-2e98b3f0><a href="/2023/schedule/week11/index.html" class="dropdown-item" data-v-2e98b3f0><span data-v-2e98b3f0><strong data-v-2e98b3f0>Week 11</strong> [Sun, Mar 27th] </span></a></li> <li data-v-2e98b3f0><a href="/2023/schedule/week12/index.html" class="dropdown-item" data-v-2e98b3f0><span data-v-2e98b3f0><strong data-v-2e98b3f0>Week 12</strong> [Sun, Apr 3rd] </span></a></li> <li data-v-2e98b3f0><a href="/2023/schedule/week13/index.html" class="dropdown-item" data-v-2e98b3f0><span data-v-2e98b3f0><strong data-v-2e98b3f0>Week 13</strong> [Sun, Apr 10th] </span></a></li></ul></li> <li class="nav-link algolia-no-index dropdown" data-v-2e98b3f0><a role="button" data-bs-toggle="dropdown" class="dropdown-toggle" data-v-2e98b3f0><strong data-v-2e98b3f0>Textbook</strong></a> <ul class="dropdown-menu" data-v-2e98b3f0> <li data-v-2e98b3f0><a href="/2023/se-book-adapted/index.html" class="dropdown-item" data-v-2e98b3f0>SE Textbook</a></li> <li data-v-2e98b3f0><a href="/2023/programming/index.html" class="dropdown-item" data-v-2e98b3f0>Programming Textbook</a></li></ul></li> <li data-v-15113a2f><a href="/2023/admin/index.html" class="nav-link" data-v-15113a2f><span data-v-15113a2f><strong data-v-15113a2f>Admin Info</strong></span></a></li> <li class="nav-link algolia-no-index dropdown" data-v-2e98b3f0><a role="button" data-bs-toggle="dropdown" class="dropdown-toggle" data-v-2e98b3f0><strong data-v-2e98b3f0>Other Links</strong></a> <ul class="dropdown-menu" data-v-2e98b3f0> <li data-v-2e98b3f0><a href="https://luminus.nus.edu.sg/modules//forum" target="_blank" class="dropdown-item" data-v-2e98b3f0><span data-v-2e98b3f0><span aria-hidden="true" class="fas fa-comment" data-v-2e98b3f0></span> Forum</span></a></li> <li data-v-2e98b3f0><a href="/2023/admin/index.html#instructors" class="dropdown-item" data-v-2e98b3f0><span data-v-2e98b3f0><span aria-hidden="true" class="fas fa-user-tie" data-v-2e98b3f0></span> Instructors</span></a></li> <li data-v-2e98b3f0><a href="https://canvas.nus.edu.sg/courses/38821/announcements" target="_blank" class="dropdown-item" data-v-2e98b3f0><span data-v-2e98b3f0><span aria-hidden="true" class="glyphicon glyphicon-bullhorn" data-v-2e98b3f0></span> Announcements</span></a></li> <li data-v-2e98b3f0><a href="https://luminus.nus.edu.sg/modules//files" target="_blank" class="dropdown-item" data-v-2e98b3f0><span data-v-2e98b3f0><span aria-hidden="true" class="fas fa-file-upload" data-v-2e98b3f0></span> Files (handouts, submissions etc.)</span></a></li> <li tags="m--tic2002 m--tee3201" data-v-2e98b3f0><a href="/2023/admin/index.html#project" class="dropdown-item" data-v-2e98b3f0><span data-v-2e98b3f0><span data-v-2e98b3f0><span aria-hidden="true" class="fas fa-drafting-compass" data-v-2e98b3f0></span></span></span> Project Info</a></li> <li tags="m--cs2113 m--tic2002 m--tee3201" data-v-2e98b3f0><a href="/2023/_markbind/layouts/2423" target="_blank" class="dropdown-item" data-v-2e98b3f0><span data-v-2e98b3f0><span data-v-2e98b3f0><span aria-hidden="true" class="fas fa-dumbbell" data-v-2e98b3f0></span></span></span> Coursemology link</a></li> <li data-v-2e98b3f0><a href="/2023/_markbind/layouts/tbd" target="_blank" class="dropdown-item" data-v-2e98b3f0><span data-v-2e98b3f0><span aria-hidden="true" class="fas fa-users-cog" data-v-2e98b3f0></span> MS Teams link</span></a></li></ul></li></ul></div> <ul class="navbar-nav navbar-right" data-v-15113a2f><li class="nav-link" data-v-15113a2f><form class="navbar-form" data-v-15113a2f><div class="dropdown" style="position:relative;" data-v-2955e59c><div id="algolia-search-input" data-v-2955e59c></div> <ul class="dropdown-menu search-dropdown-menu d-none dropdown-menu-end" data-v-2955e59c></ul></div></form></li></ul></div></nav> <div class="lower-navbar-container" style="display:none;" data-v-15113a2f><!----> <!----></div></div></header> <div id="flex-body"><nav id="site-nav" class="fixed-header-padding" data-v-e8c82f88><div class="site-nav-top" data-v-e8c82f88><div class="font-weight-bold mb-2" style="font-size:1.25rem;" data-v-e8c82f88>Python textbook</div></div> <div class="nav-component slim-scroll" data-v-e8c82f88><div data-v-e8c82f88><div class="site-nav-root"><ul class="site-nav-list site-nav-list-root" data-v-e8c82f88><li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-0" data-v-e8c82f88><a href="/2023/programming/chapters/expressions-types-variables.html" data-v-e8c82f88>Expressions, Data Types, Variables</a></div></li> <li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-0" data-v-e8c82f88><a href="/2023/programming/chapters/programs.html" data-v-e8c82f88>Python Programs</a></div></li> <li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-0" data-v-e8c82f88><a href="/2023/programming/chapters/flowcontrol.html" data-v-e8c82f88>Program Flow Control</a></div></li> <li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-0" data-v-e8c82f88><a href="/2023/programming/chapters/functions.html" data-v-e8c82f88>Functions</a></div></li> <li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-0" data-v-e8c82f88><a href="/2023/programming/chapters/lists.html" data-v-e8c82f88>Lists</a></div></li> <li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-0" data-v-e8c82f88><a href="/2023/programming/chapters/errors.html" data-v-e8c82f88>Error Handling</a></div></li> <li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-0" data-v-e8c82f88><a href="/2023/programming/chapters/strings.html" data-v-e8c82f88>Strings</a></div></li> <li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-0" data-v-e8c82f88><a href="/2023/programming/chapters/files.html" data-v-e8c82f88>Files</a></div></li> <li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-0" data-v-e8c82f88><a href="/2023/programming/chapters/dictionaries.html" data-v-e8c82f88>Dictionaries</a></div></li> <li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-0" data-v-e8c82f88><a href="/2023/programming/chapters/oop.html" data-v-e8c82f88>Object-Oriented Programming</a></div></li> <li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-0" data-v-e8c82f88><a href="/2023/programming/chapters/gui.html" data-v-e8c82f88>GUIs</a></div></li> <li class="site-nav-custom-list-item site-nav-list-item-0" data-v-e8c82f88><hr data-v-e8c82f88></li> <li class="site-nav-custom-list-item site-nav-list-item-0" data-v-e8c82f88><span class="dimmed" data-v-e8c82f88><strong data-v-e8c82f88>Appendices</strong></span></li> <li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-0" data-v-e8c82f88><a href="/2023/programming/chapters/thirdparty.html" data-v-e8c82f88><strong data-v-e8c82f88>A.</strong> Installing 3rd Party Modules</a></div></li> <li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-0" data-v-e8c82f88><a href="/2023/programming/chapters/ide.html" data-v-e8c82f88><strong data-v-e8c82f88>B.</strong> Using an IDE</a></div></li> <li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-0" data-v-e8c82f88><a href="/2023/programming/chapters/organizing.html" data-v-e8c82f88><strong data-v-e8c82f88>C.</strong> Organizing Python Code</a></div></li> <li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-0" data-v-e8c82f88><a href="/2023/programming/chapters/unittesting.html" data-v-e8c82f88><strong data-v-e8c82f88>D.</strong> Unit Testing</a></div></li> <li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-0" data-v-e8c82f88><a href="/2023/programming/chapters/monty.html" data-v-e8c82f88><strong data-v-e8c82f88>E.</strong> The Monty Project</a></div></li> <!----></ul></div></div></div> <!----></nav> <div id="content-wrapper" class="fixed-header-padding"><div id="main" class="website-content"><div id="toc"><ul><li><a href="#files"><strong>Files</strong></a> <ul><li><a href="#file-paths">File Paths</a></li> <li><a href="#reading-from-files">Reading from Files</a></li> <li><a href="#writing-to-files">Writing to Files</a></li> <li><a href="#csv-files">CSV Files</a></li></ul></li></ul></div> <div id="main"><h1 id="files"><span id="files" class="anchor"></span>Files<a href="#files" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h1> <div><h3 id="file-paths"><span id="file-paths" class="anchor"></span>File Paths<a href="#file-paths" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h3> <p>A file has a <em>filename</em> and a <em>path</em>. <strong>The <em>path</em> specifies the location of a file on the computer</strong>, as a hierarchy of <em>folders</em> (also called <em>directories</em>).</p> <div class="alert box-container alert-default" data-v-7d17494f><!----> <div class="header-and-body" data-v-7d17494f><!----> <div class="box-body-wrapper" data-v-7d17494f><!----> <!----> <div class="contents" data-v-7d17494f><div class="printable-tabs" data-v-3b6be04c><ul role="tablist" class="nav nav-tabs d-print-none nav-tabs" data-v-3b6be04c></ul> <div class="tab-content" data-v-3b6be04c><div role="tabpanel" class="tab-pane active printable-tab-pane tab-pane-hide" data-v-430db186><div class="nav-tabs printable-tab-header" data-v-430db186><div class="nav-link active" data-v-430db186>Windows</div></div>  <p data-v-430db186><span data-v-430db186><span aria-hidden="true" class="fas fa-cube" data-v-430db186></span></span> File <code class="line-numbers hljs inline no-lang" data-v-430db186>C:\photos\2018\home.jpg</code></p> <ul data-v-430db186><li data-v-430db186>Filename: <code class="line-numbers hljs inline no-lang" data-v-430db186>home.jpg</code></li> <li data-v-430db186>Path: <code class="line-numbers hljs inline no-lang" data-v-430db186>C:\photos\2018</code> (Windows uses the back slash <code class="line-numbers hljs inline no-lang" data-v-430db186>\</code> as the <em data-v-430db186>separator</em> symbol in paths )</li> <li data-v-430db186>Folders in the path (<code class="line-numbers hljs inline no-lang" data-v-430db186>C:</code> is called the <em data-v-430db186>root folder</em>):<pre data-v-430db186><code class="line-numbers hljs" data-v-430db186><span data-v-430db186>C: {root}
+</span><span data-v-430db186>  └── photos
+</span><span data-v-430db186>       └── 2018
+</span></code><div class="function-btn-container" data-v-430db186><button onclick="copyCodeBlock(this)" class="function-btn" data-v-430db186>
+    <div class="function-btn-body" data-v-430db186>
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1" data-v-430db186>
+    <g id="surface1" data-v-430db186>
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 " data-v-430db186></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre></li></ul> <p data-v-430db186><span style="color:red;" data-v-430db186><big data-v-430db186><span data-v-430db186><span aria-hidden="true" class="glyphicon glyphicon-exclamation-sign" data-v-430db186></span></span></big></span> Windows file names and paths are not case sensitive: <code class="line-numbers hljs inline no-lang" data-v-430db186>C:\photos\2018\home.jpg</code> is same as <code class="line-numbers hljs inline no-lang" data-v-430db186>C:\PHOTOS\2018\HOME.JPG</code>.
+  </p> <hr data-v-430db186></div> <div role="tabpanel" class="tab-pane active printable-tab-pane algolia-no-index tab-pane-hide" data-v-430db186><div class="nav-tabs printable-tab-header" data-v-430db186><div class="nav-link active" data-v-430db186>OS-X/Linux</div></div> <p data-v-430db186></p> <p data-v-430db186><span data-v-430db186><span aria-hidden="true" class="fas fa-cube" data-v-430db186></span></span> File <code class="line-numbers hljs inline no-lang" data-v-430db186>/Users/john/home.jpg</code></p> <ul data-v-430db186><li data-v-430db186>Filename: <code class="line-numbers hljs inline no-lang" data-v-430db186>home.jpg</code></li> <li data-v-430db186>Path: <code class="line-numbers hljs inline no-lang" data-v-430db186>/Users/john</code> (OS-X/Linux uses the forward slash <code class="line-numbers hljs inline no-lang" data-v-430db186>/</code> as the <em data-v-430db186>separator</em> symbol in paths )</li> <li data-v-430db186>Folders in the path (the <code class="line-numbers hljs inline no-lang" data-v-430db186>/</code> at the start of the path is considered the <em data-v-430db186>root folder</em>):<pre data-v-430db186><code class="line-numbers hljs" data-v-430db186><span data-v-430db186>/ {root}
+</span><span data-v-430db186>    └── Users
+</span><span data-v-430db186>          └── john
+</span></code><div class="function-btn-container" data-v-430db186><button onclick="copyCodeBlock(this)" class="function-btn" data-v-430db186>
+    <div class="function-btn-body" data-v-430db186>
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1" data-v-430db186>
+    <g id="surface1" data-v-430db186>
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 " data-v-430db186></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre></li></ul> <p data-v-430db186><span style="color:red;" data-v-430db186><big data-v-430db186><span data-v-430db186><span aria-hidden="true" class="glyphicon glyphicon-exclamation-sign" data-v-430db186></span></span></big></span> OS-X/Linux file names and paths are case sensitive. <code class="line-numbers hljs inline no-lang" data-v-430db186>/Users/john/home.jpg</code> is NOT the same as <code class="line-numbers hljs inline no-lang" data-v-430db186>/USERS/JOHN/HOME.JPG</code></p> <p data-v-430db186></p> <hr data-v-430db186></div><p data-v-3b6be04c></p></div></div></div> <!----></div></div></div> <p>The Python module <code class="line-numbers hljs inline no-lang">os</code> contains functions for dealing with files and folders. For example, you can use <code class="line-numbers hljs inline no-lang">os.getcwd()</code> to get the <span data-mb-component-type="tooltip" tabindex="0" class="trigger"><!----> <!----></span> and <code class="line-numbers hljs inline no-lang">os.chdir()</code> to change the working directory to a different location.</p> <div class="alert box-container alert-default" data-v-7d17494f><!----> <div class="header-and-body" data-v-7d17494f><!----> <div class="box-body-wrapper" data-v-7d17494f><!----> <!----> <div class="contents" data-v-7d17494f><p data-v-7d17494f><span data-v-7d17494f><span aria-hidden="true" class="fas fa-cube" data-v-7d17494f></span></span> This code shows how to print/change current working directory</p> <pre data-v-7d17494f><code class="line-numbers hljs python" data-v-7d17494f><span data-v-7d17494f><span class="hljs-keyword" data-v-7d17494f>import</span> os
+</span><span data-v-7d17494f>
+</span><span data-v-7d17494f>cwd = os.getcwd() <span class="hljs-comment" data-v-7d17494f># store current working dir</span>
+</span><span data-v-7d17494f><span class="hljs-built_in" data-v-7d17494f>print</span>(cwd) <span class="hljs-comment" data-v-7d17494f># print current working dir</span>
+</span><span data-v-7d17494f>os.chdir(<span class="hljs-string" data-v-7d17494f>'C:\\temp\\python'</span>) <span class="hljs-comment" data-v-7d17494f># change dir</span>
+</span><span data-v-7d17494f><span class="hljs-built_in" data-v-7d17494f>print</span>(os.getcwd()) <span class="hljs-comment" data-v-7d17494f># print current working dir</span>
+</span><span data-v-7d17494f>os.chdir(cwd) <span class="hljs-comment" data-v-7d17494f># change working dir back to original</span>
+</span><span data-v-7d17494f><span class="hljs-built_in" data-v-7d17494f>print</span>(os.getcwd())
+</span></code><div class="function-btn-container" data-v-7d17494f><button onclick="copyCodeBlock(this)" class="function-btn" data-v-7d17494f>
+    <div class="function-btn-body" data-v-7d17494f>
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1" data-v-7d17494f>
+    <g id="surface1" data-v-7d17494f>
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 " data-v-7d17494f></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre><p data-v-7d17494f><span data-v-7d17494f><span aria-hidden="true" class="fas fa-arrow-down" data-v-7d17494f></span></span></p> <pre data-v-7d17494f><code class="no-line-numbers hljs" data-v-7d17494f><span data-v-7d17494f>C:\photos\vaction
+</span><span data-v-7d17494f>C:\temp\python
+</span><span data-v-7d17494f>C:\photos\vaction
+</span></code><div class="function-btn-container" data-v-7d17494f><button onclick="copyCodeBlock(this)" class="function-btn" data-v-7d17494f>
+    <div class="function-btn-body" data-v-7d17494f>
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1" data-v-7d17494f>
+    <g id="surface1" data-v-7d17494f>
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 " data-v-7d17494f></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre><p data-v-7d17494f><span class="badge rounded-pill bg-success text-white" data-v-7d17494f><span aria-hidden="true" class="fas fa-lightbulb" data-v-7d17494f></span></span> Note how the path <code class="line-numbers hljs inline no-lang" data-v-7d17494f>'C:\\temp\\python'</code> uses double slash to <span tabindex="0" class="trigger-click"><span>escape</span></span> the <code class="line-numbers hljs inline no-lang" data-v-7d17494f>\</code>. In OS-X or Linux, it can be something like <code class="line-numbers hljs inline no-lang" data-v-7d17494f>/user/john/python</code> (no need for double slash).</p> <!----></div> <!----></div></div></div> <p><strong>A path that specifies all folders starting from the root is an <em>absolute path</em>. A path that is specified relative to the current working directory is a <em>relative</em> path.</strong></p> <div class="alert box-container alert-default" data-v-7d17494f><!----> <div class="header-and-body" data-v-7d17494f><!----> <div class="box-body-wrapper" data-v-7d17494f><!----> <!----> <div class="contents" data-v-7d17494f><p data-v-7d17494f><span data-v-7d17494f><span aria-hidden="true" class="fas fa-cube" data-v-7d17494f></span></span> Assume the current working directory is <code class="line-numbers hljs inline no-lang" data-v-7d17494f>C:\modules\tee3201</code> and you created a new folder inside it named <code class="line-numbers hljs inline no-lang" data-v-7d17494f>exercises</code> and put a <code class="line-numbers hljs inline no-lang" data-v-7d17494f>ex.txt</code> file in that folder.</p> <ul data-v-7d17494f><li data-v-7d17494f>Absolute path of the file: <code class="line-numbers hljs inline no-lang" data-v-7d17494f>C:\modules\tee3201\exercises\ex1.txt</code></li> <li data-v-7d17494f>Relative path of the file: <code class="line-numbers hljs inline no-lang" data-v-7d17494f>exercises\ex1.txt</code></li></ul></div> <!----></div></div></div> <p>In a path, you can use the  dot <code class="line-numbers hljs inline no-lang">.</code> as a shorthand to refer to the current working directory. Similarly, <code class="line-numbers hljs inline no-lang">..</code> can be used to refer to the parent directory.</p> <div class="alert box-container alert-default" data-v-7d17494f><!----> <div class="header-and-body" data-v-7d17494f><!----> <div class="box-body-wrapper" data-v-7d17494f><!----> <!----> <div class="contents" data-v-7d17494f><p data-v-7d17494f><span data-v-7d17494f><span aria-hidden="true" class="fas fa-cube" data-v-7d17494f></span></span> If the current working directory is <code class="line-numbers hljs inline no-lang" data-v-7d17494f>C:\modules\tee3201</code>, you can use any of the following to refer to <code class="line-numbers hljs inline no-lang" data-v-7d17494f>C:\modules\tee3201\exercises\ex1.txt</code>.</p> <ul data-v-7d17494f><li data-v-7d17494f><code class="line-numbers hljs inline no-lang" data-v-7d17494f>exercises\ex1.txt</code></li> <li data-v-7d17494f><code class="line-numbers hljs inline no-lang" data-v-7d17494f>.\exercises\ex1.txt</code></li> <li data-v-7d17494f><code class="line-numbers hljs inline no-lang" data-v-7d17494f>..\tee3201\exercises\ex1.txt</code></li> <li data-v-7d17494f><code class="line-numbers hljs inline no-lang" data-v-7d17494f>..\..\modules\tee3201\exercises\ex1.txt</code></li></ul> <div class="algolia-no-index card-container" data-v-5681bde8><!----> <div class="card expandable-card border-0" data-v-5681bde8><div class="card-header header-toggle bg-white border-0" data-v-5681bde8><div class="caret-wrapper" data-v-5681bde8><span class="glyphicon glyphicon-chevron-right" data-v-5681bde8></span></div> <div class="header-wrapper card-title bg-white" data-v-5681bde8><p data-v-5681bde8><span class="dimmed" data-v-5681bde8>another example</span></p></div> <div class="button-wrapper" data-v-5681bde8><button type="button" class="collapse-button btn btn-outline-secondary" style="display:none;" data-v-5681bde8><span aria-hidden="true" class="collapse-icon glyphicon glyphicon-menu-down"></span></button> <button type="button" class="close-button btn btn-outline-secondary seamless-button" data-v-5681bde8><span aria-hidden="true" class="glyphicon glyphicon-remove" data-v-5681bde8></span></button> <button type="button" class="popup-button btn btn-outline-secondary seamless-button" style="display:none;" data-v-5681bde8><span aria-hidden="true" class="glyphicon glyphicon-new-window" data-v-5681bde8></span></button></div></div> <div class="card-collapse" data-v-5681bde8><!----> <hr style="display:;" data-v-5681bde8></div> <!----></div></div></div> <!----></div></div></div> <p>You can use <code class="line-numbers hljs inline no-lang">os.makedirs()</code> function to create folders and <code class="line-numbers hljs inline no-lang">os.removedirs()</code> to delete folders.</p> <div class="alert box-container alert-default" data-v-7d17494f><!----> <div class="header-and-body" data-v-7d17494f><!----> <div class="box-body-wrapper" data-v-7d17494f><!----> <!----> <div class="contents" data-v-7d17494f><p data-v-7d17494f><span data-v-7d17494f><span aria-hidden="true" class="fas fa-cube" data-v-7d17494f></span></span> Example code showing how to create/delete directories</p> <pre data-v-7d17494f><code class="line-numbers hljs python" data-v-7d17494f><span data-v-7d17494f><span class="hljs-built_in" data-v-7d17494f>print</span>(os.getcwd())
+</span><span data-v-7d17494f>os.makedirs(<span class="hljs-string" data-v-7d17494f>'ex\\w1'</span>)
+</span><span data-v-7d17494f>os.chdir(<span class="hljs-string" data-v-7d17494f>'ex\\w1'</span>)
+</span><span data-v-7d17494f><span class="hljs-built_in" data-v-7d17494f>print</span>(os.getcwd())
+</span><span data-v-7d17494f>os.chdir(<span class="hljs-string" data-v-7d17494f>'..'</span>) <span class="hljs-comment" data-v-7d17494f># go to parent dir</span>
+</span><span data-v-7d17494f><span class="hljs-built_in" data-v-7d17494f>print</span>(os.getcwd())
+</span><span data-v-7d17494f>os.chdir(<span class="hljs-string" data-v-7d17494f>'..'</span>)
+</span><span data-v-7d17494f>os.removedirs(<span class="hljs-string" data-v-7d17494f>'ex\\w1'</span>)
+</span></code><div class="function-btn-container" data-v-7d17494f><button onclick="copyCodeBlock(this)" class="function-btn" data-v-7d17494f>
+    <div class="function-btn-body" data-v-7d17494f>
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1" data-v-7d17494f>
+    <g id="surface1" data-v-7d17494f>
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 " data-v-7d17494f></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre><p data-v-7d17494f><span data-v-7d17494f><span aria-hidden="true" class="fas fa-arrow-down" data-v-7d17494f></span></span></p> <pre data-v-7d17494f><code class="no-line-numbers hljs" data-v-7d17494f><span data-v-7d17494f>C:\repos\nus-tee3201\sample-code
+</span><span data-v-7d17494f>C:\repos\nus-tee3201\sample-code\ex\w1
+</span><span data-v-7d17494f>C:\repos\nus-tee3201\sample-code\ex
+</span></code><div class="function-btn-container" data-v-7d17494f><button onclick="copyCodeBlock(this)" class="function-btn" data-v-7d17494f>
+    <div class="function-btn-body" data-v-7d17494f>
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1" data-v-7d17494f>
+    <g id="surface1" data-v-7d17494f>
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 " data-v-7d17494f></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre></div> <!----></div></div></div> <p><code class="line-numbers hljs inline no-lang">os.path</code> module has many functions that can help with paths. For example, <code class="line-numbers hljs inline no-lang">os.paths.join()</code> function can be used to generate file path that matches the current operating system.</p> <div class="alert box-container alert-default" data-v-7d17494f><!----> <div class="header-and-body" data-v-7d17494f><!----> <div class="box-body-wrapper" data-v-7d17494f><!----> <!----> <div class="contents" data-v-7d17494f><p data-v-7d17494f><span data-v-7d17494f><span aria-hidden="true" class="fas fa-cube" data-v-7d17494f></span></span> Consider the code below:</p> <pre data-v-7d17494f><code class="line-numbers hljs python" data-v-7d17494f><span data-v-7d17494f>cwd = os.getcwd()
+</span><span data-v-7d17494f><span class="hljs-built_in" data-v-7d17494f>print</span>(os.path.join(cwd, <span class="hljs-string" data-v-7d17494f>'ex'</span>, <span class="hljs-string" data-v-7d17494f>'w2'</span>))
+</span></code><div class="function-btn-container" data-v-7d17494f><button onclick="copyCodeBlock(this)" class="function-btn" data-v-7d17494f>
+    <div class="function-btn-body" data-v-7d17494f>
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1" data-v-7d17494f>
+    <g id="surface1" data-v-7d17494f>
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 " data-v-7d17494f></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre><p data-v-7d17494f>If you run it on a Windows computer in the folder <code class="line-numbers hljs inline no-lang" data-v-7d17494f>C:\modules\tee3201</code>, it prints <code class="line-numbers hljs inline no-lang" data-v-7d17494f>C:\modules\tee3201\ex\w2</code>.<br data-v-7d17494f>
+If your run it on a OS-X computer in the folder <code class="line-numbers hljs inline no-lang" data-v-7d17494f>/Users/john</code>, it prints <code class="line-numbers hljs inline no-lang" data-v-7d17494f>/Users/john/ex/w2</code>.</p></div> <!----></div></div></div> <p><span style="color:red;"><big><span><span aria-hidden="true" class="glyphicon glyphicon-exclamation-sign"></span></span></big></span> To ensure that your code can work on any OS, you are advised to use <code class="line-numbers hljs inline no-lang">os.path.join()</code> function instead of hard-coding the <span data-mb-component-type="tooltip" tabindex="0" class="trigger"><!----> <!----></span>.</p> <div class="alert box-container alert-default" data-v-7d17494f><!----> <div class="header-and-body" data-v-7d17494f><!----> <div class="box-body-wrapper" data-v-7d17494f><!----> <!----> <div class="contents" data-v-7d17494f><p data-v-7d17494f><span data-v-7d17494f><span aria-hidden="true" class="fas fa-cube" data-v-7d17494f></span></span> contrasting hard-coding the separator vs using <code class="line-numbers hljs inline no-lang" data-v-7d17494f>os.path.join()</code>:</p> <ul data-v-7d17494f><li data-v-7d17494f><span style="color:red;" data-v-7d17494f><span data-v-7d17494f><strong data-v-7d17494f><span aria-hidden="true" class="fas fa-thumbs-down" data-v-7d17494f></span> Bad</strong></span></span> (Works only on Windows):<br data-v-7d17494f> <code class="line-numbers hljs inline no-lang" data-v-7d17494f>os.makedirs('ex\\w1')</code></li> <li data-v-7d17494f><span style="color:green;" data-v-7d17494f><span data-v-7d17494f><strong data-v-7d17494f><span aria-hidden="true" class="fas fa-thumbs-up" data-v-7d17494f></span> Good</strong></span></span> (Works on both Windows and OS-X):<br data-v-7d17494f> <code class="line-numbers hljs inline no-lang" data-v-7d17494f>os.makedirs(os.path.join('ex', 'w1'))</code></li></ul></div> <!----></div></div></div> <div><div expanded="" no-close="" class="card-container" data-v-5681bde8><!----> <div class="card expandable-card border-danger" data-v-5681bde8><div class="card-header header-toggle bg-danger border-danger" data-v-5681bde8><div class="caret-wrapper" data-v-5681bde8><!----></div> <div class="header-wrapper card-title bg-danger text-white" data-v-5681bde8><p data-v-5681bde8><span aria-hidden="true" class="fas fa-dumbbell" data-v-5681bde8></span> Exercise: Create Directory</p></div> <div class="button-wrapper" data-v-5681bde8><button type="button" class="collapse-button btn btn-outline-light" data-v-5681bde8><span aria-hidden="true" class="collapse-icon glyphicon glyphicon-menu-down opened"></span></button> <button type="button" class="close-button btn btn-outline-light" style="display:none;" data-v-5681bde8><span aria-hidden="true" class="glyphicon glyphicon-remove" data-v-5681bde8></span></button> <button type="button" class="popup-button btn btn-outline-light" style="display:none;" data-v-5681bde8><span aria-hidden="true" class="glyphicon glyphicon-new-window" data-v-5681bde8></span></button></div></div> <div class="card-collapse" data-v-5681bde8><div class="card-body" data-v-5681bde8> <div data-v-5681bde8><h4 id="exercise-create-directory" data-v-5681bde8><span id="exercise-create-directory" class="anchor" data-v-5681bde8></span>Exercise : Create Directory<a href="#exercise-create-directory" onclick="event.stopPropagation()" class="fa fa-anchor" data-v-5681bde8></a></h4> <p data-v-5681bde8>Complete the functions given below, to behave as described by their docstrings, so that the code produces the given output.</p> <pre data-v-5681bde8><code class="line-numbers hljs python" data-v-5681bde8><span data-v-5681bde8><span class="hljs-keyword" data-v-5681bde8>import</span> os
+</span><span data-v-5681bde8>
+</span><span data-v-5681bde8><span class="hljs-function" data-v-5681bde8><span class="hljs-keyword" data-v-5681bde8>def</span> <span class="hljs-title" data-v-5681bde8>create_dir</span>(<span class="hljs-params" data-v-5681bde8>dir_name</span>):</span>
+</span><span data-v-5681bde8>  <span class="hljs-string" data-v-5681bde8>&quot;&quot;&quot;Create a directory dir_name in the current working directory</span>
+</span><span data-v-5681bde8><span class="hljs-string" data-v-5681bde8>  </span>
+</span><span data-v-5681bde8><span class="hljs-string" data-v-5681bde8>  Example:</span>
+</span><span data-v-5681bde8><span class="hljs-string" data-v-5681bde8>  If the current directory is c:/foo/, create_dir('bar') creates </span>
+</span><span data-v-5681bde8><span class="hljs-string" data-v-5681bde8>  a c:/foo/bar directory.</span>
+</span><span data-v-5681bde8><span class="hljs-string" data-v-5681bde8>  &quot;&quot;&quot;</span>
+</span><span data-v-5681bde8>  <span class="hljs-keyword" data-v-5681bde8>pass</span> <span class="hljs-comment" data-v-5681bde8># REPLACE WITH YOUR CODE HERE</span>
+</span><span data-v-5681bde8>  
+</span><span data-v-5681bde8>  
+</span><span data-v-5681bde8><span class="hljs-function" data-v-5681bde8><span class="hljs-keyword" data-v-5681bde8>def</span> <span class="hljs-title" data-v-5681bde8>change_dir</span>(<span class="hljs-params" data-v-5681bde8>relative_path</span>):</span>
+</span><span data-v-5681bde8>  <span class="hljs-string" data-v-5681bde8>&quot;&quot;&quot;Change to the directory dir_name relative to the current working directory</span>
+</span><span data-v-5681bde8><span class="hljs-string" data-v-5681bde8>  </span>
+</span><span data-v-5681bde8><span class="hljs-string" data-v-5681bde8>  Example:</span>
+</span><span data-v-5681bde8><span class="hljs-string" data-v-5681bde8>  If the current directory is c:/foo/, change_dir('bar') changes </span>
+</span><span data-v-5681bde8><span class="hljs-string" data-v-5681bde8>  current working directory to c:/foo/bar</span>
+</span><span data-v-5681bde8><span class="hljs-string" data-v-5681bde8>  &quot;&quot;&quot;</span>
+</span><span data-v-5681bde8>  <span class="hljs-keyword" data-v-5681bde8>pass</span> <span class="hljs-comment" data-v-5681bde8># REPLACE WITH YOUR CODE HERE</span>
+</span><span data-v-5681bde8>  
+</span><span data-v-5681bde8>  
+</span><span data-v-5681bde8><span class="hljs-function" data-v-5681bde8><span class="hljs-keyword" data-v-5681bde8>def</span> <span class="hljs-title" data-v-5681bde8>print_current</span>():</span>
+</span><span data-v-5681bde8>  <span class="hljs-string" data-v-5681bde8>&quot;&quot;&quot;Print current working directory&quot;&quot;&quot;</span>
+</span><span data-v-5681bde8>  <span class="hljs-keyword" data-v-5681bde8>pass</span> <span class="hljs-comment" data-v-5681bde8># REPLACE WITH YOUR CODE HERE </span>
+</span><span data-v-5681bde8>  
+</span><span data-v-5681bde8>  
+</span><span data-v-5681bde8><span class="hljs-function" data-v-5681bde8><span class="hljs-keyword" data-v-5681bde8>def</span> <span class="hljs-title" data-v-5681bde8>change_to_parent_dir</span>():</span>
+</span><span data-v-5681bde8>  <span class="hljs-string" data-v-5681bde8>&quot;&quot;&quot;Change to the parent directry of the current working directory</span>
+</span><span data-v-5681bde8><span class="hljs-string" data-v-5681bde8>  </span>
+</span><span data-v-5681bde8><span class="hljs-string" data-v-5681bde8>  Example:</span>
+</span><span data-v-5681bde8><span class="hljs-string" data-v-5681bde8>  If the current directory is c:/foo/bar, change_to_parent_dir() changes </span>
+</span><span data-v-5681bde8><span class="hljs-string" data-v-5681bde8>  the working directory to c:/foo/</span>
+</span><span data-v-5681bde8><span class="hljs-string" data-v-5681bde8>  &quot;&quot;&quot;</span>
+</span><span data-v-5681bde8>  <span class="hljs-keyword" data-v-5681bde8>pass</span> <span class="hljs-comment" data-v-5681bde8># REPLACE WITH YOUR CODE HERE</span>
+</span><span data-v-5681bde8>  
+</span><span data-v-5681bde8>  
+</span><span data-v-5681bde8><span class="hljs-function" data-v-5681bde8><span class="hljs-keyword" data-v-5681bde8>def</span> <span class="hljs-title" data-v-5681bde8>check</span>(<span class="hljs-params" data-v-5681bde8>dir_name</span>):</span>
+</span><span data-v-5681bde8>  create_dir(dir_name)
+</span><span data-v-5681bde8>  print_current()
+</span><span data-v-5681bde8>  change_dir(dir_name)
+</span><span data-v-5681bde8>  print_current()
+</span><span data-v-5681bde8>  change_to_parent_dir()
+</span><span data-v-5681bde8>  print_current()
+</span><span data-v-5681bde8>  
+</span><span data-v-5681bde8>check(<span class="hljs-string" data-v-5681bde8>'foo'</span>)
+</span><span data-v-5681bde8>check(<span class="hljs-string" data-v-5681bde8>'bar'</span>)
+</span><span data-v-5681bde8>
+</span></code><div class="function-btn-container" data-v-5681bde8><button onclick="copyCodeBlock(this)" class="function-btn" data-v-5681bde8>
+    <div class="function-btn-body" data-v-5681bde8>
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1" data-v-5681bde8>
+    <g id="surface1" data-v-5681bde8>
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 " data-v-5681bde8></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre><p data-v-5681bde8><span data-v-5681bde8><span aria-hidden="true" class="fas fa-arrow-down" data-v-5681bde8></span></span> output when run in repl.it</p> <pre data-v-5681bde8><code class="line-numbers hljs" data-v-5681bde8><span data-v-5681bde8>/home/runner
+</span><span data-v-5681bde8>/home/runner/foo
+</span><span data-v-5681bde8>/home/runner
+</span><span data-v-5681bde8>/home/runner
+</span><span data-v-5681bde8>/home/runner/bar
+</span><span data-v-5681bde8>/home/runner
+</span></code><div class="function-btn-container" data-v-5681bde8><button onclick="copyCodeBlock(this)" class="function-btn" data-v-5681bde8>
+    <div class="function-btn-body" data-v-5681bde8>
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1" data-v-5681bde8>
+    <g id="surface1" data-v-5681bde8>
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 " data-v-5681bde8></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre><p data-v-5681bde8></p> <div class="algolia-no-index card-container" data-v-5681bde8><!----> <div class="card expandable-card border-0" data-v-5681bde8><div class="card-header header-toggle bg-white border-0" data-v-5681bde8><div class="caret-wrapper" data-v-5681bde8><span class="glyphicon glyphicon-chevron-right" data-v-5681bde8></span></div> <div class="header-wrapper card-title bg-white" data-v-5681bde8><p data-v-5681bde8><span class="dimmed" data-v-5681bde8><span aria-hidden="true" class="fas fa-battery-quarter" data-v-5681bde8></span> Partial solution</span></p></div> <div class="button-wrapper" data-v-5681bde8><button type="button" class="collapse-button btn btn-outline-secondary" style="display:none;" data-v-5681bde8><span aria-hidden="true" class="collapse-icon glyphicon glyphicon-menu-down"></span></button> <button type="button" class="close-button btn btn-outline-secondary seamless-button" data-v-5681bde8><span aria-hidden="true" class="glyphicon glyphicon-remove" data-v-5681bde8></span></button> <button type="button" class="popup-button btn btn-outline-secondary seamless-button" style="display:none;" data-v-5681bde8><span aria-hidden="true" class="glyphicon glyphicon-new-window" data-v-5681bde8></span></button></div></div> <div class="card-collapse" data-v-5681bde8><!----> <hr style="display:;" data-v-5681bde8></div> <!----></div></div></div> <!----> <button type="button" class="collapse-button btn btn-outline-secondary" data-v-5681bde8><span aria-hidden="true" class="collapse-icon glyphicon glyphicon-menu-down opened"></span></button></div> <hr style="display:none;" data-v-5681bde8></div> <!----></div></div><p></p></div></div><hr style="border-top:3px double #c5c5c5;"> <div><h3 id="reading-from-files"><span id="reading-from-files" class="anchor"></span>Reading from Files<a href="#reading-from-files" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h3> <p>This section focuses on reading from text-based files (i.e., not binary files).</p> <p><strong>There are three steps to reading files in Python:</strong></p> <ul><li>Call the <strong><code class="line-numbers hljs inline no-lang">open()</code></strong> function to receive a <code class="line-numbers hljs inline no-lang">File</code> object.</li> <li>Call the <strong><code class="line-numbers hljs inline no-lang">read()</code></strong> method on the <code class="line-numbers hljs inline no-lang">File</code> object to receive file content.</li> <li>Close the file by calling the <strong><code class="line-numbers hljs inline no-lang">close()</code></strong> method on the <code class="line-numbers hljs inline no-lang">File</code> object.</li></ul> <div class="alert box-container alert-default" data-v-7d17494f><!----> <div class="header-and-body" data-v-7d17494f><!----> <div class="box-body-wrapper" data-v-7d17494f><!----> <!----> <div class="contents" data-v-7d17494f><p data-v-7d17494f><span data-v-7d17494f><span aria-hidden="true" class="fas fa-cube" data-v-7d17494f></span></span> The code below shows how to read from a text file.</p> <div data-v-7d17494f><table data-v-7d17494f><tbody data-v-7d17494f><tr data-v-7d17494f><td valign="top" data-v-7d17494f><pre data-v-7d17494f><code class="line-numbers hljs python" data-v-7d17494f><span data-v-7d17494f>file_path = os.path.join(<span class="hljs-string" data-v-7d17494f>'data'</span>, <span class="hljs-string" data-v-7d17494f>'items.txt'</span>)
+</span><span data-v-7d17494f>f = <span class="hljs-built_in" data-v-7d17494f>open</span>(file_path, <span class="hljs-string" data-v-7d17494f>'r'</span>) <span class="hljs-comment" data-v-7d17494f># open in read mode</span>
+</span><span data-v-7d17494f>items = f.read()
+</span><span data-v-7d17494f><span class="hljs-built_in" data-v-7d17494f>print</span>(items)
+</span><span data-v-7d17494f>f.close()
+</span></code><div class="function-btn-container" data-v-7d17494f><button onclick="copyCodeBlock(this)" class="function-btn" data-v-7d17494f>
+    <div class="function-btn-body" data-v-7d17494f>
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1" data-v-7d17494f>
+    <g id="surface1" data-v-7d17494f>
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 " data-v-7d17494f></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre></td> <td valign="middle" data-v-7d17494f> → <br data-v-7d17494f><br data-v-7d17494f></td> <td valign="bottom" data-v-7d17494f><p data-v-7d17494f>Output (contents of the <code class="line-numbers hljs inline no-lang" data-v-7d17494f>items.txt</code>):</p> <pre data-v-7d17494f><code class="line-numbers hljs" data-v-7d17494f><span data-v-7d17494f>first line
+</span><span data-v-7d17494f>second line
+</span><span data-v-7d17494f>third line
+</span></code><div class="function-btn-container" data-v-7d17494f><button onclick="copyCodeBlock(this)" class="function-btn" data-v-7d17494f>
+    <div class="function-btn-body" data-v-7d17494f>
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1" data-v-7d17494f>
+    <g id="surface1" data-v-7d17494f>
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 " data-v-7d17494f></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre></td></tr></tbody></table></div> <p data-v-7d17494f><span class="badge rounded-pill bg-success text-white" data-v-7d17494f><span aria-hidden="true" class="fas fa-lightbulb" data-v-7d17494f></span></span> The <code class="line-numbers hljs inline no-lang" data-v-7d17494f>'r'</code> argument in <code class="line-numbers hljs inline no-lang" data-v-7d17494f>open(file_path, 'r')</code> indicates that the file should be opened <span data-mb-component-type="tooltip" tabindex="0" class="trigger"><!----> <!----></span>.</p></div> <!----></div></div></div> <p>It is also possible to read the file content as a list of lines, using the <code class="line-numbers hljs inline no-lang">readlines()</code> method.</p> <div class="alert box-container alert-default" data-v-7d17494f><!----> <div class="header-and-body" data-v-7d17494f><!----> <div class="box-body-wrapper" data-v-7d17494f><!----> <!----> <div class="contents" data-v-7d17494f><p data-v-7d17494f><span data-v-7d17494f><span aria-hidden="true" class="fas fa-cube" data-v-7d17494f></span></span> The code below shows how to read file content as a list of lines.</p> <pre data-v-7d17494f><code class="line-numbers hljs python" data-v-7d17494f><span data-v-7d17494f>file_path = os.path.join(<span class="hljs-string" data-v-7d17494f>'data'</span>, <span class="hljs-string" data-v-7d17494f>'items.txt'</span>)
+</span><span data-v-7d17494f>f = <span class="hljs-built_in" data-v-7d17494f>open</span>(file_path, <span class="hljs-string" data-v-7d17494f>'r'</span>)
+</span><span data-v-7d17494f>items = f.readlines()
+</span><span data-v-7d17494f><span class="hljs-built_in" data-v-7d17494f>print</span>(items) <span class="hljs-comment" data-v-7d17494f># print as a list</span>
+</span><span data-v-7d17494f><span class="hljs-keyword" data-v-7d17494f>for</span> i <span class="hljs-keyword" data-v-7d17494f>in</span> items: <span class="hljs-comment" data-v-7d17494f># print each item</span>
+</span><span data-v-7d17494f>  <span class="hljs-built_in" data-v-7d17494f>print</span>(i.strip()) <span class="hljs-comment" data-v-7d17494f># use strip() to remove linebreak at the end of each line</span>
+</span><span data-v-7d17494f>f.close()
+</span></code><div class="function-btn-container" data-v-7d17494f><button onclick="copyCodeBlock(this)" class="function-btn" data-v-7d17494f>
+    <div class="function-btn-body" data-v-7d17494f>
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1" data-v-7d17494f>
+    <g id="surface1" data-v-7d17494f>
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 " data-v-7d17494f></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre><p data-v-7d17494f><span data-v-7d17494f><span aria-hidden="true" class="fas fa-arrow-down" data-v-7d17494f></span></span></p> <pre data-v-7d17494f><code class="line-numbers hljs" data-v-7d17494f><span data-v-7d17494f>['first line\n', 'second line\n', 'third line\n']
+</span><span data-v-7d17494f>first line
+</span><span data-v-7d17494f>second line
+</span><span data-v-7d17494f>third line
+</span></code><div class="function-btn-container" data-v-7d17494f><button onclick="copyCodeBlock(this)" class="function-btn" data-v-7d17494f>
+    <div class="function-btn-body" data-v-7d17494f>
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1" data-v-7d17494f>
+    <g id="surface1" data-v-7d17494f>
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 " data-v-7d17494f></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre><p data-v-7d17494f><span class="badge rounded-pill bg-success text-white" data-v-7d17494f><span aria-hidden="true" class="fas fa-lightbulb" data-v-7d17494f></span></span> Note how each line ends with a <code class="line-numbers hljs inline no-lang" data-v-7d17494f>\n</code> which represents the line break. It can be removed using the <code class="line-numbers hljs inline no-lang" data-v-7d17494f>strip()</code> method.</p></div> <!----></div></div></div> <div><div expanded="" no-close="" class="card-container" data-v-5681bde8><!----> <div class="card expandable-card border-danger" data-v-5681bde8><div class="card-header header-toggle bg-danger border-danger" data-v-5681bde8><div class="caret-wrapper" data-v-5681bde8><!----></div> <div class="header-wrapper card-title bg-danger text-white" data-v-5681bde8><p data-v-5681bde8><span aria-hidden="true" class="fas fa-dumbbell" data-v-5681bde8></span> Exercise: File Stats</p></div> <div class="button-wrapper" data-v-5681bde8><button type="button" class="collapse-button btn btn-outline-light" data-v-5681bde8><span aria-hidden="true" class="collapse-icon glyphicon glyphicon-menu-down opened"></span></button> <button type="button" class="close-button btn btn-outline-light" style="display:none;" data-v-5681bde8><span aria-hidden="true" class="glyphicon glyphicon-remove" data-v-5681bde8></span></button> <button type="button" class="popup-button btn btn-outline-light" style="display:none;" data-v-5681bde8><span aria-hidden="true" class="glyphicon glyphicon-new-window" data-v-5681bde8></span></button></div></div> <div class="card-collapse" data-v-5681bde8><div class="card-body" data-v-5681bde8> <div data-v-5681bde8><h4 id="exercise-file-stats" data-v-5681bde8><span id="exercise-file-stats" class="anchor" data-v-5681bde8></span>Exercise : File Stats<a href="#exercise-file-stats" onclick="event.stopPropagation()" class="fa fa-anchor" data-v-5681bde8></a></h4> <p data-v-5681bde8>Complete the functions given below, to behave as described by their docstrings, so that the code produces the given output.</p> <pre data-v-5681bde8><code class="line-numbers hljs python" data-v-5681bde8><span data-v-5681bde8><span class="hljs-function" data-v-5681bde8><span class="hljs-keyword" data-v-5681bde8>def</span> <span class="hljs-title" data-v-5681bde8>get_file_content_as_list</span>(<span class="hljs-params" data-v-5681bde8>filename</span>):</span>
+</span><span data-v-5681bde8>  <span class="hljs-string" data-v-5681bde8>&quot;&quot;&quot;Return content of the file as a list of lines</span>
+</span><span data-v-5681bde8><span class="hljs-string" data-v-5681bde8>  </span>
+</span><span data-v-5681bde8><span class="hljs-string" data-v-5681bde8>  The file is expected to be in the current working directory.</span>
+</span><span data-v-5681bde8><span class="hljs-string" data-v-5681bde8>  The lines in the list contains trailing line breaks.</span>
+</span><span data-v-5681bde8><span class="hljs-string" data-v-5681bde8>  </span>
+</span><span data-v-5681bde8><span class="hljs-string" data-v-5681bde8>  Example:</span>
+</span><span data-v-5681bde8><span class="hljs-string" data-v-5681bde8>  If the a.txt has two lines 'aaa' and 'bbb', </span>
+</span><span data-v-5681bde8><span class="hljs-string" data-v-5681bde8>  get_file_content_as_list('a.txt') returns ['aaa\n', 'bbb']</span>
+</span><span data-v-5681bde8><span class="hljs-string" data-v-5681bde8>  &quot;&quot;&quot;</span>
+</span><span data-v-5681bde8>  <span class="hljs-keyword" data-v-5681bde8>return</span> [] <span class="hljs-comment" data-v-5681bde8># REPLACE WITH YOUR CODE</span>
+</span><span data-v-5681bde8>
+</span><span data-v-5681bde8>
+</span><span data-v-5681bde8><span class="hljs-function" data-v-5681bde8><span class="hljs-keyword" data-v-5681bde8>def</span> <span class="hljs-title" data-v-5681bde8>get_file_stats</span>(<span class="hljs-params" data-v-5681bde8>contents</span>):</span>
+</span><span data-v-5681bde8>  <span class="hljs-string" data-v-5681bde8>&quot;&quot;&quot;Given a list of lines, return line count and letter count as a dictionary</span>
+</span><span data-v-5681bde8><span class="hljs-string" data-v-5681bde8>  </span>
+</span><span data-v-5681bde8><span class="hljs-string" data-v-5681bde8>  Trailing line breaks (if any) are not counted for letter count.</span>
+</span><span data-v-5681bde8><span class="hljs-string" data-v-5681bde8>  Spaces, even trailing spaces, are counted for letter count.</span>
+</span><span data-v-5681bde8><span class="hljs-string" data-v-5681bde8>  Example:</span>
+</span><span data-v-5681bde8><span class="hljs-string" data-v-5681bde8>  get_stats(['aaa\n', 'bbb']) returns {'lines': 2, 'letters': 6}</span>
+</span><span data-v-5681bde8><span class="hljs-string" data-v-5681bde8>  &quot;&quot;&quot;</span>
+</span><span data-v-5681bde8>  stats = []
+</span><span data-v-5681bde8>  <span class="hljs-comment" data-v-5681bde8># ADD YOUR CODE HERE</span>
+</span><span data-v-5681bde8>  <span class="hljs-keyword" data-v-5681bde8>return</span> stats
+</span><span data-v-5681bde8>
+</span><span data-v-5681bde8>
+</span><span data-v-5681bde8><span class="hljs-function" data-v-5681bde8><span class="hljs-keyword" data-v-5681bde8>def</span> <span class="hljs-title" data-v-5681bde8>analyze_file</span>(<span class="hljs-params" data-v-5681bde8>filename</span>):</span>
+</span><span data-v-5681bde8>  contents_as_list = get_file_content_as_list(filename)
+</span><span data-v-5681bde8>  <span class="hljs-built_in" data-v-5681bde8>print</span>(<span class="hljs-string" data-v-5681bde8>'lines in file:'</span>, contents_as_list)
+</span><span data-v-5681bde8>  stats = get_file_stats(contents_as_list)
+</span><span data-v-5681bde8>  <span class="hljs-built_in" data-v-5681bde8>print</span>(<span class="hljs-string" data-v-5681bde8>'It has'</span>, stats[<span class="hljs-number" data-v-5681bde8>0</span>], <span class="hljs-string" data-v-5681bde8>'lines containing'</span>, stats[<span class="hljs-number" data-v-5681bde8>1</span>], <span class="hljs-string" data-v-5681bde8>'letters'</span>)
+</span><span data-v-5681bde8>
+</span><span data-v-5681bde8>analyze_file(<span class="hljs-string" data-v-5681bde8>'file1.txt'</span>)
+</span><span data-v-5681bde8>analyze_file(<span class="hljs-string" data-v-5681bde8>'file2.txt'</span>)
+</span></code><div class="function-btn-container" data-v-5681bde8><button onclick="copyCodeBlock(this)" class="function-btn" data-v-5681bde8>
+    <div class="function-btn-body" data-v-5681bde8>
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1" data-v-5681bde8>
+    <g id="surface1" data-v-5681bde8>
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 " data-v-5681bde8></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre><p data-v-5681bde8><code class="line-numbers hljs inline no-lang" data-v-5681bde8>file1.txt</code> (2 lines, 22 letters):</p> <pre data-v-5681bde8><code class="line-numbers hljs" data-v-5681bde8><span data-v-5681bde8>aaa bbb ccc
+</span><span data-v-5681bde8>ddd eee fff
+</span></code><div class="function-btn-container" data-v-5681bde8><button onclick="copyCodeBlock(this)" class="function-btn" data-v-5681bde8>
+    <div class="function-btn-body" data-v-5681bde8>
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1" data-v-5681bde8>
+    <g id="surface1" data-v-5681bde8>
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 " data-v-5681bde8></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre><p data-v-5681bde8><code class="line-numbers hljs inline no-lang" data-v-5681bde8>file2.txt</code> (4 lines, 10 letters -- note: the <mark data-v-5681bde8>last line has a trailing space</mark>, which adds up to 10 letters):</p> <pre data-v-5681bde8><code class="line-numbers hljs" data-v-5681bde8><span data-v-5681bde8>a
+</span><span data-v-5681bde8>bb
+</span><span data-v-5681bde8>ccc
+</span><span data-v-5681bde8>ddd 
+</span></code><div class="function-btn-container" data-v-5681bde8><button onclick="copyCodeBlock(this)" class="function-btn" data-v-5681bde8>
+    <div class="function-btn-body" data-v-5681bde8>
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1" data-v-5681bde8>
+    <g id="surface1" data-v-5681bde8>
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 " data-v-5681bde8></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre><p data-v-5681bde8><span data-v-5681bde8><span aria-hidden="true" class="fas fa-arrow-down" data-v-5681bde8></span></span></p> <pre data-v-5681bde8><code class="line-numbers hljs" data-v-5681bde8><span data-v-5681bde8>lines in file: ['aaa bbb ccc\n', 'ddd eee fff']
+</span><span data-v-5681bde8>It has 2 lines containing 22 letters
+</span><span data-v-5681bde8>lines in file: ['a\n', 'bb\n', 'ccc\n', 'ddd ']
+</span><span data-v-5681bde8>It has 4 lines containing 10 letters
+</span></code><div class="function-btn-container" data-v-5681bde8><button onclick="copyCodeBlock(this)" class="function-btn" data-v-5681bde8>
+    <div class="function-btn-body" data-v-5681bde8>
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1" data-v-5681bde8>
+    <g id="surface1" data-v-5681bde8>
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 " data-v-5681bde8></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre><div class="algolia-no-index card-container" data-v-5681bde8><!----> <div class="card expandable-card border-0" data-v-5681bde8><div class="card-header header-toggle bg-white border-0" data-v-5681bde8><div class="caret-wrapper" data-v-5681bde8><span class="glyphicon glyphicon-chevron-right" data-v-5681bde8></span></div> <div class="header-wrapper card-title bg-white" data-v-5681bde8><p data-v-5681bde8><span class="dimmed" data-v-5681bde8>💡 Tips</span></p></div> <div class="button-wrapper" data-v-5681bde8><button type="button" class="collapse-button btn btn-outline-secondary" style="display:none;" data-v-5681bde8><span aria-hidden="true" class="collapse-icon glyphicon glyphicon-menu-down"></span></button> <button type="button" class="close-button btn btn-outline-secondary seamless-button" data-v-5681bde8><span aria-hidden="true" class="glyphicon glyphicon-remove" data-v-5681bde8></span></button> <button type="button" class="popup-button btn btn-outline-secondary seamless-button" style="display:none;" data-v-5681bde8><span aria-hidden="true" class="glyphicon glyphicon-new-window" data-v-5681bde8></span></button></div></div> <div class="card-collapse" data-v-5681bde8><!----> <hr style="display:;" data-v-5681bde8></div> <!----></div></div> <div class="algolia-no-index card-container" data-v-5681bde8><!----> <div class="card expandable-card border-0" data-v-5681bde8><div class="card-header header-toggle bg-white border-0" data-v-5681bde8><div class="caret-wrapper" data-v-5681bde8><span class="glyphicon glyphicon-chevron-right" data-v-5681bde8></span></div> <div class="header-wrapper card-title bg-white" data-v-5681bde8><p data-v-5681bde8><span class="dimmed" data-v-5681bde8><span aria-hidden="true" class="fas fa-battery-quarter" data-v-5681bde8></span> Partial solution</span></p></div> <div class="button-wrapper" data-v-5681bde8><button type="button" class="collapse-button btn btn-outline-secondary" style="display:none;" data-v-5681bde8><span aria-hidden="true" class="collapse-icon glyphicon glyphicon-menu-down"></span></button> <button type="button" class="close-button btn btn-outline-secondary seamless-button" data-v-5681bde8><span aria-hidden="true" class="glyphicon glyphicon-remove" data-v-5681bde8></span></button> <button type="button" class="popup-button btn btn-outline-secondary seamless-button" style="display:none;" data-v-5681bde8><span aria-hidden="true" class="glyphicon glyphicon-new-window" data-v-5681bde8></span></button></div></div> <div class="card-collapse" data-v-5681bde8><!----> <hr style="display:;" data-v-5681bde8></div> <!----></div></div></div> <!----> <button type="button" class="collapse-button btn btn-outline-secondary" data-v-5681bde8><span aria-hidden="true" class="collapse-icon glyphicon glyphicon-menu-down opened"></span></button></div> <hr style="display:none;" data-v-5681bde8></div> <!----></div></div><p></p></div></div><hr style="border-top:3px double #c5c5c5;"> <div><h3 id="writing-to-files"><span id="writing-to-files" class="anchor"></span>Writing to Files<a href="#writing-to-files" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h3> <p><strong>Similar to reading from a file, writing to a file too is a three step process. One main difference is the file needs to be opened in the <em>write mode</em>.</strong></p> <div class="alert box-container alert-default" data-v-7d17494f><!----> <div class="header-and-body" data-v-7d17494f><!----> <div class="box-body-wrapper" data-v-7d17494f><!----> <!----> <div class="contents" data-v-7d17494f><p data-v-7d17494f><span data-v-7d17494f><span aria-hidden="true" class="fas fa-cube" data-v-7d17494f></span></span> The code below shows how to write to a text file.</p> <pre data-v-7d17494f><code class="line-numbers hljs python" data-v-7d17494f><span data-v-7d17494f>file_path = os.path.join(<span class="hljs-string" data-v-7d17494f>'data'</span>, <span class="hljs-string" data-v-7d17494f>'items.txt'</span>)
+</span><span data-v-7d17494f>f = <span class="hljs-built_in" data-v-7d17494f>open</span>(file_path, <span class="hljs-string" data-v-7d17494f>'w'</span>)  <span class="hljs-comment" data-v-7d17494f># open in write mode</span>
+</span><span data-v-7d17494f>f.write(<span class="hljs-string" data-v-7d17494f>'first line\n'</span>)
+</span><span data-v-7d17494f>f.write(<span class="hljs-string" data-v-7d17494f>'second line\n'</span>)
+</span><span data-v-7d17494f>f.close()
+</span></code><div class="function-btn-container" data-v-7d17494f><button onclick="copyCodeBlock(this)" class="function-btn" data-v-7d17494f>
+    <div class="function-btn-body" data-v-7d17494f>
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1" data-v-7d17494f>
+    <g id="surface1" data-v-7d17494f>
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 " data-v-7d17494f></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre><p data-v-7d17494f><span data-v-7d17494f><span aria-hidden="true" class="fas fa-arrow-down" data-v-7d17494f></span></span> contents of the <code class="line-numbers hljs inline no-lang" data-v-7d17494f>items.txt</code>:</p> <pre data-v-7d17494f><code class="line-numbers hljs" data-v-7d17494f><span data-v-7d17494f>first line
+</span><span data-v-7d17494f>second line
+</span></code><div class="function-btn-container" data-v-7d17494f><button onclick="copyCodeBlock(this)" class="function-btn" data-v-7d17494f>
+    <div class="function-btn-body" data-v-7d17494f>
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1" data-v-7d17494f>
+    <g id="surface1" data-v-7d17494f>
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 " data-v-7d17494f></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre><ul data-v-7d17494f><li data-v-7d17494f><span class="badge rounded-pill bg-success text-white" data-v-7d17494f><span aria-hidden="true" class="fas fa-lightbulb" data-v-7d17494f></span></span> The <code class="line-numbers hljs inline no-lang" data-v-7d17494f>'w'</code> argument indicates that the file should be opened in write mode.</li> <li data-v-7d17494f><span class="badge rounded-pill bg-success text-white" data-v-7d17494f><span aria-hidden="true" class="fas fa-lightbulb" data-v-7d17494f></span></span> Unlike the <code class="line-numbers hljs inline no-lang" data-v-7d17494f>print()</code> function that prints content in a new line every time, the <code class="line-numbers hljs inline no-lang" data-v-7d17494f>write</code> function does not add an automatic line break at the end. You need to add a <code class="line-numbers hljs inline no-lang" data-v-7d17494f>\n</code> at each place you want a line break to appear in the file.</li></ul></div> <!----></div></div></div> <p><strong>To preserve original content and add to it, open the file in <em>append mode</em>.</strong> That is because opening a file in write mode and writing to it results in overwriting the content of the file contained before it was opened.</p> <div class="alert box-container alert-default" data-v-7d17494f><!----> <div class="header-and-body" data-v-7d17494f><!----> <div class="box-body-wrapper" data-v-7d17494f><!----> <!----> <div class="contents" data-v-7d17494f><p data-v-7d17494f><span data-v-7d17494f><span aria-hidden="true" class="fas fa-cube" data-v-7d17494f></span></span> The code below shows how to append to a file.</p> <pre data-v-7d17494f><code class="line-numbers hljs python" data-v-7d17494f><span data-v-7d17494f>f = <span class="hljs-built_in" data-v-7d17494f>open</span>(file_path, <span class="hljs-string" data-v-7d17494f>'a'</span>)  <span class="hljs-comment" data-v-7d17494f># open in append mode</span>
+</span><span data-v-7d17494f>f.write(<span class="hljs-string" data-v-7d17494f>'third line\n'</span>)
+</span><span data-v-7d17494f>f.close()
+</span></code><div class="function-btn-container" data-v-7d17494f><button onclick="copyCodeBlock(this)" class="function-btn" data-v-7d17494f>
+    <div class="function-btn-body" data-v-7d17494f>
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1" data-v-7d17494f>
+    <g id="surface1" data-v-7d17494f>
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 " data-v-7d17494f></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre><p data-v-7d17494f><span data-v-7d17494f><span aria-hidden="true" class="fas fa-arrow-down" data-v-7d17494f></span></span> contents of the <code class="line-numbers hljs inline no-lang" data-v-7d17494f>items.txt</code>:</p> <pre data-v-7d17494f><code class="line-numbers hljs" data-v-7d17494f><span data-v-7d17494f>first line
+</span><span data-v-7d17494f>second line
+</span><span data-v-7d17494f>third line
+</span></code><div class="function-btn-container" data-v-7d17494f><button onclick="copyCodeBlock(this)" class="function-btn" data-v-7d17494f>
+    <div class="function-btn-body" data-v-7d17494f>
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1" data-v-7d17494f>
+    <g id="surface1" data-v-7d17494f>
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 " data-v-7d17494f></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre></div> <!----></div></div></div> <div><div expanded="" no-close="" class="card-container" data-v-5681bde8><!----> <div class="card expandable-card border-danger" data-v-5681bde8><div class="card-header header-toggle bg-danger border-danger" data-v-5681bde8><div class="caret-wrapper" data-v-5681bde8><!----></div> <div class="header-wrapper card-title bg-danger text-white" data-v-5681bde8><p data-v-5681bde8><span aria-hidden="true" class="fas fa-dumbbell" data-v-5681bde8></span> Exercise: Add Line Numbers</p></div> <div class="button-wrapper" data-v-5681bde8><button type="button" class="collapse-button btn btn-outline-light" data-v-5681bde8><span aria-hidden="true" class="collapse-icon glyphicon glyphicon-menu-down opened"></span></button> <button type="button" class="close-button btn btn-outline-light" style="display:none;" data-v-5681bde8><span aria-hidden="true" class="glyphicon glyphicon-remove" data-v-5681bde8></span></button> <button type="button" class="popup-button btn btn-outline-light" style="display:none;" data-v-5681bde8><span aria-hidden="true" class="glyphicon glyphicon-new-window" data-v-5681bde8></span></button></div></div> <div class="card-collapse" data-v-5681bde8><div class="card-body" data-v-5681bde8> <div data-v-5681bde8><h4 id="exercise-add-line-numbers" data-v-5681bde8><span id="exercise-add-line-numbers" class="anchor" data-v-5681bde8></span>Exercise : Add Line Numbers<a href="#exercise-add-line-numbers" onclick="event.stopPropagation()" class="fa fa-anchor" data-v-5681bde8></a></h4> <p data-v-5681bde8>Complete the functions given below, to behave as described by their docstrings, so that the code produces the given output. Only one function needs to be modified.</p> <pre data-v-5681bde8><code class="line-numbers hljs python" data-v-5681bde8><span data-v-5681bde8><span class="hljs-function" data-v-5681bde8><span class="hljs-keyword" data-v-5681bde8>def</span> <span class="hljs-title" data-v-5681bde8>get_file_content_as_list</span>(<span class="hljs-params" data-v-5681bde8>filename</span>):</span>
+</span><span data-v-5681bde8>  <span class="hljs-string" data-v-5681bde8>&quot;&quot;&quot;Return content of the file as a list of lines</span>
+</span><span data-v-5681bde8><span class="hljs-string" data-v-5681bde8>  </span>
+</span><span data-v-5681bde8><span class="hljs-string" data-v-5681bde8>  The file is expected to be in the current working directory.</span>
+</span><span data-v-5681bde8><span class="hljs-string" data-v-5681bde8>  The lines in the list contains trailing line breaks.</span>
+</span><span data-v-5681bde8><span class="hljs-string" data-v-5681bde8>  </span>
+</span><span data-v-5681bde8><span class="hljs-string" data-v-5681bde8>  Example:</span>
+</span><span data-v-5681bde8><span class="hljs-string" data-v-5681bde8>  If the a.txt has two lines 'aaa' and 'bbb', </span>
+</span><span data-v-5681bde8><span class="hljs-string" data-v-5681bde8>  get_file_content_as_list('a.txt') returns ['aaa\n', 'bbb']</span>
+</span><span data-v-5681bde8><span class="hljs-string" data-v-5681bde8>  &quot;&quot;&quot;</span>
+</span><span data-v-5681bde8>  f = <span class="hljs-built_in" data-v-5681bde8>open</span>(filename, <span class="hljs-string" data-v-5681bde8>'r'</span>)
+</span><span data-v-5681bde8>  lines = f.readlines()
+</span><span data-v-5681bde8>  f.close()
+</span><span data-v-5681bde8>  <span class="hljs-keyword" data-v-5681bde8>return</span> lines
+</span><span data-v-5681bde8>  
+</span><span data-v-5681bde8><span class="hljs-function" data-v-5681bde8><span class="hljs-keyword" data-v-5681bde8>def</span> <span class="hljs-title" data-v-5681bde8>write_with_line_numbers</span>(<span class="hljs-params" data-v-5681bde8>lines, filename</span>):</span>
+</span><span data-v-5681bde8>  <span class="hljs-string" data-v-5681bde8>&quot;&quot;&quot;Write the strings in lines to the file filename, after adding a line number to each line.</span>
+</span><span data-v-5681bde8><span class="hljs-string" data-v-5681bde8>  </span>
+</span><span data-v-5681bde8><span class="hljs-string" data-v-5681bde8>  Example:</span>
+</span><span data-v-5681bde8><span class="hljs-string" data-v-5681bde8>  write_with_line_numbers(['aaa\n', 'bbb'], 'out.txt') writes the following content to out.txt</span>
+</span><span data-v-5681bde8><span class="hljs-string" data-v-5681bde8>  1. aaa</span>
+</span><span data-v-5681bde8><span class="hljs-string" data-v-5681bde8>  2. bbb</span>
+</span><span data-v-5681bde8><span class="hljs-string" data-v-5681bde8>  &quot;&quot;&quot;</span>
+</span><span data-v-5681bde8>  <span class="hljs-keyword" data-v-5681bde8>pass</span> <span class="hljs-comment" data-v-5681bde8># REPLACE WITH YOUR CODE</span>
+</span><span data-v-5681bde8>
+</span><span data-v-5681bde8>
+</span><span data-v-5681bde8><span class="hljs-function" data-v-5681bde8><span class="hljs-keyword" data-v-5681bde8>def</span> <span class="hljs-title" data-v-5681bde8>process_file</span>(<span class="hljs-params" data-v-5681bde8>sourcefile, targetfile</span>):</span>
+</span><span data-v-5681bde8>  <span class="hljs-string" data-v-5681bde8>&quot;&quot;&quot;Copy the text in sourcefile to targetfile, but also add line numbers to each line.</span>
+</span><span data-v-5681bde8><span class="hljs-string" data-v-5681bde8>  </span>
+</span><span data-v-5681bde8><span class="hljs-string" data-v-5681bde8>  Example:</span>
+</span><span data-v-5681bde8><span class="hljs-string" data-v-5681bde8>  Assume a.txt has the following text:</span>
+</span><span data-v-5681bde8><span class="hljs-string" data-v-5681bde8>  aaa</span>
+</span><span data-v-5681bde8><span class="hljs-string" data-v-5681bde8>  bbb</span>
+</span><span data-v-5681bde8><span class="hljs-string" data-v-5681bde8>  process_file('a.txt', 'b.txt') results in b.txt having the following text:</span>
+</span><span data-v-5681bde8><span class="hljs-string" data-v-5681bde8>  1. aaa</span>
+</span><span data-v-5681bde8><span class="hljs-string" data-v-5681bde8>  2. bbb</span>
+</span><span data-v-5681bde8><span class="hljs-string" data-v-5681bde8>  &quot;&quot;&quot;</span>
+</span><span data-v-5681bde8>  contents = get_file_content_as_list(sourcefile)
+</span><span data-v-5681bde8>  write_with_line_numbers(contents, targetfile)
+</span><span data-v-5681bde8>  <span class="hljs-built_in" data-v-5681bde8>print</span>(get_file_content_as_list(targetfile))
+</span><span data-v-5681bde8>  
+</span><span data-v-5681bde8>process_file(<span class="hljs-string" data-v-5681bde8>'file1a.txt'</span>, <span class="hljs-string" data-v-5681bde8>'file1b.txt'</span>)
+</span><span data-v-5681bde8>process_file(<span class="hljs-string" data-v-5681bde8>'file2a.txt'</span>, <span class="hljs-string" data-v-5681bde8>'file2b.txt'</span>)
+</span><span data-v-5681bde8>
+</span></code><div class="function-btn-container" data-v-5681bde8><button onclick="copyCodeBlock(this)" class="function-btn" data-v-5681bde8>
+    <div class="function-btn-body" data-v-5681bde8>
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1" data-v-5681bde8>
+    <g id="surface1" data-v-5681bde8>
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 " data-v-5681bde8></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre><p data-v-5681bde8><code class="line-numbers hljs inline no-lang" data-v-5681bde8>file1a.txt</code>:</p> <pre data-v-5681bde8><code class="line-numbers hljs" data-v-5681bde8><span data-v-5681bde8>first line
+</span><span data-v-5681bde8>
+</span><span data-v-5681bde8>second line
+</span><span data-v-5681bde8>third line
+</span></code><div class="function-btn-container" data-v-5681bde8><button onclick="copyCodeBlock(this)" class="function-btn" data-v-5681bde8>
+    <div class="function-btn-body" data-v-5681bde8>
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1" data-v-5681bde8>
+    <g id="surface1" data-v-5681bde8>
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 " data-v-5681bde8></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre><p data-v-5681bde8><code class="line-numbers hljs inline no-lang" data-v-5681bde8>file2a.txt</code>:</p> <pre data-v-5681bde8><code class="line-numbers hljs" data-v-5681bde8><span data-v-5681bde8>hang in there
+</span></code><div class="function-btn-container" data-v-5681bde8><button onclick="copyCodeBlock(this)" class="function-btn" data-v-5681bde8>
+    <div class="function-btn-body" data-v-5681bde8>
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1" data-v-5681bde8>
+    <g id="surface1" data-v-5681bde8>
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 " data-v-5681bde8></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre><p data-v-5681bde8><span data-v-5681bde8><span aria-hidden="true" class="fas fa-arrow-down" data-v-5681bde8></span></span></p> <pre data-v-5681bde8><code class="line-numbers hljs" data-v-5681bde8><span data-v-5681bde8>['1. first line\n', '2. \n', '3. second line\n', '4. third line']
+</span><span data-v-5681bde8>['1. hang in there']
+</span></code><div class="function-btn-container" data-v-5681bde8><button onclick="copyCodeBlock(this)" class="function-btn" data-v-5681bde8>
+    <div class="function-btn-body" data-v-5681bde8>
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1" data-v-5681bde8>
+    <g id="surface1" data-v-5681bde8>
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 " data-v-5681bde8></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre><div class="algolia-no-index card-container" data-v-5681bde8><!----> <div class="card expandable-card border-0" data-v-5681bde8><div class="card-header header-toggle bg-white border-0" data-v-5681bde8><div class="caret-wrapper" data-v-5681bde8><span class="glyphicon glyphicon-chevron-right" data-v-5681bde8></span></div> <div class="header-wrapper card-title bg-white" data-v-5681bde8><p data-v-5681bde8><span class="dimmed" data-v-5681bde8><span aria-hidden="true" class="fas fa-battery-quarter" data-v-5681bde8></span> Partial solution</span></p></div> <div class="button-wrapper" data-v-5681bde8><button type="button" class="collapse-button btn btn-outline-secondary" style="display:none;" data-v-5681bde8><span aria-hidden="true" class="collapse-icon glyphicon glyphicon-menu-down"></span></button> <button type="button" class="close-button btn btn-outline-secondary seamless-button" data-v-5681bde8><span aria-hidden="true" class="glyphicon glyphicon-remove" data-v-5681bde8></span></button> <button type="button" class="popup-button btn btn-outline-secondary seamless-button" style="display:none;" data-v-5681bde8><span aria-hidden="true" class="glyphicon glyphicon-new-window" data-v-5681bde8></span></button></div></div> <div class="card-collapse" data-v-5681bde8><!----> <hr style="display:;" data-v-5681bde8></div> <!----></div></div></div> <!----> <button type="button" class="collapse-button btn btn-outline-secondary" data-v-5681bde8><span aria-hidden="true" class="collapse-icon glyphicon glyphicon-menu-down opened"></span></button></div> <hr style="display:none;" data-v-5681bde8></div> <!----></div></div><p></p></div></div><hr style="border-top:3px double #c5c5c5;"> <div><h3 id="csv-files"><span id="csv-files" class="anchor"></span>CSV files<a href="#csv-files" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h3> <p><strong>CSV files are often used as a simple way to save spreadsheet-like data.</strong> Each line in a CSV file represents a row in the spreadsheet, and commas separate the cells in the row. They usually have the <code class="line-numbers hljs inline no-lang">.csv</code> extension and can be opened in spreadsheet programs such as Excel or in any text editor.</p> <div class="alert box-container alert-default" data-v-7d17494f><!----> <div class="header-and-body" data-v-7d17494f><!----> <div class="box-body-wrapper" data-v-7d17494f><!----> <!----> <div class="contents" data-v-7d17494f><p data-v-7d17494f><span data-v-7d17494f><span aria-hidden="true" class="fas fa-cube" data-v-7d17494f></span></span> Here is the content of a simple CSV file <span class="dimmed" data-v-7d17494f>(click <a href="/2023/programming/files-csv/deliveries.csv" data-v-7d17494f>here</a> to download a copy)</span> and how it looks like when opened in Excel.</p> <table data-v-7d17494f><tbody data-v-7d17494f><tr data-v-7d17494f><td data-v-7d17494f><pre data-v-7d17494f><code class="line-numbers hljs" data-v-7d17494f><span data-v-7d17494f>4/11/2017,Alice Bee,4
+</span><span data-v-7d17494f>5/11/2017,Chris Ding,12
+</span><span data-v-7d17494f>5/11/2017,Brenda Chew,13
+</span><span data-v-7d17494f>6/11/2017,Dan Pillai,5
+</span></code><div class="function-btn-container" data-v-7d17494f><button onclick="copyCodeBlock(this)" class="function-btn" data-v-7d17494f>
+    <div class="function-btn-body" data-v-7d17494f>
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1" data-v-7d17494f>
+    <g id="surface1" data-v-7d17494f>
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 " data-v-7d17494f></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre><p data-v-7d17494f></p></td> <td data-v-7d17494f> → </td> <td data-v-7d17494f><p data-v-7d17494f></p> <img src="/2023/programming/files-csv/images/deliveries.png" data-v-7d17494f></td></tr></tbody></table></div> <!----></div></div></div> <p><span class="badge rounded-pill bg-success text-white"><span aria-hidden="true" class="fas fa-lightbulb"></span></span> If a value itself contains a comma <span class="dimmed">e.g., <code class="line-numbers hljs inline no-lang">Foo, Emily</code></span>, it can be enclosed in double quotes <span class="dimmed">e.g., <code class="line-numbers hljs inline no-lang">&quot;Foo, Emily&quot;</code></span>, to prevent it being misinterpreted as multiple values.</p> <div class="alert box-container alert-default" data-v-7d17494f><!----> <div class="header-and-body" data-v-7d17494f><!----> <div class="box-body-wrapper" data-v-7d17494f><!----> <!----> <div class="contents" data-v-7d17494f><p data-v-7d17494f><span data-v-7d17494f><span aria-hidden="true" class="fas fa-cube" data-v-7d17494f></span></span> This example shows how to use double quotes to handle commas inside a value:</p> <ul data-v-7d17494f><li data-v-7d17494f><code class="line-numbers hljs inline no-lang" data-v-7d17494f>7/11/2017,&quot;Foo, Emily&quot;,5</code> interpreted as three values: <code class="line-numbers hljs inline no-lang" data-v-7d17494f>7/11/2017</code> and <code class="line-numbers hljs inline no-lang" data-v-7d17494f>Foo, Emily</code> and <code class="line-numbers hljs inline no-lang" data-v-7d17494f>5</code></li> <li data-v-7d17494f><code class="line-numbers hljs inline no-lang" data-v-7d17494f>7/11/2017,Foo, Emily,5</code> interpreted as four values: <code class="line-numbers hljs inline no-lang" data-v-7d17494f>7/11/2017</code> and <code class="line-numbers hljs inline no-lang" data-v-7d17494f>Foo</code> and <code class="line-numbers hljs inline no-lang" data-v-7d17494f> Emily</code> and <code class="line-numbers hljs inline no-lang" data-v-7d17494f>5</code></li></ul></div> <!----></div></div></div> <p><strong>Python has an in-built module named <code class="line-numbers hljs inline no-lang">csv</code> that provides functions to deal with CSV files more conveniently</strong>, although CSV files are text files that can be read/written using normal file access techniques covered earlier. For example, Python provides a way to read a CSV file as a <code class="line-numbers hljs inline no-lang">Reader</code> object that knows how to interpret a CSV file.</p> <div class="alert box-container alert-default" data-v-7d17494f><!----> <div class="header-and-body" data-v-7d17494f><!----> <div class="box-body-wrapper" data-v-7d17494f><!----> <!----> <div class="contents" data-v-7d17494f><p data-v-7d17494f><span data-v-7d17494f><span aria-hidden="true" class="fas fa-cube" data-v-7d17494f></span></span> The code below shows how to use the <code class="line-numbers hljs inline no-lang" data-v-7d17494f>csv</code> module to read contents of a CSV file named <code class="line-numbers hljs inline no-lang" data-v-7d17494f>deliveries.csv</code>:</p> <pre data-v-7d17494f><code class="line-numbers hljs python" data-v-7d17494f><span data-v-7d17494f><span class="hljs-keyword" data-v-7d17494f>import</span> csv
+</span><span data-v-7d17494f>
+</span><span data-v-7d17494f>deliveries_file = <span class="hljs-built_in" data-v-7d17494f>open</span>(<span class="hljs-string" data-v-7d17494f>'deliveries.csv'</span>) <span class="hljs-comment" data-v-7d17494f># open file</span>
+</span><span data-v-7d17494f>deliveries_reader = csv.reader(deliveries_file) <span class="hljs-comment" data-v-7d17494f># create a Reader</span>
+</span><span data-v-7d17494f><span class="hljs-keyword" data-v-7d17494f>for</span> row <span class="hljs-keyword" data-v-7d17494f>in</span> deliveries_reader: <span class="hljs-comment" data-v-7d17494f># access each line using the Reader</span>
+</span><span data-v-7d17494f>  <span class="hljs-built_in" data-v-7d17494f>print</span>(row)
+</span><span data-v-7d17494f>deliveries_file.close() <span class="hljs-comment" data-v-7d17494f># close file</span>
+</span></code><div class="function-btn-container" data-v-7d17494f><button onclick="copyCodeBlock(this)" class="function-btn" data-v-7d17494f>
+    <div class="function-btn-body" data-v-7d17494f>
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1" data-v-7d17494f>
+    <g id="surface1" data-v-7d17494f>
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 " data-v-7d17494f></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre><p data-v-7d17494f><span data-v-7d17494f><span aria-hidden="true" class="fas fa-arrow-down" data-v-7d17494f></span></span></p> <pre data-v-7d17494f><code class="line-numbers hljs" data-v-7d17494f><span data-v-7d17494f>['4/11/2017', 'Alice Bee', '4']
+</span><span data-v-7d17494f>['5/11/2017', 'Chris Ding', '12']
+</span><span data-v-7d17494f>['5/11/2017', 'Brenda Chew', '13']
+</span><span data-v-7d17494f>['6/11/2017', 'Dan Pillai', '5']
+</span></code><div class="function-btn-container" data-v-7d17494f><button onclick="copyCodeBlock(this)" class="function-btn" data-v-7d17494f>
+    <div class="function-btn-body" data-v-7d17494f>
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1" data-v-7d17494f>
+    <g id="surface1" data-v-7d17494f>
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 " data-v-7d17494f></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre><p data-v-7d17494f>As you can see, <code class="line-numbers hljs inline no-lang" data-v-7d17494f>Reader</code> object returns content of a line as a list object with the value of each cell as an item in the list. Replacing the line,</p> <pre data-v-7d17494f><code class="line-numbers hljs python" data-v-7d17494f><span data-v-7d17494f>...
+</span><span data-v-7d17494f><span class="hljs-built_in" data-v-7d17494f>print</span>(row)
+</span><span data-v-7d17494f>...
+</span></code><div class="function-btn-container" data-v-7d17494f><button onclick="copyCodeBlock(this)" class="function-btn" data-v-7d17494f>
+    <div class="function-btn-body" data-v-7d17494f>
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1" data-v-7d17494f>
+    <g id="surface1" data-v-7d17494f>
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 " data-v-7d17494f></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre><p data-v-7d17494f>... with the following line,</p> <pre data-v-7d17494f><code class="line-numbers hljs python" data-v-7d17494f><span data-v-7d17494f>...
+</span><span data-v-7d17494f><span class="hljs-built_in" data-v-7d17494f>print</span>(<span class="hljs-string" data-v-7d17494f>'Date:'</span>, row[<span class="hljs-number" data-v-7d17494f>0</span>], <span class="hljs-string" data-v-7d17494f>'\tRecipient:'</span>, row[<span class="hljs-number" data-v-7d17494f>1</span>], <span class="hljs-string" data-v-7d17494f>'\tQuantity:'</span>, row[<span class="hljs-number" data-v-7d17494f>2</span>] )
+</span><span data-v-7d17494f>...
+</span></code><div class="function-btn-container" data-v-7d17494f><button onclick="copyCodeBlock(this)" class="function-btn" data-v-7d17494f>
+    <div class="function-btn-body" data-v-7d17494f>
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1" data-v-7d17494f>
+    <g id="surface1" data-v-7d17494f>
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 " data-v-7d17494f></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre><p data-v-7d17494f>... will give you the output shown below:</p> <pre data-v-7d17494f><code class="line-numbers hljs" data-v-7d17494f><span data-v-7d17494f>Date: 4/11/2017 	Recipient: Alice Bee 	Quantity: 4
+</span><span data-v-7d17494f>Date: 5/11/2017 	Recipient: Chris Ding 	Quantity: 12
+</span><span data-v-7d17494f>Date: 5/11/2017 	Recipient: Brenda Chew 	Quantity: 13
+</span><span data-v-7d17494f>Date: 6/11/2017 	Recipient: Dan Pillai 	Quantity: 5
+</span></code><div class="function-btn-container" data-v-7d17494f><button onclick="copyCodeBlock(this)" class="function-btn" data-v-7d17494f>
+    <div class="function-btn-body" data-v-7d17494f>
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1" data-v-7d17494f>
+    <g id="surface1" data-v-7d17494f>
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 " data-v-7d17494f></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre></div> <!----></div></div></div> <p>Note that all values read from a CSV files come as strings. If they are meant to represent other types, you need to convert the string to the correct type first.</p> <div class="alert box-container alert-default" data-v-7d17494f><!----> <div class="header-and-body" data-v-7d17494f><!----> <div class="box-body-wrapper" data-v-7d17494f><!----> <!----> <div class="contents" data-v-7d17494f><p data-v-7d17494f><span data-v-7d17494f><span aria-hidden="true" class="fas fa-cube" data-v-7d17494f></span></span> In this example the 3rd value of each row is converted to an <code class="line-numbers hljs inline no-lang" data-v-7d17494f>int</code> before adding them up.</p> <pre data-v-7d17494f><code class="line-numbers hljs python" data-v-7d17494f><span data-v-7d17494f>deliveries_file = <span class="hljs-built_in" data-v-7d17494f>open</span>(<span class="hljs-string" data-v-7d17494f>'deliveries.csv'</span>)
+</span><span data-v-7d17494f>deliveries_reader = csv.reader(deliveries_file)
+</span><span data-v-7d17494f>total = <span class="hljs-number" data-v-7d17494f>0</span>
+</span><span data-v-7d17494f><span class="hljs-keyword" data-v-7d17494f>for</span> row <span class="hljs-keyword" data-v-7d17494f>in</span> deliveries_reader:
+</span><span data-v-7d17494f>  <span class="hljs-comment" data-v-7d17494f># convert 3rd cell to an int and add to total</span>
+</span><span data-v-7d17494f>  total = total + <span class="hljs-built_in" data-v-7d17494f>int</span>(row[<span class="hljs-number" data-v-7d17494f>2</span>])
+</span><span data-v-7d17494f>
+</span><span data-v-7d17494f><span class="hljs-built_in" data-v-7d17494f>print</span>(<span class="hljs-string" data-v-7d17494f>'Total quantity delivered:'</span>, total)
+</span><span data-v-7d17494f>deliveries_file.close()
+</span></code><div class="function-btn-container" data-v-7d17494f><button onclick="copyCodeBlock(this)" class="function-btn" data-v-7d17494f>
+    <div class="function-btn-body" data-v-7d17494f>
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1" data-v-7d17494f>
+    <g id="surface1" data-v-7d17494f>
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 " data-v-7d17494f></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre><p data-v-7d17494f><span data-v-7d17494f><span aria-hidden="true" class="fas fa-arrow-down" data-v-7d17494f></span></span></p> <pre data-v-7d17494f><code class="line-numbers hljs" data-v-7d17494f><span data-v-7d17494f>Total quantity delivered: 34
+</span></code><div class="function-btn-container" data-v-7d17494f><button onclick="copyCodeBlock(this)" class="function-btn" data-v-7d17494f>
+    <div class="function-btn-body" data-v-7d17494f>
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1" data-v-7d17494f>
+    <g id="surface1" data-v-7d17494f>
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 " data-v-7d17494f></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre></div> <!----></div></div></div> <p><strong>The <code class="line-numbers hljs inline no-lang">csv</code> module also provide an easy way to write to CSV files, one row at a time, using a <code class="line-numbers hljs inline no-lang">Writer</code> object.</strong></p> <div class="alert box-container alert-default" data-v-7d17494f><!----> <div class="header-and-body" data-v-7d17494f><!----> <div class="box-body-wrapper" data-v-7d17494f><!----> <!----> <div class="contents" data-v-7d17494f><p data-v-7d17494f><span data-v-7d17494f><span aria-hidden="true" class="fas fa-cube" data-v-7d17494f></span></span> The code below writes two rows to the <code class="line-numbers hljs inline no-lang" data-v-7d17494f>pricelist.csv</code> file.</p> <pre data-v-7d17494f><code class="line-numbers hljs python" data-v-7d17494f><span data-v-7d17494f>output_file = <span class="hljs-built_in" data-v-7d17494f>open</span>(<span class="hljs-string" data-v-7d17494f>'pricelist.csv'</span>, <span class="hljs-string" data-v-7d17494f>'w'</span>, newline=<span class="hljs-string" data-v-7d17494f>''</span>) <span class="hljs-comment" data-v-7d17494f># open file in write mode</span>
+</span><span data-v-7d17494f>output_writer = csv.writer(output_file) <span class="hljs-comment" data-v-7d17494f># get a Writer object</span>
+</span><span data-v-7d17494f>output_writer.writerow([<span class="hljs-string" data-v-7d17494f>'apples'</span>, <span class="hljs-string" data-v-7d17494f>'1'</span>, <span class="hljs-string" data-v-7d17494f>'1.5'</span>, <span class="hljs-string" data-v-7d17494f>'True'</span>]) <span class="hljs-comment" data-v-7d17494f># write one row</span>
+</span><span data-v-7d17494f>output_writer.writerow([<span class="hljs-string" data-v-7d17494f>'bananas'</span>, <span class="hljs-string" data-v-7d17494f>'3'</span>, <span class="hljs-string" data-v-7d17494f>'2.0'</span>, <span class="hljs-string" data-v-7d17494f>'False'</span>]) <span class="hljs-comment" data-v-7d17494f># write another row</span>
+</span><span data-v-7d17494f>output_file.close() <span class="hljs-comment" data-v-7d17494f># close file</span>
+</span></code><div class="function-btn-container" data-v-7d17494f><button onclick="copyCodeBlock(this)" class="function-btn" data-v-7d17494f>
+    <div class="function-btn-body" data-v-7d17494f>
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1" data-v-7d17494f>
+    <g id="surface1" data-v-7d17494f>
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 " data-v-7d17494f></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre><p data-v-7d17494f>The <code class="line-numbers hljs inline no-lang" data-v-7d17494f>pricelist.csv</code> file will now contain:</p> <pre data-v-7d17494f><code class="line-numbers hljs" data-v-7d17494f><span data-v-7d17494f>apples,1,1.5,True
+</span><span data-v-7d17494f>bananas,3,2.0,False
+</span></code><div class="function-btn-container" data-v-7d17494f><button onclick="copyCodeBlock(this)" class="function-btn" data-v-7d17494f>
+    <div class="function-btn-body" data-v-7d17494f>
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1" data-v-7d17494f>
+    <g id="surface1" data-v-7d17494f>
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 " data-v-7d17494f></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre><ul data-v-7d17494f><li data-v-7d17494f><span class="badge rounded-pill bg-success text-white" data-v-7d17494f><span aria-hidden="true" class="fas fa-lightbulb" data-v-7d17494f></span></span> You can open a file in append mode if you want to append to it instead of overwriting current content. <br data-v-7d17494f> e.g., <code class="line-numbers hljs inline no-lang" data-v-7d17494f>output_file = open('pricelist.csv', </code><mark data-v-7d17494f><code class="line-numbers hljs inline no-lang" data-v-7d17494f>'a',</code></mark><code class="line-numbers hljs inline no-lang" data-v-7d17494f> newline='')</code></li> <li data-v-7d17494f><span class="badge rounded-pill bg-success text-white" data-v-7d17494f><span aria-hidden="true" class="fas fa-lightbulb" data-v-7d17494f></span></span> The keyword argument <code class="line-numbers hljs inline no-lang" data-v-7d17494f>newline=''</code> need to be used when opening a CSV file in Windows. The reasoning behind it is too complicated to explain here.</li></ul></div> <!----></div></div></div> <div><div expanded="" no-close="" class="card-container" data-v-5681bde8><!----> <div class="card expandable-card border-danger" data-v-5681bde8><div class="card-header header-toggle bg-danger border-danger" data-v-5681bde8><div class="caret-wrapper" data-v-5681bde8><!----></div> <div class="header-wrapper card-title bg-danger text-white" data-v-5681bde8><p data-v-5681bde8><span aria-hidden="true" class="fas fa-dumbbell" data-v-5681bde8></span> Exercise: Calcluate GST</p></div> <div class="button-wrapper" data-v-5681bde8><button type="button" class="collapse-button btn btn-outline-light" data-v-5681bde8><span aria-hidden="true" class="collapse-icon glyphicon glyphicon-menu-down opened"></span></button> <button type="button" class="close-button btn btn-outline-light" style="display:none;" data-v-5681bde8><span aria-hidden="true" class="glyphicon glyphicon-remove" data-v-5681bde8></span></button> <button type="button" class="popup-button btn btn-outline-light" style="display:none;" data-v-5681bde8><span aria-hidden="true" class="glyphicon glyphicon-new-window" data-v-5681bde8></span></button></div></div> <div class="card-collapse" data-v-5681bde8><div class="card-body" data-v-5681bde8> <div data-v-5681bde8><h4 id="exercise-calculate-gst" data-v-5681bde8><span id="exercise-calculate-gst" class="anchor" data-v-5681bde8></span>Exercise : Calculate GST<a href="#exercise-calculate-gst" onclick="event.stopPropagation()" class="fa fa-anchor" data-v-5681bde8></a></h4> <p data-v-5681bde8>Suppose there is a CSV file in this format:</p> <div data-v-5681bde8><table data-v-5681bde8><tbody data-v-5681bde8><tr data-v-5681bde8><td valign="top" data-v-5681bde8><p data-v-5681bde8><code class="line-numbers hljs inline no-lang" data-v-5681bde8>itemlist1.csv</code>:</p> <pre data-v-5681bde8><code class="line-numbers hljs" data-v-5681bde8><span data-v-5681bde8>item,price
+</span><span data-v-5681bde8>book,10.0
+</span><span data-v-5681bde8>bag,50.0
+</span><span data-v-5681bde8>&quot;pens, pencils&quot;, 5.0
+</span></code><div class="function-btn-container" data-v-5681bde8><button onclick="copyCodeBlock(this)" class="function-btn" data-v-5681bde8>
+    <div class="function-btn-body" data-v-5681bde8>
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1" data-v-5681bde8>
+    <g id="surface1" data-v-5681bde8>
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 " data-v-5681bde8></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre></td> <td valign="middle" data-v-5681bde8> → <br data-v-5681bde8><br data-v-5681bde8></td> <td valign="bottom" data-v-5681bde8><div class="table-responsive" data-v-5681bde8><table class="markbind-table table table-bordered table-striped" data-v-5681bde8><thead data-v-5681bde8><tr data-v-5681bde8><th data-v-5681bde8>item</th> <th data-v-5681bde8>price</th></tr></thead> <tbody data-v-5681bde8><tr data-v-5681bde8><td data-v-5681bde8>book</td> <td data-v-5681bde8>10.0</td></tr> <tr data-v-5681bde8><td data-v-5681bde8>bag</td> <td data-v-5681bde8>50.0</td></tr> <tr data-v-5681bde8><td data-v-5681bde8>pens, pencils</td> <td data-v-5681bde8>5.0</td></tr></tbody></table></div></td></tr></tbody></table></div> <p data-v-5681bde8>Write a program to calculate GST for each item at 7% and give the value as an additional column. The output should be in a new file.</p> <div data-v-5681bde8><table data-v-5681bde8><tbody data-v-5681bde8><tr data-v-5681bde8><td valign="top" data-v-5681bde8><p data-v-5681bde8><code class="line-numbers hljs inline no-lang" data-v-5681bde8>updated_itemlist1.csv</code>:</p> <pre data-v-5681bde8><code class="line-numbers hljs" data-v-5681bde8><span data-v-5681bde8>item,price,GST
+</span><span data-v-5681bde8>book,10.0,0.7
+</span><span data-v-5681bde8>bag,50.0,3.5
+</span><span data-v-5681bde8>&quot;pens, pencils&quot;,5.0,0.35
+</span></code><div class="function-btn-container" data-v-5681bde8><button onclick="copyCodeBlock(this)" class="function-btn" data-v-5681bde8>
+    <div class="function-btn-body" data-v-5681bde8>
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1" data-v-5681bde8>
+    <g id="surface1" data-v-5681bde8>
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 " data-v-5681bde8></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre></td> <td valign="middle" data-v-5681bde8> → <br data-v-5681bde8><br data-v-5681bde8></td> <td valign="bottom" data-v-5681bde8><div class="table-responsive" data-v-5681bde8><table class="markbind-table table table-bordered table-striped" data-v-5681bde8><thead data-v-5681bde8><tr data-v-5681bde8><th data-v-5681bde8>item</th> <th data-v-5681bde8>price</th> <th data-v-5681bde8>GST</th></tr></thead> <tbody data-v-5681bde8><tr data-v-5681bde8><td data-v-5681bde8>book</td> <td data-v-5681bde8>10.0</td> <td data-v-5681bde8>0.7</td></tr> <tr data-v-5681bde8><td data-v-5681bde8>bag</td> <td data-v-5681bde8>50.0</td> <td data-v-5681bde8>3.5</td></tr> <tr data-v-5681bde8><td data-v-5681bde8>pens, pencils</td> <td data-v-5681bde8>5.0</td> <td data-v-5681bde8>0.35</td></tr></tbody></table></div></td></tr></tbody></table></div> <p data-v-5681bde8>Start with the following code:</p> <pre data-v-5681bde8><code class="line-numbers hljs python" data-v-5681bde8><span data-v-5681bde8><span class="hljs-keyword" data-v-5681bde8>import</span> csv
+</span><span data-v-5681bde8>
+</span><span data-v-5681bde8><span class="hljs-function" data-v-5681bde8><span class="hljs-keyword" data-v-5681bde8>def</span> <span class="hljs-title" data-v-5681bde8>calculate_GST</span>(<span class="hljs-params" data-v-5681bde8>source_file, target_file</span>):</span>
+</span><span data-v-5681bde8>  <span class="hljs-string" data-v-5681bde8>&quot;&quot;&quot;Read the data from the CSV file source_file and write </span>
+</span><span data-v-5681bde8><span class="hljs-string" data-v-5681bde8>  the data, including the calculated GST values, to the CSV file target_file</span>
+</span><span data-v-5681bde8><span class="hljs-string" data-v-5681bde8>  &quot;&quot;&quot;</span>
+</span><span data-v-5681bde8>  input_lines = read_csv_lines(source_file)
+</span><span data-v-5681bde8>  updated_lines = []
+</span><span data-v-5681bde8>  
+</span><span data-v-5681bde8>  <span class="hljs-comment" data-v-5681bde8># ADD YOUR CODE HERE</span>
+</span><span data-v-5681bde8>  
+</span><span data-v-5681bde8>  write_to_csv_file(updated_lines, target_file)
+</span><span data-v-5681bde8>   
+</span><span data-v-5681bde8>  
+</span><span data-v-5681bde8><span class="hljs-function" data-v-5681bde8><span class="hljs-keyword" data-v-5681bde8>def</span> <span class="hljs-title" data-v-5681bde8>read_csv_lines</span>(<span class="hljs-params" data-v-5681bde8>filename</span>):</span>
+</span><span data-v-5681bde8>  <span class="hljs-string" data-v-5681bde8>&quot;&quot;&quot;Return the values in the csv file (specified by the filename) as a list of lists</span>
+</span><span data-v-5681bde8><span class="hljs-string" data-v-5681bde8>  each list representing a row of the file.</span>
+</span><span data-v-5681bde8><span class="hljs-string" data-v-5681bde8>  </span>
+</span><span data-v-5681bde8><span class="hljs-string" data-v-5681bde8>  Example: If the file file1.csv has the following contents,</span>
+</span><span data-v-5681bde8><span class="hljs-string" data-v-5681bde8>  item,price</span>
+</span><span data-v-5681bde8><span class="hljs-string" data-v-5681bde8>  book,10.0</span>
+</span><span data-v-5681bde8><span class="hljs-string" data-v-5681bde8>  read_csv_lines('file1.csv') returns [['item', 'price'], ['book', '10.0']]</span>
+</span><span data-v-5681bde8><span class="hljs-string" data-v-5681bde8>  </span>
+</span><span data-v-5681bde8><span class="hljs-string" data-v-5681bde8>  &quot;&quot;&quot;</span>
+</span><span data-v-5681bde8>  <span class="hljs-keyword" data-v-5681bde8>return</span> [] <span class="hljs-comment" data-v-5681bde8># REPLACE WITH YOUR CODE</span>
+</span><span data-v-5681bde8>  
+</span><span data-v-5681bde8>  
+</span><span data-v-5681bde8><span class="hljs-function" data-v-5681bde8><span class="hljs-keyword" data-v-5681bde8>def</span> <span class="hljs-title" data-v-5681bde8>write_to_csv_file</span>(<span class="hljs-params" data-v-5681bde8>lines, filename</span>):</span>
+</span><span data-v-5681bde8>  <span class="hljs-string" data-v-5681bde8>&quot;&quot;&quot;Write the given lines (a list of lists) to the CSV file (specified by filename)</span>
+</span><span data-v-5681bde8><span class="hljs-string" data-v-5681bde8>  </span>
+</span><span data-v-5681bde8><span class="hljs-string" data-v-5681bde8>  Example:</span>
+</span><span data-v-5681bde8><span class="hljs-string" data-v-5681bde8>  write_to_csv_file([['item', 'price', 'GST'], ['book', '10.0', '0.7']], 'file2.txt')</span>
+</span><span data-v-5681bde8><span class="hljs-string" data-v-5681bde8>  </span>
+</span><span data-v-5681bde8><span class="hljs-string" data-v-5681bde8>  &quot;&quot;&quot;</span>
+</span><span data-v-5681bde8>  <span class="hljs-keyword" data-v-5681bde8>pass</span> <span class="hljs-comment" data-v-5681bde8># REPLACE WITH YOUR CODE</span>
+</span><span data-v-5681bde8>  
+</span><span data-v-5681bde8>
+</span><span data-v-5681bde8><span class="hljs-function" data-v-5681bde8><span class="hljs-keyword" data-v-5681bde8>def</span> <span class="hljs-title" data-v-5681bde8>process</span>(<span class="hljs-params" data-v-5681bde8>source_file, target_file</span>):</span>
+</span><span data-v-5681bde8>  
+</span><span data-v-5681bde8>  calculate_GST(source_file, target_file)
+</span><span data-v-5681bde8>  <span class="hljs-built_in" data-v-5681bde8>print</span>(read_csv_lines(target_file))
+</span><span data-v-5681bde8>  
+</span><span data-v-5681bde8>  
+</span><span data-v-5681bde8>process(<span class="hljs-string" data-v-5681bde8>'itemlist1.csv'</span>, <span class="hljs-string" data-v-5681bde8>'updated_itemlist1.csv'</span>)
+</span><span data-v-5681bde8>process(<span class="hljs-string" data-v-5681bde8>'itemlist2.csv'</span>, <span class="hljs-string" data-v-5681bde8>'updated_itemlist2.csv'</span>)
+</span></code><div class="function-btn-container" data-v-5681bde8><button onclick="copyCodeBlock(this)" class="function-btn" data-v-5681bde8>
+    <div class="function-btn-body" data-v-5681bde8>
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1" data-v-5681bde8>
+    <g id="surface1" data-v-5681bde8>
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 " data-v-5681bde8></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre><p data-v-5681bde8><code class="line-numbers hljs inline no-lang" data-v-5681bde8>itemlist2.csv</code>:</p> <pre data-v-5681bde8><code class="line-numbers hljs" data-v-5681bde8><span data-v-5681bde8>item,price
+</span><span data-v-5681bde8>bread,1.0
+</span><span data-v-5681bde8>bananas,4.0
+</span></code><div class="function-btn-container" data-v-5681bde8><button onclick="copyCodeBlock(this)" class="function-btn" data-v-5681bde8>
+    <div class="function-btn-body" data-v-5681bde8>
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1" data-v-5681bde8>
+    <g id="surface1" data-v-5681bde8>
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 " data-v-5681bde8></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre><p data-v-5681bde8><span class="badge rounded-pill bg-success text-white" data-v-5681bde8><span aria-hidden="true" class="fas fa-lightbulb" data-v-5681bde8></span></span> You can use the built-in function <code class="line-numbers hljs inline no-lang" data-v-5681bde8>round</code> to round floating point numbers to a specific number of decimal places. e.g.,</p> <ul data-v-5681bde8><li data-v-5681bde8><code class="line-numbers hljs inline no-lang" data-v-5681bde8>round(1.98, 1)</code> rounds <code class="line-numbers hljs inline no-lang" data-v-5681bde8>1.98</code> to one decimal place, giving you <code class="line-numbers hljs inline no-lang" data-v-5681bde8>2.0</code></li> <li data-v-5681bde8><code class="line-numbers hljs inline no-lang" data-v-5681bde8>round(1.234, 2)</code> gives <code class="line-numbers hljs inline no-lang" data-v-5681bde8>1.23</code> and <code class="line-numbers hljs inline no-lang" data-v-5681bde8>round(1.2, 1)</code> gives <code class="line-numbers hljs inline no-lang" data-v-5681bde8>1.2</code></li></ul></div> <!----> <button type="button" class="collapse-button btn btn-outline-secondary" data-v-5681bde8><span aria-hidden="true" class="collapse-icon glyphicon glyphicon-menu-down opened"></span></button></div> <hr style="display:none;" data-v-5681bde8></div> <!----></div></div><p></p></div></div><hr style="border-top:3px double #c5c5c5;"></div></div> <i id="scroll-top-button" onclick="handleScrollTop()" aria-hidden="true" class="fa fa-arrow-circle-up fa-lg d-print-none"></i></div> <nav id="page-nav" class="fixed-header-padding" data-v-e8c82f88><div class="nav-component slim-scroll" data-v-e8c82f88><nav id="mb-page-nav" class="nav nav-pills flex-column my-0 small no-flex-wrap" data-v-e8c82f88><a class="nav-link py-1" href="#files" data-v-e8c82f88>Files‎</a> <nav class="nav nav-pills flex-column my-0 nested no-flex-wrap" data-v-e8c82f88><a class="nav-link py-1" href="#file-paths" data-v-e8c82f88>File Paths‎</a> <nav class="nav nav-pills flex-column my-0 nested no-flex-wrap" data-v-e8c82f88><a class="nav-link py-1" href="#exercise-create-directory" data-v-e8c82f88>Exercise : Create Directory‎</a></nav> <a class="nav-link py-1" href="#reading-from-files" data-v-e8c82f88>Reading from Files‎</a> <nav class="nav nav-pills flex-column my-0 nested no-flex-wrap" data-v-e8c82f88><a class="nav-link py-1" href="#exercise-file-stats" data-v-e8c82f88>Exercise : File Stats‎</a></nav> <a class="nav-link py-1" href="#writing-to-files" data-v-e8c82f88>Writing to Files‎</a> <nav class="nav nav-pills flex-column my-0 nested no-flex-wrap" data-v-e8c82f88><a class="nav-link py-1" href="#exercise-add-line-numbers" data-v-e8c82f88>Exercise : Add Line Numbers‎</a></nav> <a class="nav-link py-1" href="#csv-files" data-v-e8c82f88>CSV files‎</a> <nav class="nav nav-pills flex-column my-0 nested no-flex-wrap" data-v-e8c82f88><a class="nav-link py-1" href="#exercise-calculate-gst" data-v-e8c82f88>Exercise : Calculate GST‎</a></nav></nav> <!----></nav></div> <!----></nav></div> <footer><div class="text-center"><small>[<span><strong>Powered by</strong></span> <img src="https://markbind.org/favicon.ico" width="30"> <a href="https://markbind.org/">MarkBind 4.0.2</a>, generated on Wed, 21 Dec 2022, 22:21:42 GMT+8]</small></div></footer></div>
+</body><script src="../../markbind/js/bootstrap-utility.min.js"></script>
+<script>
+  MarkBind.setupWithSearch()
+</script>
+    <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3.2.0/dist/umd/index.js"></script>
+    <script>
+    docsearch({
+      container: "#algolia-search-input",
+      appId: "3DU4XTBX4T",
+      apiKey: "3e2fd3c3b12a363309307794dce54969",
+      indexName: "nus-tic-cs",
+      searchParameters: {"facetFilters":[["site:nus-tee3201.github.io"],["tags:admin","tags:se-book-adapted","tags:schedule"]]}
+    });
+  </script>
+    <script>
+    const style = document.createElement('style');
+    style.innerHTML = ".DocSearch-Container { z-index: 1002; position: fixed; }";
+    document.getElementsByTagName('head')[0].appendChild(style);
+  </script>
+  
+    <script>
+    function copyCodeBlock(element) {
+        const pre = element.parentElement.parentElement;
+        const codeElement = pre.querySelector('code');
+
+        // create dummy text element to select() the text field
+        const textElement = document.createElement('textarea');
+        textElement.value = codeElement.textContent;
+        document.body.appendChild(textElement);
+        textElement.select();
+
+        document.execCommand('copy');
+        document.body.removeChild(textElement);
+    }
+    </script>
+</html>

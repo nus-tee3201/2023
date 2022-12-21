@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="generator" content="MarkBind 4.0.2">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>TEE3201 - Python Basics: The Monty Project</title>
+    <link rel="stylesheet" href="../../markbind/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../markbind/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="../../markbind/glyphicons/css/bootstrap-glyphicons.min.css">
+    <link rel="stylesheet" href="../../markbind/css/octicons.css">
+    <link rel="stylesheet" href="../../markbind/material-icons/material-icons.css">
+    <link rel="stylesheet" href="../../markbind/css/codeblock-light.min.css"><link rel="stylesheet" href="../../markbind/css/markbind.min.css"><script src="../../markbind/js/polyfill.min.js"></script>
+    <script src="../../markbind/js/vue.min.js"></script>
+    <script src="../../markbind/js/markbind.min.js"></script>
+    <script src="monty.page-vue-render.js"></script>
+    <script src="../../markbind/js/jquery.min.js"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3.2.0/dist/style.css"><link rel="stylesheet" href="/2023/plugins/markbind-plugin-anchors/markbind-plugin-anchors.css"><link rel="stylesheet" href="/2023/plugins/markbind-plugin-tree/markbind-plugin-tree.css">
+    
+<link rel="stylesheet" href="/2023/css/main.css">
+<link rel="icon" href="/2023/favicon.ico"></head>
+<script>
+  const baseUrl = '/2023'
+</script>
+<body  data-bs-spy="scroll" data-bs-target="#mb-page-nav" data-bs-offset="100" >
+<div id="app" data-server-rendered="true"><div class="w-100 p-1 bg-warning text-center d-print-none"><span><strong>This is a draft version of the website! The final version will be available near the start of the semester.</strong></span></div> <div class="w-100 p-1 bg-success text-white text-center d-print-none"><span>This module will be delivered in <em>blended learning</em> mode (i.e., a mix of online and F2F activities) this semester.</span></div> <header sticky=""><div placement="top" data-v-15113a2f><nav class="navbar navbar-expand-md d-print-none navbar-dark bg-dark" data-v-15113a2f><div class="container-fluid" data-v-15113a2f><div class="navbar-left" data-v-15113a2f><a href="/2023/index.html" title="Home" class="navbar-brand" data-v-15113a2f><span class="badge rounded-pill bg-danger" data-v-15113a2f>TEE3201 <small data-v-15113a2f>2023</small></span></a></div> <div class="navbar-default" data-v-15113a2f><ul class="navbar-nav me-auto mt-2 mt-lg-0" data-v-15113a2f> <li class="nav-link algolia-no-index dropdown" data-v-2e98b3f0><a role="button" data-bs-toggle="dropdown" class="dropdown-toggle" data-v-2e98b3f0><strong data-v-2e98b3f0>Schedule</strong></a> <ul class="dropdown-menu" data-v-2e98b3f0> <li data-v-2e98b3f0><a href="/2023/schedule/timeline.html" class="dropdown-item" data-v-2e98b3f0><span data-v-2e98b3f0><strong data-v-2e98b3f0>Full Timeline</strong></span></a></li> <li data-v-2e98b3f0><a href="/2023/schedule/week1/index.html" class="dropdown-item" data-v-2e98b3f0><span data-v-2e98b3f0><strong data-v-2e98b3f0>Week 1</strong> [Sun, Jan 9th] </span></a></li> <li data-v-2e98b3f0><a href="/2023/schedule/week2/index.html" class="dropdown-item" data-v-2e98b3f0><span data-v-2e98b3f0><strong data-v-2e98b3f0>Week 2</strong> [Sun, Jan 16th] </span></a></li> <li data-v-2e98b3f0><a href="/2023/schedule/week3/index.html" class="dropdown-item" data-v-2e98b3f0><span data-v-2e98b3f0><strong data-v-2e98b3f0>Week 3</strong> [Sun, Jan 23rd] </span></a></li> <li data-v-2e98b3f0><a href="/2023/schedule/week4/index.html" class="dropdown-item" data-v-2e98b3f0><span data-v-2e98b3f0><strong data-v-2e98b3f0>Week 4</strong> [Sun, Jan 30th] </span></a></li> <li data-v-2e98b3f0><a href="/2023/schedule/week5/index.html" class="dropdown-item" data-v-2e98b3f0><span data-v-2e98b3f0><strong data-v-2e98b3f0>Week 5</strong> [Sun, Feb 6th] </span></a></li> <li data-v-2e98b3f0><a href="/2023/schedule/week6/index.html" class="dropdown-item" data-v-2e98b3f0><span data-v-2e98b3f0><strong data-v-2e98b3f0>Week 6</strong> [Sun, Feb 13th] </span></a></li> <li data-v-2e98b3f0><a href="/2023/schedule/week7/index.html" class="dropdown-item" data-v-2e98b3f0><span data-v-2e98b3f0><strong data-v-2e98b3f0>Week 7</strong> [Sun, Feb 20th] </span></a></li> <li data-v-2e98b3f0><a href="/2023/schedule/week8/index.html" class="dropdown-item" data-v-2e98b3f0><span data-v-2e98b3f0><strong data-v-2e98b3f0>Week 8</strong> [Sun, Mar 6th] </span></a></li> <li data-v-2e98b3f0><a href="/2023/schedule/week9/index.html" class="dropdown-item" data-v-2e98b3f0><span data-v-2e98b3f0><strong data-v-2e98b3f0>Week 9</strong> [Sun, Mar 13th] </span></a></li> <li data-v-2e98b3f0><a href="/2023/schedule/week10/index.html" class="dropdown-item" data-v-2e98b3f0><span data-v-2e98b3f0><strong data-v-2e98b3f0>Week 10</strong> [Sun, Mar 20th] </span></a></li> <li data-v-2e98b3f0><a href="/2023/schedule/week11/index.html" class="dropdown-item" data-v-2e98b3f0><span data-v-2e98b3f0><strong data-v-2e98b3f0>Week 11</strong> [Sun, Mar 27th] </span></a></li> <li data-v-2e98b3f0><a href="/2023/schedule/week12/index.html" class="dropdown-item" data-v-2e98b3f0><span data-v-2e98b3f0><strong data-v-2e98b3f0>Week 12</strong> [Sun, Apr 3rd] </span></a></li> <li data-v-2e98b3f0><a href="/2023/schedule/week13/index.html" class="dropdown-item" data-v-2e98b3f0><span data-v-2e98b3f0><strong data-v-2e98b3f0>Week 13</strong> [Sun, Apr 10th] </span></a></li></ul></li> <li class="nav-link algolia-no-index dropdown" data-v-2e98b3f0><a role="button" data-bs-toggle="dropdown" class="dropdown-toggle" data-v-2e98b3f0><strong data-v-2e98b3f0>Textbook</strong></a> <ul class="dropdown-menu" data-v-2e98b3f0> <li data-v-2e98b3f0><a href="/2023/se-book-adapted/index.html" class="dropdown-item" data-v-2e98b3f0>SE Textbook</a></li> <li data-v-2e98b3f0><a href="/2023/programming/index.html" class="dropdown-item" data-v-2e98b3f0>Programming Textbook</a></li></ul></li> <li data-v-15113a2f><a href="/2023/admin/index.html" class="nav-link" data-v-15113a2f><span data-v-15113a2f><strong data-v-15113a2f>Admin Info</strong></span></a></li> <li class="nav-link algolia-no-index dropdown" data-v-2e98b3f0><a role="button" data-bs-toggle="dropdown" class="dropdown-toggle" data-v-2e98b3f0><strong data-v-2e98b3f0>Other Links</strong></a> <ul class="dropdown-menu" data-v-2e98b3f0> <li data-v-2e98b3f0><a href="https://luminus.nus.edu.sg/modules//forum" target="_blank" class="dropdown-item" data-v-2e98b3f0><span data-v-2e98b3f0><span aria-hidden="true" class="fas fa-comment" data-v-2e98b3f0></span> Forum</span></a></li> <li data-v-2e98b3f0><a href="/2023/admin/index.html#instructors" class="dropdown-item" data-v-2e98b3f0><span data-v-2e98b3f0><span aria-hidden="true" class="fas fa-user-tie" data-v-2e98b3f0></span> Instructors</span></a></li> <li data-v-2e98b3f0><a href="https://canvas.nus.edu.sg/courses/38821/announcements" target="_blank" class="dropdown-item" data-v-2e98b3f0><span data-v-2e98b3f0><span aria-hidden="true" class="glyphicon glyphicon-bullhorn" data-v-2e98b3f0></span> Announcements</span></a></li> <li data-v-2e98b3f0><a href="https://luminus.nus.edu.sg/modules//files" target="_blank" class="dropdown-item" data-v-2e98b3f0><span data-v-2e98b3f0><span aria-hidden="true" class="fas fa-file-upload" data-v-2e98b3f0></span> Files (handouts, submissions etc.)</span></a></li> <li tags="m--tic2002 m--tee3201" data-v-2e98b3f0><a href="/2023/admin/index.html#project" class="dropdown-item" data-v-2e98b3f0><span data-v-2e98b3f0><span data-v-2e98b3f0><span aria-hidden="true" class="fas fa-drafting-compass" data-v-2e98b3f0></span></span></span> Project Info</a></li> <li tags="m--cs2113 m--tic2002 m--tee3201" data-v-2e98b3f0><a href="/2023/_markbind/layouts/2423" target="_blank" class="dropdown-item" data-v-2e98b3f0><span data-v-2e98b3f0><span data-v-2e98b3f0><span aria-hidden="true" class="fas fa-dumbbell" data-v-2e98b3f0></span></span></span> Coursemology link</a></li> <li data-v-2e98b3f0><a href="/2023/_markbind/layouts/tbd" target="_blank" class="dropdown-item" data-v-2e98b3f0><span data-v-2e98b3f0><span aria-hidden="true" class="fas fa-users-cog" data-v-2e98b3f0></span> MS Teams link</span></a></li></ul></li></ul></div> <ul class="navbar-nav navbar-right" data-v-15113a2f><li class="nav-link" data-v-15113a2f><form class="navbar-form" data-v-15113a2f><div class="dropdown" style="position:relative;" data-v-2955e59c><div id="algolia-search-input" data-v-2955e59c></div> <ul class="dropdown-menu search-dropdown-menu d-none dropdown-menu-end" data-v-2955e59c></ul></div></form></li></ul></div></nav> <div class="lower-navbar-container" style="display:none;" data-v-15113a2f><!----> <!----></div></div></header> <div id="flex-body"><nav id="site-nav" class="fixed-header-padding" data-v-e8c82f88><div class="site-nav-top" data-v-e8c82f88><div class="font-weight-bold mb-2" style="font-size:1.25rem;" data-v-e8c82f88>Python textbook</div></div> <div class="nav-component slim-scroll" data-v-e8c82f88><div data-v-e8c82f88><div class="site-nav-root"><ul class="site-nav-list site-nav-list-root" data-v-e8c82f88><li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-0" data-v-e8c82f88><a href="/2023/programming/chapters/expressions-types-variables.html" data-v-e8c82f88>Expressions, Data Types, Variables</a></div></li> <li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-0" data-v-e8c82f88><a href="/2023/programming/chapters/programs.html" data-v-e8c82f88>Python Programs</a></div></li> <li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-0" data-v-e8c82f88><a href="/2023/programming/chapters/flowcontrol.html" data-v-e8c82f88>Program Flow Control</a></div></li> <li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-0" data-v-e8c82f88><a href="/2023/programming/chapters/functions.html" data-v-e8c82f88>Functions</a></div></li> <li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-0" data-v-e8c82f88><a href="/2023/programming/chapters/lists.html" data-v-e8c82f88>Lists</a></div></li> <li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-0" data-v-e8c82f88><a href="/2023/programming/chapters/errors.html" data-v-e8c82f88>Error Handling</a></div></li> <li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-0" data-v-e8c82f88><a href="/2023/programming/chapters/strings.html" data-v-e8c82f88>Strings</a></div></li> <li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-0" data-v-e8c82f88><a href="/2023/programming/chapters/files.html" data-v-e8c82f88>Files</a></div></li> <li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-0" data-v-e8c82f88><a href="/2023/programming/chapters/dictionaries.html" data-v-e8c82f88>Dictionaries</a></div></li> <li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-0" data-v-e8c82f88><a href="/2023/programming/chapters/oop.html" data-v-e8c82f88>Object-Oriented Programming</a></div></li> <li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-0" data-v-e8c82f88><a href="/2023/programming/chapters/gui.html" data-v-e8c82f88>GUIs</a></div></li> <li class="site-nav-custom-list-item site-nav-list-item-0" data-v-e8c82f88><hr data-v-e8c82f88></li> <li class="site-nav-custom-list-item site-nav-list-item-0" data-v-e8c82f88><span class="dimmed" data-v-e8c82f88><strong data-v-e8c82f88>Appendices</strong></span></li> <li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-0" data-v-e8c82f88><a href="/2023/programming/chapters/thirdparty.html" data-v-e8c82f88><strong data-v-e8c82f88>A.</strong> Installing 3rd Party Modules</a></div></li> <li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-0" data-v-e8c82f88><a href="/2023/programming/chapters/ide.html" data-v-e8c82f88><strong data-v-e8c82f88>B.</strong> Using an IDE</a></div></li> <li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-0" data-v-e8c82f88><a href="/2023/programming/chapters/organizing.html" data-v-e8c82f88><strong data-v-e8c82f88>C.</strong> Organizing Python Code</a></div></li> <li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-0" data-v-e8c82f88><a href="/2023/programming/chapters/unittesting.html" data-v-e8c82f88><strong data-v-e8c82f88>D.</strong> Unit Testing</a></div></li> <li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-0" data-v-e8c82f88><a href="/2023/programming/chapters/monty.html" data-v-e8c82f88><strong data-v-e8c82f88>E.</strong> The Monty Project</a></div></li> <!----></ul></div></div></div> <!----></nav> <div id="content-wrapper" class="fixed-header-padding"><div id="main" class="website-content"><div id="toc"></div> <div id="main"><h1 id="the-monty-project"><span id="the-monty-project" class="anchor"></span><div class="text-white bg-primary p-1">The Monty Project</div><a href="#the-monty-project" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h1> <div><div id="intro"><div class="lead"><span class="image-wrapper float-start border me-2 mt-2 p1 bg-white"><img src="https://upload.wikimedia.org/wikipedia/en/c/cb/Flyingcircus_2.jpg" width="200" loading="lazy" class="img-fluid rounded"> <span class="image-caption"><p><small><small>The <strong>Monty Python</strong> Comedy Group,<br> [<a href="https://en.wikipedia.org/wiki/Monty_Python">credit: Wikipedia</a>]</small></small></p></span></span><p></p> <p><strong>The <em>Monty Project</em> is an educational software project designed to take you through the steps of building a small software <em>incrementally</em></strong>, while applying as many Python and SE techniques as possible along the way.</p></div> <p><strong>The project aims to build a product named <em>Monty</em>, a Personal Assistant Chatbot that helps a person to keep track of various things.</strong> <span class="dimmed">The name <em>Monty</em> was chosen as a placeholder name, in honor of the <a href="https://en.wikipedia.org/wiki/Monty_Python">Monty Python comedy group</a> whose work inspired the name of the the Python language.</span> <strong>You may give it any other name and personality you wish.</strong></p> <p>Here is a sample interaction with Monty:</p> <pre><code class="line-numbers hljs"><span>*******************************************************************************************
+</span><span>*  __          __  _                            _          __  __             _           *
+</span><span>*  \ \        / / | |                          | |        |  \/  |           | |          *
+</span><span>*   \ \  /\  / /__| | ___ ___  _ __ ___   ___  | |_ ___   | \  / | ___  _ __ | |_ _   _   *
+</span><span>*    \ \/  \/ / _ \ |/ __/ _ \| '_ ' _ \ / _ \ | __/ _ \  | |\/| |/ _ \| '_ \| __| | | |  *
+</span><span>*     \  /\  /  __/ | (_| (_) | | | | | |  __/ | || (_) | | |  | | (_) | | | | |_| |_| |  *
+</span><span>*      \/  \/ \___|_|\___\___/|_| |_| |_|\___|  \__\___/  |_|  |_|\___/|_| |_|\__|\__, |  *
+</span><span>*                                                                                  __/ |  *
+</span><span>*                                                                                 |___/   *
+</span><span>*******************************************************************************************
+</span><span>
+</span><span>&gt;&gt;&gt; What can I do for you?
+</span><span>
+</span><span>help
+</span><span>&gt;&gt;&gt; I'm glad you asked. Here it is:
+</span><span>==================================================
+</span><span>Monty can understand the following commands:
+</span><span>
+</span><span>  add DESCRIPTION
+</span><span>    Adds a task with the DESCRIPTION to the list
+</span><span>    Example: add read book
+</span><span>  done INDEX
+</span><span>    Marks the task at INDEX as 'done'
+</span><span>    Example: done 1
+</span><span>  exit
+</span><span>    Exits the application
+</span><span>  help
+</span><span>    Shows the help information
+</span><span>  list
+</span><span>    Lists the tasks in the list
+</span><span>--------------------------------------------------
+</span><span>
+</span><span>&gt;&gt;&gt; What can I do for you?
+</span><span>
+</span><span>add read book
+</span><span>&gt;&gt;&gt; Task added to the list
+</span><span>&gt;&gt;&gt; What can I do for you?
+</span><span>
+</span><span>add return book
+</span><span>&gt;&gt;&gt; Task added to the list
+</span><span>&gt;&gt;&gt; What can I do for you?
+</span><span>
+</span><span>done 1
+</span><span>&gt;&gt;&gt; Congrats on completing a task! :-)
+</span><span>&gt;&gt;&gt; What can I do for you?
+</span><span>
+</span><span>list
+</span><span>&gt;&gt;&gt; Here is the list of tasks:
+</span><span>==================================================
+</span><span>STATUS | INDEX | DESCRIPTION
+</span><span>--------------------------------------------------
+</span><span>  X    |   1   | read book
+</span><span>  -    |   2   | return book
+</span><span>--------------------------------------------------
+</span><span>&gt;&gt;&gt; What can I do for you?
+</span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn">
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 "></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre></div> <div id="increments_summary"><p>The project consists of the following <em>increments</em>:</p> <ul><li><strong>Levels</strong>: A series of features, meant to be added to Monty in the given order, although some can be skipped. These have been named <code class="line-numbers hljs inline no-lang">Level 1</code> to <code class="line-numbers hljs inline no-lang">Level 14</code> to indicate how each makes the product progressively &quot;level up&quot;.</li> <li><strong>Extensions:</strong> <ul><li><big><span class="badge rounded-pill bg-primary">Category B</span></big> These are enhancements related to task tracking.</li> <li><big><span class="badge rounded-pill bg-success">Category C</span></big> These are enhancements, not specifically related to task tracking.</li> <li><big><span class="badge rounded-pill bg-danger">Category D</span></big> Each of these adds the ability to track another type of entities.</li></ul></li></ul></div> <h2 id="levels"><span id="levels" class="anchor"></span>Levels<a href="#levels" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h2> <div id="monty1"><h3 id="level-1-echo-once"><span id="level-1-echo-once" class="anchor"></span><span class="badge bg-info">Level 1</span> <span class="text-info">Echo Once</span><a href="#level-1-echo-once" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h3> <p>Write a Python program to read in one user command and repeat it back to the user. An example output is given below.</p> <pre><code class="line-numbers hljs"><span>&gt;&gt;&gt; Hello, my name is Monty
+</span><span>&gt;&gt;&gt; What can I do for you?
+</span><span>foo
+</span><span>&gt;&gt;&gt; Your command is: foo
+</span><span>&gt;&gt;&gt; Bye!
+</span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn">
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 "></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre><span minimized="" class="algolia-no-index card-container" data-v-5681bde8><!----> <span class="morph" data-v-5681bde8><button class="morph-display-wrapper btn btn-outline-secondary" data-v-5681bde8><div class="minimal-caret-wrapper" data-v-5681bde8><span class="glyphicon glyphicon-chevron-right" data-v-5681bde8></span></div> <span class="card-title" data-v-5681bde8><p data-v-5681bde8><span aria-hidden="true" class="fas fa-battery-quarter" data-v-5681bde8></span> Partial solution</p></span></button></span></span></div> <hr style="border-top:3px double #c5c5c5;"> <div id="monty2"><h3 id="level-2-recognize-known-commands"><span id="level-2-recognize-known-commands" class="anchor"></span><span class="badge bg-info">Level 2</span> <span class="text-info">Recognize Known Commands</span><a href="#level-2-recognize-known-commands" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h3> <p>Extend <a href="/2023/programming/chapters/monty.html#monty1">Monty 1 code</a> to work as follows:</p> <ul><li>It recognizes the <code class="line-numbers hljs inline no-lang">list</code> command and responds with a fixed message.</li> <li>It recognizes the <code class="line-numbers hljs inline no-lang">exit</code> command and exits the program if user confirms.</li> <li>For all other inputs, it responds with a fixed error message.</li></ul> <p>A sample session is given below.</p> <div class="alert box-container alert-warning" data-v-7d17494f><!----> <div class="header-and-body" data-v-7d17494f><!----> <div class="box-body-wrapper" data-v-7d17494f><div class="icon-wrapper" data-v-7d17494f><i class="fas fa-exclamation" data-v-7d17494f></i></div> <!----> <div class="contents" data-v-7d17494f><p data-v-7d17494f>You are highly encouraged to give the software a <strong data-v-7d17494f>different name</strong> (i.e., not Monty), define your own <strong data-v-7d17494f>command formats</strong> (e.g., <code class="line-numbers hljs inline no-lang" data-v-7d17494f>show</code> instead of <code class="line-numbers hljs inline no-lang" data-v-7d17494f>list</code>), and even a different <strong data-v-7d17494f>personality</strong> (e.g., you can make its questions/responses sound similar to a popular video game character). Differentiating your software in those ways will reduce the risk of plagiarism concerns.</p></div> <!----></div></div></div> <pre><code class="line-numbers hljs"><span>&gt;&gt;&gt; Hello, my name is Monty
+</span><span>&gt;&gt;&gt; What can I do for you?
+</span><span>
+</span><span>list
+</span><span>&gt;&gt;&gt; Nothing to list
+</span><span>&gt;&gt;&gt; What can I do for you?
+</span><span>
+</span><span>foo
+</span><span>&gt;&gt;&gt; OOPS! Unknown command
+</span><span>&gt;&gt;&gt; What can I do for you?
+</span><span>
+</span><span>exit
+</span><span>&gt;&gt;&gt; Are you sure? y/n
+</span><span>n
+</span><span>&gt;&gt;&gt; What can I do for you?
+</span><span>
+</span><span>exit
+</span><span>&gt;&gt;&gt; Are you sure? y/n
+</span><span>y
+</span><span>&gt;&gt;&gt; Bye!
+</span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn">
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 "></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre><span minimized="" class="algolia-no-index card-container" data-v-5681bde8><!----> <span class="morph" data-v-5681bde8><button class="morph-display-wrapper btn btn-outline-secondary" data-v-5681bde8><div class="minimal-caret-wrapper" data-v-5681bde8><span class="glyphicon glyphicon-chevron-right" data-v-5681bde8></span></div> <span class="card-title" data-v-5681bde8><p data-v-5681bde8><span aria-hidden="true" class="fas fa-battery-quarter" data-v-5681bde8></span> Partial solution</p></span></button></span></span></div> <hr style="border-top:3px double #c5c5c5;"> <div id="monty3"><h3 id="level-3-use-functions"><span id="level-3-use-functions" class="anchor"></span><span class="badge bg-info">Level 3</span> <span class="text-info">Use Functions</span><a href="#level-3-use-functions" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h3> <p>Restructure the <a href="/2023/programming/chapters/monty.html#monty2">Monty Level 2 code</a> to fit the following structure, while keeping the behavior same as before.</p> <pre><code class="line-numbers hljs python"><span><span class="hljs-keyword">import</span> sys
+</span><span>
+</span><span>
+</span><span><span class="hljs-comment"># ADD MISSING FUNCTIONS</span>
+</span><span>
+</span><span>
+</span><span><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">main</span>():</span>
+</span><span>    print_greeting()
+</span><span>    <span class="hljs-keyword">while</span> <span class="hljs-literal">True</span>:
+</span><span>        command = read_command()
+</span><span>        execute_command(command)
+</span><span>
+</span><span>
+</span><span>main()
+</span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn">
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 "></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre><span minimized="" class="algolia-no-index card-container" data-v-5681bde8><!----> <span class="morph" data-v-5681bde8><button class="morph-display-wrapper btn btn-outline-secondary" data-v-5681bde8><div class="minimal-caret-wrapper" data-v-5681bde8><span class="glyphicon glyphicon-chevron-right" data-v-5681bde8></span></div> <span class="card-title" data-v-5681bde8><p data-v-5681bde8><span aria-hidden="true" class="fas fa-battery-quarter" data-v-5681bde8></span> Partial solution</p></span></button></span></span></div> <hr style="border-top:3px double #c5c5c5;"> <div id="monty4"><h3 id="level-4-collect-tasks-in-memory"><span id="level-4-collect-tasks-in-memory" class="anchor"></span><span class="badge bg-info">Level 4</span> <span class="text-info">Collect Tasks in Memory</span><a href="#level-4-collect-tasks-in-memory" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h3> <p>Enhance the <a href="/2023/programming/chapters/monty.html#monty3">Monty Level 3 code</a> to improve the functionality as per the sample output given below.</p> <pre><code class="line-numbers hljs"><span>&gt;&gt;&gt; Hello, my name is Monty
+</span><span>&gt;&gt;&gt; What can I do for you?
+</span><span>
+</span><span>list
+</span><span>&gt;&gt;&gt; Nothing to list
+</span><span>&gt;&gt;&gt; What can I do for you?
+</span><span>
+</span><span>add read book
+</span><span>&gt;&gt;&gt; What can I do for you?
+</span><span>
+</span><span>list
+</span><span>&gt;&gt;&gt; List of items:
+</span><span>     1. read book
+</span><span>&gt;&gt;&gt; What can I do for you?
+</span><span>
+</span><span>add return book
+</span><span>&gt;&gt;&gt; What can I do for you?
+</span><span>
+</span><span>list
+</span><span>&gt;&gt;&gt; List of items:
+</span><span>     1. read book
+</span><span>     2. return book
+</span><span>&gt;&gt;&gt; What can I do for you?
+</span><span>
+</span><span>exit
+</span><span>&gt;&gt;&gt; Are you sure? y/n
+</span><span>y
+</span><span>&gt;&gt;&gt; Bye!
+</span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn">
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 "></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre><div class="alert box-container alert-default" data-v-7d17494f><!----> <div class="header-and-body" data-v-7d17494f><!----> <div class="box-body-wrapper" data-v-7d17494f><!----> <!----> <div class="contents" data-v-7d17494f><p data-v-7d17494f><span class="badge rounded-pill bg-success text-white" data-v-7d17494f><span aria-hidden="true" class="fas fa-lightbulb" data-v-7d17494f></span></span> You can use the list slicing syntax to extract a portion of a  string.<br data-v-7d17494f></p> <div data-v-7d17494f><table data-v-7d17494f><tbody data-v-7d17494f><tr data-v-7d17494f><td valign="top" data-v-7d17494f><pre data-v-7d17494f><code class="line-numbers hljs python" data-v-7d17494f><span data-v-7d17494f>
+</span><span data-v-7d17494f>s = <span class="hljs-string" data-v-7d17494f>'abcdefgh'</span>
+</span><span data-v-7d17494f><span class="hljs-built_in" data-v-7d17494f>print</span>(s[<span class="hljs-number" data-v-7d17494f>2</span>:])
+</span><span data-v-7d17494f><span class="hljs-built_in" data-v-7d17494f>print</span>(s[:<span class="hljs-number" data-v-7d17494f>5</span>])
+</span></code><div class="function-btn-container" data-v-7d17494f><button onclick="copyCodeBlock(this)" class="function-btn" data-v-7d17494f>
+    <div class="function-btn-body" data-v-7d17494f>
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1" data-v-7d17494f>
+    <g id="surface1" data-v-7d17494f>
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 " data-v-7d17494f></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre></td> <td valign="bottom" data-v-7d17494f> → <br data-v-7d17494f><br data-v-7d17494f></td> <td valign="bottom" data-v-7d17494f><pre data-v-7d17494f><code class="line-numbers hljs" data-v-7d17494f><span data-v-7d17494f>cdefgh
+</span><span data-v-7d17494f>abcde
+</span></code><div class="function-btn-container" data-v-7d17494f><button onclick="copyCodeBlock(this)" class="function-btn" data-v-7d17494f>
+    <div class="function-btn-body" data-v-7d17494f>
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1" data-v-7d17494f>
+    <g id="surface1" data-v-7d17494f>
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 " data-v-7d17494f></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre></td></tr></tbody></table></div> <p data-v-7d17494f>The above technique can be used to extract the item description from an <code class="line-numbers hljs inline no-lang" data-v-7d17494f>add</code> command.</p></div> <!----></div></div></div> <span minimized="" class="algolia-no-index card-container" data-v-5681bde8><!----> <span class="morph" data-v-5681bde8><button class="morph-display-wrapper btn btn-outline-secondary" data-v-5681bde8><div class="minimal-caret-wrapper" data-v-5681bde8><span class="glyphicon glyphicon-chevron-right" data-v-5681bde8></span></div> <span class="card-title" data-v-5681bde8><p data-v-5681bde8><span aria-hidden="true" class="fas fa-battery-quarter" data-v-5681bde8></span> Partial solution</p></span></button></span></span></div> <hr style="border-top:3px double #c5c5c5;"> <div id="monty5"><h3 id="level-5-mark-tasks-as-done"><span id="level-5-mark-tasks-as-done" class="anchor"></span><span class="badge bg-info">Level 5</span> <span class="text-info">Mark Tasks as Done</span><a href="#level-5-mark-tasks-as-done" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h3> <p>Enhance the <a href="/2023/programming/chapters/monty.html#monty4">Monty Level 4 code</a> in the following ways:</p> <ul><li>Add a <code class="line-numbers hljs inline no-lang">done</code> command so that the user can mark a task as done. e.g., <code class="line-numbers hljs inline no-lang">done 2</code> marks the task at index 2 as <em>done</em>.</li> <li>Show appropriate error messages if the user gives an invalid index for the <code class="line-numbers hljs inline no-lang">done</code> command</li> <li>Optionally, implement an <code class="line-numbers hljs inline no-lang">undone</code> (or <code class="line-numbers hljs inline no-lang">unmark</code>) command to change the status of a task back to <em>not done</em>.</li></ul> <p>A sample output is given below.</p> <pre><code class="line-numbers hljs"><span>&gt;&gt;&gt; Hello, my name is Monty
+</span><span>&gt;&gt;&gt; What can I do for you?
+</span><span>
+</span><span>add borrow book
+</span><span>&gt;&gt;&gt; What can I do for you?
+</span><span>
+</span><span>add read book
+</span><span>&gt;&gt;&gt; What can I do for you?
+</span><span>
+</span><span>add return book
+</span><span>&gt;&gt;&gt; What can I do for you?
+</span><span>
+</span><span>list
+</span><span>&gt;&gt;&gt; List of items:
+</span><span>     [ ] 1. borrow book
+</span><span>     [ ] 2. read book
+</span><span>     [ ] 3. return book
+</span><span>&gt;&gt;&gt; What can I do for you?
+</span><span>
+</span><span>done 1
+</span><span>&gt;&gt;&gt; What can I do for you?
+</span><span>
+</span><span>list
+</span><span>&gt;&gt;&gt; List of items:
+</span><span>     [X] 1. borrow book
+</span><span>     [ ] 2. read book
+</span><span>     [ ] 3. return book
+</span><span>&gt;&gt;&gt; What can I do for you?
+</span><span>
+</span><span>done abc
+</span><span>&gt;&gt;&gt; SORRY, I could not perform that command. Problem: abc is not a number
+</span><span>&gt;&gt;&gt; What can I do for you?
+</span><span>
+</span><span>done 5
+</span><span>&gt;&gt;&gt; SORRY, I could not perform that command. Problem: No item at index 5
+</span><span>&gt;&gt;&gt; What can I do for you?
+</span><span>
+</span><span>done 0
+</span><span>&gt;&gt;&gt; SORRY, I could not perform that command. Problem: Index must be greater than 0
+</span><span>&gt;&gt;&gt; What can I do for you?
+</span><span>
+</span><span>garbage
+</span><span>&gt;&gt;&gt; SORRY, I could not perform that command. Problem: Command not recognized
+</span><span>&gt;&gt;&gt; What can I do for you?
+</span><span>
+</span><span>exit
+</span><span>&gt;&gt;&gt; Are you sure? y/n
+</span><span>y
+</span><span>&gt;&gt;&gt; Bye!
+</span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn">
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 "></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre><div class="alert box-container alert-default" data-v-7d17494f><!----> <div class="header-and-body" data-v-7d17494f><!----> <div class="box-body-wrapper" data-v-7d17494f><!----> <!----> <div class="contents" data-v-7d17494f><p data-v-7d17494f><span class="badge rounded-pill bg-success text-white" data-v-7d17494f><span aria-hidden="true" class="fas fa-lightbulb" data-v-7d17494f></span></span> Each task has two data values: the description and the 'done' status. You can use a list to hold these two data items. That means your list of tasks will be a list containing lists. Example:</p> <pre data-v-7d17494f><code class="line-numbers hljs python" data-v-7d17494f><span data-v-7d17494f>tasks = []
+</span><span data-v-7d17494f>tasks.append([<span class="hljs-string" data-v-7d17494f>'read book'</span>, <span class="hljs-literal" data-v-7d17494f>False</span>])
+</span><span data-v-7d17494f><span class="hljs-built_in" data-v-7d17494f>print</span>(<span class="hljs-string" data-v-7d17494f>'Description of the first task:'</span>, tasks[<span class="hljs-number" data-v-7d17494f>0</span>][<span class="hljs-number" data-v-7d17494f>0</span>])
+</span><span data-v-7d17494f>
+</span><span data-v-7d17494f><span class="hljs-keyword" data-v-7d17494f>if</span> tasks[<span class="hljs-number" data-v-7d17494f>0</span>][<span class="hljs-number" data-v-7d17494f>1</span>]:
+</span><span data-v-7d17494f>    <span class="hljs-built_in" data-v-7d17494f>print</span>(<span class="hljs-string" data-v-7d17494f>'X'</span>)
+</span><span data-v-7d17494f><span class="hljs-keyword" data-v-7d17494f>else</span>:
+</span><span data-v-7d17494f>    <span class="hljs-built_in" data-v-7d17494f>print</span>(<span class="hljs-string" data-v-7d17494f>'-'</span>)
+</span></code><div class="function-btn-container" data-v-7d17494f><button onclick="copyCodeBlock(this)" class="function-btn" data-v-7d17494f>
+    <div class="function-btn-body" data-v-7d17494f>
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1" data-v-7d17494f>
+    <g id="surface1" data-v-7d17494f>
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 " data-v-7d17494f></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre><p data-v-7d17494f><span class="badge rounded-pill bg-success text-white" data-v-7d17494f><span aria-hidden="true" class="fas fa-lightbulb" data-v-7d17494f></span></span> You can use exceptions to identify and handle errors in the command.</p> <pre data-v-7d17494f><code class="line-numbers hljs python" data-v-7d17494f><span data-v-7d17494f><span class="hljs-function" data-v-7d17494f><span class="hljs-keyword" data-v-7d17494f>def</span> <span class="hljs-title" data-v-7d17494f>main</span>():</span>
+</span><span data-v-7d17494f>    print_greeting()
+</span><span data-v-7d17494f>    <span class="hljs-keyword" data-v-7d17494f>while</span> <span class="hljs-literal" data-v-7d17494f>True</span>:
+</span><span data-v-7d17494f>        <span class="hljs-keyword" data-v-7d17494f>try</span>:
+</span><span data-v-7d17494f>            command = read_command()
+</span><span data-v-7d17494f>            execute_command(command)
+</span><span data-v-7d17494f>        <span class="hljs-keyword" data-v-7d17494f>except</span> Exception <span class="hljs-keyword" data-v-7d17494f>as</span> e:
+</span><span data-v-7d17494f>            <span class="hljs-built_in" data-v-7d17494f>print</span>(<span class="hljs-string" data-v-7d17494f>'&gt;&gt;&gt; SORRY, I could not perform that command. Problem:'</span>, e)
+</span></code><div class="function-btn-container" data-v-7d17494f><button onclick="copyCodeBlock(this)" class="function-btn" data-v-7d17494f>
+    <div class="function-btn-body" data-v-7d17494f>
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1" data-v-7d17494f>
+    <g id="surface1" data-v-7d17494f>
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 " data-v-7d17494f></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre></div> <!----></div></div></div> <span minimized="" class="algolia-no-index card-container" data-v-5681bde8><!----> <span class="morph" data-v-5681bde8><button class="morph-display-wrapper btn btn-outline-secondary" data-v-5681bde8><div class="minimal-caret-wrapper" data-v-5681bde8><span class="glyphicon glyphicon-chevron-right" data-v-5681bde8></span></div> <span class="card-title" data-v-5681bde8><p data-v-5681bde8><span aria-hidden="true" class="fas fa-battery-quarter" data-v-5681bde8></span> Partial solution</p></span></button></span></span></div> <hr style="border-top:3px double #c5c5c5;"> <div id="monty6"><h3 id="level-6-give-help"><span id="level-6-give-help" class="anchor"></span><span class="badge bg-info">Level 6</span> <span class="text-info">Give Help</span><a href="#level-6-give-help" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h3> <p>Enhance the <a href="/2023/programming/chapters/monty.html#monty5">Monty Level 5 code</a> in the following ways:</p> <ul><li>Add a <code class="line-numbers hljs inline no-lang">help</code> command so that the user can view how to use the app.</li> <li>Improve the formatting of the text displayed to the user to make the user experience nicer.</li></ul> <p>A sample output is given below.</p> <pre><code class="line-numbers hljs"><span>*******************************************************************************************
+</span><span>*  __          __  _                            _          __  __             _           *
+</span><span>*  \ \        / / | |                          | |        |  \/  |           | |          *
+</span><span>*   \ \  /\  / /__| | ___ ___  _ __ ___   ___  | |_ ___   | \  / | ___  _ __ | |_ _   _   *
+</span><span>*    \ \/  \/ / _ \ |/ __/ _ \| '_ ' _ \ / _ \ | __/ _ \  | |\/| |/ _ \| '_ \| __| | | |  *
+</span><span>*     \  /\  /  __/ | (_| (_) | | | | | |  __/ | || (_) | | |  | | (_) | | | | |_| |_| |  *
+</span><span>*      \/  \/ \___|_|\___\___/|_| |_| |_|\___|  \__\___/  |_|  |_|\___/|_| |_|\__|\__, |  *
+</span><span>*                                                                                  __/ |  *
+</span><span>*                                                                                 |___/   *
+</span><span>*******************************************************************************************
+</span><span>
+</span><span>&gt;&gt;&gt; What can I do for you?
+</span><span>
+</span><span>help
+</span><span>&gt;&gt;&gt; I'm glad you asked. Here it is:
+</span><span>==================================================
+</span><span>Monty can understand the following commands:
+</span><span>
+</span><span>  add DESCRIPTION
+</span><span>    Adds a task to the list
+</span><span>    Example: add read book
+</span><span>  done INDEX
+</span><span>    Marks the task at INDEX as 'done'
+</span><span>    Example: done 1
+</span><span>  exit
+</span><span>    Exits the application
+</span><span>  help
+</span><span>    Shows the help information
+</span><span>  list
+</span><span>    Lists the tasks in the list
+</span><span>--------------------------------------------------
+</span><span>
+</span><span>&gt;&gt;&gt; What can I do for you?
+</span><span>
+</span><span>add read book
+</span><span>&gt;&gt;&gt; Task added to the list
+</span><span>&gt;&gt;&gt; What can I do for you?
+</span><span>
+</span><span>add return book
+</span><span>&gt;&gt;&gt; Task added to the list
+</span><span>&gt;&gt;&gt; What can I do for you?
+</span><span>
+</span><span>done 1
+</span><span>&gt;&gt;&gt; Congrats on completing a task! :-)
+</span><span>&gt;&gt;&gt; What can I do for you?
+</span><span>
+</span><span>list
+</span><span>&gt;&gt;&gt; Here is the list of tasks:
+</span><span>==================================================
+</span><span>STATUS | INDEX | DESCRIPTION
+</span><span>--------------------------------------------------
+</span><span>  X    |   1   | read book
+</span><span>  -    |   2   | return book
+</span><span>--------------------------------------------------
+</span><span>&gt;&gt;&gt; What can I do for you?
+</span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn">
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 "></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre><div class="alert box-container alert-default" data-v-7d17494f><!----> <div class="header-and-body" data-v-7d17494f><!----> <div class="box-body-wrapper" data-v-7d17494f><!----> <!----> <div class="contents" data-v-7d17494f><p data-v-7d17494f><span class="badge rounded-pill bg-success text-white" data-v-7d17494f><span aria-hidden="true" class="fas fa-lightbulb" data-v-7d17494f></span></span> You can use triple quotes to define a long string such as the help text.</p> <pre data-v-7d17494f><code class="line-numbers hljs python" data-v-7d17494f><span data-v-7d17494f>help_text =<span class="hljs-string" data-v-7d17494f>'''</span>
+</span><span data-v-7d17494f><span class="hljs-string" data-v-7d17494f>long text</span>
+</span><span data-v-7d17494f><span class="hljs-string" data-v-7d17494f>more text</span>
+</span><span data-v-7d17494f><span class="hljs-string" data-v-7d17494f>'''</span>
+</span></code><div class="function-btn-container" data-v-7d17494f><button onclick="copyCodeBlock(this)" class="function-btn" data-v-7d17494f>
+    <div class="function-btn-body" data-v-7d17494f>
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1" data-v-7d17494f>
+    <g id="surface1" data-v-7d17494f>
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 " data-v-7d17494f></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre><p data-v-7d17494f><span class="badge rounded-pill bg-success text-white" data-v-7d17494f><span aria-hidden="true" class="fas fa-lightbulb" data-v-7d17494f></span></span> You can generate ASCII art using online resources such as <a href="http://patorjk.com/software/taag" data-v-7d17494f>http://patorjk.com/software/taag</a></p></div> <!----></div></div></div> <span minimized="" class="algolia-no-index card-container" data-v-5681bde8><!----> <span class="morph" data-v-5681bde8><button class="morph-display-wrapper btn btn-outline-secondary" data-v-5681bde8><div class="minimal-caret-wrapper" data-v-5681bde8><span class="glyphicon glyphicon-chevron-right" data-v-5681bde8></span></div> <span class="card-title" data-v-5681bde8><p data-v-5681bde8><span aria-hidden="true" class="fas fa-battery-quarter" data-v-5681bde8></span> Partial solution</p></span></button></span></span></div> <hr style="border-top:3px double #c5c5c5;"> <div id="monty7"><h3 id="level-7-save-tasks-to-disk"><span id="level-7-save-tasks-to-disk" class="anchor"></span><span class="badge bg-info">Level 7</span> <span class="text-info">Save Tasks to Disk</span><a href="#level-7-save-tasks-to-disk" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h3> <p>Enhance the <a href="/2023/programming/chapters/monty.html#monty6">Monty Level 6 code</a> in the following ways:</p> <ul><li>Monty <strong>saves tasks into a csv file</strong>, and <strong>loads data from the same file at the start</strong>.</li> <li><strong>Add a <code class="line-numbers hljs inline no-lang">delete</code> command</strong> that can delete a task at a specific index.</li></ul> <p>A sample output is given below. Note the following:</p> <ul><li>Monty is able to show at the very start the three tasks loaded from the file.</li> <li>When item 2 is deleted, the item previously at index 3 moves to position 2.</li></ul> <pre><code class="line-numbers hljs"><span>*******************************************************************************************
+</span><span>*  __          __  _                            _          __  __             _           *
+</span><span>*  \ \        / / | |                          | |        |  \/  |           | |          *
+</span><span>*   \ \  /\  / /__| | ___ ___  _ __ ___   ___  | |_ ___   | \  / | ___  _ __ | |_ _   _   *
+</span><span>*    \ \/  \/ / _ \ |/ __/ _ \| '_ ' _ \ / _ \ | __/ _ \  | |\/| |/ _ \| '_ \| __| | | |  *
+</span><span>*     \  /\  /  __/ | (_| (_) | | | | | |  __/ | || (_) | | |  | | (_) | | | | |_| |_| |  *
+</span><span>*      \/  \/ \___|_|\___\___/|_| |_| |_|\___|  \__\___/  |_|  |_|\___/|_| |_|\__|\__, |  *
+</span><span>*                                                                                  __/ |  *
+</span><span>*                                                                                 |___/   *
+</span><span>*******************************************************************************************
+</span><span>
+</span><span>&gt;&gt;&gt; What can I do for you?
+</span><span>
+</span><span>list
+</span><span>&gt;&gt;&gt; Here is the list of tasks:
+</span><span>==================================================
+</span><span>STATUS | INDEX | DESCRIPTION
+</span><span>--------------------------------------------------
+</span><span>  X    |   1   | borrow book
+</span><span>  -    |   2   | read book
+</span><span>  -    |   3   | return book
+</span><span>--------------------------------------------------
+</span><span>&gt;&gt;&gt; What can I do for you?
+</span><span>
+</span><span>delete 2
+</span><span>&gt;&gt;&gt; Task deleted from the list
+</span><span>&gt;&gt;&gt; What can I do for you?
+</span><span>
+</span><span>list
+</span><span>&gt;&gt;&gt; Here is the list of tasks:
+</span><span>==================================================
+</span><span>STATUS | INDEX | DESCRIPTION
+</span><span>--------------------------------------------------
+</span><span>  X    |   1   | borrow book
+</span><span>  -    |   2   | return book
+</span><span>--------------------------------------------------
+</span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn">
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 "></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre><div class="alert box-container alert-default" data-v-7d17494f><!----> <div class="header-and-body" data-v-7d17494f><!----> <div class="box-body-wrapper" data-v-7d17494f><!----> <!----> <div class="contents" data-v-7d17494f><p data-v-7d17494f><span class="badge rounded-pill bg-success text-white" data-v-7d17494f><span aria-hidden="true" class="fas fa-lightbulb" data-v-7d17494f></span></span> here are some tips:</p> <ul data-v-7d17494f><li data-v-7d17494f><p data-v-7d17494f>The filename can be specified in the code. e.g.,</p> <pre data-v-7d17494f><code class="line-numbers hljs python" data-v-7d17494f><span data-v-7d17494f>DATA_FILE = <span class="hljs-string" data-v-7d17494f>'monty7.csv'</span>
+</span></code><div class="function-btn-container" data-v-7d17494f><button onclick="copyCodeBlock(this)" class="function-btn" data-v-7d17494f>
+    <div class="function-btn-body" data-v-7d17494f>
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1" data-v-7d17494f>
+    <g id="surface1" data-v-7d17494f>
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 " data-v-7d17494f></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre></li> <li data-v-7d17494f><p data-v-7d17494f>The following statement will create an empty <code class="line-numbers hljs inline no-lang" data-v-7d17494f>data.csv</code> file if the file doesn't exist, but will keep the file as it is if it already exists <span class="dimmed" data-v-7d17494f>(it simply opens the file in append mode -- which creates the file it if it doesn't exist -- and close it right after)</span>.</p> <pre data-v-7d17494f><code class="line-numbers hljs python" data-v-7d17494f><span data-v-7d17494f><span class="hljs-built_in" data-v-7d17494f>open</span>(<span class="hljs-string" data-v-7d17494f>'data.csv'</span>, <span class="hljs-string" data-v-7d17494f>'a'</span>).close()
+</span></code><div class="function-btn-container" data-v-7d17494f><button onclick="copyCodeBlock(this)" class="function-btn" data-v-7d17494f>
+    <div class="function-btn-body" data-v-7d17494f>
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1" data-v-7d17494f>
+    <g id="surface1" data-v-7d17494f>
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 " data-v-7d17494f></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre></li> <li data-v-7d17494f><p data-v-7d17494f>The format of the file is up to you. Here is an example:</p> <pre data-v-7d17494f><code class="line-numbers hljs" data-v-7d17494f><span data-v-7d17494f>borrow book,done
+</span><span data-v-7d17494f>read book,pending
+</span><span data-v-7d17494f>return book,pending
+</span></code><div class="function-btn-container" data-v-7d17494f><button onclick="copyCodeBlock(this)" class="function-btn" data-v-7d17494f>
+    <div class="function-btn-body" data-v-7d17494f>
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1" data-v-7d17494f>
+    <g id="surface1" data-v-7d17494f>
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 " data-v-7d17494f></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre></li> <li data-v-7d17494f><p data-v-7d17494f>The program can load the tasks from the file at the beginning. It can save the data after each command. For example, as follows:</p> <pre data-v-7d17494f><code class="line-numbers hljs python" data-v-7d17494f><span data-v-7d17494f> items = []
+</span><span data-v-7d17494f> DATA_FILE = <span class="hljs-string" data-v-7d17494f>'monty7.csv'</span>
+</span><span data-v-7d17494f>
+</span><span data-v-7d17494f>
+</span><span data-v-7d17494f> <span class="hljs-function" data-v-7d17494f><span class="hljs-keyword" data-v-7d17494f>def</span> <span class="hljs-title" data-v-7d17494f>main</span>():</span>
+</span><span data-v-7d17494f>     create_file_if_missing(DATA_FILE)
+</span><span data-v-7d17494f>     load_data(DATA_FILE) <span class="hljs-comment" data-v-7d17494f># load task data from the file</span>
+</span><span data-v-7d17494f>     print_greeting()
+</span><span data-v-7d17494f>     <span class="hljs-keyword" data-v-7d17494f>while</span> <span class="hljs-literal" data-v-7d17494f>True</span>:
+</span><span data-v-7d17494f>         <span class="hljs-keyword" data-v-7d17494f>try</span>:
+</span><span data-v-7d17494f>             command = read_command()
+</span><span data-v-7d17494f>             execute_command(command)
+</span><span data-v-7d17494f>             save_data(DATA_FILE, items) <span class="hljs-comment" data-v-7d17494f># save all tasks in the file</span>
+</span><span data-v-7d17494f>         <span class="hljs-keyword" data-v-7d17494f>except</span> Exception <span class="hljs-keyword" data-v-7d17494f>as</span> e:
+</span><span data-v-7d17494f>             <span class="hljs-built_in" data-v-7d17494f>print</span>(<span class="hljs-string" data-v-7d17494f>'&gt;&gt;&gt; SORRY, I could not perform that command. Problem:'</span>, e)
+</span><span data-v-7d17494f>
+</span><span data-v-7d17494f>
+</span><span data-v-7d17494f> main()
+</span></code><div class="function-btn-container" data-v-7d17494f><button onclick="copyCodeBlock(this)" class="function-btn" data-v-7d17494f>
+    <div class="function-btn-body" data-v-7d17494f>
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1" data-v-7d17494f>
+    <g id="surface1" data-v-7d17494f>
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 " data-v-7d17494f></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre></li></ul></div> <!----></div></div></div> <span minimized="" class="algolia-no-index card-container" data-v-5681bde8><!----> <span class="morph" data-v-5681bde8><button class="morph-display-wrapper btn btn-outline-secondary" data-v-5681bde8><div class="minimal-caret-wrapper" data-v-5681bde8><span class="glyphicon glyphicon-chevron-right" data-v-5681bde8></span></div> <span class="card-title" data-v-5681bde8><p data-v-5681bde8><span aria-hidden="true" class="fas fa-battery-quarter" data-v-5681bde8></span> Partial solution</p></span></button></span></span> <p></p> <p>Given below are some more features you can consider adding at this point (it is <mark>optional to add them to Monty 7</mark>):</p> <ul><li><strong>Remove the need for the user to confirm before exiting Monty.</strong> As data are saved to a file, such a confirmation is no longer necessary because an accidental exit will not cause any permanent damage.<pre><code class="line-numbers hljs"><span>&gt;&gt;&gt; What can I do for you?
+</span><span>
+</span><span>exit
+</span><span>&gt;&gt;&gt; Bye!
+</span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn">
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 "></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre></li> <li><strong>Add a <code class="line-numbers hljs inline no-lang">pending</code> command</strong> (other possible names: <code class="line-numbers hljs inline no-lang">undone</code> or <code class="line-numbers hljs inline no-lang">unmark</code>) that can mark a task as not-done-yet (i.e., the opposite of the <code class="line-numbers hljs inline no-lang">done</code> command), if you haven't done that already.<pre><code class="line-numbers hljs"><span> &gt;&gt;&gt; What can I do for you?
+</span><span>
+</span><span> list
+</span><span> &gt;&gt;&gt; Here is the list of tasks:
+</span><span> ==================================================
+</span><span> STATUS | INDEX | DESCRIPTION
+</span><span> --------------------------------------------------
+</span><span>   X    |   1   | borrow book
+</span><span>   -    |   2   | read book
+</span><span>   -    |   3   | return book
+</span><span> --------------------------------------------------
+</span><span> &gt;&gt;&gt; What can I do for you?
+</span><span>
+</span><span> pending 1
+</span><span> &gt;&gt;&gt; OK, I have marked that item as pending
+</span><span> &gt;&gt;&gt; What can I do for you?
+</span><span>
+</span><span> list
+</span><span> &gt;&gt;&gt; Here is the list of tasks:
+</span><span> ==================================================
+</span><span> STATUS | INDEX | DESCRIPTION
+</span><span> --------------------------------------------------
+</span><span>   -    |   1   | borrow book
+</span><span>   -    |   2   | read book
+</span><span>   -    |   3   | return book
+</span><span> --------------------------------------------------
+</span><span> &gt;&gt;&gt; What can I do for you?
+</span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn">
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 "></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre></li> <li><strong>Make commands case insensitive and immune to extra leading/trailing spaces</strong>. For example, all these commands should work the same way.<pre><code class="line-numbers hljs"><span>add read book
+</span><span>ADD read book
+</span><span>Add read book
+</span><span>add    read book
+</span><span>    add read book
+</span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn">
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 "></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre></li></ul></div> <hr style="border-top:3px double #c5c5c5;"> <div id="monty8"><h3 id="level-8-support-deadlines"><span id="level-8-support-deadlines" class="anchor"></span><span class="badge bg-info">Level 8</span> <span class="text-info">Support Deadlines</span><a href="#level-8-support-deadlines" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h3> <p>Enhance the <a href="/2023/programming/chapters/monty.html#monty7">Monty Level 7 code</a> to add support for keeping track of deadlines as well as regular todo tasks</p> <p>Previous behavior:</p> <ul><li><code class="line-numbers hljs inline no-lang">add buy book</code>: adds a task <code class="line-numbers hljs inline no-lang">buy book</code></li></ul> <p>Proposed change - replace the above command with the following two:</p> <ul><li><code class="line-numbers hljs inline no-lang">todo read book</code>: adds a todo task <code class="line-numbers hljs inline no-lang">read book</code></li> <li><code class="line-numbers hljs inline no-lang">deadline return book by: May 3rd</code> adds a deadline <code class="line-numbers hljs inline no-lang">return book</code> which is to be done by <code class="line-numbers hljs inline no-lang">May 3d</code>.<br>
+Note: <code class="line-numbers hljs inline no-lang">by:</code> is a keyword. Anything that comes after it is considered a description of the deadline.</li></ul> <p>A sample output is given below.</p> <pre><code class="line-numbers hljs"><span>&gt;&gt;&gt; What can I do for you?
+</span><span>
+</span><span>list
+</span><span>&gt;&gt;&gt; Here is the list of tasks:
+</span><span>============================================================
+</span><span>STATUS | INDEX | DESCRIPTION                 | DEADLINE
+</span><span>------------------------------------------------------------
+</span><span>  X    |   1   | borrow book                 | -
+</span><span>  -    |   2   | read book                   | -
+</span><span>  -    |   3   | return book                 | Monday
+</span><span>------------------------------------------------------------
+</span><span>&gt;&gt;&gt; What can I do for you?
+</span><span>
+</span><span>todo watch movie
+</span><span>&gt;&gt;&gt; What can I do for you?
+</span><span>
+</span><span>deadline submit assignment by: end of May
+</span><span>&gt;&gt;&gt; What can I do for you?
+</span><span>
+</span><span>list
+</span><span>&gt;&gt;&gt; Here is the list of tasks:
+</span><span>============================================================
+</span><span>STATUS | INDEX | DESCRIPTION                 | DEADLINE
+</span><span>------------------------------------------------------------
+</span><span>  X    |   1   | borrow book                 | -
+</span><span>  -    |   2   | read book                   | -
+</span><span>  -    |   3   | return book                 | Monday
+</span><span>  -    |   4   | watch movie                 | -
+</span><span>  -    |   5   | submit assignment           | end of May
+</span><span>------------------------------------------------------------
+</span><span>&gt;&gt;&gt; What can I do for you?
+</span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn">
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 "></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre><div class="alert box-container alert-default" data-v-7d17494f><!----> <div class="header-and-body" data-v-7d17494f><!----> <div class="box-body-wrapper" data-v-7d17494f><!----> <!----> <div class="contents" data-v-7d17494f><p data-v-7d17494f><span class="badge rounded-pill bg-success text-white" data-v-7d17494f><span aria-hidden="true" class="fas fa-lightbulb" data-v-7d17494f></span></span> here are some tips:</p> <ul data-v-7d17494f><li data-v-7d17494f>One option is to use a list of dictionary objects to store the tasks/deadlines. Given below is an example of such a data structure. In that data structure, <code class="line-numbers hljs inline no-lang" data-v-7d17494f>T</code> and <code class="line-numbers hljs inline no-lang" data-v-7d17494f>D</code> is used to indicate todo items and deadline items, respectively.<pre data-v-7d17494f><code class="no-line-numbers hljs python" data-v-7d17494f><span data-v-7d17494f>[
+</span><span data-v-7d17494f> {<span class="hljs-string" data-v-7d17494f>'type'</span>: <span class="hljs-string" data-v-7d17494f>'T'</span>, <span class="hljs-string" data-v-7d17494f>'description'</span>: <span class="hljs-string" data-v-7d17494f>'borrow book'</span>, <span class="hljs-string" data-v-7d17494f>'is_done'</span>: <span class="hljs-literal" data-v-7d17494f>True</span>},
+</span><span data-v-7d17494f> {<span class="hljs-string" data-v-7d17494f>'type'</span>: <span class="hljs-string" data-v-7d17494f>'T'</span>, <span class="hljs-string" data-v-7d17494f>'description'</span>: <span class="hljs-string" data-v-7d17494f>'read book'</span>, <span class="hljs-string" data-v-7d17494f>'is_done'</span>: <span class="hljs-literal" data-v-7d17494f>False</span>},
+</span><span data-v-7d17494f> {<span class="hljs-string" data-v-7d17494f>'type'</span>: <span class="hljs-string" data-v-7d17494f>'D'</span>, <span class="hljs-string" data-v-7d17494f>'description'</span>: <span class="hljs-string" data-v-7d17494f>'return book'</span>, <span class="hljs-string" data-v-7d17494f>'is_done'</span>: <span class="hljs-literal" data-v-7d17494f>False</span>, <span class="hljs-string" data-v-7d17494f>'by'</span>: <span class="hljs-string" data-v-7d17494f>'Monday'</span>}
+</span><span data-v-7d17494f>]
+</span><span data-v-7d17494f>
+</span></code><div class="function-btn-container" data-v-7d17494f><button onclick="copyCodeBlock(this)" class="function-btn" data-v-7d17494f>
+    <div class="function-btn-body" data-v-7d17494f>
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1" data-v-7d17494f>
+    <g id="surface1" data-v-7d17494f>
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 " data-v-7d17494f></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre></li> <li data-v-7d17494f>The format of the csv file needs to be updated to store extra values too. Here is an example:<pre data-v-7d17494f><code class="no-line-numbers hljs" data-v-7d17494f><span data-v-7d17494f>T,borrow book,done
+</span><span data-v-7d17494f>T,read book,pending
+</span><span data-v-7d17494f>D,return book,pending,Monday
+</span></code><div class="function-btn-container" data-v-7d17494f><button onclick="copyCodeBlock(this)" class="function-btn" data-v-7d17494f>
+    <div class="function-btn-body" data-v-7d17494f>
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1" data-v-7d17494f>
+    <g id="surface1" data-v-7d17494f>
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 " data-v-7d17494f></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre></li></ul></div> <!----></div></div></div> <span minimized="" class="algolia-no-index card-container" data-v-5681bde8><!----> <span class="morph" data-v-5681bde8><button class="morph-display-wrapper btn btn-outline-secondary" data-v-5681bde8><div class="minimal-caret-wrapper" data-v-5681bde8><span class="glyphicon glyphicon-chevron-right" data-v-5681bde8></span></div> <span class="card-title" data-v-5681bde8><p data-v-5681bde8><span aria-hidden="true" class="fas fa-battery-quarter" data-v-5681bde8></span> Partial solution</p></span></button></span></span> <p></p></div> <hr style="border-top:3px double #c5c5c5;"> <div id="monty9"><h3 id="level-9-use-classes"><span id="level-9-use-classes" class="anchor"></span><span class="badge bg-info">Level 9</span> <span class="text-info">Use Classes</span><a href="#level-9-use-classes" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h3> <p>Enhance the <a href="/2023/programming/chapters/monty.html#monty8">Monty Level 8 code</a> to use classes <code class="line-numbers hljs inline no-lang">ToDo</code> and <code class="line-numbers hljs inline no-lang">Deadline</code> (i.e., you need to define these two classes) to represent todo tasks and deadlines, respectively.<br> <span><span aria-hidden="true" class="fas fa-info-circle"></span></span> This means you no longer needs to use <code class="line-numbers hljs inline no-lang">dict</code> objects to represent todo/deadline tasks. That is, your tasks can be kept as a <code class="line-numbers hljs inline no-lang">list</code> of <code class="line-numbers hljs inline no-lang">ToDo</code> and <code class="line-numbers hljs inline no-lang">Deadline</code> objects, instead of a <code class="line-numbers hljs inline no-lang">list</code> of <code class="line-numbers hljs inline no-lang">dict</code>objects.</p> <div class="alert box-container alert-default" data-v-7d17494f><!----> <div class="header-and-body" data-v-7d17494f><div class="box-header-wrapper" data-v-7d17494f><!----> <div class="box-header" data-v-7d17494f><p data-v-7d17494f><span aria-hidden="true" class="fas fa-lightbulb" data-v-7d17494f></span> A shorthand for <code class="line-numbers hljs inline no-lang" data-v-7d17494f>if-else</code></p></div> <!----></div> <div class="box-body-wrapper box-body-wrapper-with-heading" data-v-7d17494f><!----> <!----> <div class="contents" data-v-7d17494f>
+Consider the following code:
+<pre data-v-7d17494f><code class="line-numbers hljs python" data-v-7d17494f><span data-v-7d17494f><span class="hljs-function" data-v-7d17494f><span class="hljs-keyword" data-v-7d17494f>def</span> <span class="hljs-title" data-v-7d17494f>get_as_word</span>(<span class="hljs-params" data-v-7d17494f>status</span>):</span>
+</span><span data-v-7d17494f>    <span class="hljs-keyword" data-v-7d17494f>if</span> status == <span class="hljs-number" data-v-7d17494f>1</span>:
+</span><span data-v-7d17494f>        <span class="hljs-keyword" data-v-7d17494f>return</span> <span class="hljs-string" data-v-7d17494f>'Yes'</span>
+</span><span data-v-7d17494f>    <span class="hljs-keyword" data-v-7d17494f>else</span>:
+</span><span data-v-7d17494f>        <span class="hljs-keyword" data-v-7d17494f>return</span> <span class="hljs-string" data-v-7d17494f>'No'</span>
+</span></code><div class="function-btn-container" data-v-7d17494f><button onclick="copyCodeBlock(this)" class="function-btn" data-v-7d17494f>
+    <div class="function-btn-body" data-v-7d17494f>
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1" data-v-7d17494f>
+    <g id="surface1" data-v-7d17494f>
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 " data-v-7d17494f></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre><p data-v-7d17494f>The same can be written using the following shorthand for <code class="line-numbers hljs inline no-lang" data-v-7d17494f>if-else</code>:</p> <pre data-v-7d17494f><code class="line-numbers hljs python" data-v-7d17494f><span data-v-7d17494f><span class="hljs-function" data-v-7d17494f><span class="hljs-keyword" data-v-7d17494f>def</span> <span class="hljs-title" data-v-7d17494f>get_as_word</span>(<span class="hljs-params" data-v-7d17494f>status</span>):</span>
+</span><span data-v-7d17494f>    <span class="hljs-keyword" data-v-7d17494f>return</span> <span class="hljs-string" data-v-7d17494f>'Yes'</span> <span class="hljs-keyword" data-v-7d17494f>if</span> status == <span class="hljs-number" data-v-7d17494f>1</span> <span class="hljs-keyword" data-v-7d17494f>else</span> <span class="hljs-string" data-v-7d17494f>'No'</span>
+</span></code><div class="function-btn-container" data-v-7d17494f><button onclick="copyCodeBlock(this)" class="function-btn" data-v-7d17494f>
+    <div class="function-btn-body" data-v-7d17494f>
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1" data-v-7d17494f>
+    <g id="surface1" data-v-7d17494f>
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 " data-v-7d17494f></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre><p data-v-7d17494f>A few more examples:</p> <pre data-v-7d17494f><code class="line-numbers hljs python" data-v-7d17494f><span data-v-7d17494f>status_as_word = <span class="hljs-string" data-v-7d17494f>'Yes'</span> <span class="hljs-keyword" data-v-7d17494f>if</span> status == <span class="hljs-number" data-v-7d17494f>1</span> <span class="hljs-keyword" data-v-7d17494f>else</span> <span class="hljs-string" data-v-7d17494f>'No'</span>
+</span><span data-v-7d17494f><span class="hljs-built_in" data-v-7d17494f>print</span>(<span class="hljs-string" data-v-7d17494f>'Yes'</span>) <span class="hljs-keyword" data-v-7d17494f>if</span> status == <span class="hljs-number" data-v-7d17494f>1</span> <span class="hljs-keyword" data-v-7d17494f>else</span> <span class="hljs-built_in" data-v-7d17494f>print</span>(<span class="hljs-string" data-v-7d17494f>'No'</span>)
+</span><span data-v-7d17494f><span class="hljs-built_in" data-v-7d17494f>print</span>(<span class="hljs-string" data-v-7d17494f>'Yes'</span> <span class="hljs-keyword" data-v-7d17494f>if</span> status == <span class="hljs-number" data-v-7d17494f>1</span> <span class="hljs-keyword" data-v-7d17494f>else</span> <span class="hljs-string" data-v-7d17494f>'No'</span>)
+</span></code><div class="function-btn-container" data-v-7d17494f><button onclick="copyCodeBlock(this)" class="function-btn" data-v-7d17494f>
+    <div class="function-btn-body" data-v-7d17494f>
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1" data-v-7d17494f>
+    <g id="surface1" data-v-7d17494f>
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 " data-v-7d17494f></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre><p data-v-7d17494f>Note that this shorthand requires both the <code class="line-numbers hljs inline no-lang" data-v-7d17494f>if</code> part and the <code class="line-numbers hljs inline no-lang" data-v-7d17494f>else</code> part.</p></div> <!----></div></div></div> <span minimized="" class="algolia-no-index card-container" data-v-5681bde8><!----> <span class="morph" data-v-5681bde8><button class="morph-display-wrapper btn btn-outline-secondary" data-v-5681bde8><div class="minimal-caret-wrapper" data-v-5681bde8><span class="glyphicon glyphicon-chevron-right" data-v-5681bde8></span></div> <span class="card-title" data-v-5681bde8><p data-v-5681bde8><span aria-hidden="true" class="fas fa-battery-quarter" data-v-5681bde8></span> Partial solution</p></span></button></span></span> <p></p></div> <hr style="border-top:3px double #c5c5c5;"> <div id="monty10"><h3 id="level-10-use-more-classes"><span id="level-10-use-more-classes" class="anchor"></span><span class="badge bg-info">Level 10</span> <span class="text-info">Use More Classes</span><a href="#level-10-use-more-classes" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h3> <p>Enhance the <a href="/2023/programming/chapters/monty.html#monty9">Monty Level 9 code</a> to extract the following classes:</p> <ul><li><code class="line-numbers hljs inline no-lang">UserInterface</code>: an object of this class can be used to handle reading input from the user and showing output back to the user.</li> <li><code class="line-numbers hljs inline no-lang">StorageManager</code>: an object of this class can be used to read data from the data file and write data back to the data file.</li> <li><code class="line-numbers hljs inline no-lang">TaskManager</code>: an object of this class will hold the list of <code class="line-numbers hljs inline no-lang">Task</code>/<code class="line-numbers hljs inline no-lang">Deadline</code> objects and will execute commands.</li></ul> <span minimized="" class="algolia-no-index card-container" data-v-5681bde8><!----> <span class="morph" data-v-5681bde8><button class="morph-display-wrapper btn btn-outline-secondary" data-v-5681bde8><div class="minimal-caret-wrapper" data-v-5681bde8><span class="glyphicon glyphicon-chevron-right" data-v-5681bde8></span></div> <span class="card-title" data-v-5681bde8><p data-v-5681bde8><span aria-hidden="true" class="fas fa-battery-quarter" data-v-5681bde8></span> Partial solution</p></span></button></span></span> <p></p> <p><strong>Optional feature to consider:</strong> add a <code class="line-numbers hljs inline no-lang">progress</code> command that shows how many tasks/deadlines were marked as <em>done</em> during a session so far. Here is an example output:</p> <pre><code class="line-numbers hljs"><span>&gt;&gt;&gt; What can I do for you?
+</span><span>
+</span><span>list
+</span><span>&gt;&gt;&gt; Here is the list of tasks:
+</span><span>    ============================================================
+</span><span>    STATUS | INDEX | DESCRIPTION                 | DEADLINE
+</span><span>    ------------------------------------------------------------
+</span><span>      X    |   1   | borrow book                 | -
+</span><span>      -    |   2   | read book                   | -
+</span><span>      -    |   3   | return book                 | Monday
+</span><span>    ------------------------------------------------------------
+</span><span>&gt;&gt;&gt; What can I do for you?
+</span><span>
+</span><span>progress
+</span><span>&gt;&gt;&gt; Progress for this session: todos 0 deadlines 0
+</span><span>&gt;&gt;&gt; What can I do for you?
+</span><span>
+</span><span>done 2
+</span><span>&gt;&gt;&gt; Congrats on completing a task! :-)
+</span><span>&gt;&gt;&gt; What can I do for you?
+</span><span>
+</span><span>progress
+</span><span>&gt;&gt;&gt; Progress for this session: todos 1 deadlines 0
+</span><span>&gt;&gt;&gt; What can I do for you?
+</span><span>
+</span><span>done 3
+</span><span>&gt;&gt;&gt; Congrats on completing a task! :-)
+</span><span>&gt;&gt;&gt; What can I do for you?
+</span><span>
+</span><span>progress
+</span><span>&gt;&gt;&gt; Progress for this session: todos 1 deadlines 1
+</span><span>&gt;&gt;&gt; What can I do for you?
+</span><span>
+</span><span>pending 2
+</span><span>&gt;&gt;&gt; OK, I have marked that item as pending
+</span><span>&gt;&gt;&gt; What can I do for you?
+</span><span>
+</span><span>progress
+</span><span>&gt;&gt;&gt; Progress for this session: todos 0 deadlines 1
+</span><span>&gt;&gt;&gt; What can I do for you?
+</span><span>
+</span><span>list
+</span><span>&gt;&gt;&gt; Here is the list of tasks:
+</span><span>    ============================================================
+</span><span>    STATUS | INDEX | DESCRIPTION                 | DEADLINE
+</span><span>    ------------------------------------------------------------
+</span><span>      X    |   1   | borrow book                 | -
+</span><span>      -    |   2   | read book                   | -
+</span><span>      X    |   3   | return book                 | Monday
+</span><span>    ------------------------------------------------------------
+</span><span>&gt;&gt;&gt; What can I do for you?
+</span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn">
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 "></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre><span minimized="" class="algolia-no-index card-container" data-v-5681bde8><!----> <span class="morph" data-v-5681bde8><button class="morph-display-wrapper btn btn-outline-secondary" data-v-5681bde8><div class="minimal-caret-wrapper" data-v-5681bde8><span class="glyphicon glyphicon-chevron-right" data-v-5681bde8></span></div> <span class="card-title" data-v-5681bde8><p data-v-5681bde8><span aria-hidden="true" class="fas fa-battery-quarter" data-v-5681bde8></span> Partial solution</p></span></button></span></span> <p></p></div> <hr style="border-top:3px double #c5c5c5;"> <div id="monty11"><h3 id="level-11-use-multiple-code-files"><span id="level-11-use-multiple-code-files" class="anchor"></span><span class="badge bg-info">Level 11</span> <span class="text-info">Use Multiple Code Files</span><a href="#level-11-use-multiple-code-files" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h3> <p>Enhance the <a href="/2023/programming/chapters/monty.html#monty10">Monty Level 10 code</a> to divide the source code into multiple files (e.g., <code class="line-numbers hljs inline no-lang">todo.py</code>, <code class="line-numbers hljs inline no-lang">deadline.py</code>, etc.).</p></div> <hr style="border-top:3px double #c5c5c5;"> <div id="monty12"><h3 id="level-12-use-inheritance"><span id="level-12-use-inheritance" class="anchor"></span><span class="badge bg-info">Level 12</span> <span class="text-info">Use Inheritance</span><a href="#level-12-use-inheritance" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h3> <p>Enhance the <a href="/2023/programming/chapters/monty.html#monty11">Monty Level 11 code</a> to make the <code class="line-numbers hljs inline no-lang">Deadline</code> class inherit from the <code class="line-numbers hljs inline no-lang">ToDo</code> class:</p> <span minimized="" class="algolia-no-index card-container" data-v-5681bde8><!----> <span class="morph" data-v-5681bde8><button class="morph-display-wrapper btn btn-outline-secondary" data-v-5681bde8><div class="minimal-caret-wrapper" data-v-5681bde8><span class="glyphicon glyphicon-chevron-right" data-v-5681bde8></span></div> <span class="card-title" data-v-5681bde8><p data-v-5681bde8><span aria-hidden="true" class="fas fa-battery-quarter" data-v-5681bde8></span> Partial solution</p></span></button></span></span></div> <hr style="border-top:3px double #c5c5c5;"> <div id="monty13"><h3 id="level-13-add-unit-tests"><span id="level-13-add-unit-tests" class="anchor"></span><span class="badge bg-info">Level 13</span> <span class="text-info">Add Unit Tests</span><a href="#level-13-add-unit-tests" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h3> <p>Add some unit tests to <a href="/2023/programming/chapters/monty.html#monty12">Monty Level 12 code</a>.</p> <p>Minimum requirement: 2 unit tests, testing two functions/methods</p></div> <hr style="border-top:3px double #c5c5c5;"> <div id="monty14"><h3 id="level-14-add-a-gui"><span id="level-14-add-a-gui" class="anchor"></span><span class="badge bg-info">Level 14</span> <span class="text-info">Add a GUI</span><a href="#level-14-add-a-gui" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h3> <p>Enhance the <a href="/2023/programming/chapters/monty.html#monty13">Monty Level 13 code</a> to integrate it with the skeletal GUI given below.</p> <p>Notes about the given version of the GUI:</p> <ul><li>The GUI shows the list of tasks all the time.</li> <li>It initializes with some dummy data.</li> <li>It only supports an <code class="line-numbers hljs inline no-lang">add</code> command and a <code class="line-numbers hljs inline no-lang">help</code> command.</li></ul> <p>Here are some screenshots of the GUI:<br> <img src="/2023/programming/monty/images/gui-start.png"></p><p></p> <img src="/2023/programming/monty/images/gui-later.png"><p></p> <div class="algolia-no-index card-container" data-v-5681bde8><!----> <div class="card expandable-card border-0" data-v-5681bde8><div class="card-header header-toggle bg-white border-0" data-v-5681bde8><div class="caret-wrapper" data-v-5681bde8><span class="glyphicon glyphicon-chevron-right" data-v-5681bde8></span></div> <div class="header-wrapper card-title bg-white" data-v-5681bde8><p data-v-5681bde8>Skeletal GUI code</p></div> <div class="button-wrapper" data-v-5681bde8><button type="button" class="collapse-button btn btn-outline-secondary" style="display:none;" data-v-5681bde8><span aria-hidden="true" class="collapse-icon glyphicon glyphicon-menu-down"></span></button> <button type="button" class="close-button btn btn-outline-secondary seamless-button" data-v-5681bde8><span aria-hidden="true" class="glyphicon glyphicon-remove" data-v-5681bde8></span></button> <button type="button" class="popup-button btn btn-outline-secondary seamless-button" style="display:none;" data-v-5681bde8><span aria-hidden="true" class="glyphicon glyphicon-new-window" data-v-5681bde8></span></button></div></div> <div class="card-collapse" data-v-5681bde8><!----> <hr style="display:;" data-v-5681bde8></div> <!----></div></div></div> <div><h2 id="extensions-category-b"><span id="extensions-category-b" class="anchor"></span>Extensions: Category B<a href="#extensions-category-b" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h2> <div id="B-Events"><div><h3 id="b-events"><span id="b-events" class="anchor"></span><span class="badge rounded-pill bg-primary">B-Events</span><a href="#b-events" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h3> <p><strong>Events</strong></p></div> <p>Provide a way for the user to track <em>events</em> (i.e., things with a start time and an end time such as a meeting), in addition to <em>todo</em> and <em>deadline</em> tasks.</p></div><hr> <div id="B-DoAfterTasks"><div><h3 id="b-doaftertasks"><span id="b-doaftertasks" class="anchor"></span><span class="badge rounded-pill bg-primary">B-DoAfterTasks</span><a href="#b-doaftertasks" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h3> <p><strong>'Do after' tasks</strong></p></div> <p>Support the managing of tasks that need to be <em>done</em> after a specific time/task <span class="dimmed">e.g., return book after the exam is over</span>.</p></div><hr> <div id="B-DoWithinPeriodTasks"><div><h3 id="b-dowithinperiodtasks"><span id="b-dowithinperiodtasks" class="anchor"></span><span class="badge rounded-pill bg-primary">B-DoWithinPeriodTasks</span><a href="#b-dowithinperiodtasks" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h3> <p><strong>'Do within a period' task</strong></p></div> <p>Provide support for managing tasks that need to be done within a certain period <span class="dimmed">e.g., collect certificate between Jan 15 and 25th</span>.</p></div><hr> <div id="B-FixedDurationTasks"><div><h3 id="b-fixeddurationtasks"><span id="b-fixeddurationtasks" class="anchor"></span><span class="badge rounded-pill bg-primary">B-FixedDurationTasks</span><a href="#b-fixeddurationtasks" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h3> <p><strong>Unscheduled tasks with a fixed duration</strong></p></div> <p>Provide support for managing tasks that takes a fixed amount of time but does not have a fixed start/end time <span class="dimmed">e.g., reading the sales report (needs 2 hours)</span>.</p></div><hr> <h2 id="extensions-category-c"><span id="extensions-category-c" class="anchor"></span>Extensions: Category C<a href="#extensions-category-c" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h2> <div id="C-DetectDuplicates"><div><h3 id="c-detectduplicates"><span id="c-detectduplicates" class="anchor"></span><span class="badge rounded-pill bg-success">C-DetectDuplicates</span><a href="#c-detectduplicates" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h3> <p><strong>Deal duplicate items</strong></p></div> <p>Add the ability to recognize and deal with duplicate items. <span class="dimmed">e.g., the same task added multiple times</span>.</p></div><hr> <div id="C-FlexibleDataSource"><div><h3 id="c-flexibledatasource"><span id="c-flexibledatasource" class="anchor"></span><span class="badge rounded-pill bg-success">C-FlexibleDataSource</span><a href="#c-flexibledatasource" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h3> <p><strong>Flexible data source</strong></p></div> <p>Provide more flexibility with the data source <span class="dimmed">e.g., the ability for the user to specify which file to use as the data source</span>.</p></div><hr> <div id="C-DateTimes"><div><h3 id="c-datetimes"><span id="c-datetimes" class="anchor"></span><span class="badge rounded-pill bg-success">C-DateTimes</span><a href="#c-datetimes" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h3> <p><strong>Meaningful date/times</strong></p></div> <p>Make Monty understand the meaning of dates/times attached to a task. e.g., sort deadlines based on their dates/times</p></div><hr> <div id="C-Sort"><div><h3 id="c-sort"><span id="c-sort" class="anchor"></span><span class="badge rounded-pill bg-success">C-Sort</span><a href="#c-sort" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h3> <p><strong>Sorting items managed by the App</strong></p></div> <p>The ability to sort items <span class="dimmed">e.g., sort deadlines chronologically</span>.</p></div> <div id="C-Search"><div><h3 id="c-search"><span id="c-search" class="anchor"></span><span class="badge rounded-pill bg-success">C-Search</span><a href="#c-search" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h3> <p><strong>More flexibility in searching for items</strong></p></div> <p>Provide the ability to find tasks based on a search criterion <span class="dimmed">e.g., find items that contains the provided keyword in their description</span>.</p></div> <div id="C-Update"><div><h3 id="c-update"><span id="c-update" class="anchor"></span><span class="badge rounded-pill bg-success">C-Update</span><a href="#c-update" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h3> <p><strong>Easily edit items</strong></p></div> <p>Support a way to easily edit details of items <span class="dimmed">e.g., change the deadline date without changing anything else</span>.</p> <p>Minimal: the ability to update an existing item without having to delete it first</p> <p>Other ideas:</p> <ul><li>the ability to <em>clone</em> items (to easily create new items based on existing items)</li></ul></div> <div id="C-Tagging"><div><h3 id="c-tagging"><span id="c-tagging" class="anchor"></span><span class="badge rounded-pill bg-success">C-Tagging</span><a href="#c-tagging" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h3> <p><strong>Tagging items</strong></p></div> <p>Provide a way to tag items <span class="dimmed">e.g., tag a task as <code class="line-numbers hljs inline no-lang">#fun</code></span>.</p></div> <div id="C-Priority"><div><h3 id="c-priority"><span id="c-priority" class="anchor"></span><span class="badge rounded-pill bg-success">C-Priority</span><a href="#c-priority" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h3> <p><strong>Prioritizing items</strong></p></div> <p>Provide a way to attach priorities to items <span class="dimmed">e.g., mark an item as a <code class="line-numbers hljs inline no-lang">high</code> priority (or priority level <code class="line-numbers hljs inline no-lang">1</code>)</span>.</p></div> <div id="C-Archive"><div><h3 id="c-archive"><span id="c-archive" class="anchor"></span><span class="badge rounded-pill bg-success">C-Archive</span><a href="#c-archive" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h3> <p><strong>Archiving items</strong></p></div> <p>Provide a way to <em>archive</em> items so that the user can remove items from the app but still keep a record of them somewhere <span class="dimmed">e.g., archive all tasks in the list into a file so that the user can start over with a clean slate</span>.</p></div> <div id="C-MassOps"><div><h3 id="c-massops"><span id="c-massops" class="anchor"></span><span class="badge rounded-pill bg-success">C-MassOps</span><a href="#c-massops" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h3> <p><strong>Mass operations</strong></p></div> <p>Provide a way to perform tasks on multiple items <span class="dimmed">e.g., delete some specific items in one go</span>.</p></div> <div id="C-Statistics"><div><h3 id="c-statistics"><span id="c-statistics" class="anchor"></span><span class="badge rounded-pill bg-success">C-Statistics</span><a href="#c-statistics" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h3> <p><strong>Statistics and insights</strong></p></div> <p>Provide a way to leverage statistics about the items managed by the App <span class="dimmed">e.g., show the number of tasks that have been completed in the past week</span>.</p></div> <div id="C-FriendlierSyntax"><div><h3 id="c-friendliersyntax"><span id="c-friendliersyntax" class="anchor"></span><span class="badge rounded-pill bg-success">C-FriendlierSyntax</span><a href="#c-friendliersyntax" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h3> <p><strong>Friendlier syntax for commands</strong></p></div> <p>Make the command syntax more flexible.</p> <p>Minimal: provide shorter aliases for keywords <span class="dimmed">e.g., <code class="line-numbers hljs inline no-lang">t</code> can be shorter alias for <code class="line-numbers hljs inline no-lang">todo</code></span>.</p> <p>Other ideas:</p> <ul><li>Allow users to define their own aliases</li> <li>Remove the need for the parts of a command to be in a specific order</li></ul></div> <h2 id="extensions-category-d"><span id="extensions-category-d" class="anchor"></span>Extensions: Category D<a href="#extensions-category-d" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h2> <div id="D-Contacts"><div><h3 id="d-contacts"><span id="d-contacts" class="anchor"></span><span class="badge rounded-pill bg-danger">D-Contacts</span><a href="#d-contacts" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h3> <p><strong>Support managing contacts</strong></p></div> <p>Support managing info about contacts <span class="dimmed">e.g., details of friends</span></p></div> <div id="D-Notes"><div><h3 id="d-notes"><span id="d-notes" class="anchor"></span><span class="badge rounded-pill bg-danger">D-Notes</span><a href="#d-notes" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h3> <p><strong>Support managing notes</strong></p></div> <p>Support managing info about small snippets of textual information the user wants to record <span class="dimmed">e.g., one's own waist size, a name of a movie that the user wants to remember</span></p></div> <div id="D-Expenses"><div><h3 id="d-expenses"><span id="d-expenses" class="anchor"></span><span class="badge rounded-pill bg-danger">D-Expenses</span><a href="#d-expenses" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h3> <p><strong>Support managing expenses</strong></p></div> <p>Support managing info about expenses <span class="dimmed">e.g., the amounts spent on food, books, transport, etc.</span></p></div> <div id="D-Loans"><div><h3 id="d-loans"><span id="d-loans" class="anchor"></span><span class="badge rounded-pill bg-danger">D-Loans</span><a href="#d-loans" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h3> <p><strong>Support managing loan records</strong></p></div> <p>Support keeping records of loans given/taken <span class="dimmed">e.g., money lent/owed to colleagues/friends</span></p></div> <div id="D-Places"><div><h3 id="d-places"><span id="d-places" class="anchor"></span><span class="badge rounded-pill bg-danger">D-Places</span><a href="#d-places" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h3> <p><strong>Support managing info about places</strong></p></div> <p>Support recording info about places <span class="dimmed">e.g., info about restaurants visited, for future reference</span></p></div> <div id="D-Trivia"><div><h3 id="d-trivia"><span id="d-trivia" class="anchor"></span><span class="badge rounded-pill bg-danger">D-Trivia</span><a href="#d-trivia" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h3> <p><strong>Support managing trivia</strong></p></div> <p>Provide the ability to learn/memorize things<span class="dimmed">e.g., learn vocabulary, answers to questions</span></p></div> <div id="D-Clients"><div><h3 id="d-clients"><span id="d-clients" class="anchor"></span><span class="badge rounded-pill bg-danger">D-Clients</span><a href="#d-clients" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h3> <p><strong>Support managing client info</strong></p></div> <p>Support managing info about clients <span class="dimmed">e.g., for an insurance agent to keep track of clients</span></p></div> <div id="D-Merchandise"><div><h3 id="d-merchandise"><span id="d-merchandise" class="anchor"></span><span class="badge rounded-pill bg-danger">D-Merchandise</span><a href="#d-merchandise" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h3> <p><strong>Support managing merchandise info</strong></p></div> <p>Support managing info about merchandise <span class="dimmed">e.g., a property agent to keep track of properties, a collector of stamps keep track of items in the collection</span></p></div></div></div></div></div> <i id="scroll-top-button" onclick="handleScrollTop()" aria-hidden="true" class="fa fa-arrow-circle-up fa-lg d-print-none"></i></div> <nav id="page-nav" class="fixed-header-padding" data-v-e8c82f88><div class="nav-component slim-scroll" data-v-e8c82f88><nav id="mb-page-nav" class="nav nav-pills flex-column my-0 small no-flex-wrap" data-v-e8c82f88><a class="nav-link py-1" href="#the-monty-project" data-v-e8c82f88>The Monty Project‎</a> <nav class="nav nav-pills flex-column my-0 nested no-flex-wrap" data-v-e8c82f88><a class="nav-link py-1" href="#levels" data-v-e8c82f88>Levels‎</a> <nav class="nav nav-pills flex-column my-0 nested no-flex-wrap" data-v-e8c82f88><a class="nav-link py-1" href="#level-1-echo-once" data-v-e8c82f88>Level 1 Echo Once‎</a> <a class="nav-link py-1" href="#level-2-recognize-known-commands" data-v-e8c82f88>Level 2 Recognize Known Commands‎</a> <a class="nav-link py-1" href="#level-3-use-functions" data-v-e8c82f88>Level 3 Use Functions‎</a> <a class="nav-link py-1" href="#level-4-collect-tasks-in-memory" data-v-e8c82f88>Level 4 Collect Tasks in Memory‎</a> <a class="nav-link py-1" href="#level-5-mark-tasks-as-done" data-v-e8c82f88>Level 5 Mark Tasks as Done‎</a> <a class="nav-link py-1" href="#level-6-give-help" data-v-e8c82f88>Level 6 Give Help‎</a> <a class="nav-link py-1" href="#level-7-save-tasks-to-disk" data-v-e8c82f88>Level 7 Save Tasks to Disk‎</a> <a class="nav-link py-1" href="#level-8-support-deadlines" data-v-e8c82f88>Level 8 Support Deadlines‎</a> <a class="nav-link py-1" href="#level-9-use-classes" data-v-e8c82f88>Level 9 Use Classes‎</a> <a class="nav-link py-1" href="#level-10-use-more-classes" data-v-e8c82f88>Level 10 Use More Classes‎</a> <a class="nav-link py-1" href="#level-11-use-multiple-code-files" data-v-e8c82f88>Level 11 Use Multiple Code Files‎</a> <a class="nav-link py-1" href="#level-12-use-inheritance" data-v-e8c82f88>Level 12 Use Inheritance‎</a> <a class="nav-link py-1" href="#level-13-add-unit-tests" data-v-e8c82f88>Level 13 Add Unit Tests‎</a> <a class="nav-link py-1" href="#level-14-add-a-gui" data-v-e8c82f88>Level 14 Add a GUI‎</a></nav> <a class="nav-link py-1" href="#extensions-category-b" data-v-e8c82f88>Extensions: Category B‎</a> <nav class="nav nav-pills flex-column my-0 nested no-flex-wrap" data-v-e8c82f88><a class="nav-link py-1" href="#b-events" data-v-e8c82f88>B-Events‎</a> <a class="nav-link py-1" href="#b-doaftertasks" data-v-e8c82f88>B-DoAfterTasks‎</a> <a class="nav-link py-1" href="#b-dowithinperiodtasks" data-v-e8c82f88>B-DoWithinPeriodTasks‎</a> <a class="nav-link py-1" href="#b-fixeddurationtasks" data-v-e8c82f88>B-FixedDurationTasks‎</a></nav> <a class="nav-link py-1" href="#extensions-category-c" data-v-e8c82f88>Extensions: Category C‎</a> <nav class="nav nav-pills flex-column my-0 nested no-flex-wrap" data-v-e8c82f88><a class="nav-link py-1" href="#c-detectduplicates" data-v-e8c82f88>C-DetectDuplicates‎</a> <a class="nav-link py-1" href="#c-flexibledatasource" data-v-e8c82f88>C-FlexibleDataSource‎</a> <a class="nav-link py-1" href="#c-datetimes" data-v-e8c82f88>C-DateTimes‎</a> <a class="nav-link py-1" href="#c-sort" data-v-e8c82f88>C-Sort‎</a> <a class="nav-link py-1" href="#c-search" data-v-e8c82f88>C-Search‎</a> <a class="nav-link py-1" href="#c-update" data-v-e8c82f88>C-Update‎</a> <a class="nav-link py-1" href="#c-tagging" data-v-e8c82f88>C-Tagging‎</a> <a class="nav-link py-1" href="#c-priority" data-v-e8c82f88>C-Priority‎</a> <a class="nav-link py-1" href="#c-archive" data-v-e8c82f88>C-Archive‎</a> <a class="nav-link py-1" href="#c-massops" data-v-e8c82f88>C-MassOps‎</a> <a class="nav-link py-1" href="#c-statistics" data-v-e8c82f88>C-Statistics‎</a> <a class="nav-link py-1" href="#c-friendliersyntax" data-v-e8c82f88>C-FriendlierSyntax‎</a></nav> <a class="nav-link py-1" href="#extensions-category-d" data-v-e8c82f88>Extensions: Category D‎</a> <nav class="nav nav-pills flex-column my-0 nested no-flex-wrap" data-v-e8c82f88><a class="nav-link py-1" href="#d-contacts" data-v-e8c82f88>D-Contacts‎</a> <a class="nav-link py-1" href="#d-notes" data-v-e8c82f88>D-Notes‎</a> <a class="nav-link py-1" href="#d-expenses" data-v-e8c82f88>D-Expenses‎</a> <a class="nav-link py-1" href="#d-loans" data-v-e8c82f88>D-Loans‎</a> <a class="nav-link py-1" href="#d-places" data-v-e8c82f88>D-Places‎</a> <a class="nav-link py-1" href="#d-trivia" data-v-e8c82f88>D-Trivia‎</a> <a class="nav-link py-1" href="#d-clients" data-v-e8c82f88>D-Clients‎</a> <a class="nav-link py-1" href="#d-merchandise" data-v-e8c82f88>D-Merchandise‎</a></nav></nav> <!----></nav></div> <!----></nav></div> <footer><div class="text-center"><small>[<span><strong>Powered by</strong></span> <img src="https://markbind.org/favicon.ico" width="30"> <a href="https://markbind.org/">MarkBind 4.0.2</a>, generated on Wed, 21 Dec 2022, 22:21:42 GMT+8]</small></div></footer></div>
+</body><script src="../../markbind/js/bootstrap-utility.min.js"></script>
+<script>
+  MarkBind.setupWithSearch()
+</script>
+    <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3.2.0/dist/umd/index.js"></script>
+    <script>
+    docsearch({
+      container: "#algolia-search-input",
+      appId: "3DU4XTBX4T",
+      apiKey: "3e2fd3c3b12a363309307794dce54969",
+      indexName: "nus-tic-cs",
+      searchParameters: {"facetFilters":[["site:nus-tee3201.github.io"],["tags:admin","tags:se-book-adapted","tags:schedule"]]}
+    });
+  </script>
+    <script>
+    const style = document.createElement('style');
+    style.innerHTML = ".DocSearch-Container { z-index: 1002; position: fixed; }";
+    document.getElementsByTagName('head')[0].appendChild(style);
+  </script>
+  
+    <script>
+    function copyCodeBlock(element) {
+        const pre = element.parentElement.parentElement;
+        const codeElement = pre.querySelector('code');
+
+        // create dummy text element to select() the text field
+        const textElement = document.createElement('textarea');
+        textElement.value = codeElement.textContent;
+        document.body.appendChild(textElement);
+        textElement.select();
+
+        document.execCommand('copy');
+        document.body.removeChild(textElement);
+    }
+    </script>
+</html>

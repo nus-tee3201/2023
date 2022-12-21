@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="generator" content="MarkBind 4.0.2">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>TEE3201 - Python Basics: Functions</title>
+    <link rel="stylesheet" href="../../markbind/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../markbind/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="../../markbind/glyphicons/css/bootstrap-glyphicons.min.css">
+    <link rel="stylesheet" href="../../markbind/css/octicons.css">
+    <link rel="stylesheet" href="../../markbind/material-icons/material-icons.css">
+    <link rel="stylesheet" href="../../markbind/css/codeblock-light.min.css"><link rel="stylesheet" href="../../markbind/css/markbind.min.css"><script src="../../markbind/js/polyfill.min.js"></script>
+    <script src="../../markbind/js/vue.min.js"></script>
+    <script src="../../markbind/js/markbind.min.js"></script>
+    <script src="functions.page-vue-render.js"></script>
+    <script src="../../markbind/js/jquery.min.js"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3.2.0/dist/style.css"><link rel="stylesheet" href="/2023/plugins/markbind-plugin-anchors/markbind-plugin-anchors.css"><link rel="stylesheet" href="/2023/plugins/markbind-plugin-tree/markbind-plugin-tree.css">
+    
+<link rel="stylesheet" href="/2023/css/main.css">
+<link rel="icon" href="/2023/favicon.ico"></head>
+<script>
+  const baseUrl = '/2023'
+</script>
+<body  data-bs-spy="scroll" data-bs-target="#mb-page-nav" data-bs-offset="100" >
+<div id="app" data-server-rendered="true"><div class="w-100 p-1 bg-warning text-center d-print-none"><span><strong>This is a draft version of the website! The final version will be available near the start of the semester.</strong></span></div> <div class="w-100 p-1 bg-success text-white text-center d-print-none"><span>This module will be delivered in <em>blended learning</em> mode (i.e., a mix of online and F2F activities) this semester.</span></div> <header sticky=""><div placement="top" data-v-15113a2f><nav class="navbar navbar-expand-md d-print-none navbar-dark bg-dark" data-v-15113a2f><div class="container-fluid" data-v-15113a2f><div class="navbar-left" data-v-15113a2f><a href="/2023/index.html" title="Home" class="navbar-brand" data-v-15113a2f><span class="badge rounded-pill bg-danger" data-v-15113a2f>TEE3201 <small data-v-15113a2f>2023</small></span></a></div> <div class="navbar-default" data-v-15113a2f><ul class="navbar-nav me-auto mt-2 mt-lg-0" data-v-15113a2f> <li class="nav-link algolia-no-index dropdown" data-v-2e98b3f0><a role="button" data-bs-toggle="dropdown" class="dropdown-toggle" data-v-2e98b3f0><strong data-v-2e98b3f0>Schedule</strong></a> <ul class="dropdown-menu" data-v-2e98b3f0> <li data-v-2e98b3f0><a href="/2023/schedule/timeline.html" class="dropdown-item" data-v-2e98b3f0><span data-v-2e98b3f0><strong data-v-2e98b3f0>Full Timeline</strong></span></a></li> <li data-v-2e98b3f0><a href="/2023/schedule/week1/index.html" class="dropdown-item" data-v-2e98b3f0><span data-v-2e98b3f0><strong data-v-2e98b3f0>Week 1</strong> [Sun, Jan 9th] </span></a></li> <li data-v-2e98b3f0><a href="/2023/schedule/week2/index.html" class="dropdown-item" data-v-2e98b3f0><span data-v-2e98b3f0><strong data-v-2e98b3f0>Week 2</strong> [Sun, Jan 16th] </span></a></li> <li data-v-2e98b3f0><a href="/2023/schedule/week3/index.html" class="dropdown-item" data-v-2e98b3f0><span data-v-2e98b3f0><strong data-v-2e98b3f0>Week 3</strong> [Sun, Jan 23rd] </span></a></li> <li data-v-2e98b3f0><a href="/2023/schedule/week4/index.html" class="dropdown-item" data-v-2e98b3f0><span data-v-2e98b3f0><strong data-v-2e98b3f0>Week 4</strong> [Sun, Jan 30th] </span></a></li> <li data-v-2e98b3f0><a href="/2023/schedule/week5/index.html" class="dropdown-item" data-v-2e98b3f0><span data-v-2e98b3f0><strong data-v-2e98b3f0>Week 5</strong> [Sun, Feb 6th] </span></a></li> <li data-v-2e98b3f0><a href="/2023/schedule/week6/index.html" class="dropdown-item" data-v-2e98b3f0><span data-v-2e98b3f0><strong data-v-2e98b3f0>Week 6</strong> [Sun, Feb 13th] </span></a></li> <li data-v-2e98b3f0><a href="/2023/schedule/week7/index.html" class="dropdown-item" data-v-2e98b3f0><span data-v-2e98b3f0><strong data-v-2e98b3f0>Week 7</strong> [Sun, Feb 20th] </span></a></li> <li data-v-2e98b3f0><a href="/2023/schedule/week8/index.html" class="dropdown-item" data-v-2e98b3f0><span data-v-2e98b3f0><strong data-v-2e98b3f0>Week 8</strong> [Sun, Mar 6th] </span></a></li> <li data-v-2e98b3f0><a href="/2023/schedule/week9/index.html" class="dropdown-item" data-v-2e98b3f0><span data-v-2e98b3f0><strong data-v-2e98b3f0>Week 9</strong> [Sun, Mar 13th] </span></a></li> <li data-v-2e98b3f0><a href="/2023/schedule/week10/index.html" class="dropdown-item" data-v-2e98b3f0><span data-v-2e98b3f0><strong data-v-2e98b3f0>Week 10</strong> [Sun, Mar 20th] </span></a></li> <li data-v-2e98b3f0><a href="/2023/schedule/week11/index.html" class="dropdown-item" data-v-2e98b3f0><span data-v-2e98b3f0><strong data-v-2e98b3f0>Week 11</strong> [Sun, Mar 27th] </span></a></li> <li data-v-2e98b3f0><a href="/2023/schedule/week12/index.html" class="dropdown-item" data-v-2e98b3f0><span data-v-2e98b3f0><strong data-v-2e98b3f0>Week 12</strong> [Sun, Apr 3rd] </span></a></li> <li data-v-2e98b3f0><a href="/2023/schedule/week13/index.html" class="dropdown-item" data-v-2e98b3f0><span data-v-2e98b3f0><strong data-v-2e98b3f0>Week 13</strong> [Sun, Apr 10th] </span></a></li></ul></li> <li class="nav-link algolia-no-index dropdown" data-v-2e98b3f0><a role="button" data-bs-toggle="dropdown" class="dropdown-toggle" data-v-2e98b3f0><strong data-v-2e98b3f0>Textbook</strong></a> <ul class="dropdown-menu" data-v-2e98b3f0> <li data-v-2e98b3f0><a href="/2023/se-book-adapted/index.html" class="dropdown-item" data-v-2e98b3f0>SE Textbook</a></li> <li data-v-2e98b3f0><a href="/2023/programming/index.html" class="dropdown-item" data-v-2e98b3f0>Programming Textbook</a></li></ul></li> <li data-v-15113a2f><a href="/2023/admin/index.html" class="nav-link" data-v-15113a2f><span data-v-15113a2f><strong data-v-15113a2f>Admin Info</strong></span></a></li> <li class="nav-link algolia-no-index dropdown" data-v-2e98b3f0><a role="button" data-bs-toggle="dropdown" class="dropdown-toggle" data-v-2e98b3f0><strong data-v-2e98b3f0>Other Links</strong></a> <ul class="dropdown-menu" data-v-2e98b3f0> <li data-v-2e98b3f0><a href="https://luminus.nus.edu.sg/modules//forum" target="_blank" class="dropdown-item" data-v-2e98b3f0><span data-v-2e98b3f0><span aria-hidden="true" class="fas fa-comment" data-v-2e98b3f0></span> Forum</span></a></li> <li data-v-2e98b3f0><a href="/2023/admin/index.html#instructors" class="dropdown-item" data-v-2e98b3f0><span data-v-2e98b3f0><span aria-hidden="true" class="fas fa-user-tie" data-v-2e98b3f0></span> Instructors</span></a></li> <li data-v-2e98b3f0><a href="https://canvas.nus.edu.sg/courses/38821/announcements" target="_blank" class="dropdown-item" data-v-2e98b3f0><span data-v-2e98b3f0><span aria-hidden="true" class="glyphicon glyphicon-bullhorn" data-v-2e98b3f0></span> Announcements</span></a></li> <li data-v-2e98b3f0><a href="https://luminus.nus.edu.sg/modules//files" target="_blank" class="dropdown-item" data-v-2e98b3f0><span data-v-2e98b3f0><span aria-hidden="true" class="fas fa-file-upload" data-v-2e98b3f0></span> Files (handouts, submissions etc.)</span></a></li> <li tags="m--tic2002 m--tee3201" data-v-2e98b3f0><a href="/2023/admin/index.html#project" class="dropdown-item" data-v-2e98b3f0><span data-v-2e98b3f0><span data-v-2e98b3f0><span aria-hidden="true" class="fas fa-drafting-compass" data-v-2e98b3f0></span></span></span> Project Info</a></li> <li tags="m--cs2113 m--tic2002 m--tee3201" data-v-2e98b3f0><a href="/2023/_markbind/layouts/2423" target="_blank" class="dropdown-item" data-v-2e98b3f0><span data-v-2e98b3f0><span data-v-2e98b3f0><span aria-hidden="true" class="fas fa-dumbbell" data-v-2e98b3f0></span></span></span> Coursemology link</a></li> <li data-v-2e98b3f0><a href="/2023/_markbind/layouts/tbd" target="_blank" class="dropdown-item" data-v-2e98b3f0><span data-v-2e98b3f0><span aria-hidden="true" class="fas fa-users-cog" data-v-2e98b3f0></span> MS Teams link</span></a></li></ul></li></ul></div> <ul class="navbar-nav navbar-right" data-v-15113a2f><li class="nav-link" data-v-15113a2f><form class="navbar-form" data-v-15113a2f><div class="dropdown" style="position:relative;" data-v-2955e59c><div id="algolia-search-input" data-v-2955e59c></div> <ul class="dropdown-menu search-dropdown-menu d-none dropdown-menu-end" data-v-2955e59c></ul></div></form></li></ul></div></nav> <div class="lower-navbar-container" style="display:none;" data-v-15113a2f><!----> <!----></div></div></header> <div id="flex-body"><nav id="site-nav" class="fixed-header-padding" data-v-e8c82f88><div class="site-nav-top" data-v-e8c82f88><div class="font-weight-bold mb-2" style="font-size:1.25rem;" data-v-e8c82f88>Python textbook</div></div> <div class="nav-component slim-scroll" data-v-e8c82f88><div data-v-e8c82f88><div class="site-nav-root"><ul class="site-nav-list site-nav-list-root" data-v-e8c82f88><li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-0" data-v-e8c82f88><a href="/2023/programming/chapters/expressions-types-variables.html" data-v-e8c82f88>Expressions, Data Types, Variables</a></div></li> <li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-0" data-v-e8c82f88><a href="/2023/programming/chapters/programs.html" data-v-e8c82f88>Python Programs</a></div></li> <li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-0" data-v-e8c82f88><a href="/2023/programming/chapters/flowcontrol.html" data-v-e8c82f88>Program Flow Control</a></div></li> <li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-0" data-v-e8c82f88><a href="/2023/programming/chapters/functions.html" data-v-e8c82f88>Functions</a></div></li> <li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-0" data-v-e8c82f88><a href="/2023/programming/chapters/lists.html" data-v-e8c82f88>Lists</a></div></li> <li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-0" data-v-e8c82f88><a href="/2023/programming/chapters/errors.html" data-v-e8c82f88>Error Handling</a></div></li> <li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-0" data-v-e8c82f88><a href="/2023/programming/chapters/strings.html" data-v-e8c82f88>Strings</a></div></li> <li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-0" data-v-e8c82f88><a href="/2023/programming/chapters/files.html" data-v-e8c82f88>Files</a></div></li> <li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-0" data-v-e8c82f88><a href="/2023/programming/chapters/dictionaries.html" data-v-e8c82f88>Dictionaries</a></div></li> <li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-0" data-v-e8c82f88><a href="/2023/programming/chapters/oop.html" data-v-e8c82f88>Object-Oriented Programming</a></div></li> <li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-0" data-v-e8c82f88><a href="/2023/programming/chapters/gui.html" data-v-e8c82f88>GUIs</a></div></li> <li class="site-nav-custom-list-item site-nav-list-item-0" data-v-e8c82f88><hr data-v-e8c82f88></li> <li class="site-nav-custom-list-item site-nav-list-item-0" data-v-e8c82f88><span class="dimmed" data-v-e8c82f88><strong data-v-e8c82f88>Appendices</strong></span></li> <li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-0" data-v-e8c82f88><a href="/2023/programming/chapters/thirdparty.html" data-v-e8c82f88><strong data-v-e8c82f88>A.</strong> Installing 3rd Party Modules</a></div></li> <li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-0" data-v-e8c82f88><a href="/2023/programming/chapters/ide.html" data-v-e8c82f88><strong data-v-e8c82f88>B.</strong> Using an IDE</a></div></li> <li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-0" data-v-e8c82f88><a href="/2023/programming/chapters/organizing.html" data-v-e8c82f88><strong data-v-e8c82f88>C.</strong> Organizing Python Code</a></div></li> <li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-0" data-v-e8c82f88><a href="/2023/programming/chapters/unittesting.html" data-v-e8c82f88><strong data-v-e8c82f88>D.</strong> Unit Testing</a></div></li> <li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-0" data-v-e8c82f88><a href="/2023/programming/chapters/monty.html" data-v-e8c82f88><strong data-v-e8c82f88>E.</strong> The Monty Project</a></div></li> <!----></ul></div></div></div> <!----></nav> <div id="content-wrapper" class="fixed-header-padding"><div id="main" class="website-content"><div id="toc"><ul><li><a href="#functions"><strong>Functions</strong></a> <ul><li><a href="#writing-functions">Writing Functions</a></li> <li><a href="#function-parameters">Function Parameters</a></li> <li><a href="#return-value">Return Value</a></li> <li><a href="#local-and-global-scope">Local and Global Scope</a></li></ul></li></ul></div> <div id="main"><h1 id="functions"><span id="functions" class="anchor"></span>Functions<a href="#functions" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h1> <div><h3 id="writing-functions"><span id="writing-functions" class="anchor"></span>Writing Functions<a href="#writing-functions" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h3> <p><strong>You can write your own functions in Python.</strong> Function are useful when you want to execute a bunch of statements multiple times at different points of a program.</p> <p>Format:</p> <pre><code class="line-numbers hljs python"><span><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">function_name</span>():</span>
+</span><span>    statement_1
+</span><span>    statement_2
+</span><span>    ...
+</span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn">
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 "></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre><div class="alert box-container alert-default" data-v-7d17494f><!----> <div class="header-and-body" data-v-7d17494f><!----> <div class="box-body-wrapper" data-v-7d17494f><!----> <!----> <div class="contents" data-v-7d17494f><p data-v-7d17494f><span data-v-7d17494f><span aria-hidden="true" class="fas fa-cube" data-v-7d17494f></span></span> The code below defines a function named <code class="line-numbers hljs inline no-lang" data-v-7d17494f>say_hello</code> and calls it twice.</p> <div data-v-7d17494f><table data-v-7d17494f><tbody data-v-7d17494f><tr data-v-7d17494f><td valign="top" data-v-7d17494f><pre data-v-7d17494f><code class="line-numbers hljs python" data-v-7d17494f><span data-v-7d17494f><span class="hljs-function" data-v-7d17494f><span class="hljs-keyword" data-v-7d17494f>def</span> <span class="hljs-title" data-v-7d17494f>say_hello</span>():</span>
+</span><span data-v-7d17494f>  <span class="hljs-built_in" data-v-7d17494f>print</span>(<span class="hljs-string" data-v-7d17494f>'Hello!'</span>)
+</span><span data-v-7d17494f>  <span class="hljs-built_in" data-v-7d17494f>print</span>(<span class="hljs-string" data-v-7d17494f>'How are you?'</span>)
+</span><span data-v-7d17494f>  <span class="hljs-built_in" data-v-7d17494f>print</span>(<span class="hljs-string" data-v-7d17494f>'Nice to meet you.'</span>)
+</span><span data-v-7d17494f>
+</span><span data-v-7d17494f><span class="hljs-comment" data-v-7d17494f># call the function twice</span>
+</span><span data-v-7d17494f><span class="hljs-built_in" data-v-7d17494f>print</span>(<span class="hljs-string" data-v-7d17494f>'Going to call the function ...'</span>)
+</span><span data-v-7d17494f>say_hello()
+</span><span data-v-7d17494f><span class="hljs-built_in" data-v-7d17494f>print</span>(<span class="hljs-string" data-v-7d17494f>'Going to repeat ...'</span>)
+</span><span data-v-7d17494f>say_hello()
+</span></code><div class="function-btn-container" data-v-7d17494f><button onclick="copyCodeBlock(this)" class="function-btn" data-v-7d17494f>
+    <div class="function-btn-body" data-v-7d17494f>
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1" data-v-7d17494f>
+    <g id="surface1" data-v-7d17494f>
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 " data-v-7d17494f></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre></td> <td valign="bottom" data-v-7d17494f> → <br data-v-7d17494f><br data-v-7d17494f></td> <td valign="bottom" data-v-7d17494f><pre data-v-7d17494f><code class="no-line-numbers hljs" data-v-7d17494f><span data-v-7d17494f>Going to call the function ...
+</span><span data-v-7d17494f>Hello!
+</span><span data-v-7d17494f>How are you?
+</span><span data-v-7d17494f>Nice to meet you.
+</span><span data-v-7d17494f>Going to repeat ...
+</span><span data-v-7d17494f>Hello!
+</span><span data-v-7d17494f>How are you?
+</span><span data-v-7d17494f>Nice to meet you.
+</span><span data-v-7d17494f>
+</span></code><div class="function-btn-container" data-v-7d17494f><button onclick="copyCodeBlock(this)" class="function-btn" data-v-7d17494f>
+    <div class="function-btn-body" data-v-7d17494f>
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1" data-v-7d17494f>
+    <g id="surface1" data-v-7d17494f>
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 " data-v-7d17494f></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre><div data-v-7d17494f><p data-v-7d17494f><span class="dimmed" data-v-7d17494f>[Click <a href="http://pythontutor.com/iframe-embed.html#code=def%20say_hello%28%29%3A%0A%20%20print%28'Hello!'%29%0A%20%20print%28'How%20are%20you%3F'%29%0A%20%20print%28'Nice%20to%20meet%20you.'%29%0A%20%20%0A%23%20call%20the%20function%20twice%0Aprint%28'Going%20to%20call%20the%20function%20...'%29%0Asay_hello%28%29%0Aprint%28'Going%20to%20repeat%20...'%29%0Asay_hello%28%29&amp;codeDivHeight=400&amp;codeDivWidth=350&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=false&amp;origin=opt-frontend.js&amp;py=3&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false" target="_blank" data-v-7d17494f>here</a> to visualize the execution]</span></p></div></td></tr></tbody></table></div> <p data-v-7d17494f>Note how the statements inside the function are not executed unless the method is called.</p></div> <!----></div></div></div> <p>The function definition should appear in the code <em>before</em> it is called.</p> <div class="alert box-container alert-default" data-v-7d17494f><!----> <div class="header-and-body" data-v-7d17494f><!----> <div class="box-body-wrapper" data-v-7d17494f><!----> <!----> <div class="contents" data-v-7d17494f><table data-v-7d17494f><tbody data-v-7d17494f><tr data-v-7d17494f><td data-v-7d17494f><p data-v-7d17494f><span style="color:green;" data-v-7d17494f><span data-v-7d17494f><strong data-v-7d17494f><span aria-hidden="true" class="fas fa-thumbs-up" data-v-7d17494f></span> Good</strong></span></span> (this works)</p> <pre data-v-7d17494f><code class="line-numbers hljs python" data-v-7d17494f><span data-v-7d17494f><span class="hljs-built_in" data-v-7d17494f>print</span>(<span class="hljs-string" data-v-7d17494f>'starting ...'</span>)
+</span><span data-v-7d17494f>
+</span><span data-v-7d17494f><span class="hljs-function" data-v-7d17494f><span class="hljs-keyword" data-v-7d17494f>def</span> <span class="hljs-title" data-v-7d17494f>say_hello</span>():</span>
+</span><span data-v-7d17494f>  <span class="hljs-built_in" data-v-7d17494f>print</span>(<span class="hljs-string" data-v-7d17494f>'Hello!'</span>)
+</span><span data-v-7d17494f>
+</span><span data-v-7d17494f><span class="hljs-built_in" data-v-7d17494f>print</span>(<span class="hljs-string" data-v-7d17494f>'Going to say hello ...'</span>)
+</span><span data-v-7d17494f>
+</span><span data-v-7d17494f>say_hello()
+</span></code><div class="function-btn-container" data-v-7d17494f><button onclick="copyCodeBlock(this)" class="function-btn" data-v-7d17494f>
+    <div class="function-btn-body" data-v-7d17494f>
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1" data-v-7d17494f>
+    <g id="surface1" data-v-7d17494f>
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 " data-v-7d17494f></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre></td> <td data-v-7d17494f>  </td> <td data-v-7d17494f><p data-v-7d17494f><span style="color:red;" data-v-7d17494f><span data-v-7d17494f><strong data-v-7d17494f><span aria-hidden="true" class="fas fa-thumbs-down" data-v-7d17494f></span> Bad</strong></span></span> (this will not work!)</p> <pre data-v-7d17494f><code class="line-numbers hljs python" data-v-7d17494f><span data-v-7d17494f><span class="hljs-built_in" data-v-7d17494f>print</span>(<span class="hljs-string" data-v-7d17494f>'starting ...'</span>)
+</span><span data-v-7d17494f><span class="hljs-built_in" data-v-7d17494f>print</span>(<span class="hljs-string" data-v-7d17494f>'Going to say hello ...'</span>)
+</span><span data-v-7d17494f>
+</span><span data-v-7d17494f><span class="hljs-comment" data-v-7d17494f># call appears before definition</span>
+</span><span data-v-7d17494f>say_hello()
+</span><span data-v-7d17494f>
+</span><span data-v-7d17494f><span class="hljs-function" data-v-7d17494f><span class="hljs-keyword" data-v-7d17494f>def</span> <span class="hljs-title" data-v-7d17494f>say_hello</span>():</span>
+</span><span data-v-7d17494f>  <span class="hljs-built_in" data-v-7d17494f>print</span>(<span class="hljs-string" data-v-7d17494f>'Hello!'</span>)
+</span></code><div class="function-btn-container" data-v-7d17494f><button onclick="copyCodeBlock(this)" class="function-btn" data-v-7d17494f>
+    <div class="function-btn-body" data-v-7d17494f>
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1" data-v-7d17494f>
+    <g id="surface1" data-v-7d17494f>
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 " data-v-7d17494f></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre></td></tr></tbody></table></div> <!----></div></div></div> <div class="algolia-no-index card-container" data-v-5681bde8><!----> <div class="card expandable-card border-0" data-v-5681bde8><div class="card-header header-toggle bg-white border-0" data-v-5681bde8><div class="caret-wrapper" data-v-5681bde8><span class="glyphicon glyphicon-chevron-right" data-v-5681bde8></span></div> <div class="header-wrapper card-title bg-white" data-v-5681bde8><p data-v-5681bde8><span class="dimmed" data-v-5681bde8><span data-v-5681bde8><span aria-hidden="true" class="glyphicon glyphicon-facetime-video" data-v-5681bde8></span></span> Defining your own functions</span></p></div> <div class="button-wrapper" data-v-5681bde8><button type="button" class="collapse-button btn btn-outline-secondary" style="display:none;" data-v-5681bde8><span aria-hidden="true" class="collapse-icon glyphicon glyphicon-menu-down"></span></button> <button type="button" class="close-button btn btn-outline-secondary seamless-button" data-v-5681bde8><span aria-hidden="true" class="glyphicon glyphicon-remove" data-v-5681bde8></span></button> <button type="button" class="popup-button btn btn-outline-secondary seamless-button" style="display:none;" data-v-5681bde8><span aria-hidden="true" class="glyphicon glyphicon-new-window" data-v-5681bde8></span></button></div></div> <div class="card-collapse" data-v-5681bde8><!----> <hr style="display:;" data-v-5681bde8></div> <!----></div></div><p></p> <div><div expanded="" no-close="" class="card-container" data-v-5681bde8><!----> <div class="card expandable-card border-danger" data-v-5681bde8><div class="card-header header-toggle bg-danger border-danger" data-v-5681bde8><div class="caret-wrapper" data-v-5681bde8><!----></div> <div class="header-wrapper card-title bg-danger text-white" data-v-5681bde8><p data-v-5681bde8><span aria-hidden="true" class="fas fa-dumbbell" data-v-5681bde8></span> Exercise: Hip Hip Hooray!</p></div> <div class="button-wrapper" data-v-5681bde8><button type="button" class="collapse-button btn btn-outline-light" data-v-5681bde8><span aria-hidden="true" class="collapse-icon glyphicon glyphicon-menu-down opened"></span></button> <button type="button" class="close-button btn btn-outline-light" style="display:none;" data-v-5681bde8><span aria-hidden="true" class="glyphicon glyphicon-remove" data-v-5681bde8></span></button> <button type="button" class="popup-button btn btn-outline-light" style="display:none;" data-v-5681bde8><span aria-hidden="true" class="glyphicon glyphicon-new-window" data-v-5681bde8></span></button></div></div> <div class="card-collapse" data-v-5681bde8><div class="card-body" data-v-5681bde8> <div data-v-5681bde8><h4 id="exercise-hip-hip-hooray" data-v-5681bde8><span id="exercise-hip-hip-hooray" class="anchor" data-v-5681bde8></span>Exercise : Hip Hip Hooray<a href="#exercise-hip-hip-hooray" onclick="event.stopPropagation()" class="fa fa-anchor" data-v-5681bde8></a></h4> <p data-v-5681bde8>Define the missing functions in the code below so that it produces the given output:</p> <table data-v-5681bde8><tbody data-v-5681bde8><tr data-v-5681bde8><td data-v-5681bde8><pre data-v-5681bde8><code class="line-numbers hljs python" data-v-5681bde8><span data-v-5681bde8><span class="hljs-keyword" data-v-5681bde8>for</span> i <span class="hljs-keyword" data-v-5681bde8>in</span> <span class="hljs-built_in" data-v-5681bde8>range</span>(<span class="hljs-number" data-v-5681bde8>3</span>):
+</span><span data-v-5681bde8>  say_hip()
+</span><span data-v-5681bde8>  say_hip()
+</span><span data-v-5681bde8>  say_horray()
+</span><span data-v-5681bde8>  <span class="hljs-built_in" data-v-5681bde8>print</span>() <span class="hljs-comment" data-v-5681bde8># print empty line</span>
+</span><span data-v-5681bde8>
+</span><span data-v-5681bde8>
+</span><span data-v-5681bde8>
+</span><span data-v-5681bde8>
+</span><span data-v-5681bde8>
+</span></code><div class="function-btn-container" data-v-5681bde8><button onclick="copyCodeBlock(this)" class="function-btn" data-v-5681bde8>
+    <div class="function-btn-body" data-v-5681bde8>
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1" data-v-5681bde8>
+    <g id="surface1" data-v-5681bde8>
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 " data-v-5681bde8></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre></td> <td data-v-5681bde8> → </td> <td data-v-5681bde8><pre data-v-5681bde8><code class="line-numbers hljs" data-v-5681bde8><span data-v-5681bde8>Hip
+</span><span data-v-5681bde8>Hip
+</span><span data-v-5681bde8>Hooray!
+</span><span data-v-5681bde8>
+</span><span data-v-5681bde8>Hip
+</span><span data-v-5681bde8>Hip
+</span><span data-v-5681bde8>Hooray!
+</span><span data-v-5681bde8>
+</span><span data-v-5681bde8>Hip
+</span><span data-v-5681bde8>Hip
+</span><span data-v-5681bde8>Hooray!
+</span></code><div class="function-btn-container" data-v-5681bde8><button onclick="copyCodeBlock(this)" class="function-btn" data-v-5681bde8>
+    <div class="function-btn-body" data-v-5681bde8>
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1" data-v-5681bde8>
+    <g id="surface1" data-v-5681bde8>
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 " data-v-5681bde8></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre></td></tr></tbody></table></div> <!----> <button type="button" class="collapse-button btn btn-outline-secondary" data-v-5681bde8><span aria-hidden="true" class="collapse-icon glyphicon glyphicon-menu-down opened"></span></button></div> <hr style="display:none;" data-v-5681bde8></div> <!----></div></div><p></p></div></div><hr style="border-top:3px double #c5c5c5;"> <div><h3 id="function-parameters"><span id="function-parameters" class="anchor"></span>Function Parameters<a href="#function-parameters" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h3> <p><strong>You can configure a function to have <em>parameters</em>. The code inside the function can use the parameters like variables.</strong> That means we can pass arguments (i.e., values for those parameters) to affect the behavior of a function so that the function behaves differently each time it is executed.</p> <p>Format:</p> <pre><code class="line-numbers hljs python"><span><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">function_name</span>(<span class="hljs-params">parameter1_name, parameter2_name, ...</span>):</span>
+</span><span>    ...
+</span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn">
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 "></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre><p><strong><strong>Parameters vs arguments:</strong></strong> When you define a function, you can specify <em>parameters</em> that it can accept. When you call the function, you can assign <em>arguments</em> (i.e. values) to each of those parameters.</p> <div class="alert box-container alert-default" data-v-7d17494f><!----> <div class="header-and-body" data-v-7d17494f><!----> <div class="box-body-wrapper" data-v-7d17494f><!----> <!----> <div class="contents" data-v-7d17494f><p data-v-7d17494f><span data-v-7d17494f><span aria-hidden="true" class="fas fa-cube" data-v-7d17494f></span></span> The <code class="line-numbers hljs inline no-lang" data-v-7d17494f>say_hello</code> function below takes one parameter. The first time we call it we pass the argument <code class="line-numbers hljs inline no-lang" data-v-7d17494f>Gina</code> to that parameter, and the next time we pass a different argument <code class="line-numbers hljs inline no-lang" data-v-7d17494f>John</code> to the same parameter.</p> <div data-v-7d17494f><table data-v-7d17494f><tbody data-v-7d17494f><tr data-v-7d17494f><td valign="top" data-v-7d17494f><pre data-v-7d17494f><code class="line-numbers hljs python" data-v-7d17494f><span data-v-7d17494f><span class="hljs-function" data-v-7d17494f><span class="hljs-keyword" data-v-7d17494f>def</span> <span class="hljs-title" data-v-7d17494f>say_hello</span>(<span class="hljs-params" data-v-7d17494f>name</span>):</span>
+</span><span data-v-7d17494f>  <span class="hljs-built_in" data-v-7d17494f>print</span>(<span class="hljs-string" data-v-7d17494f>'Hello '</span> + name)
+</span><span data-v-7d17494f>  <span class="hljs-built_in" data-v-7d17494f>print</span>(<span class="hljs-string" data-v-7d17494f>'How are you'</span>, name, <span class="hljs-string" data-v-7d17494f>'?'</span>)
+</span><span data-v-7d17494f>
+</span><span data-v-7d17494f>say_hello(<span class="hljs-string" data-v-7d17494f>'Gina'</span>)
+</span><span data-v-7d17494f>say_hello(<span class="hljs-string" data-v-7d17494f>'John'</span>)
+</span></code><div class="function-btn-container" data-v-7d17494f><button onclick="copyCodeBlock(this)" class="function-btn" data-v-7d17494f>
+    <div class="function-btn-body" data-v-7d17494f>
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1" data-v-7d17494f>
+    <g id="surface1" data-v-7d17494f>
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 " data-v-7d17494f></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre></td> <td valign="bottom" data-v-7d17494f> → <br data-v-7d17494f><br data-v-7d17494f></td> <td valign="bottom" data-v-7d17494f><pre data-v-7d17494f><code class="line-numbers hljs" data-v-7d17494f><span data-v-7d17494f>Hello Gina
+</span><span data-v-7d17494f>How are you Gina ?
+</span><span data-v-7d17494f>Hello John
+</span><span data-v-7d17494f>How are you John ?
+</span><span data-v-7d17494f>
+</span></code><div class="function-btn-container" data-v-7d17494f><button onclick="copyCodeBlock(this)" class="function-btn" data-v-7d17494f>
+    <div class="function-btn-body" data-v-7d17494f>
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1" data-v-7d17494f>
+    <g id="surface1" data-v-7d17494f>
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 " data-v-7d17494f></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre><div data-v-7d17494f><p data-v-7d17494f><span class="dimmed" data-v-7d17494f>[Click <a href="http://pythontutor.com/iframe-embed.html#code=def%20say_hello%28name%29%3A%0A%20%20print%28'Hello%20'%20%2B%20name%29%0A%20%20print%28'How%20are%20you',%20name,%20'%3F'%29%0A%20%20%0Asay_hello%28'Gina'%29%0Asay_hello%28'John'%29&amp;codeDivHeight=400&amp;codeDivWidth=350&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=false&amp;origin=opt-frontend.js&amp;py=3&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false" target="_blank" data-v-7d17494f>here</a> to visualize the execution]</span></p></div></td></tr></tbody></table></div> <p data-v-7d17494f><span data-v-7d17494f><span aria-hidden="true" class="fas fa-cube" data-v-7d17494f></span></span> The code below has a <code class="line-numbers hljs inline no-lang" data-v-7d17494f>say_hello</code> function that takes one parameter and a <code class="line-numbers hljs inline no-lang" data-v-7d17494f>repeat_hello</code> function that takes two parameters. Furthermore, note how one function calls the other.</p> <pre data-v-7d17494f><code class="line-numbers hljs python" data-v-7d17494f><span data-v-7d17494f><span class="hljs-function" data-v-7d17494f><span class="hljs-keyword" data-v-7d17494f>def</span> <span class="hljs-title" data-v-7d17494f>say_hello</span>(<span class="hljs-params" data-v-7d17494f>name</span>):</span>
+</span><span data-v-7d17494f>  <span class="hljs-built_in" data-v-7d17494f>print</span>(<span class="hljs-string" data-v-7d17494f>'Knock knock '</span> + name)
+</span><span data-v-7d17494f>
+</span><span data-v-7d17494f><span class="hljs-function" data-v-7d17494f><span class="hljs-keyword" data-v-7d17494f>def</span> <span class="hljs-title" data-v-7d17494f>repeat_hello</span>(<span class="hljs-params" data-v-7d17494f>name, times</span>):</span>
+</span><span data-v-7d17494f>  <span class="hljs-built_in" data-v-7d17494f>print</span>(<span class="hljs-string" data-v-7d17494f>'Greeting '</span>, name, times, <span class="hljs-string" data-v-7d17494f>'times'</span>)
+</span><span data-v-7d17494f>  <span class="hljs-keyword" data-v-7d17494f>for</span> i <span class="hljs-keyword" data-v-7d17494f>in</span> <span class="hljs-built_in" data-v-7d17494f>range</span>(times):
+</span><span data-v-7d17494f>    say_hello(name)
+</span><span data-v-7d17494f>  
+</span><span data-v-7d17494f>repeat_hello(<span class="hljs-string" data-v-7d17494f>'Penny'</span>, <span class="hljs-number" data-v-7d17494f>3</span>)
+</span><span data-v-7d17494f>say_hello(<span class="hljs-string" data-v-7d17494f>'Sheldon'</span>)
+</span></code><div class="function-btn-container" data-v-7d17494f><button onclick="copyCodeBlock(this)" class="function-btn" data-v-7d17494f>
+    <div class="function-btn-body" data-v-7d17494f>
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1" data-v-7d17494f>
+    <g id="surface1" data-v-7d17494f>
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 " data-v-7d17494f></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre><p data-v-7d17494f><span data-v-7d17494f><span aria-hidden="true" class="fas fa-arrow-down" data-v-7d17494f></span></span></p> <pre data-v-7d17494f><code class="line-numbers hljs" data-v-7d17494f><span data-v-7d17494f>Knock knock Penny
+</span><span data-v-7d17494f>Knock knock Penny
+</span><span data-v-7d17494f>Knock knock Penny
+</span><span data-v-7d17494f>Knock knock Sheldon
+</span></code><div class="function-btn-container" data-v-7d17494f><button onclick="copyCodeBlock(this)" class="function-btn" data-v-7d17494f>
+    <div class="function-btn-body" data-v-7d17494f>
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1" data-v-7d17494f>
+    <g id="surface1" data-v-7d17494f>
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 " data-v-7d17494f></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre><span minimized="" class="algolia-no-index card-container" data-v-5681bde8><!----> <span class="morph" data-v-5681bde8><button class="morph-display-wrapper btn btn-outline-secondary" data-v-5681bde8><div class="minimal-caret-wrapper" data-v-5681bde8><span class="glyphicon glyphicon-chevron-right" data-v-5681bde8></span></div> <span class="card-title" data-v-5681bde8><p data-v-5681bde8><span class="dimmed" data-v-5681bde8>😆 See the human version of the above code</span></p></span></button></span></span><p data-v-7d17494f></p></div> <!----></div></div></div> <p><strong>Parameter values are forgotten after the function returns</strong>.</p> <div class="alert box-container alert-default" data-v-7d17494f><!----> <div class="header-and-body" data-v-7d17494f><!----> <div class="box-body-wrapper" data-v-7d17494f><!----> <!----> <div class="contents" data-v-7d17494f><p data-v-7d17494f><span data-v-7d17494f><span aria-hidden="true" class="fas fa-cube" data-v-7d17494f></span></span> The code below produces an error because variable <code class="line-numbers hljs inline no-lang" data-v-7d17494f>v1</code> is not available after the function has returned.</p> <pre data-v-7d17494f><code class="line-numbers hljs python" data-v-7d17494f><span data-v-7d17494f><span class="hljs-function" data-v-7d17494f><span class="hljs-keyword" data-v-7d17494f>def</span> <span class="hljs-title" data-v-7d17494f>print_uniqueness</span>(<span class="hljs-params" data-v-7d17494f>v1, v2, v3</span>):</span>
+</span><span data-v-7d17494f>  <span class="hljs-built_in" data-v-7d17494f>print</span>(v1 != v2 <span class="hljs-keyword" data-v-7d17494f>and</span> v2 != v3 <span class="hljs-keyword" data-v-7d17494f>and</span> v3 != v1)
+</span><span data-v-7d17494f>  
+</span><span data-v-7d17494f>print_uniqueness(<span class="hljs-number" data-v-7d17494f>1</span>,<span class="hljs-number" data-v-7d17494f>2</span>,<span class="hljs-number" data-v-7d17494f>4</span>) <span class="hljs-comment" data-v-7d17494f># True</span>
+</span><span data-v-7d17494f>print_uniqueness(<span class="hljs-number" data-v-7d17494f>1</span>,<span class="hljs-number" data-v-7d17494f>1</span>,<span class="hljs-number" data-v-7d17494f>2</span>) <span class="hljs-comment" data-v-7d17494f># False</span>
+</span><span data-v-7d17494f>
+</span><span data-v-7d17494f><span class="hljs-comment" data-v-7d17494f># Error. v1 is not available after function returns</span>
+</span><span data-v-7d17494f><span class="hljs-built_in" data-v-7d17494f>print</span>(v1) 
+</span></code><div class="function-btn-container" data-v-7d17494f><button onclick="copyCodeBlock(this)" class="function-btn" data-v-7d17494f>
+    <div class="function-btn-body" data-v-7d17494f>
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1" data-v-7d17494f>
+    <g id="surface1" data-v-7d17494f>
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 " data-v-7d17494f></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre></div> <!----></div></div></div> <div class="algolia-no-index card-container" data-v-5681bde8><!----> <div class="card expandable-card border-0" data-v-5681bde8><div class="card-header header-toggle bg-white border-0" data-v-5681bde8><div class="caret-wrapper" data-v-5681bde8><span class="glyphicon glyphicon-chevron-right" data-v-5681bde8></span></div> <div class="header-wrapper card-title bg-white" data-v-5681bde8><p data-v-5681bde8><span class="dimmed" data-v-5681bde8><span data-v-5681bde8><span aria-hidden="true" class="glyphicon glyphicon-facetime-video" data-v-5681bde8></span></span> Function parameters</span></p></div> <div class="button-wrapper" data-v-5681bde8><button type="button" class="collapse-button btn btn-outline-secondary" style="display:none;" data-v-5681bde8><span aria-hidden="true" class="collapse-icon glyphicon glyphicon-menu-down"></span></button> <button type="button" class="close-button btn btn-outline-secondary seamless-button" data-v-5681bde8><span aria-hidden="true" class="glyphicon glyphicon-remove" data-v-5681bde8></span></button> <button type="button" class="popup-button btn btn-outline-secondary seamless-button" style="display:none;" data-v-5681bde8><span aria-hidden="true" class="glyphicon glyphicon-new-window" data-v-5681bde8></span></button></div></div> <div class="card-collapse" data-v-5681bde8><!----> <hr style="display:;" data-v-5681bde8></div> <!----></div></div><p></p> <div><div expanded="" no-close="" class="card-container" data-v-5681bde8><!----> <div class="card expandable-card border-danger" data-v-5681bde8><div class="card-header header-toggle bg-danger border-danger" data-v-5681bde8><div class="caret-wrapper" data-v-5681bde8><!----></div> <div class="header-wrapper card-title bg-danger text-white" data-v-5681bde8><p data-v-5681bde8><span aria-hidden="true" class="fas fa-dumbbell" data-v-5681bde8></span> Exercise: Grader <code class="line-numbers hljs inline no-lang" data-v-5681bde8>print_score</code> function</p></div> <div class="button-wrapper" data-v-5681bde8><button type="button" class="collapse-button btn btn-outline-light" data-v-5681bde8><span aria-hidden="true" class="collapse-icon glyphicon glyphicon-menu-down opened"></span></button> <button type="button" class="close-button btn btn-outline-light" style="display:none;" data-v-5681bde8><span aria-hidden="true" class="glyphicon glyphicon-remove" data-v-5681bde8></span></button> <button type="button" class="popup-button btn btn-outline-light" style="display:none;" data-v-5681bde8><span aria-hidden="true" class="glyphicon glyphicon-new-window" data-v-5681bde8></span></button></div></div> <div class="card-collapse" data-v-5681bde8><div class="card-body" data-v-5681bde8> <div data-v-5681bde8><h4 id="exercise-grader-print-score-function" data-v-5681bde8><span id="exercise-grader-print-score-function" class="anchor" data-v-5681bde8></span>Exercise : Grader - <code class="line-numbers hljs inline no-lang" data-v-5681bde8>print_score</code> Function<a href="#exercise-grader-print-score-function" onclick="event.stopPropagation()" class="fa fa-anchor" data-v-5681bde8></a></h4> <p data-v-5681bde8>The code below prints the grade based on exam and project score, somewhat similar to <span tabindex="0" class="trigger-click"><span>a previous exercise you did</span></span>.</p> <pre data-v-5681bde8><code class="line-numbers hljs python" data-v-5681bde8><span data-v-5681bde8>project_score = <span class="hljs-built_in" data-v-5681bde8>int</span>(<span class="hljs-built_in" data-v-5681bde8>input</span>(<span class="hljs-string" data-v-5681bde8>'Enter project score:'</span>))
+</span><span data-v-5681bde8>exam_score = <span class="hljs-built_in" data-v-5681bde8>int</span>(<span class="hljs-built_in" data-v-5681bde8>input</span>(<span class="hljs-string" data-v-5681bde8>'Enter exam score:'</span>))
+</span><span data-v-5681bde8>total_score = project_score + exam_score
+</span><span data-v-5681bde8><span class="hljs-built_in" data-v-5681bde8>print</span>(<span class="hljs-string" data-v-5681bde8>'Total:'</span>, total_score)
+</span><span data-v-5681bde8>
+</span><span data-v-5681bde8><span class="hljs-keyword" data-v-5681bde8>if</span> total_score &gt;= <span class="hljs-number" data-v-5681bde8>60</span> <span class="hljs-keyword" data-v-5681bde8>and</span> project_score &gt;= <span class="hljs-number" data-v-5681bde8>25</span> <span class="hljs-keyword" data-v-5681bde8>and</span> exam_score &gt;= <span class="hljs-number" data-v-5681bde8>25</span>:
+</span><span data-v-5681bde8>    grade = <span class="hljs-string" data-v-5681bde8>'A'</span>
+</span><span data-v-5681bde8><span class="hljs-keyword" data-v-5681bde8>elif</span> (total_score &gt;= <span class="hljs-number" data-v-5681bde8>50</span>) <span class="hljs-keyword" data-v-5681bde8>and</span> (project_score &gt;= <span class="hljs-number" data-v-5681bde8>25</span> <span class="hljs-keyword" data-v-5681bde8>or</span> exam_score &gt;= <span class="hljs-number" data-v-5681bde8>25</span>):
+</span><span data-v-5681bde8>    grade = <span class="hljs-string" data-v-5681bde8>'B'</span>
+</span><span data-v-5681bde8><span class="hljs-keyword" data-v-5681bde8>elif</span> total_score &gt;= <span class="hljs-number" data-v-5681bde8>40</span>:
+</span><span data-v-5681bde8>    grade = <span class="hljs-string" data-v-5681bde8>'C'</span>
+</span><span data-v-5681bde8><span class="hljs-keyword" data-v-5681bde8>else</span>:
+</span><span data-v-5681bde8>    grade = <span class="hljs-string" data-v-5681bde8>'D'</span>
+</span><span data-v-5681bde8>
+</span><span data-v-5681bde8><span class="hljs-built_in" data-v-5681bde8>print</span>(<span class="hljs-string" data-v-5681bde8>'Project :'</span>, <span class="hljs-string" data-v-5681bde8>'='</span> * (project_score//<span class="hljs-number" data-v-5681bde8>5</span>))
+</span><span data-v-5681bde8><span class="hljs-built_in" data-v-5681bde8>print</span>(<span class="hljs-string" data-v-5681bde8>'Exam    :'</span>, <span class="hljs-string" data-v-5681bde8>'='</span> * (exam_score//<span class="hljs-number" data-v-5681bde8>5</span>))
+</span><span data-v-5681bde8><span class="hljs-built_in" data-v-5681bde8>print</span>(<span class="hljs-string" data-v-5681bde8>'Total   :'</span>, <span class="hljs-string" data-v-5681bde8>'='</span> * (total_score//<span class="hljs-number" data-v-5681bde8>5</span>))
+</span><span data-v-5681bde8><span class="hljs-built_in" data-v-5681bde8>print</span>(<span class="hljs-string" data-v-5681bde8>'Grade   :'</span>, grade)
+</span></code><div class="function-btn-container" data-v-5681bde8><button onclick="copyCodeBlock(this)" class="function-btn" data-v-5681bde8>
+    <div class="function-btn-body" data-v-5681bde8>
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1" data-v-5681bde8>
+    <g id="surface1" data-v-5681bde8>
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 " data-v-5681bde8></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre><p data-v-5681bde8>Read the above code to understand how it works. Do you remember <span tabindex="0" class="trigger-click"><span>the meaning of <code class="line-numbers hljs inline no-lang">//</code> operator</span></span> used in the code above?</p> <!----> <p data-v-5681bde8>Add a <code class="line-numbers hljs inline no-lang" data-v-5681bde8>print_score</code> function to the code and replace the following three lines,</p> <pre data-v-5681bde8><code class="line-numbers hljs python" data-v-5681bde8><span data-v-5681bde8><span class="hljs-built_in" data-v-5681bde8>print</span>(<span class="hljs-string" data-v-5681bde8>'Project :'</span>, <span class="hljs-string" data-v-5681bde8>'='</span> * (project_score//<span class="hljs-number" data-v-5681bde8>5</span>))
+</span><span data-v-5681bde8><span class="hljs-built_in" data-v-5681bde8>print</span>(<span class="hljs-string" data-v-5681bde8>'Exam    :'</span>, <span class="hljs-string" data-v-5681bde8>'='</span> * (exam_score//<span class="hljs-number" data-v-5681bde8>5</span>))
+</span><span data-v-5681bde8><span class="hljs-built_in" data-v-5681bde8>print</span>(<span class="hljs-string" data-v-5681bde8>'Total   :'</span>, <span class="hljs-string" data-v-5681bde8>'='</span> * (total_score//<span class="hljs-number" data-v-5681bde8>5</span>))
+</span></code><div class="function-btn-container" data-v-5681bde8><button onclick="copyCodeBlock(this)" class="function-btn" data-v-5681bde8>
+    <div class="function-btn-body" data-v-5681bde8>
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1" data-v-5681bde8>
+    <g id="surface1" data-v-5681bde8>
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 " data-v-5681bde8></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre><p data-v-5681bde8>with these three lines,</p> <pre data-v-5681bde8><code class="line-numbers hljs python" data-v-5681bde8><span data-v-5681bde8>print_score(<span class="hljs-string" data-v-5681bde8>'Project :'</span>, project_score)
+</span><span data-v-5681bde8>print_score(<span class="hljs-string" data-v-5681bde8>'Exam    :'</span>, exam_score)
+</span><span data-v-5681bde8>print_score(<span class="hljs-string" data-v-5681bde8>'Total   :'</span>, total_score)
+</span></code><div class="function-btn-container" data-v-5681bde8><button onclick="copyCodeBlock(this)" class="function-btn" data-v-5681bde8>
+    <div class="function-btn-body" data-v-5681bde8>
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1" data-v-5681bde8>
+    <g id="surface1" data-v-5681bde8>
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 " data-v-5681bde8></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre><p data-v-5681bde8>without changing the external behavior of the program.</p> <!----></div> <!----> <button type="button" class="collapse-button btn btn-outline-secondary" data-v-5681bde8><span aria-hidden="true" class="collapse-icon glyphicon glyphicon-menu-down opened"></span></button></div> <hr style="display:none;" data-v-5681bde8></div> <!----></div></div><p></p></div></div><hr style="border-top:3px double #c5c5c5;"> <div><h3 id="return-value"><span id="return-value" class="anchor"></span>Return Value<a href="#return-value" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h3> <p><strong>You can use a <code class="line-numbers hljs inline no-lang">return</code> statement to make a function return a value</strong>.</p> <div class="alert box-container alert-default" data-v-7d17494f><!----> <div class="header-and-body" data-v-7d17494f><!----> <div class="box-body-wrapper" data-v-7d17494f><!----> <!----> <div class="contents" data-v-7d17494f><p data-v-7d17494f><span data-v-7d17494f><span aria-hidden="true" class="fas fa-cube" data-v-7d17494f></span></span> The <code class="line-numbers hljs inline no-lang" data-v-7d17494f>play()</code> function below returns one of the strings <code class="line-numbers hljs inline no-lang" data-v-7d17494f>Rock</code>, <code class="line-numbers hljs inline no-lang" data-v-7d17494f>Paper</code>, <code class="line-numbers hljs inline no-lang" data-v-7d17494f>Scissors</code> randomly.</p> <pre data-v-7d17494f><code class="line-numbers hljs python" data-v-7d17494f><span data-v-7d17494f><span class="hljs-keyword" data-v-7d17494f>import</span> random
+</span><span data-v-7d17494f>
+</span><span data-v-7d17494f><span class="hljs-function" data-v-7d17494f><span class="hljs-keyword" data-v-7d17494f>def</span> <span class="hljs-title" data-v-7d17494f>play</span>():</span>
+</span><span data-v-7d17494f>  value = random.randint(<span class="hljs-number" data-v-7d17494f>1</span>,<span class="hljs-number" data-v-7d17494f>3</span>)
+</span><span data-v-7d17494f>  <span class="hljs-keyword" data-v-7d17494f>if</span> value == <span class="hljs-number" data-v-7d17494f>1</span>:
+</span><span data-v-7d17494f>    <span class="hljs-keyword" data-v-7d17494f>return</span> <span class="hljs-string" data-v-7d17494f>'Rock'</span>
+</span><span data-v-7d17494f>  <span class="hljs-keyword" data-v-7d17494f>elif</span> value == <span class="hljs-number" data-v-7d17494f>2</span>:
+</span><span data-v-7d17494f>    <span class="hljs-keyword" data-v-7d17494f>return</span> <span class="hljs-string" data-v-7d17494f>'Paper'</span>
+</span><span data-v-7d17494f>  <span class="hljs-keyword" data-v-7d17494f>else</span>:
+</span><span data-v-7d17494f>    <span class="hljs-keyword" data-v-7d17494f>return</span> <span class="hljs-string" data-v-7d17494f>'Scissors'</span>
+</span><span data-v-7d17494f>  
+</span><span data-v-7d17494f><span class="hljs-built_in" data-v-7d17494f>print</span>(<span class="hljs-string" data-v-7d17494f>'Player1 response : '</span> + play())
+</span><span data-v-7d17494f><span class="hljs-built_in" data-v-7d17494f>print</span>(<span class="hljs-string" data-v-7d17494f>'Player2 response : '</span> + play())
+</span></code><div class="function-btn-container" data-v-7d17494f><button onclick="copyCodeBlock(this)" class="function-btn" data-v-7d17494f>
+    <div class="function-btn-body" data-v-7d17494f>
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1" data-v-7d17494f>
+    <g id="surface1" data-v-7d17494f>
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 " data-v-7d17494f></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre><div data-v-7d17494f><span minimized="" class="algolia-no-index card-container" data-v-5681bde8><!----> <span class="morph" data-v-5681bde8><button class="morph-display-wrapper btn btn-outline-secondary" data-v-5681bde8><div class="minimal-caret-wrapper" data-v-5681bde8><span class="glyphicon glyphicon-chevron-right" data-v-5681bde8></span></div> <span class="card-title" data-v-5681bde8><p data-v-5681bde8><span aria-hidden="true" class="fas fa-laptop" data-v-5681bde8></span> Try your own</p></span></button></span></span><p data-v-7d17494f></p></div></div> <!----></div></div></div> <p><strong>You can use an empty <code class="line-numbers hljs inline no-lang">return</code> statement to return from the function without executing the remainder of the function</strong>, even if the function does not return anything.</p> <div class="alert box-container alert-default" data-v-7d17494f><!----> <div class="header-and-body" data-v-7d17494f><!----> <div class="box-body-wrapper" data-v-7d17494f><!----> <!----> <div class="contents" data-v-7d17494f><p data-v-7d17494f><span data-v-7d17494f><span aria-hidden="true" class="fas fa-cube" data-v-7d17494f></span></span> The <code class="line-numbers hljs inline no-lang" data-v-7d17494f>print_all_products</code> function below uses an empty <code class="line-numbers hljs inline no-lang" data-v-7d17494f>return</code> statement to return from the function early if one of the arguments is <code class="line-numbers hljs inline no-lang" data-v-7d17494f>0</code>:</p> <pre data-v-7d17494f><code class="line-numbers hljs python" data-v-7d17494f><span data-v-7d17494f><span class="hljs-function" data-v-7d17494f><span class="hljs-keyword" data-v-7d17494f>def</span> <span class="hljs-title" data-v-7d17494f>print_product</span>(<span class="hljs-params" data-v-7d17494f>a, b</span>):</span>
+</span><span data-v-7d17494f>  <span class="hljs-built_in" data-v-7d17494f>print</span>(a, <span class="hljs-string" data-v-7d17494f>'x'</span>, b, <span class="hljs-string" data-v-7d17494f>'='</span>, a*b)
+</span><span data-v-7d17494f>
+</span><span data-v-7d17494f><span class="hljs-function" data-v-7d17494f><span class="hljs-keyword" data-v-7d17494f>def</span> <span class="hljs-title" data-v-7d17494f>print_all_products</span>(<span class="hljs-params" data-v-7d17494f>n1, n2, n3</span>):</span>
+</span><span data-v-7d17494f>  <span class="hljs-comment" data-v-7d17494f># return early if any value is 0</span>
+</span><span data-v-7d17494f>  <span class="hljs-keyword" data-v-7d17494f>if</span> n1 == <span class="hljs-number" data-v-7d17494f>0</span> <span class="hljs-keyword" data-v-7d17494f>or</span> n2 == <span class="hljs-number" data-v-7d17494f>0</span> <span class="hljs-keyword" data-v-7d17494f>or</span> n3 == <span class="hljs-number" data-v-7d17494f>0</span>:
+</span><span data-v-7d17494f>    <span class="hljs-built_in" data-v-7d17494f>print</span>(<span class="hljs-string" data-v-7d17494f>'Values cannot be zeros'</span>)
+</span><span data-v-7d17494f>    <span class="hljs-keyword" data-v-7d17494f>return</span>
+</span><span data-v-7d17494f>  
+</span><span data-v-7d17494f>  <span class="hljs-comment" data-v-7d17494f># print all possible products</span>
+</span><span data-v-7d17494f>  print_product(n1, n2)
+</span><span data-v-7d17494f>  print_product(n2, n3)
+</span><span data-v-7d17494f>  print_product(n3, n1)
+</span><span data-v-7d17494f>  
+</span><span data-v-7d17494f>  
+</span><span data-v-7d17494f>print_all_products(<span class="hljs-number" data-v-7d17494f>2</span>,<span class="hljs-number" data-v-7d17494f>3</span>,<span class="hljs-number" data-v-7d17494f>4</span>)
+</span><span data-v-7d17494f>print_all_products(<span class="hljs-number" data-v-7d17494f>0</span>,<span class="hljs-number" data-v-7d17494f>2</span>,<span class="hljs-number" data-v-7d17494f>3</span>)
+</span></code><div class="function-btn-container" data-v-7d17494f><button onclick="copyCodeBlock(this)" class="function-btn" data-v-7d17494f>
+    <div class="function-btn-body" data-v-7d17494f>
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1" data-v-7d17494f>
+    <g id="surface1" data-v-7d17494f>
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 " data-v-7d17494f></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre><div data-v-7d17494f><span minimized="" class="algolia-no-index card-container" data-v-5681bde8><!----> <span class="morph" data-v-5681bde8><button class="morph-display-wrapper btn btn-outline-secondary" data-v-5681bde8><div class="minimal-caret-wrapper" data-v-5681bde8><span class="glyphicon glyphicon-chevron-right" data-v-5681bde8></span></div> <span class="card-title" data-v-5681bde8><p data-v-5681bde8><span aria-hidden="true" class="fas fa-laptop" data-v-5681bde8></span> Try your own</p></span></button></span></span><p data-v-7d17494f></p></div></div> <!----></div></div></div> <div class="algolia-no-index card-container" data-v-5681bde8><!----> <div class="card expandable-card border-0" data-v-5681bde8><div class="card-header header-toggle bg-white border-0" data-v-5681bde8><div class="caret-wrapper" data-v-5681bde8><span class="glyphicon glyphicon-chevron-right" data-v-5681bde8></span></div> <div class="header-wrapper card-title bg-white" data-v-5681bde8><p data-v-5681bde8><span class="dimmed" data-v-5681bde8><span data-v-5681bde8><span aria-hidden="true" class="glyphicon glyphicon-facetime-video" data-v-5681bde8></span></span> Returning values from functions</span></p></div> <div class="button-wrapper" data-v-5681bde8><button type="button" class="collapse-button btn btn-outline-secondary" style="display:none;" data-v-5681bde8><span aria-hidden="true" class="collapse-icon glyphicon glyphicon-menu-down"></span></button> <button type="button" class="close-button btn btn-outline-secondary seamless-button" data-v-5681bde8><span aria-hidden="true" class="glyphicon glyphicon-remove" data-v-5681bde8></span></button> <button type="button" class="popup-button btn btn-outline-secondary seamless-button" style="display:none;" data-v-5681bde8><span aria-hidden="true" class="glyphicon glyphicon-new-window" data-v-5681bde8></span></button></div></div> <div class="card-collapse" data-v-5681bde8><!----> <hr style="display:;" data-v-5681bde8></div> <!----></div></div><p></p> <div><div expanded="" no-close="" class="card-container" data-v-5681bde8><!----> <div class="card expandable-card border-danger" data-v-5681bde8><div class="card-header header-toggle bg-danger border-danger" data-v-5681bde8><div class="caret-wrapper" data-v-5681bde8><!----></div> <div class="header-wrapper card-title bg-danger text-white" data-v-5681bde8><p data-v-5681bde8><span aria-hidden="true" class="fas fa-dumbbell" data-v-5681bde8></span> Exercise: Grader - <code class="line-numbers hljs inline no-lang" data-v-5681bde8>calculate_grade</code> function</p></div> <div class="button-wrapper" data-v-5681bde8><button type="button" class="collapse-button btn btn-outline-light" data-v-5681bde8><span aria-hidden="true" class="collapse-icon glyphicon glyphicon-menu-down opened"></span></button> <button type="button" class="close-button btn btn-outline-light" style="display:none;" data-v-5681bde8><span aria-hidden="true" class="glyphicon glyphicon-remove" data-v-5681bde8></span></button> <button type="button" class="popup-button btn btn-outline-light" style="display:none;" data-v-5681bde8><span aria-hidden="true" class="glyphicon glyphicon-new-window" data-v-5681bde8></span></button></div></div> <div class="card-collapse" data-v-5681bde8><div class="card-body" data-v-5681bde8> <div data-v-5681bde8><h4 id="exercise-grader-calculate-grade-function" data-v-5681bde8><span id="exercise-grader-calculate-grade-function" class="anchor" data-v-5681bde8></span>Exercise : Grader - <code class="line-numbers hljs inline no-lang" data-v-5681bde8>calculate_grade</code> Function<a href="#exercise-grader-calculate-grade-function" onclick="event.stopPropagation()" class="fa fa-anchor" data-v-5681bde8></a></h4> <p data-v-5681bde8>In a previous exercise you wrote a function to print scores (an example solution is given below).</p> <pre data-v-5681bde8><code class="line-numbers hljs python" data-v-5681bde8><span data-v-5681bde8><span class="hljs-function" data-v-5681bde8><span class="hljs-keyword" data-v-5681bde8>def</span> <span class="hljs-title" data-v-5681bde8>print_score</span>(<span class="hljs-params" data-v-5681bde8>name, value</span>):</span>
+</span><span data-v-5681bde8>  <span class="hljs-built_in" data-v-5681bde8>print</span>(name, <span class="hljs-string" data-v-5681bde8>'='</span> * (value//<span class="hljs-number" data-v-5681bde8>5</span>))
+</span><span data-v-5681bde8>
+</span><span data-v-5681bde8>project_score = <span class="hljs-built_in" data-v-5681bde8>int</span>(<span class="hljs-built_in" data-v-5681bde8>input</span>(<span class="hljs-string" data-v-5681bde8>'Enter project score:'</span>))
+</span><span data-v-5681bde8>exam_score = <span class="hljs-built_in" data-v-5681bde8>int</span>(<span class="hljs-built_in" data-v-5681bde8>input</span>(<span class="hljs-string" data-v-5681bde8>'Enter exam score:'</span>))
+</span><span data-v-5681bde8>
+</span><span data-v-5681bde8>total_score = project_score + exam_score
+</span><span data-v-5681bde8><span class="hljs-built_in" data-v-5681bde8>print</span>(<span class="hljs-string" data-v-5681bde8>'Total:'</span>, total_score)
+</span><span data-v-5681bde8>
+</span><span data-v-5681bde8><span class="hljs-keyword" data-v-5681bde8>if</span> total_score &gt;= <span class="hljs-number" data-v-5681bde8>60</span> <span class="hljs-keyword" data-v-5681bde8>and</span> project_score &gt;= <span class="hljs-number" data-v-5681bde8>25</span> <span class="hljs-keyword" data-v-5681bde8>and</span> exam_score &gt;= <span class="hljs-number" data-v-5681bde8>25</span>:
+</span><span data-v-5681bde8>    grade = <span class="hljs-string" data-v-5681bde8>'A'</span>
+</span><span data-v-5681bde8><span class="hljs-keyword" data-v-5681bde8>elif</span> (total_score &gt;= <span class="hljs-number" data-v-5681bde8>50</span>) <span class="hljs-keyword" data-v-5681bde8>and</span> (project_score &gt;= <span class="hljs-number" data-v-5681bde8>25</span> <span class="hljs-keyword" data-v-5681bde8>or</span> exam_score &gt;= <span class="hljs-number" data-v-5681bde8>25</span>):
+</span><span data-v-5681bde8>    grade = <span class="hljs-string" data-v-5681bde8>'B'</span>
+</span><span data-v-5681bde8><span class="hljs-keyword" data-v-5681bde8>elif</span> total_score &gt;= <span class="hljs-number" data-v-5681bde8>40</span>:
+</span><span data-v-5681bde8>    grade = <span class="hljs-string" data-v-5681bde8>'C'</span>
+</span><span data-v-5681bde8><span class="hljs-keyword" data-v-5681bde8>else</span>:
+</span><span data-v-5681bde8>    grade = <span class="hljs-string" data-v-5681bde8>'D'</span>
+</span><span data-v-5681bde8>
+</span><span data-v-5681bde8>print_score(<span class="hljs-string" data-v-5681bde8>'Project :'</span>, project_score)
+</span><span data-v-5681bde8>print_score(<span class="hljs-string" data-v-5681bde8>'Exam    :'</span>, exam_score)
+</span><span data-v-5681bde8>print_score(<span class="hljs-string" data-v-5681bde8>'Total   :'</span>, total_score)
+</span><span data-v-5681bde8><span class="hljs-built_in" data-v-5681bde8>print</span>(<span class="hljs-string" data-v-5681bde8>'Grade   :'</span>, grade)
+</span></code><div class="function-btn-container" data-v-5681bde8><button onclick="copyCodeBlock(this)" class="function-btn" data-v-5681bde8>
+    <div class="function-btn-body" data-v-5681bde8>
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1" data-v-5681bde8>
+    <g id="surface1" data-v-5681bde8>
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 " data-v-5681bde8></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre><p data-v-5681bde8>Add a <code class="line-numbers hljs inline no-lang" data-v-5681bde8>calculate_grade</code> function to the code and replace the following lines,</p> <pre data-v-5681bde8><code class="line-numbers hljs python" data-v-5681bde8><span data-v-5681bde8><span class="hljs-keyword" data-v-5681bde8>if</span> total &gt;= <span class="hljs-number" data-v-5681bde8>60</span> <span class="hljs-keyword" data-v-5681bde8>and</span> project_score &gt;= <span class="hljs-number" data-v-5681bde8>25</span> <span class="hljs-keyword" data-v-5681bde8>and</span> exam_score &gt;= <span class="hljs-number" data-v-5681bde8>25</span>:
+</span><span data-v-5681bde8>    grade = <span class="hljs-string" data-v-5681bde8>'A'</span>
+</span><span data-v-5681bde8><span class="hljs-keyword" data-v-5681bde8>elif</span> (total &gt;= <span class="hljs-number" data-v-5681bde8>50</span>) <span class="hljs-keyword" data-v-5681bde8>and</span> (project_score &gt;= <span class="hljs-number" data-v-5681bde8>25</span> <span class="hljs-keyword" data-v-5681bde8>or</span> exam_score &gt;= <span class="hljs-number" data-v-5681bde8>25</span>):
+</span><span data-v-5681bde8>    grade = <span class="hljs-string" data-v-5681bde8>'B'</span>
+</span><span data-v-5681bde8><span class="hljs-keyword" data-v-5681bde8>elif</span> total &gt;= <span class="hljs-number" data-v-5681bde8>40</span>:
+</span><span data-v-5681bde8>    grade = <span class="hljs-string" data-v-5681bde8>'C'</span>
+</span><span data-v-5681bde8><span class="hljs-keyword" data-v-5681bde8>else</span>:
+</span><span data-v-5681bde8>    grade = <span class="hljs-string" data-v-5681bde8>'D'</span>
+</span></code><div class="function-btn-container" data-v-5681bde8><button onclick="copyCodeBlock(this)" class="function-btn" data-v-5681bde8>
+    <div class="function-btn-body" data-v-5681bde8>
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1" data-v-5681bde8>
+    <g id="surface1" data-v-5681bde8>
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 " data-v-5681bde8></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre><p data-v-5681bde8>with the line,</p> <pre data-v-5681bde8><code class="line-numbers hljs python" data-v-5681bde8><span data-v-5681bde8>grade = calculate_grade(project_score, exam_score)
+</span></code><div class="function-btn-container" data-v-5681bde8><button onclick="copyCodeBlock(this)" class="function-btn" data-v-5681bde8>
+    <div class="function-btn-body" data-v-5681bde8>
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1" data-v-5681bde8>
+    <g id="surface1" data-v-5681bde8>
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 " data-v-5681bde8></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre><p data-v-5681bde8>without changing the external behavior of the program.</p></div> <!----> <button type="button" class="collapse-button btn btn-outline-secondary" data-v-5681bde8><span aria-hidden="true" class="collapse-icon glyphicon glyphicon-menu-down opened"></span></button></div> <hr style="display:none;" data-v-5681bde8></div> <!----></div></div><p></p></div></div><hr style="border-top:3px double #c5c5c5;"> <div><h3 id="local-and-global-scope"><span id="local-and-global-scope" class="anchor"></span>Local and Global Scope<a href="#local-and-global-scope" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h3> <p><strong>The <em>scope</em> of a variable is which part of the code it can be read/modified.</strong> Think of a scope as a container for variables. When a scope is destroyed, all the values stored in the scope’s variables are forgotten.</p> <p><strong>The <em>global scope</em> is the scope that is applicable to the entire program.</strong> There is only one global scope, and it is created when your program begins. When your program terminates, the global scope is destroyed, and all its variables are forgotten. Otherwise, the next time you ran your program, the variables would remember their values from the last time you ran it. <strong>A variable that exists in the global scope is called a <em>global variable</em>.</strong></p> <p><strong>A <em>local scope</em> is a scope that applies only during the execution of a function.</strong> A local scope is created whenever a function is called. Parameters and variables that are assigned in the called function are said to exist in that function’s local scope. <strong>A variable that exists in a local scope is called a <em>local variable</em>.</strong> When the function returns, the local scope is destroyed, and these variables are forgotten. The next time you call this function, the local variables will not remember the values stored in them from the last time the function was called.</p> <p>A variable must be in the global scope or the local scope; it cannot be in both.</p> <p><sub><span class="dimmed">[Some parts of the above explanation were adapted from <a href="https://automatetheboringstuff.com/chapter3/"><em>Automate the Boring Stuff</em></a>]</span></sub></p> <p>Consider the code given below <span class="dimmed">(apparently, from a program related to a farm)</span>. The global scope and the local scope of each function indicated by shaded areas.<br> <img src="/2023/programming/functions-scope/images/scopeAsShadedAreas.png" width="500"></p> <p>Note the following rules about scope:</p> <ul><li>Rule 1: <strong>Local scopes can read global variables</strong> e.g., <code class="line-numbers hljs inline no-lang">raise_chicken</code> function can access the global variable <code class="line-numbers hljs inline no-lang">total_chickens</code> (see line 6).</li> <li>Rule 2: <strong>Global scope cannot read/write local variables</strong> e.g., line 11 will be rejected because it reads the local variable <code class="line-numbers hljs inline no-lang">eggs</code>.</li> <li>Rule 3: <strong>Local scopes cannot read/write variables of other local scopes</strong> e.g., line 15 will be rejected because it reads the local variable <code class="line-numbers hljs inline no-lang">eggs</code>.</li> <li>Rule 4: <strong>If a variable is <mark><em>assigned</em></mark> in a local scope, it becomes a local variable</strong> even if a global variable has the same name. That is, there can be separate global and local variables with the same name.  e.g., line 16 (<code class="line-numbers hljs inline no-lang">total_cows = 10</code>) creates a local variable <code class="line-numbers hljs inline no-lang">total_cows</code> although there is also a global variable <code class="line-numbers hljs inline no-lang">total_cows</code>; the line 19 prints <code class="line-numbers hljs inline no-lang">5</code> because the <code class="line-numbers hljs inline no-lang">total_cows</code> global variable remains <code class="line-numbers hljs inline no-lang">5</code> and the local variable <code class="line-numbers hljs inline no-lang">total_cows</code> which has the value <code class="line-numbers hljs inline no-lang">10</code> is destroyed after the function <code class="line-numbers hljs inline no-lang">milk_cows</code> is executed.</li></ul> <p><strong>To modify a global variable within a local scope, use the <code class="line-numbers hljs inline no-lang">global</code> statement on that variable.</strong></p> <div class="alert box-container alert-default" data-v-7d17494f><!----> <div class="header-and-body" data-v-7d17494f><!----> <div class="box-body-wrapper" data-v-7d17494f><!----> <!----> <div class="contents" data-v-7d17494f><p data-v-7d17494f><span data-v-7d17494f><span aria-hidden="true" class="fas fa-cube" data-v-7d17494f></span></span> The <code class="line-numbers hljs inline no-lang" data-v-7d17494f>breed_cows</code> function below can increase the global variable <code class="line-numbers hljs inline no-lang" data-v-7d17494f>total_cows</code> to <code class="line-numbers hljs inline no-lang" data-v-7d17494f>10</code> from the local scope because it has a <code class="line-numbers hljs inline no-lang" data-v-7d17494f>global total_cows</code> statement. If you remove that statement, the last print statement will print <code class="line-numbers hljs inline no-lang" data-v-7d17494f>5</code> instead of <code class="line-numbers hljs inline no-lang" data-v-7d17494f>10</code></p> <pre data-v-7d17494f><code class="line-numbers hljs python" data-v-7d17494f><span data-v-7d17494f>total_cows = <span class="hljs-number" data-v-7d17494f>5</span>
+</span><span data-v-7d17494f><span class="hljs-built_in" data-v-7d17494f>print</span>(<span class="hljs-string" data-v-7d17494f>'total cows before breeding:'</span>, total_cows)
+</span><span data-v-7d17494f>
+</span><span data-v-7d17494f><span class="hljs-function" data-v-7d17494f><span class="hljs-keyword" data-v-7d17494f>def</span> <span class="hljs-title" data-v-7d17494f>breed_cows</span>():</span>
+</span><span data-v-7d17494f>    <span class="hljs-keyword" data-v-7d17494f>global</span> total_cows
+</span><span data-v-7d17494f>    <span class="hljs-built_in" data-v-7d17494f>print</span>(<span class="hljs-string" data-v-7d17494f>'breeding cows'</span>)
+</span><span data-v-7d17494f>    total_cows = <span class="hljs-number" data-v-7d17494f>10</span>
+</span><span data-v-7d17494f>    <span class="hljs-built_in" data-v-7d17494f>print</span>(<span class="hljs-string" data-v-7d17494f>'total cows at the end of breeding:'</span>, total_cows)
+</span><span data-v-7d17494f>
+</span><span data-v-7d17494f>breed_cows()
+</span><span data-v-7d17494f><span class="hljs-built_in" data-v-7d17494f>print</span>(<span class="hljs-string" data-v-7d17494f>'total cows after breeding:'</span>, total_cows) <span class="hljs-comment" data-v-7d17494f># prints 10</span>
+</span></code><div class="function-btn-container" data-v-7d17494f><button onclick="copyCodeBlock(this)" class="function-btn" data-v-7d17494f>
+    <div class="function-btn-body" data-v-7d17494f>
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1" data-v-7d17494f>
+    <g id="surface1" data-v-7d17494f>
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 " data-v-7d17494f></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre><table data-v-7d17494f><tbody data-v-7d17494f><tr data-v-7d17494f><td data-v-7d17494f><p data-v-7d17494f><span data-v-7d17494f><span aria-hidden="true" class="fas fa-arrow-down" data-v-7d17494f></span></span></p> <pre data-v-7d17494f><code class="no-line-numbers hljs" data-v-7d17494f><span data-v-7d17494f>total cows before breeding: 5
+</span><span data-v-7d17494f>breeding cows
+</span><span data-v-7d17494f>total cows at the end of breeding: 10
+</span><span data-v-7d17494f>total cows after breeding: 10
+</span></code><div class="function-btn-container" data-v-7d17494f><button onclick="copyCodeBlock(this)" class="function-btn" data-v-7d17494f>
+    <div class="function-btn-body" data-v-7d17494f>
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1" data-v-7d17494f>
+    <g id="surface1" data-v-7d17494f>
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 " data-v-7d17494f></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre></td> <td data-v-7d17494f>  </td> <td data-v-7d17494f><p data-v-7d17494f><span data-v-7d17494f><span aria-hidden="true" class="fas fa-arrow-down" data-v-7d17494f></span></span> without the <code class="line-numbers hljs inline no-lang" data-v-7d17494f>global total_cows</code> statement</p> <pre data-v-7d17494f><code class="no-line-numbers hljs" data-v-7d17494f><span data-v-7d17494f>total cows before breeding: 5
+</span><span data-v-7d17494f>breeding cows
+</span><span data-v-7d17494f>total cows at the end of breeding: 10
+</span><span data-v-7d17494f>total cows after breeding: 5
+</span></code><div class="function-btn-container" data-v-7d17494f><button onclick="copyCodeBlock(this)" class="function-btn" data-v-7d17494f>
+    <div class="function-btn-body" data-v-7d17494f>
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1" data-v-7d17494f>
+    <g id="surface1" data-v-7d17494f>
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 " data-v-7d17494f></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre></td></tr></tbody></table> <div data-v-7d17494f><span minimized="" class="algolia-no-index card-container" data-v-5681bde8><!----> <span class="morph" data-v-5681bde8><button class="morph-display-wrapper btn btn-outline-secondary" data-v-5681bde8><div class="minimal-caret-wrapper" data-v-5681bde8><span class="glyphicon glyphicon-chevron-right" data-v-5681bde8></span></div> <span class="card-title" data-v-5681bde8><p data-v-5681bde8><span aria-hidden="true" class="fas fa-laptop" data-v-5681bde8></span> Try your own</p></span></button></span></span><p data-v-7d17494f></p></div></div> <!----></div></div></div> <div class="algolia-no-index card-container" data-v-5681bde8><!----> <div class="card expandable-card border-0" data-v-5681bde8><div class="card-header header-toggle bg-white border-0" data-v-5681bde8><div class="caret-wrapper" data-v-5681bde8><span class="glyphicon glyphicon-chevron-right" data-v-5681bde8></span></div> <div class="header-wrapper card-title bg-white" data-v-5681bde8><p data-v-5681bde8><span class="dimmed" data-v-5681bde8><span data-v-5681bde8><span aria-hidden="true" class="glyphicon glyphicon-facetime-video" data-v-5681bde8></span></span> Global and local scope</span></p></div> <div class="button-wrapper" data-v-5681bde8><button type="button" class="collapse-button btn btn-outline-secondary" style="display:none;" data-v-5681bde8><span aria-hidden="true" class="collapse-icon glyphicon glyphicon-menu-down"></span></button> <button type="button" class="close-button btn btn-outline-secondary seamless-button" data-v-5681bde8><span aria-hidden="true" class="glyphicon glyphicon-remove" data-v-5681bde8></span></button> <button type="button" class="popup-button btn btn-outline-secondary seamless-button" style="display:none;" data-v-5681bde8><span aria-hidden="true" class="glyphicon glyphicon-new-window" data-v-5681bde8></span></button></div></div> <div class="card-collapse" data-v-5681bde8><!----> <hr style="display:;" data-v-5681bde8></div> <!----></div></div><p></p> <div><div expanded="" no-close="" class="card-container" data-v-5681bde8><!----> <div class="card expandable-card border-danger" data-v-5681bde8><div class="card-header header-toggle bg-danger border-danger" data-v-5681bde8><div class="caret-wrapper" data-v-5681bde8><!----></div> <div class="header-wrapper card-title bg-danger text-white" data-v-5681bde8><p data-v-5681bde8><span aria-hidden="true" class="fas fa-dumbbell" data-v-5681bde8></span> Exercise: Grader - Add <code class="line-numbers hljs inline no-lang" data-v-5681bde8>main</code> Function</p></div> <div class="button-wrapper" data-v-5681bde8><button type="button" class="collapse-button btn btn-outline-light" data-v-5681bde8><span aria-hidden="true" class="collapse-icon glyphicon glyphicon-menu-down opened"></span></button> <button type="button" class="close-button btn btn-outline-light" style="display:none;" data-v-5681bde8><span aria-hidden="true" class="glyphicon glyphicon-remove" data-v-5681bde8></span></button> <button type="button" class="popup-button btn btn-outline-light" style="display:none;" data-v-5681bde8><span aria-hidden="true" class="glyphicon glyphicon-new-window" data-v-5681bde8></span></button></div></div> <div class="card-collapse" data-v-5681bde8><div class="card-body" data-v-5681bde8> <div data-v-5681bde8><h4 id="exercise-grader-add-a-main-function" data-v-5681bde8><span id="exercise-grader-add-a-main-function" class="anchor" data-v-5681bde8></span>Exercise : Grader - Add a <code class="line-numbers hljs inline no-lang" data-v-5681bde8>main</code> Function<a href="#exercise-grader-add-a-main-function" onclick="event.stopPropagation()" class="fa fa-anchor" data-v-5681bde8></a></h4> <p data-v-5681bde8>Take the <span tabindex="0" class="trigger-click"><span>a grader you wrote in the previous exercise</span></span>.
+Here is an example of how the code is likely to look like:</p> <pre data-v-5681bde8><code class="line-numbers hljs python" data-v-5681bde8><span data-v-5681bde8><span class="hljs-function" data-v-5681bde8><span class="hljs-keyword" data-v-5681bde8>def</span> <span class="hljs-title" data-v-5681bde8>print_score</span>(<span class="hljs-params" data-v-5681bde8>name, value</span>):</span>
+</span><span data-v-5681bde8>  <span class="hljs-built_in" data-v-5681bde8>print</span>(name, <span class="hljs-string" data-v-5681bde8>'='</span> * (value//<span class="hljs-number" data-v-5681bde8>5</span>))
+</span><span data-v-5681bde8>
+</span><span data-v-5681bde8><span class="hljs-function" data-v-5681bde8><span class="hljs-keyword" data-v-5681bde8>def</span> <span class="hljs-title" data-v-5681bde8>calculate_grade</span>(<span class="hljs-params" data-v-5681bde8>project, exam</span>):</span>
+</span><span data-v-5681bde8>  <span class="hljs-keyword" data-v-5681bde8>if</span> total_score &gt;= <span class="hljs-number" data-v-5681bde8>60</span> <span class="hljs-keyword" data-v-5681bde8>and</span> project &gt;= <span class="hljs-number" data-v-5681bde8>25</span> <span class="hljs-keyword" data-v-5681bde8>and</span> exam &gt;= <span class="hljs-number" data-v-5681bde8>25</span>:
+</span><span data-v-5681bde8>    <span class="hljs-keyword" data-v-5681bde8>return</span> <span class="hljs-string" data-v-5681bde8>'A'</span>
+</span><span data-v-5681bde8>  <span class="hljs-keyword" data-v-5681bde8>elif</span> (total_score &gt;= <span class="hljs-number" data-v-5681bde8>50</span>) <span class="hljs-keyword" data-v-5681bde8>and</span> (project &gt;= <span class="hljs-number" data-v-5681bde8>25</span> <span class="hljs-keyword" data-v-5681bde8>or</span> exam &gt;= <span class="hljs-number" data-v-5681bde8>25</span>):
+</span><span data-v-5681bde8>    <span class="hljs-keyword" data-v-5681bde8>return</span> <span class="hljs-string" data-v-5681bde8>'B'</span>
+</span><span data-v-5681bde8>  <span class="hljs-keyword" data-v-5681bde8>elif</span> total_score &gt;= <span class="hljs-number" data-v-5681bde8>40</span>:
+</span><span data-v-5681bde8>    <span class="hljs-keyword" data-v-5681bde8>return</span> <span class="hljs-string" data-v-5681bde8>'C'</span>
+</span><span data-v-5681bde8>  <span class="hljs-keyword" data-v-5681bde8>else</span>:
+</span><span data-v-5681bde8>    <span class="hljs-keyword" data-v-5681bde8>return</span> <span class="hljs-string" data-v-5681bde8>'D'</span>
+</span><span data-v-5681bde8>
+</span><span data-v-5681bde8>project_score = <span class="hljs-built_in" data-v-5681bde8>int</span>(<span class="hljs-built_in" data-v-5681bde8>input</span>(<span class="hljs-string" data-v-5681bde8>'Enter project score:'</span>))
+</span><span data-v-5681bde8>exam_score = <span class="hljs-built_in" data-v-5681bde8>int</span>(<span class="hljs-built_in" data-v-5681bde8>input</span>(<span class="hljs-string" data-v-5681bde8>'Enter exam score:'</span>))
+</span><span data-v-5681bde8>
+</span><span data-v-5681bde8>total_score = project_score + exam_score
+</span><span data-v-5681bde8><span class="hljs-built_in" data-v-5681bde8>print</span>(<span class="hljs-string" data-v-5681bde8>'Total:'</span>, total_score)
+</span><span data-v-5681bde8>
+</span><span data-v-5681bde8>grade = calculate_grade(project_score, exam_score)
+</span><span data-v-5681bde8>
+</span><span data-v-5681bde8>print_score(<span class="hljs-string" data-v-5681bde8>'Project :'</span>, project_score)
+</span><span data-v-5681bde8>print_score(<span class="hljs-string" data-v-5681bde8>'Exam    :'</span>, exam_score)
+</span><span data-v-5681bde8>print_score(<span class="hljs-string" data-v-5681bde8>'Total   :'</span>, total_score)
+</span><span data-v-5681bde8><span class="hljs-built_in" data-v-5681bde8>print</span>(<span class="hljs-string" data-v-5681bde8>'Grade   :'</span>, grade)
+</span></code><div class="function-btn-container" data-v-5681bde8><button onclick="copyCodeBlock(this)" class="function-btn" data-v-5681bde8>
+    <div class="function-btn-body" data-v-5681bde8>
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1" data-v-5681bde8>
+    <g id="surface1" data-v-5681bde8>
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 " data-v-5681bde8></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre><p data-v-5681bde8>Move <mark data-v-5681bde8>all the statements that are not inside a function</mark> (i.e., the last 10 statements in the code above) into a new function called <code class="line-numbers hljs inline no-lang" data-v-5681bde8>main</code>. Given below is the expected structure of the code. The external behavior of the code should remain as before.</p> <pre data-v-5681bde8><code class="line-numbers hljs python" data-v-5681bde8><span data-v-5681bde8><span class="hljs-function" data-v-5681bde8><span class="hljs-keyword" data-v-5681bde8>def</span> <span class="hljs-title" data-v-5681bde8>print_score</span>(<span class="hljs-params" data-v-5681bde8>name, value</span>):</span>
+</span><span data-v-5681bde8>  <span class="hljs-comment" data-v-5681bde8># ...</span>
+</span><span data-v-5681bde8>
+</span><span data-v-5681bde8><span class="hljs-function" data-v-5681bde8><span class="hljs-keyword" data-v-5681bde8>def</span> <span class="hljs-title" data-v-5681bde8>calculate_grade</span>(<span class="hljs-params" data-v-5681bde8>project, exam</span>):</span>
+</span><span data-v-5681bde8>  <span class="hljs-comment" data-v-5681bde8># ...</span>
+</span><span data-v-5681bde8>
+</span><span data-v-5681bde8><span class="hljs-function" data-v-5681bde8><span class="hljs-keyword" data-v-5681bde8>def</span> <span class="hljs-title" data-v-5681bde8>main</span>():</span>
+</span><span data-v-5681bde8>  <span class="hljs-comment" data-v-5681bde8># MOVE CODE HERE</span>
+</span><span data-v-5681bde8>
+</span><span data-v-5681bde8>main()
+</span></code><div class="function-btn-container" data-v-5681bde8><button onclick="copyCodeBlock(this)" class="function-btn" data-v-5681bde8>
+    <div class="function-btn-body" data-v-5681bde8>
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1" data-v-5681bde8>
+    <g id="surface1" data-v-5681bde8>
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 " data-v-5681bde8></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre><p data-v-5681bde8><span class="badge rounded-pill bg-success text-white" data-v-5681bde8><span aria-hidden="true" class="fas fa-lightbulb" data-v-5681bde8></span></span> You might have to do minor changes to the existing function <code class="line-numbers hljs inline no-lang" data-v-5681bde8>calculate_grade</code></p> <!----></div> <!----> <button type="button" class="collapse-button btn btn-outline-secondary" data-v-5681bde8><span aria-hidden="true" class="collapse-icon glyphicon glyphicon-menu-down opened"></span></button></div> <hr style="display:none;" data-v-5681bde8></div> <!----></div></div><p></p></div> <div><div expanded="" no-close="" class="card-container" data-v-5681bde8><!----> <div class="card expandable-card border-danger" data-v-5681bde8><div class="card-header header-toggle bg-danger border-danger" data-v-5681bde8><div class="caret-wrapper" data-v-5681bde8><!----></div> <div class="header-wrapper card-title bg-danger text-white" data-v-5681bde8><p data-v-5681bde8><span aria-hidden="true" class="fas fa-dumbbell" data-v-5681bde8></span> Exercise: Grader - Restructure the <code class="line-numbers hljs inline no-lang" data-v-5681bde8>main</code> Function</p></div> <div class="button-wrapper" data-v-5681bde8><button type="button" class="collapse-button btn btn-outline-light" data-v-5681bde8><span aria-hidden="true" class="collapse-icon glyphicon glyphicon-menu-down opened"></span></button> <button type="button" class="close-button btn btn-outline-light" style="display:none;" data-v-5681bde8><span aria-hidden="true" class="glyphicon glyphicon-remove" data-v-5681bde8></span></button> <button type="button" class="popup-button btn btn-outline-light" style="display:none;" data-v-5681bde8><span aria-hidden="true" class="glyphicon glyphicon-new-window" data-v-5681bde8></span></button></div></div> <div class="card-collapse" data-v-5681bde8><div class="card-body" data-v-5681bde8> <div data-v-5681bde8><h4 id="exercise-grader-restructure-the-main-function" data-v-5681bde8><span id="exercise-grader-restructure-the-main-function" class="anchor" data-v-5681bde8></span>Exercise : Grader - Restructure the <code class="line-numbers hljs inline no-lang" data-v-5681bde8>main</code> Function<a href="#exercise-grader-restructure-the-main-function" onclick="event.stopPropagation()" class="fa fa-anchor" data-v-5681bde8></a></h4> <p data-v-5681bde8>Take the <span tabindex="0" class="trigger-click"><span>a grader you wrote in the previous exercise</span></span>.
+Restructure the <code class="line-numbers hljs inline no-lang" data-v-5681bde8>main</code> function so that its code looks as follows:</p> <pre data-v-5681bde8><code class="line-numbers hljs python" data-v-5681bde8><span data-v-5681bde8><span class="hljs-function" data-v-5681bde8><span class="hljs-keyword" data-v-5681bde8>def</span> <span class="hljs-title" data-v-5681bde8>print_score</span>(<span class="hljs-params" data-v-5681bde8>name, value</span>):</span>
+</span><span data-v-5681bde8>  <span class="hljs-comment" data-v-5681bde8># ...</span>
+</span><span data-v-5681bde8>
+</span><span data-v-5681bde8><span class="hljs-function" data-v-5681bde8><span class="hljs-keyword" data-v-5681bde8>def</span> <span class="hljs-title" data-v-5681bde8>calculate_grade</span>(<span class="hljs-params" data-v-5681bde8>project, exam</span>):</span>
+</span><span data-v-5681bde8>  <span class="hljs-comment" data-v-5681bde8># ...</span>
+</span><span data-v-5681bde8>
+</span><span data-v-5681bde8><span class="hljs-comment" data-v-5681bde8># ADD MISSING FUNCTIONS</span>
+</span><span data-v-5681bde8>
+</span><span data-v-5681bde8><span class="hljs-function" data-v-5681bde8><span class="hljs-keyword" data-v-5681bde8>def</span> <span class="hljs-title" data-v-5681bde8>main</span>():</span>
+</span><span data-v-5681bde8>  project_score = read_number(<span class="hljs-string" data-v-5681bde8>'Enter project score:'</span>)
+</span><span data-v-5681bde8>  exam_score = read_number(<span class="hljs-string" data-v-5681bde8>'Enter exam score:'</span>)
+</span><span data-v-5681bde8>  grade = calculate_grade(project_score, exam_score)
+</span><span data-v-5681bde8>  print_report(project_score, exam_score, grade)
+</span><span data-v-5681bde8>
+</span><span data-v-5681bde8>main()
+</span></code><div class="function-btn-container" data-v-5681bde8><button onclick="copyCodeBlock(this)" class="function-btn" data-v-5681bde8>
+    <div class="function-btn-body" data-v-5681bde8>
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1" data-v-5681bde8>
+    <g id="surface1" data-v-5681bde8>
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 " data-v-5681bde8></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre><p data-v-5681bde8>The external behavior of the code should remain as before.</p> <p data-v-5681bde8><span class="badge rounded-pill bg-success text-white" data-v-5681bde8><span aria-hidden="true" class="fas fa-lightbulb" data-v-5681bde8></span></span> You need to add functions <code class="line-numbers hljs inline no-lang" data-v-5681bde8>read_number</code> and <code class="line-numbers hljs inline no-lang" data-v-5681bde8>print_report</code>.</p> <!----></div> <!----> <button type="button" class="collapse-button btn btn-outline-secondary" data-v-5681bde8><span aria-hidden="true" class="collapse-icon glyphicon glyphicon-menu-down opened"></span></button></div> <hr style="display:none;" data-v-5681bde8></div> <!----></div></div><p></p></div> <div><div expanded="" no-close="" class="card-container" data-v-5681bde8><!----> <div class="card expandable-card border-danger" data-v-5681bde8><div class="card-header header-toggle bg-danger border-danger" data-v-5681bde8><div class="caret-wrapper" data-v-5681bde8><!----></div> <div class="header-wrapper card-title bg-danger text-white" data-v-5681bde8><p data-v-5681bde8><span aria-hidden="true" class="fas fa-dumbbell" data-v-5681bde8></span> Exercise: Grader - Analyze Grades in a Loop</p></div> <div class="button-wrapper" data-v-5681bde8><button type="button" class="collapse-button btn btn-outline-light" data-v-5681bde8><span aria-hidden="true" class="collapse-icon glyphicon glyphicon-menu-down opened"></span></button> <button type="button" class="close-button btn btn-outline-light" style="display:none;" data-v-5681bde8><span aria-hidden="true" class="glyphicon glyphicon-remove" data-v-5681bde8></span></button> <button type="button" class="popup-button btn btn-outline-light" style="display:none;" data-v-5681bde8><span aria-hidden="true" class="glyphicon glyphicon-new-window" data-v-5681bde8></span></button></div></div> <div class="card-collapse" data-v-5681bde8><div class="card-body" data-v-5681bde8> <div data-v-5681bde8><h4 id="exercise-grader-analyze-grades-in-a-loop" data-v-5681bde8><span id="exercise-grader-analyze-grades-in-a-loop" class="anchor" data-v-5681bde8></span>Exercise : Grader - Analyze Grades in a Loop<a href="#exercise-grader-analyze-grades-in-a-loop" onclick="event.stopPropagation()" class="fa fa-anchor" data-v-5681bde8></a></h4> <p data-v-5681bde8>Take the program you wrote in the <span tabindex="0" class="trigger-click"><span>previous exercise</span></span>. Enhance it to analyze grades in a loop until the user chooses to stop. A sample output is given below:</p> <pre data-v-5681bde8><code class="line-numbers hljs python" data-v-5681bde8><span data-v-5681bde8>Enter project score:<span class="hljs-number" data-v-5681bde8>10</span>
+</span><span data-v-5681bde8>Enter exam score:<span class="hljs-number" data-v-5681bde8>50</span>
+</span><span data-v-5681bde8>Total: <span class="hljs-number" data-v-5681bde8>60</span>
+</span><span data-v-5681bde8>Project : ==
+</span><span data-v-5681bde8>Exam    : ==========
+</span><span data-v-5681bde8>Total   : ============
+</span><span data-v-5681bde8>Grade   : B
+</span><span data-v-5681bde8>Continue y/n?y
+</span><span data-v-5681bde8>Enter project score:<span class="hljs-number" data-v-5681bde8>50</span>
+</span><span data-v-5681bde8>Enter exam score:<span class="hljs-number" data-v-5681bde8>49</span>
+</span><span data-v-5681bde8>Total: <span class="hljs-number" data-v-5681bde8>99</span>
+</span><span data-v-5681bde8>Project : ==========
+</span><span data-v-5681bde8>Exam    : =========
+</span><span data-v-5681bde8>Total   : ===================
+</span><span data-v-5681bde8>Grade   : A
+</span><span data-v-5681bde8>Continue y/n?n
+</span></code><div class="function-btn-container" data-v-5681bde8><button onclick="copyCodeBlock(this)" class="function-btn" data-v-5681bde8>
+    <div class="function-btn-body" data-v-5681bde8>
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1" data-v-5681bde8>
+    <g id="surface1" data-v-5681bde8>
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 " data-v-5681bde8></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre><!----></div> <!----> <button type="button" class="collapse-button btn btn-outline-secondary" data-v-5681bde8><span aria-hidden="true" class="collapse-icon glyphicon glyphicon-menu-down opened"></span></button></div> <hr style="display:none;" data-v-5681bde8></div> <!----></div></div><p></p></div></div><hr style="border-top:3px double #c5c5c5;"></div></div> <i id="scroll-top-button" onclick="handleScrollTop()" aria-hidden="true" class="fa fa-arrow-circle-up fa-lg d-print-none"></i></div> <nav id="page-nav" class="fixed-header-padding" data-v-e8c82f88><div class="nav-component slim-scroll" data-v-e8c82f88><nav id="mb-page-nav" class="nav nav-pills flex-column my-0 small no-flex-wrap" data-v-e8c82f88><a class="nav-link py-1" href="#functions" data-v-e8c82f88>Functions‎</a> <nav class="nav nav-pills flex-column my-0 nested no-flex-wrap" data-v-e8c82f88><a class="nav-link py-1" href="#writing-functions" data-v-e8c82f88>Writing Functions‎</a> <nav class="nav nav-pills flex-column my-0 nested no-flex-wrap" data-v-e8c82f88><a class="nav-link py-1" href="#exercise-hip-hip-hooray" data-v-e8c82f88>Exercise : Hip Hip Hooray‎</a></nav> <a class="nav-link py-1" href="#function-parameters" data-v-e8c82f88>Function Parameters‎</a> <nav class="nav nav-pills flex-column my-0 nested no-flex-wrap" data-v-e8c82f88><a class="nav-link py-1" href="#exercise-grader-print-score-function" data-v-e8c82f88>Exercise : Grader - print_score Function‎</a></nav> <a class="nav-link py-1" href="#return-value" data-v-e8c82f88>Return Value‎</a> <nav class="nav nav-pills flex-column my-0 nested no-flex-wrap" data-v-e8c82f88><a class="nav-link py-1" href="#exercise-grader-calculate-grade-function" data-v-e8c82f88>Exercise : Grader - calculate_grade Function‎</a></nav> <a class="nav-link py-1" href="#local-and-global-scope" data-v-e8c82f88>Local and Global Scope‎</a> <nav class="nav nav-pills flex-column my-0 nested no-flex-wrap" data-v-e8c82f88><a class="nav-link py-1" href="#exercise-grader-add-a-main-function" data-v-e8c82f88>Exercise : Grader - Add a main Function‎</a> <a class="nav-link py-1" href="#exercise-grader-restructure-the-main-function" data-v-e8c82f88>Exercise : Grader - Restructure the main Function‎</a> <a class="nav-link py-1" href="#exercise-grader-analyze-grades-in-a-loop" data-v-e8c82f88>Exercise : Grader - Analyze Grades in a Loop‎</a></nav></nav> <!----></nav></div> <!----></nav></div> <footer><div class="text-center"><small>[<span><strong>Powered by</strong></span> <img src="https://markbind.org/favicon.ico" width="30"> <a href="https://markbind.org/">MarkBind 4.0.2</a>, generated on Wed, 21 Dec 2022, 22:21:42 GMT+8]</small></div></footer></div>
+</body><script src="../../markbind/js/bootstrap-utility.min.js"></script>
+<script>
+  MarkBind.setupWithSearch()
+</script>
+    <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3.2.0/dist/umd/index.js"></script>
+    <script>
+    docsearch({
+      container: "#algolia-search-input",
+      appId: "3DU4XTBX4T",
+      apiKey: "3e2fd3c3b12a363309307794dce54969",
+      indexName: "nus-tic-cs",
+      searchParameters: {"facetFilters":[["site:nus-tee3201.github.io"],["tags:admin","tags:se-book-adapted","tags:schedule"]]}
+    });
+  </script>
+    <script>
+    const style = document.createElement('style');
+    style.innerHTML = ".DocSearch-Container { z-index: 1002; position: fixed; }";
+    document.getElementsByTagName('head')[0].appendChild(style);
+  </script>
+  
+    <script>
+    function copyCodeBlock(element) {
+        const pre = element.parentElement.parentElement;
+        const codeElement = pre.querySelector('code');
+
+        // create dummy text element to select() the text field
+        const textElement = document.createElement('textarea');
+        textElement.value = codeElement.textContent;
+        document.body.appendChild(textElement);
+        textElement.select();
+
+        document.execCommand('copy');
+        document.body.removeChild(textElement);
+    }
+    </script>
+</html>

@@ -1,0 +1,1191 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="generator" content="MarkBind 4.0.2">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>TEE3201 - Python Basics: Flow Control</title>
+    <link rel="stylesheet" href="../../markbind/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../markbind/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="../../markbind/glyphicons/css/bootstrap-glyphicons.min.css">
+    <link rel="stylesheet" href="../../markbind/css/octicons.css">
+    <link rel="stylesheet" href="../../markbind/material-icons/material-icons.css">
+    <link rel="stylesheet" href="../../markbind/css/codeblock-light.min.css"><link rel="stylesheet" href="../../markbind/css/markbind.min.css"><script src="../../markbind/js/polyfill.min.js"></script>
+    <script src="../../markbind/js/vue.min.js"></script>
+    <script src="../../markbind/js/markbind.min.js"></script>
+    <script src="flowcontrol.page-vue-render.js"></script>
+    <script src="../../markbind/js/jquery.min.js"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3.2.0/dist/style.css"><link rel="stylesheet" href="/2023/plugins/markbind-plugin-anchors/markbind-plugin-anchors.css"><link rel="stylesheet" href="/2023/plugins/markbind-plugin-tree/markbind-plugin-tree.css">
+    
+<link rel="stylesheet" href="/2023/css/main.css">
+<link rel="icon" href="/2023/favicon.ico"></head>
+<script>
+  const baseUrl = '/2023'
+</script>
+<body  data-bs-spy="scroll" data-bs-target="#mb-page-nav" data-bs-offset="100" >
+<div id="app" data-server-rendered="true"><div class="w-100 p-1 bg-warning text-center d-print-none"><span><strong>This is a draft version of the website! The final version will be available near the start of the semester.</strong></span></div> <div class="w-100 p-1 bg-success text-white text-center d-print-none"><span>This module will be delivered in <em>blended learning</em> mode (i.e., a mix of online and F2F activities) this semester.</span></div> <header sticky=""><div placement="top" data-v-15113a2f><nav class="navbar navbar-expand-md d-print-none navbar-dark bg-dark" data-v-15113a2f><div class="container-fluid" data-v-15113a2f><div class="navbar-left" data-v-15113a2f><a href="/2023/index.html" title="Home" class="navbar-brand" data-v-15113a2f><span class="badge rounded-pill bg-danger" data-v-15113a2f>TEE3201 <small data-v-15113a2f>2023</small></span></a></div> <div class="navbar-default" data-v-15113a2f><ul class="navbar-nav me-auto mt-2 mt-lg-0" data-v-15113a2f> <li class="nav-link algolia-no-index dropdown" data-v-2e98b3f0><a role="button" data-bs-toggle="dropdown" class="dropdown-toggle" data-v-2e98b3f0><strong data-v-2e98b3f0>Schedule</strong></a> <ul class="dropdown-menu" data-v-2e98b3f0> <li data-v-2e98b3f0><a href="/2023/schedule/timeline.html" class="dropdown-item" data-v-2e98b3f0><span data-v-2e98b3f0><strong data-v-2e98b3f0>Full Timeline</strong></span></a></li> <li data-v-2e98b3f0><a href="/2023/schedule/week1/index.html" class="dropdown-item" data-v-2e98b3f0><span data-v-2e98b3f0><strong data-v-2e98b3f0>Week 1</strong> [Sun, Jan 9th] </span></a></li> <li data-v-2e98b3f0><a href="/2023/schedule/week2/index.html" class="dropdown-item" data-v-2e98b3f0><span data-v-2e98b3f0><strong data-v-2e98b3f0>Week 2</strong> [Sun, Jan 16th] </span></a></li> <li data-v-2e98b3f0><a href="/2023/schedule/week3/index.html" class="dropdown-item" data-v-2e98b3f0><span data-v-2e98b3f0><strong data-v-2e98b3f0>Week 3</strong> [Sun, Jan 23rd] </span></a></li> <li data-v-2e98b3f0><a href="/2023/schedule/week4/index.html" class="dropdown-item" data-v-2e98b3f0><span data-v-2e98b3f0><strong data-v-2e98b3f0>Week 4</strong> [Sun, Jan 30th] </span></a></li> <li data-v-2e98b3f0><a href="/2023/schedule/week5/index.html" class="dropdown-item" data-v-2e98b3f0><span data-v-2e98b3f0><strong data-v-2e98b3f0>Week 5</strong> [Sun, Feb 6th] </span></a></li> <li data-v-2e98b3f0><a href="/2023/schedule/week6/index.html" class="dropdown-item" data-v-2e98b3f0><span data-v-2e98b3f0><strong data-v-2e98b3f0>Week 6</strong> [Sun, Feb 13th] </span></a></li> <li data-v-2e98b3f0><a href="/2023/schedule/week7/index.html" class="dropdown-item" data-v-2e98b3f0><span data-v-2e98b3f0><strong data-v-2e98b3f0>Week 7</strong> [Sun, Feb 20th] </span></a></li> <li data-v-2e98b3f0><a href="/2023/schedule/week8/index.html" class="dropdown-item" data-v-2e98b3f0><span data-v-2e98b3f0><strong data-v-2e98b3f0>Week 8</strong> [Sun, Mar 6th] </span></a></li> <li data-v-2e98b3f0><a href="/2023/schedule/week9/index.html" class="dropdown-item" data-v-2e98b3f0><span data-v-2e98b3f0><strong data-v-2e98b3f0>Week 9</strong> [Sun, Mar 13th] </span></a></li> <li data-v-2e98b3f0><a href="/2023/schedule/week10/index.html" class="dropdown-item" data-v-2e98b3f0><span data-v-2e98b3f0><strong data-v-2e98b3f0>Week 10</strong> [Sun, Mar 20th] </span></a></li> <li data-v-2e98b3f0><a href="/2023/schedule/week11/index.html" class="dropdown-item" data-v-2e98b3f0><span data-v-2e98b3f0><strong data-v-2e98b3f0>Week 11</strong> [Sun, Mar 27th] </span></a></li> <li data-v-2e98b3f0><a href="/2023/schedule/week12/index.html" class="dropdown-item" data-v-2e98b3f0><span data-v-2e98b3f0><strong data-v-2e98b3f0>Week 12</strong> [Sun, Apr 3rd] </span></a></li> <li data-v-2e98b3f0><a href="/2023/schedule/week13/index.html" class="dropdown-item" data-v-2e98b3f0><span data-v-2e98b3f0><strong data-v-2e98b3f0>Week 13</strong> [Sun, Apr 10th] </span></a></li></ul></li> <li class="nav-link algolia-no-index dropdown" data-v-2e98b3f0><a role="button" data-bs-toggle="dropdown" class="dropdown-toggle" data-v-2e98b3f0><strong data-v-2e98b3f0>Textbook</strong></a> <ul class="dropdown-menu" data-v-2e98b3f0> <li data-v-2e98b3f0><a href="/2023/se-book-adapted/index.html" class="dropdown-item" data-v-2e98b3f0>SE Textbook</a></li> <li data-v-2e98b3f0><a href="/2023/programming/index.html" class="dropdown-item" data-v-2e98b3f0>Programming Textbook</a></li></ul></li> <li data-v-15113a2f><a href="/2023/admin/index.html" class="nav-link" data-v-15113a2f><span data-v-15113a2f><strong data-v-15113a2f>Admin Info</strong></span></a></li> <li class="nav-link algolia-no-index dropdown" data-v-2e98b3f0><a role="button" data-bs-toggle="dropdown" class="dropdown-toggle" data-v-2e98b3f0><strong data-v-2e98b3f0>Other Links</strong></a> <ul class="dropdown-menu" data-v-2e98b3f0> <li data-v-2e98b3f0><a href="https://luminus.nus.edu.sg/modules//forum" target="_blank" class="dropdown-item" data-v-2e98b3f0><span data-v-2e98b3f0><span aria-hidden="true" class="fas fa-comment" data-v-2e98b3f0></span> Forum</span></a></li> <li data-v-2e98b3f0><a href="/2023/admin/index.html#instructors" class="dropdown-item" data-v-2e98b3f0><span data-v-2e98b3f0><span aria-hidden="true" class="fas fa-user-tie" data-v-2e98b3f0></span> Instructors</span></a></li> <li data-v-2e98b3f0><a href="https://canvas.nus.edu.sg/courses/38821/announcements" target="_blank" class="dropdown-item" data-v-2e98b3f0><span data-v-2e98b3f0><span aria-hidden="true" class="glyphicon glyphicon-bullhorn" data-v-2e98b3f0></span> Announcements</span></a></li> <li data-v-2e98b3f0><a href="https://luminus.nus.edu.sg/modules//files" target="_blank" class="dropdown-item" data-v-2e98b3f0><span data-v-2e98b3f0><span aria-hidden="true" class="fas fa-file-upload" data-v-2e98b3f0></span> Files (handouts, submissions etc.)</span></a></li> <li tags="m--tic2002 m--tee3201" data-v-2e98b3f0><a href="/2023/admin/index.html#project" class="dropdown-item" data-v-2e98b3f0><span data-v-2e98b3f0><span data-v-2e98b3f0><span aria-hidden="true" class="fas fa-drafting-compass" data-v-2e98b3f0></span></span></span> Project Info</a></li> <li tags="m--cs2113 m--tic2002 m--tee3201" data-v-2e98b3f0><a href="/2023/_markbind/layouts/2423" target="_blank" class="dropdown-item" data-v-2e98b3f0><span data-v-2e98b3f0><span data-v-2e98b3f0><span aria-hidden="true" class="fas fa-dumbbell" data-v-2e98b3f0></span></span></span> Coursemology link</a></li> <li data-v-2e98b3f0><a href="/2023/_markbind/layouts/tbd" target="_blank" class="dropdown-item" data-v-2e98b3f0><span data-v-2e98b3f0><span aria-hidden="true" class="fas fa-users-cog" data-v-2e98b3f0></span> MS Teams link</span></a></li></ul></li></ul></div> <ul class="navbar-nav navbar-right" data-v-15113a2f><li class="nav-link" data-v-15113a2f><form class="navbar-form" data-v-15113a2f><div class="dropdown" style="position:relative;" data-v-2955e59c><div id="algolia-search-input" data-v-2955e59c></div> <ul class="dropdown-menu search-dropdown-menu d-none dropdown-menu-end" data-v-2955e59c></ul></div></form></li></ul></div></nav> <div class="lower-navbar-container" style="display:none;" data-v-15113a2f><!----> <!----></div></div></header> <div id="flex-body"><nav id="site-nav" class="fixed-header-padding" data-v-e8c82f88><div class="site-nav-top" data-v-e8c82f88><div class="font-weight-bold mb-2" style="font-size:1.25rem;" data-v-e8c82f88>Python textbook</div></div> <div class="nav-component slim-scroll" data-v-e8c82f88><div data-v-e8c82f88><div class="site-nav-root"><ul class="site-nav-list site-nav-list-root" data-v-e8c82f88><li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-0" data-v-e8c82f88><a href="/2023/programming/chapters/expressions-types-variables.html" data-v-e8c82f88>Expressions, Data Types, Variables</a></div></li> <li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-0" data-v-e8c82f88><a href="/2023/programming/chapters/programs.html" data-v-e8c82f88>Python Programs</a></div></li> <li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-0" data-v-e8c82f88><a href="/2023/programming/chapters/flowcontrol.html" data-v-e8c82f88>Program Flow Control</a></div></li> <li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-0" data-v-e8c82f88><a href="/2023/programming/chapters/functions.html" data-v-e8c82f88>Functions</a></div></li> <li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-0" data-v-e8c82f88><a href="/2023/programming/chapters/lists.html" data-v-e8c82f88>Lists</a></div></li> <li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-0" data-v-e8c82f88><a href="/2023/programming/chapters/errors.html" data-v-e8c82f88>Error Handling</a></div></li> <li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-0" data-v-e8c82f88><a href="/2023/programming/chapters/strings.html" data-v-e8c82f88>Strings</a></div></li> <li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-0" data-v-e8c82f88><a href="/2023/programming/chapters/files.html" data-v-e8c82f88>Files</a></div></li> <li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-0" data-v-e8c82f88><a href="/2023/programming/chapters/dictionaries.html" data-v-e8c82f88>Dictionaries</a></div></li> <li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-0" data-v-e8c82f88><a href="/2023/programming/chapters/oop.html" data-v-e8c82f88>Object-Oriented Programming</a></div></li> <li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-0" data-v-e8c82f88><a href="/2023/programming/chapters/gui.html" data-v-e8c82f88>GUIs</a></div></li> <li class="site-nav-custom-list-item site-nav-list-item-0" data-v-e8c82f88><hr data-v-e8c82f88></li> <li class="site-nav-custom-list-item site-nav-list-item-0" data-v-e8c82f88><span class="dimmed" data-v-e8c82f88><strong data-v-e8c82f88>Appendices</strong></span></li> <li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-0" data-v-e8c82f88><a href="/2023/programming/chapters/thirdparty.html" data-v-e8c82f88><strong data-v-e8c82f88>A.</strong> Installing 3rd Party Modules</a></div></li> <li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-0" data-v-e8c82f88><a href="/2023/programming/chapters/ide.html" data-v-e8c82f88><strong data-v-e8c82f88>B.</strong> Using an IDE</a></div></li> <li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-0" data-v-e8c82f88><a href="/2023/programming/chapters/organizing.html" data-v-e8c82f88><strong data-v-e8c82f88>C.</strong> Organizing Python Code</a></div></li> <li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-0" data-v-e8c82f88><a href="/2023/programming/chapters/unittesting.html" data-v-e8c82f88><strong data-v-e8c82f88>D.</strong> Unit Testing</a></div></li> <li data-v-e8c82f88><div onclick="handleSiteNavClick(this)" class="site-nav-default-list-item site-nav-list-item-0" data-v-e8c82f88><a href="/2023/programming/chapters/monty.html" data-v-e8c82f88><strong data-v-e8c82f88>E.</strong> The Monty Project</a></div></li> <!----></ul></div></div></div> <!----></nav> <div id="content-wrapper" class="fixed-header-padding"><div id="main" class="website-content"><div id="toc"><ul><li><a href="#program-flow-control"><strong>Program Flow Control</strong></a> <ul><li><a href="#booleans">Booleans</a></li> <li><a href="#if-statements"><code class="line-numbers hljs inline no-lang">if</code> Statements</a></li> <li><a href="#while-statements"><code class="line-numbers hljs inline no-lang">while</code> Statements</a></li> <li><a href="#for-statements"><code class="line-numbers hljs inline no-lang">for</code> Statements</a></li> <li><a href="#importing-modules">Importing Modules</a></li> <li><a href="#early-termination">Early Termination</a></li></ul></li></ul></div> <div id="main"><h1 id="program-flow-control"><span id="program-flow-control" class="anchor"></span>Program Flow Control<a href="#program-flow-control" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h1> <div><h3 id="booleans"><span id="booleans" class="anchor"></span>Booleans<a href="#booleans" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h3> <p><strong>The <code class="line-numbers hljs inline no-lang">bool</code> data type is used to represent <span data-mb-component-type="tooltip" tabindex="0" class="trigger"><!----> <!----></span></strong>. They are useful when the program execution needs to vary based on a certain condition <span class="dimmed"> e.g., print 'old' if age is greater than 100.</span></p> <p>The <code class="line-numbers hljs inline no-lang">bool</code> data type can hold only two values <code class="line-numbers hljs inline no-lang">True</code> and <code class="line-numbers hljs inline no-lang">False</code> (case sensitive).</p> <pre><code class="line-numbers hljs python"><span><span class="hljs-meta">&gt;&gt;&gt; </span><span class="hljs-built_in">type</span>(<span class="hljs-literal">True</span>)
+</span><span>&lt;<span class="hljs-class"><span class="hljs-keyword">class</span> '<span class="hljs-title">bool</span>'&gt;</span>
+</span><span><span class="hljs-class"></span>
+</span><span><span class="hljs-class">&gt;&gt;&gt; <span class="hljs-title">type</span>(<span class="hljs-params"><span class="hljs-literal">False</span></span>)</span>
+</span><span><span class="hljs-class">&lt;<span class="hljs-title">class</span> '<span class="hljs-title">bool</span>'&gt;</span>
+</span><span><span class="hljs-class"></span>
+</span><span><span class="hljs-class">&gt;&gt;&gt; <span class="hljs-title">type</span>(<span class="hljs-params"><span class="hljs-string">'True'</span></span>)</span>
+</span><span><span class="hljs-class">&lt;<span class="hljs-title">class</span> '<span class="hljs-title">str</span>'&gt;</span>
+</span><span><span class="hljs-class"></span>
+</span><span><span class="hljs-class">&gt;&gt;&gt; <span class="hljs-title">type</span>(<span class="hljs-params">true</span>)</span>
+</span><span><span class="hljs-class">...</span>
+</span><span><span class="hljs-class"><span class="hljs-title">NameError</span>:</span> name <span class="hljs-string">'true'</span> <span class="hljs-keyword">is</span> <span class="hljs-keyword">not</span> defined
+</span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn">
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 "></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre><p>You can <strong>use the comparison <em>operators</em> to create an expression that evaluate to a boolean result</strong>.</p> <div class="table-responsive"><table class="markbind-table table table-bordered table-striped"><thead><tr><th style="text-align:center;">Operator</th> <th>Meaning</th></tr></thead> <tbody><tr><td style="text-align:center;"><code class="line-numbers hljs inline no-lang">==</code></td> <td>Equal to (different from the assignment operator <code class="line-numbers hljs inline no-lang">=</code>)</td></tr> <tr><td style="text-align:center;"><code class="line-numbers hljs inline no-lang">!=</code></td> <td>Not equal to</td></tr> <tr><td style="text-align:center;"><code class="line-numbers hljs inline no-lang">&lt;</code></td> <td>Less than</td></tr> <tr><td style="text-align:center;"><code class="line-numbers hljs inline no-lang">&gt;</code></td> <td>Greater than</td></tr> <tr><td style="text-align:center;"><code class="line-numbers hljs inline no-lang">&lt;=</code></td> <td>Less than or equal to</td></tr> <tr><td style="text-align:center;"><code class="line-numbers hljs inline no-lang">&gt;=</code></td> <td>Greater than or equal to</td></tr></tbody></table></div><p><span><span aria-hidden="true" class="fas fa-cube"></span></span> Here are some examples</p> <pre><code class="line-numbers hljs python"><span><span class="hljs-built_in">print</span>(<span class="hljs-string">'hello'</span> == <span class="hljs-string">'Hello'</span>) <span class="hljs-comment"># False</span>
+</span><span><span class="hljs-built_in">print</span>(<span class="hljs-string">'dog'</span> != <span class="hljs-string">'cat'</span>) <span class="hljs-comment"># True</span>
+</span><span><span class="hljs-built_in">print</span>(<span class="hljs-literal">True</span> == <span class="hljs-literal">True</span>) <span class="hljs-comment"># True</span>
+</span><span><span class="hljs-built_in">print</span>(<span class="hljs-literal">True</span> != <span class="hljs-literal">False</span>) <span class="hljs-comment"># True</span>
+</span><span><span class="hljs-built_in">print</span>(<span class="hljs-number">42</span> == <span class="hljs-number">42.0</span>) <span class="hljs-comment"># True (they are different types of numbers, but of same value)</span>
+</span><span><span class="hljs-built_in">print</span>(<span class="hljs-number">42</span> == <span class="hljs-string">'42'</span>) <span class="hljs-comment"># False</span>
+</span><span><span class="hljs-built_in">print</span>(<span class="hljs-number">42</span> == <span class="hljs-built_in">int</span>(<span class="hljs-string">'42'</span>)) <span class="hljs-comment"># True</span>
+</span><span><span class="hljs-built_in">print</span>(<span class="hljs-number">20</span> &gt; <span class="hljs-number">10</span>) <span class="hljs-comment"># True</span>
+</span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn">
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 "></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre><p>In contrast, <strong><em>boolean operators</em> (<code class="line-numbers hljs inline no-lang">and</code>, <code class="line-numbers hljs inline no-lang">or</code> and <code class="line-numbers hljs inline no-lang">not</code>) work only on boolean values</strong>. Here is how they work.</p> <div class="container"><div class="row"><div class="col-sm"><div><div class="table-responsive"><table class="markbind-table table table-bordered table-striped"><thead><tr><th>Expression</th> <th>Result</th></tr></thead> <tbody><tr><td><code class="line-numbers hljs inline no-lang">True</code> <strong><code class="line-numbers hljs inline no-lang">and</code></strong> <code class="line-numbers hljs inline no-lang">True</code></td> <td><code class="line-numbers hljs inline no-lang">True</code></td></tr> <tr><td><code class="line-numbers hljs inline no-lang">True</code> <strong><code class="line-numbers hljs inline no-lang">and</code></strong> <code class="line-numbers hljs inline no-lang">False</code></td> <td><code class="line-numbers hljs inline no-lang">False</code></td></tr> <tr><td><code class="line-numbers hljs inline no-lang">False</code> <strong><code class="line-numbers hljs inline no-lang">and</code></strong> <code class="line-numbers hljs inline no-lang">True</code></td> <td><code class="line-numbers hljs inline no-lang">False</code></td></tr> <tr><td><code class="line-numbers hljs inline no-lang">False</code> <strong><code class="line-numbers hljs inline no-lang">and</code></strong> <code class="line-numbers hljs inline no-lang">False</code></td> <td><code class="line-numbers hljs inline no-lang">False</code></td></tr></tbody></table></div></div></div> <div class="col-sm"><div><div class="table-responsive"><table class="markbind-table table table-bordered table-striped"><thead><tr><th>Expression</th> <th>Result</th></tr></thead> <tbody><tr><td><code class="line-numbers hljs inline no-lang">True</code> <strong><code class="line-numbers hljs inline no-lang">or</code></strong> <code class="line-numbers hljs inline no-lang">True</code></td> <td><code class="line-numbers hljs inline no-lang">True</code></td></tr> <tr><td><code class="line-numbers hljs inline no-lang">True</code> <strong><code class="line-numbers hljs inline no-lang">or</code></strong> <code class="line-numbers hljs inline no-lang">False</code></td> <td><code class="line-numbers hljs inline no-lang">True</code></td></tr> <tr><td><code class="line-numbers hljs inline no-lang">False</code> <strong><code class="line-numbers hljs inline no-lang">or</code></strong> <code class="line-numbers hljs inline no-lang">True</code></td> <td><code class="line-numbers hljs inline no-lang">True</code></td></tr> <tr><td><code class="line-numbers hljs inline no-lang">False</code> <strong><code class="line-numbers hljs inline no-lang">or</code></strong> <code class="line-numbers hljs inline no-lang">False</code></td> <td><code class="line-numbers hljs inline no-lang">False</code></td></tr></tbody></table></div></div></div> <div class="col-sm"><div><div class="table-responsive"><table class="markbind-table table table-bordered table-striped"><thead><tr><th>Expression</th> <th>Result</th></tr></thead> <tbody><tr><td><strong><code class="line-numbers hljs inline no-lang">not</code></strong> <code class="line-numbers hljs inline no-lang">True</code></td> <td><code class="line-numbers hljs inline no-lang">False</code></td></tr> <tr><td><strong><code class="line-numbers hljs inline no-lang">not</code></strong> <code class="line-numbers hljs inline no-lang">False</code></td> <td><code class="line-numbers hljs inline no-lang">True</code></td></tr></tbody></table></div></div></div></div></div> <p>You can mix the two types of operators. Some examples below:</p> <pre><code class="line-numbers hljs python"><span>result = (<span class="hljs-number">2</span> &gt; <span class="hljs-number">5</span>) <span class="hljs-keyword">or</span> (<span class="hljs-number">10</span> &lt; <span class="hljs-number">20</span>) <span class="hljs-comment"># True</span>
+</span><span>result = (<span class="hljs-number">2</span> == <span class="hljs-number">2</span>) <span class="hljs-keyword">and</span> (<span class="hljs-number">3</span> != <span class="hljs-number">3</span>) <span class="hljs-comment"># False</span>
+</span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn">
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 "></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre><div class="algolia-no-index card-container" data-v-5681bde8><!----> <div class="card expandable-card border-0" data-v-5681bde8><div class="card-header header-toggle bg-white border-0" data-v-5681bde8><div class="caret-wrapper" data-v-5681bde8><span class="glyphicon glyphicon-chevron-right" data-v-5681bde8></span></div> <div class="header-wrapper card-title bg-white" data-v-5681bde8><p data-v-5681bde8><span class="dimmed" data-v-5681bde8><span data-v-5681bde8><span aria-hidden="true" class="glyphicon glyphicon-facetime-video" data-v-5681bde8></span></span> Booleans</span></p></div> <div class="button-wrapper" data-v-5681bde8><button type="button" class="collapse-button btn btn-outline-secondary" style="display:none;" data-v-5681bde8><span aria-hidden="true" class="collapse-icon glyphicon glyphicon-menu-down"></span></button> <button type="button" class="close-button btn btn-outline-secondary seamless-button" data-v-5681bde8><span aria-hidden="true" class="glyphicon glyphicon-remove" data-v-5681bde8></span></button> <button type="button" class="popup-button btn btn-outline-secondary seamless-button" style="display:none;" data-v-5681bde8><span aria-hidden="true" class="glyphicon glyphicon-new-window" data-v-5681bde8></span></button></div></div> <div class="card-collapse" data-v-5681bde8><!----> <hr style="display:;" data-v-5681bde8></div> <!----></div></div></div><hr style="border-top:3px double #c5c5c5;"> <div><h3 id="if-statements"><span id="if-statements" class="anchor"></span><code class="line-numbers hljs inline no-lang">if</code> Statements<a href="#if-statements" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h3> <p>Python uses the <code class="line-numbers hljs inline no-lang">if</code> statement to indicate that some code should only be executed if a certain condition is true.</p> <p>Format:</p> <pre><code class="line-numbers hljs"><span>if condition :
+</span><span>    statements_to_execute_if_true
+</span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn">
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 "></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre><p><span><span aria-hidden="true" class="fas fa-cube"></span></span> The code below has two <code class="line-numbers hljs inline no-lang">if</code> statements; one evaluates to <code class="line-numbers hljs inline no-lang">true</code> while the other doesn't.</p> <div class="container"><div class="row"><div class="col"><pre><code class="line-numbers hljs python"><span>price = <span class="hljs-number">55</span>
+</span><span><span class="hljs-built_in">print</span>(price)
+</span><span><span class="hljs-keyword">if</span> price &gt; <span class="hljs-number">50</span>:
+</span><span>    <span class="hljs-built_in">print</span>(<span class="hljs-string">'Expensive'</span>)
+</span><span>
+</span><span>weight = <span class="hljs-number">45</span>
+</span><span><span class="hljs-built_in">print</span>(weight)
+</span><span><span class="hljs-keyword">if</span> weight &gt; <span class="hljs-number">100</span>:
+</span><span>    <span class="hljs-built_in">print</span>(<span class="hljs-string">'Heavy'</span>)
+</span><span>
+</span><span><span class="hljs-built_in">print</span>(<span class="hljs-string">'Done'</span>)
+</span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn">
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 "></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre></div> <div class="col align-self-end"><p>output <span aria-hidden="true" class="fas fa-level-down-alt"></span></p> <pre><code class="line-numbers hljs"><span>50
+</span><span>Expensive
+</span><span>45
+</span><span>Done
+</span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn">
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 "></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre><div><p><span class="dimmed">[Click <a href="http://pythontutor.com/iframe-embed.html#code=price%20%3D%2055%0Aprint%28price%29%0Aif%20price%20%3E%2050%3A%0A%20%20%20%20print%28'Expensive'%29%0Aweight%20%3D%2045%0Aprint%28weight%29%0Aif%20weight%20%3E%20100%3A%0A%20%20%20%20print%28'Heavy'%29%0Aprint%28'Done'%29&amp;codeDivHeight=400&amp;codeDivWidth=350&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=false&amp;origin=opt-frontend.js&amp;py=3&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false" target="_blank">here</a> to visualize the execution]</span></p></div></div></div></div> <p>Note how the code that should execute when the condition is true is indented (usually by 4 spaces). <strong>Python uses indentation to indicate code <em>blocks</em></strong> (aka <em>clauses</em>) <span class="dimmed">i.e., a sequence of statements that belong together</span>. In the example below, lines 2-4 are in the same block because they are all indented by one level; if the condition is true, all three are executed; if the condition is false, all three are omitted. Line 5 goes back to the previous indentation level, indicating the end of the code block.</p> <pre><code class="line-numbers hljs python"><span><span class="hljs-keyword">if</span> name == <span class="hljs-string">'Blue'</span>:          <span class="hljs-comment"># line 1</span>
+</span><span>    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;It's a color&quot;</span>)   <span class="hljs-comment"># line 2</span>
+</span><span>    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;It's a feeling&quot;</span>) <span class="hljs-comment"># line 3</span>
+</span><span>    <span class="hljs-built_in">print</span>(<span class="hljs-string">&quot;It's a word&quot;</span>)    <span class="hljs-comment"># line 4</span>
+</span><span><span class="hljs-built_in">print</span>(<span class="hljs-string">'Done'</span>)               <span class="hljs-comment"># line 5</span>
+</span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn">
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 "></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre><div><div expanded="" no-close="" class="card-container" data-v-5681bde8><!----> <div class="card expandable-card border-danger" data-v-5681bde8><div class="card-header header-toggle bg-danger border-danger" data-v-5681bde8><div class="caret-wrapper" data-v-5681bde8><!----></div> <div class="header-wrapper card-title bg-danger text-white" data-v-5681bde8><p data-v-5681bde8><span aria-hidden="true" class="fas fa-dumbbell" data-v-5681bde8></span> Exercise: Even Numbers</p></div> <div class="button-wrapper" data-v-5681bde8><button type="button" class="collapse-button btn btn-outline-light" data-v-5681bde8><span aria-hidden="true" class="collapse-icon glyphicon glyphicon-menu-down opened"></span></button> <button type="button" class="close-button btn btn-outline-light" style="display:none;" data-v-5681bde8><span aria-hidden="true" class="glyphicon glyphicon-remove" data-v-5681bde8></span></button> <button type="button" class="popup-button btn btn-outline-light" style="display:none;" data-v-5681bde8><span aria-hidden="true" class="glyphicon glyphicon-new-window" data-v-5681bde8></span></button></div></div> <div class="card-collapse" data-v-5681bde8><div class="card-body" data-v-5681bde8> <div data-v-5681bde8><h4 id="exercise-even-numbers" data-v-5681bde8><span id="exercise-even-numbers" class="anchor" data-v-5681bde8></span>Exercise - Even Numbers<a href="#exercise-even-numbers" onclick="event.stopPropagation()" class="fa fa-anchor" data-v-5681bde8></a></h4> <p data-v-5681bde8>Write a program to read an integer from the keyboard and print 'Even number' only if it is an even number. Follow the example below:</p> <pre data-v-5681bde8><code class="line-numbers hljs" data-v-5681bde8><span data-v-5681bde8>Enter an integer:
+</span><span data-v-5681bde8>4
+</span><span data-v-5681bde8>Even number
+</span><span data-v-5681bde8>Done
+</span></code><div class="function-btn-container" data-v-5681bde8><button onclick="copyCodeBlock(this)" class="function-btn" data-v-5681bde8>
+    <div class="function-btn-body" data-v-5681bde8>
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1" data-v-5681bde8>
+    <g id="surface1" data-v-5681bde8>
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 " data-v-5681bde8></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre><pre data-v-5681bde8><code class="line-numbers hljs" data-v-5681bde8><span data-v-5681bde8>Enter an integer:
+</span><span data-v-5681bde8>7
+</span><span data-v-5681bde8>Done
+</span></code><div class="function-btn-container" data-v-5681bde8><button onclick="copyCodeBlock(this)" class="function-btn" data-v-5681bde8>
+    <div class="function-btn-body" data-v-5681bde8>
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1" data-v-5681bde8>
+    <g id="surface1" data-v-5681bde8>
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 " data-v-5681bde8></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre></div> <!----> <button type="button" class="collapse-button btn btn-outline-secondary" data-v-5681bde8><span aria-hidden="true" class="collapse-icon glyphicon glyphicon-menu-down opened"></span></button></div> <hr style="display:none;" data-v-5681bde8></div> <!----></div></div><p></p></div> <p><code class="line-numbers hljs inline no-lang">if</code> statements can be <span data-mb-component-type="tooltip" tabindex="0" class="trigger"><!----> <!----></span>, using deeper indentation.</p> <pre><code class="line-numbers hljs python"><span>age = <span class="hljs-number">13</span>
+</span><span>gender = <span class="hljs-string">'F'</span>
+</span><span><span class="hljs-keyword">if</span> (age &gt; <span class="hljs-number">12</span>) <span class="hljs-keyword">and</span> (age &lt; <span class="hljs-number">20</span>):          
+</span><span>    <span class="hljs-built_in">print</span>(<span class="hljs-string">'Teenager'</span>)  <span class="hljs-comment"># indented one level - new code block starts here </span>
+</span><span>    <span class="hljs-keyword">if</span> gender == <span class="hljs-string">'F'</span>:
+</span><span>        <span class="hljs-built_in">print</span>(<span class="hljs-string">'Female'</span>)<span class="hljs-comment"># indented two levels - this block is nested within the first block</span>
+</span><span>        <span class="hljs-built_in">print</span>(<span class="hljs-string">'Girl'</span>)  
+</span><span>    <span class="hljs-keyword">if</span> gender == <span class="hljs-string">'M'</span>:
+</span><span>        <span class="hljs-built_in">print</span>(<span class="hljs-string">'Male'</span>) <span class="hljs-comment"># another block nested within the first block</span>
+</span><span>        <span class="hljs-built_in">print</span>(<span class="hljs-string">'Boy'</span>)
+</span><span>    <span class="hljs-built_in">print</span>(<span class="hljs-string">'Gender code is '</span> + gender) 
+</span><span><span class="hljs-built_in">print</span>(<span class="hljs-string">'Age is '</span> + <span class="hljs-built_in">str</span>(age))               
+</span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn">
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 "></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre><p><span><span aria-hidden="true" class="fas fa-arrow-down"></span></span> <span><span class="dimmed">[Click <a href="http://pythontutor.com/iframe-embed.html#code=age%20%3D%2013%0Agender%20%3D%20'F'%0Aif%20%28age%20%3E%2012%29%20and%20%28age%20%3C%2020%29%3A%20%20%20%20%20%20%20%20%20%20%0A%20%20%20%20print%28%22Teenager%22%29%20%20%23%20indented%20one%20level%20-%20new%20code%20block%20starts%20here%20%0A%20%20%20%20if%20gender%20%3D%3D%20'F'%3A%0A%20%20%20%20%20%20%20%20print%28'Female'%29%23%20indented%20two%20levels%20-%20this%20block%20is%20nested%20within%20the%20first%20block%0A%20%20%20%20%20%20%20%20print%28'Girl'%29%20%20%0A%20%20%20%20if%20gender%20%3D%3D%20'M'%3A%0A%20%20%20%20%20%20%20%20print%28'Male'%29%20%23%20another%20block%20nested%20within%20the%20first%20block%0A%20%20%20%20%20%20%20%20print%28'Boy'%29%0A%20%20%20%20print%28'Gender%20code%20is%20'%20%2B%20gender%29%20%0Aprint%28'Age%20is%20'%20%2B%20str%28age%29%29%20&amp;codeDivHeight=400&amp;codeDivWidth=350&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=false&amp;origin=opt-frontend.js&amp;py=3&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false" target="_blank">here</a> to visualize the execution]</span></span></p> <pre><code class="line-numbers hljs python"><span>Teenager
+</span><span>Female
+</span><span>Girl
+</span><span>Gender code <span class="hljs-keyword">is</span> F
+</span><span>Age <span class="hljs-keyword">is</span> <span class="hljs-number">13</span>
+</span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn">
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 "></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre><div class="algolia-no-index card-container" data-v-5681bde8><!----> <div class="card expandable-card border-0" data-v-5681bde8><div class="card-header header-toggle bg-white border-0" data-v-5681bde8><div class="caret-wrapper" data-v-5681bde8><span class="glyphicon glyphicon-chevron-right" data-v-5681bde8></span></div> <div class="header-wrapper card-title bg-white" data-v-5681bde8><p data-v-5681bde8><span class="dimmed" data-v-5681bde8><span data-v-5681bde8><span aria-hidden="true" class="glyphicon glyphicon-facetime-video" data-v-5681bde8></span></span> Using <code class="line-numbers hljs inline no-lang" data-v-5681bde8>if</code></span></p></div> <div class="button-wrapper" data-v-5681bde8><button type="button" class="collapse-button btn btn-outline-secondary" style="display:none;" data-v-5681bde8><span aria-hidden="true" class="collapse-icon glyphicon glyphicon-menu-down"></span></button> <button type="button" class="close-button btn btn-outline-secondary seamless-button" data-v-5681bde8><span aria-hidden="true" class="glyphicon glyphicon-remove" data-v-5681bde8></span></button> <button type="button" class="popup-button btn btn-outline-secondary seamless-button" style="display:none;" data-v-5681bde8><span aria-hidden="true" class="glyphicon glyphicon-new-window" data-v-5681bde8></span></button></div></div> <div class="card-collapse" data-v-5681bde8><!----> <hr style="display:;" data-v-5681bde8></div> <!----></div></div><p></p> <p>If a situation has only two <span data-mb-component-type="tooltip" tabindex="0" class="trigger"><!----> <!----></span> possibilities <span class="dimmed">e.g. if we assume the value of <code class="line-numbers hljs inline no-lang">gender</code> can only be <code class="line-numbers hljs inline no-lang">M</code> or <code class="line-numbers hljs inline no-lang">F</code></span>, we can use the <code class="line-numbers hljs inline no-lang">else</code> statement to deal with both conditions together.</p> <p><span><span aria-hidden="true" class="fas fa-cube"></span></span> In the example below, the entire <code class="line-numbers hljs inline no-lang">else</code> block will be skipped if the <code class="line-numbers hljs inline no-lang">if</code> condition is true.</p> <pre><code class="line-numbers hljs python"><span><span class="hljs-keyword">if</span> gender == <span class="hljs-string">'F'</span>:
+</span><span>    <span class="hljs-built_in">print</span>(<span class="hljs-string">'Female'</span>)
+</span><span><span class="hljs-keyword">else</span>:
+</span><span>    <span class="hljs-built_in">print</span>(<span class="hljs-string">'Not Female'</span>)               
+</span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn">
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 "></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre><div class="algolia-no-index card-container" data-v-5681bde8><!----> <div class="card expandable-card border-0" data-v-5681bde8><div class="card-header header-toggle bg-white border-0" data-v-5681bde8><div class="caret-wrapper" data-v-5681bde8><span class="glyphicon glyphicon-chevron-right" data-v-5681bde8></span></div> <div class="header-wrapper card-title bg-white" data-v-5681bde8><p data-v-5681bde8><span class="dimmed" data-v-5681bde8><span data-v-5681bde8><span aria-hidden="true" class="glyphicon glyphicon-facetime-video" data-v-5681bde8></span></span> Using <code class="line-numbers hljs inline no-lang" data-v-5681bde8>else</code></span></p></div> <div class="button-wrapper" data-v-5681bde8><button type="button" class="collapse-button btn btn-outline-secondary" style="display:none;" data-v-5681bde8><span aria-hidden="true" class="collapse-icon glyphicon glyphicon-menu-down"></span></button> <button type="button" class="close-button btn btn-outline-secondary seamless-button" data-v-5681bde8><span aria-hidden="true" class="glyphicon glyphicon-remove" data-v-5681bde8></span></button> <button type="button" class="popup-button btn btn-outline-secondary seamless-button" style="display:none;" data-v-5681bde8><span aria-hidden="true" class="glyphicon glyphicon-new-window" data-v-5681bde8></span></button></div></div> <div class="card-collapse" data-v-5681bde8><!----> <hr style="display:;" data-v-5681bde8></div> <!----></div></div><p></p> <p>If a situation has more than two mutually exclusive possibilities, we can bring in <code class="line-numbers hljs inline no-lang">elif</code> (an abbreviation of <em>else if</em>) blocks too.</p> <p><span><span aria-hidden="true" class="fas fa-cube"></span></span> The example below shows how to use an <code class="line-numbers hljs inline no-lang">if-elif-else</code> construct to control the flow of the execution.</p> <pre><code class="line-numbers hljs python"><span><span class="hljs-keyword">if</span> gender == <span class="hljs-string">'F'</span>:
+</span><span>    <span class="hljs-built_in">print</span>(<span class="hljs-string">'Female'</span>)
+</span><span><span class="hljs-keyword">elif</span> gender == <span class="hljs-string">'M'</span>:
+</span><span>    <span class="hljs-built_in">print</span>(<span class="hljs-string">'Male'</span>)
+</span><span><span class="hljs-keyword">elif</span> gender == <span class="hljs-string">'O'</span>:
+</span><span>    <span class="hljs-built_in">print</span>(<span class="hljs-string">'Other'</span>)
+</span><span><span class="hljs-keyword">else</span>:
+</span><span>    <span class="hljs-built_in">print</span>(<span class="hljs-string">'Unrecognized value'</span>)             
+</span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn">
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 "></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre><div class="algolia-no-index card-container" data-v-5681bde8><!----> <div class="card expandable-card border-0" data-v-5681bde8><div class="card-header header-toggle bg-white border-0" data-v-5681bde8><div class="caret-wrapper" data-v-5681bde8><span class="glyphicon glyphicon-chevron-right" data-v-5681bde8></span></div> <div class="header-wrapper card-title bg-white" data-v-5681bde8><p data-v-5681bde8><span class="dimmed" data-v-5681bde8><span aria-hidden="true" class="fas fa-laptop" data-v-5681bde8></span> Try your own</span></p></div> <div class="button-wrapper" data-v-5681bde8><button type="button" class="collapse-button btn btn-outline-secondary" style="display:none;" data-v-5681bde8><span aria-hidden="true" class="collapse-icon glyphicon glyphicon-menu-down"></span></button> <button type="button" class="close-button btn btn-outline-secondary seamless-button" data-v-5681bde8><span aria-hidden="true" class="glyphicon glyphicon-remove" data-v-5681bde8></span></button> <button type="button" class="popup-button btn btn-outline-secondary seamless-button" style="display:none;" data-v-5681bde8><span aria-hidden="true" class="glyphicon glyphicon-new-window" data-v-5681bde8></span></button></div></div> <div class="card-collapse" data-v-5681bde8><!----> <hr style="display:;" data-v-5681bde8></div> <!----></div></div><p></p> <p>Note that in an <code class="line-numbers hljs inline no-lang">if-elif-else</code> construct no more than one block (the first one whose condition is true) will be executed.</p> <div class="algolia-no-index card-container" data-v-5681bde8><!----> <div class="card expandable-card border-0" data-v-5681bde8><div class="card-header header-toggle bg-white border-0" data-v-5681bde8><div class="caret-wrapper" data-v-5681bde8><span class="glyphicon glyphicon-chevron-right" data-v-5681bde8></span></div> <div class="header-wrapper card-title bg-white" data-v-5681bde8><p data-v-5681bde8><span class="dimmed" data-v-5681bde8><span data-v-5681bde8><span aria-hidden="true" class="glyphicon glyphicon-facetime-video" data-v-5681bde8></span></span> Using <code class="line-numbers hljs inline no-lang" data-v-5681bde8>elif</code></span></p></div> <div class="button-wrapper" data-v-5681bde8><button type="button" class="collapse-button btn btn-outline-secondary" style="display:none;" data-v-5681bde8><span aria-hidden="true" class="collapse-icon glyphicon glyphicon-menu-down"></span></button> <button type="button" class="close-button btn btn-outline-secondary seamless-button" data-v-5681bde8><span aria-hidden="true" class="glyphicon glyphicon-remove" data-v-5681bde8></span></button> <button type="button" class="popup-button btn btn-outline-secondary seamless-button" style="display:none;" data-v-5681bde8><span aria-hidden="true" class="glyphicon glyphicon-new-window" data-v-5681bde8></span></button></div></div> <div class="card-collapse" data-v-5681bde8><!----> <hr style="display:;" data-v-5681bde8></div> <!----></div></div><p></p> <div><div expanded="" no-close="" class="card-container" data-v-5681bde8><!----> <div class="card expandable-card border-danger" data-v-5681bde8><div class="card-header header-toggle bg-danger border-danger" data-v-5681bde8><div class="caret-wrapper" data-v-5681bde8><!----></div> <div class="header-wrapper card-title bg-danger text-white" data-v-5681bde8><p data-v-5681bde8><span aria-hidden="true" class="fas fa-dumbbell" data-v-5681bde8></span> Exercise: Grade Analyzer</p></div> <div class="button-wrapper" data-v-5681bde8><button type="button" class="collapse-button btn btn-outline-light" data-v-5681bde8><span aria-hidden="true" class="collapse-icon glyphicon glyphicon-menu-down opened"></span></button> <button type="button" class="close-button btn btn-outline-light" style="display:none;" data-v-5681bde8><span aria-hidden="true" class="glyphicon glyphicon-remove" data-v-5681bde8></span></button> <button type="button" class="popup-button btn btn-outline-light" style="display:none;" data-v-5681bde8><span aria-hidden="true" class="glyphicon glyphicon-new-window" data-v-5681bde8></span></button></div></div> <div class="card-collapse" data-v-5681bde8><div class="card-body" data-v-5681bde8> <div data-v-5681bde8><h4 id="exercise-grade-analyzer" data-v-5681bde8><span id="exercise-grade-analyzer" class="anchor" data-v-5681bde8></span>Exercise - Grade Analyzer<a href="#exercise-grade-analyzer" onclick="event.stopPropagation()" class="fa fa-anchor" data-v-5681bde8></a></h4> <p data-v-5681bde8>Write a program to read project score and exam score from the keyboard and print a bar chart of the scores and a grade. Follow the example below:</p> <pre data-v-5681bde8><code class="line-numbers hljs" data-v-5681bde8><span data-v-5681bde8>Enter project score
+</span><span data-v-5681bde8>30
+</span><span data-v-5681bde8>
+</span><span data-v-5681bde8>Enter exam score
+</span><span data-v-5681bde8>40
+</span><span data-v-5681bde8>
+</span><span data-v-5681bde8>Total: 70
+</span><span data-v-5681bde8>
+</span><span data-v-5681bde8>Project : ======
+</span><span data-v-5681bde8>Exam    : ========
+</span><span data-v-5681bde8>Total   : ==============
+</span><span data-v-5681bde8>Grade   : A
+</span></code><div class="function-btn-container" data-v-5681bde8><button onclick="copyCodeBlock(this)" class="function-btn" data-v-5681bde8>
+    <div class="function-btn-body" data-v-5681bde8>
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1" data-v-5681bde8>
+    <g id="surface1" data-v-5681bde8>
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 " data-v-5681bde8></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre><ul data-v-5681bde8><li data-v-5681bde8>Note how the colons (<code class="line-numbers hljs inline no-lang" data-v-5681bde8>:</code>) are aligned.</li> <li data-v-5681bde8>Note the extra blank lines in the expected output.</li> <li data-v-5681bde8>The bar chart has one <code class="line-numbers hljs inline no-lang" data-v-5681bde8>=</code> for each 5 marks <span class="dimmed" data-v-5681bde8> 24 marks should be shown as <code class="line-numbers hljs inline no-lang" data-v-5681bde8>====</code>.</span></li> <li data-v-5681bde8>Assume all inputs are positive integers.</li></ul> <p data-v-5681bde8>Grading rules:</p> <ul data-v-5681bde8><li data-v-5681bde8><code class="line-numbers hljs inline no-lang" data-v-5681bde8>A</code>: at least 25 marks for each component and at least 60 in total</li> <li data-v-5681bde8><code class="line-numbers hljs inline no-lang" data-v-5681bde8>B</code>: at least one component has 25 or more marks and at least 50 in total</li> <li data-v-5681bde8><code class="line-numbers hljs inline no-lang" data-v-5681bde8>C</code>: at least 40 in total</li> <li data-v-5681bde8><code class="line-numbers hljs inline no-lang" data-v-5681bde8>D</code>: otherwise</li></ul></div> <!----> <button type="button" class="collapse-button btn btn-outline-secondary" data-v-5681bde8><span aria-hidden="true" class="collapse-icon glyphicon glyphicon-menu-down opened"></span></button></div> <hr style="display:none;" data-v-5681bde8></div> <!----></div></div><p></p></div> <div><div expanded="" no-close="" class="card-container" data-v-5681bde8><!----> <div class="card expandable-card border-danger" data-v-5681bde8><div class="card-header header-toggle bg-danger border-danger" data-v-5681bde8><div class="caret-wrapper" data-v-5681bde8><!----></div> <div class="header-wrapper card-title bg-danger text-white" data-v-5681bde8><p data-v-5681bde8><span aria-hidden="true" class="fas fa-dumbbell" data-v-5681bde8></span> Exercise: Grade Analyzer (extended)</p></div> <div class="button-wrapper" data-v-5681bde8><button type="button" class="collapse-button btn btn-outline-light" data-v-5681bde8><span aria-hidden="true" class="collapse-icon glyphicon glyphicon-menu-down opened"></span></button> <button type="button" class="close-button btn btn-outline-light" style="display:none;" data-v-5681bde8><span aria-hidden="true" class="glyphicon glyphicon-remove" data-v-5681bde8></span></button> <button type="button" class="popup-button btn btn-outline-light" style="display:none;" data-v-5681bde8><span aria-hidden="true" class="glyphicon glyphicon-new-window" data-v-5681bde8></span></button></div></div> <div class="card-collapse" data-v-5681bde8><div class="card-body" data-v-5681bde8> <div data-v-5681bde8><h4 id="exercise-grade-analyzer-extended" data-v-5681bde8><span id="exercise-grade-analyzer-extended" class="anchor" data-v-5681bde8></span>Exercise - Grade Analyzer (Extended)<a href="#exercise-grade-analyzer-extended" onclick="event.stopPropagation()" class="fa fa-anchor" data-v-5681bde8></a></h4> <p data-v-5681bde8>Extend the code you wrote for the exercise <em data-v-5681bde8>Grade Analyzer</em> with the following additional feature.</p> <p data-v-5681bde8>If the grade is determined to be <code class="line-numbers hljs inline no-lang" data-v-5681bde8>D</code> ask the user if the grade should be withheld. If the user agrees, show the grade as <code class="line-numbers hljs inline no-lang" data-v-5681bde8>NA</code> instead of <code class="line-numbers hljs inline no-lang" data-v-5681bde8>D</code>.</p> <pre data-v-5681bde8><code class="line-numbers hljs" data-v-5681bde8><span data-v-5681bde8>Enter project score
+</span><span data-v-5681bde8>10
+</span><span data-v-5681bde8>
+</span><span data-v-5681bde8>Enter exam score
+</span><span data-v-5681bde8>20
+</span><span data-v-5681bde8>
+</span><span data-v-5681bde8>Total: 30
+</span><span data-v-5681bde8>
+</span><span data-v-5681bde8>Grade is low. Withhold? y/n?
+</span><span data-v-5681bde8>y
+</span><span data-v-5681bde8> 
+</span><span data-v-5681bde8>Project : ==
+</span><span data-v-5681bde8>Exam    : ====
+</span><span data-v-5681bde8>Total   : ======
+</span><span data-v-5681bde8>Grade   : NA
+</span></code><div class="function-btn-container" data-v-5681bde8><button onclick="copyCodeBlock(this)" class="function-btn" data-v-5681bde8>
+    <div class="function-btn-body" data-v-5681bde8>
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1" data-v-5681bde8>
+    <g id="surface1" data-v-5681bde8>
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 " data-v-5681bde8></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre></div> <!----> <button type="button" class="collapse-button btn btn-outline-secondary" data-v-5681bde8><span aria-hidden="true" class="collapse-icon glyphicon glyphicon-menu-down opened"></span></button></div> <hr style="display:none;" data-v-5681bde8></div> <!----></div></div><p></p></div></div><hr style="border-top:3px double #c5c5c5;"> <div><h3 id="while-statements"><span id="while-statements" class="anchor"></span><code class="line-numbers hljs inline no-lang">while</code> Statements<a href="#while-statements" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h3> <p><strong>Python uses the <code class="line-numbers hljs inline no-lang">while</code> statement to repeat a code block until a certain condition is true. Such an execution path is also known as a <em>loop</em> and each execution of the code block is called an <em>iteration</em>.</strong></p> <p>Format:</p> <pre><code class="line-numbers hljs"><span>while condition :
+</span><span>    statements_to_execute_if_condition_is_true
+</span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn">
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 "></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre><div class="alert box-container alert-default" data-v-7d17494f><!----> <div class="header-and-body" data-v-7d17494f><!----> <div class="box-body-wrapper" data-v-7d17494f><!----> <!----> <div class="contents" data-v-7d17494f><p data-v-7d17494f><span data-v-7d17494f><span aria-hidden="true" class="fas fa-cube" data-v-7d17494f></span></span> the code below prints 'Hello' 3 times (i.e., the loop is executed for 3 iterations), followed by 'Done'.</p> <table data-v-7d17494f><tbody data-v-7d17494f><tr data-v-7d17494f><td data-v-7d17494f><pre data-v-7d17494f><code class="line-numbers hljs python" data-v-7d17494f><span data-v-7d17494f>counter = <span class="hljs-number" data-v-7d17494f>0</span>
+</span><span data-v-7d17494f><span class="hljs-keyword" data-v-7d17494f>while</span> counter &lt; <span class="hljs-number" data-v-7d17494f>3</span>:
+</span><span data-v-7d17494f>    <span class="hljs-built_in" data-v-7d17494f>print</span>(<span class="hljs-string" data-v-7d17494f>'Hello'</span>)
+</span><span data-v-7d17494f>    counter = counter + <span class="hljs-number" data-v-7d17494f>1</span>
+</span><span data-v-7d17494f><span class="hljs-built_in" data-v-7d17494f>print</span>(<span class="hljs-string" data-v-7d17494f>'Done'</span>)
+</span></code><div class="function-btn-container" data-v-7d17494f><button onclick="copyCodeBlock(this)" class="function-btn" data-v-7d17494f>
+    <div class="function-btn-body" data-v-7d17494f>
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1" data-v-7d17494f>
+    <g id="surface1" data-v-7d17494f>
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 " data-v-7d17494f></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre></td> <td data-v-7d17494f> → </td> <td data-v-7d17494f><pre data-v-7d17494f><code class="line-numbers hljs" data-v-7d17494f><span data-v-7d17494f>Hello
+</span><span data-v-7d17494f>Hello
+</span><span data-v-7d17494f>Hello
+</span><span data-v-7d17494f>Done
+</span></code><div class="function-btn-container" data-v-7d17494f><button onclick="copyCodeBlock(this)" class="function-btn" data-v-7d17494f>
+    <div class="function-btn-body" data-v-7d17494f>
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1" data-v-7d17494f>
+    <g id="surface1" data-v-7d17494f>
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 " data-v-7d17494f></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre><div data-v-7d17494f><p data-v-7d17494f><span class="dimmed" data-v-7d17494f>[Click <a href="http://pythontutor.com/iframe-embed.html#code=counter%20%3D%200%0Awhile%20counter%20%3C%203%3A%0A%20%20%20%20print%28'Hello'%29%0A%20%20%20%20counter%20%3D%20counter%20%2B%201%0Aprint%28'Done'%29&amp;codeDivHeight=400&amp;codeDivWidth=350&amp;cumulative=false&amp;curInstr=0&amp;heapPrimitives=false&amp;origin=opt-frontend.js&amp;py=3&amp;rawInputLstJSON=%5B%5D&amp;textReferences=false" target="_blank" data-v-7d17494f>here</a> to visualize the execution]</span></p></div></td></tr></tbody></table> <div class="algolia-no-index card-container" data-v-5681bde8><!----> <div class="card expandable-card border-0" data-v-5681bde8><div class="card-header header-toggle bg-white border-0" data-v-5681bde8><div class="caret-wrapper" data-v-5681bde8><span class="glyphicon glyphicon-chevron-right" data-v-5681bde8></span></div> <div class="header-wrapper card-title bg-white" data-v-5681bde8><p data-v-5681bde8><span class="dimmed" data-v-5681bde8><span aria-hidden="true" class="fas fa-laptop" data-v-5681bde8></span> Try your own</span></p></div> <div class="button-wrapper" data-v-5681bde8><button type="button" class="collapse-button btn btn-outline-secondary" style="display:none;" data-v-5681bde8><span aria-hidden="true" class="collapse-icon glyphicon glyphicon-menu-down"></span></button> <button type="button" class="close-button btn btn-outline-secondary seamless-button" data-v-5681bde8><span aria-hidden="true" class="glyphicon glyphicon-remove" data-v-5681bde8></span></button> <button type="button" class="popup-button btn btn-outline-secondary seamless-button" style="display:none;" data-v-5681bde8><span aria-hidden="true" class="glyphicon glyphicon-new-window" data-v-5681bde8></span></button></div></div> <div class="card-collapse" data-v-5681bde8><!----> <hr style="display:;" data-v-5681bde8></div> <!----></div></div><p data-v-7d17494f></p></div> <!----></div></div></div> <div class="algolia-no-index card-container" data-v-5681bde8><!----> <div class="card expandable-card border-0" data-v-5681bde8><div class="card-header header-toggle bg-white border-0" data-v-5681bde8><div class="caret-wrapper" data-v-5681bde8><span class="glyphicon glyphicon-chevron-right" data-v-5681bde8></span></div> <div class="header-wrapper card-title bg-white" data-v-5681bde8><p data-v-5681bde8><span class="dimmed" data-v-5681bde8><span data-v-5681bde8><span aria-hidden="true" class="glyphicon glyphicon-facetime-video" data-v-5681bde8></span></span> Basic <code class="line-numbers hljs inline no-lang" data-v-5681bde8>while</code> loops</span></p></div> <div class="button-wrapper" data-v-5681bde8><button type="button" class="collapse-button btn btn-outline-secondary" style="display:none;" data-v-5681bde8><span aria-hidden="true" class="collapse-icon glyphicon glyphicon-menu-down"></span></button> <button type="button" class="close-button btn btn-outline-secondary seamless-button" data-v-5681bde8><span aria-hidden="true" class="glyphicon glyphicon-remove" data-v-5681bde8></span></button> <button type="button" class="popup-button btn btn-outline-secondary seamless-button" style="display:none;" data-v-5681bde8><span aria-hidden="true" class="glyphicon glyphicon-new-window" data-v-5681bde8></span></button></div></div> <div class="card-collapse" data-v-5681bde8><!----> <hr style="display:;" data-v-5681bde8></div> <!----></div></div><p></p> <div class="alert box-container alert-default" data-v-7d17494f><!----> <div class="header-and-body" data-v-7d17494f><!----> <div class="box-body-wrapper" data-v-7d17494f><!----> <!----> <div class="contents" data-v-7d17494f><p data-v-7d17494f><strong data-v-7d17494f><span style="color:red;" data-v-7d17494f><big data-v-7d17494f><span data-v-7d17494f><span aria-hidden="true" class="glyphicon glyphicon-exclamation-sign" data-v-7d17494f></span></span></big></span> Infinite Loops</strong>: Sometimes programming mistakes can result in <em data-v-7d17494f>infinite loops</em> <span class="dimmed" data-v-7d17494f> i.e., loops that never terminate.</span> In the example below, the condition <code class="line-numbers hljs inline no-lang" data-v-7d17494f>counter &lt; 3</code> always evaluates to <code class="line-numbers hljs inline no-lang" data-v-7d17494f>True</code> (because the statement to increment <code class="line-numbers hljs inline no-lang" data-v-7d17494f>counter</code> has been left out by mistake)</p> <pre data-v-7d17494f><code class="line-numbers hljs python" data-v-7d17494f><span data-v-7d17494f>counter = <span class="hljs-number" data-v-7d17494f>0</span>
+</span><span data-v-7d17494f><span class="hljs-keyword" data-v-7d17494f>while</span> counter &lt; <span class="hljs-number" data-v-7d17494f>3</span>:
+</span><span data-v-7d17494f>    <span class="hljs-built_in" data-v-7d17494f>print</span>(<span class="hljs-string" data-v-7d17494f>'Hello'</span>)
+</span></code><div class="function-btn-container" data-v-7d17494f><button onclick="copyCodeBlock(this)" class="function-btn" data-v-7d17494f>
+    <div class="function-btn-body" data-v-7d17494f>
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1" data-v-7d17494f>
+    <g id="surface1" data-v-7d17494f>
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 " data-v-7d17494f></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre><p data-v-7d17494f><span class="badge rounded-pill bg-success text-white" data-v-7d17494f><span aria-hidden="true" class="fas fa-lightbulb" data-v-7d17494f></span></span> When using IDLE, if a bug in your code caused it to go into an infinite loop,  you can use <code class="line-numbers hljs inline no-lang" data-v-7d17494f>Ctrl + C</code> to force it to stop executing.</p> <div class="algolia-no-index card-container" data-v-5681bde8><!----> <div class="card expandable-card border-0" data-v-5681bde8><div class="card-header header-toggle bg-white border-0" data-v-5681bde8><div class="caret-wrapper" data-v-5681bde8><span class="glyphicon glyphicon-chevron-right" data-v-5681bde8></span></div> <div class="header-wrapper card-title bg-white" data-v-5681bde8><p data-v-5681bde8><span class="dimmed" data-v-5681bde8><span data-v-5681bde8><span aria-hidden="true" class="glyphicon glyphicon-facetime-video" data-v-5681bde8></span></span> Infinite loops</span></p></div> <div class="button-wrapper" data-v-5681bde8><button type="button" class="collapse-button btn btn-outline-secondary" style="display:none;" data-v-5681bde8><span aria-hidden="true" class="collapse-icon glyphicon glyphicon-menu-down"></span></button> <button type="button" class="close-button btn btn-outline-secondary seamless-button" data-v-5681bde8><span aria-hidden="true" class="glyphicon glyphicon-remove" data-v-5681bde8></span></button> <button type="button" class="popup-button btn btn-outline-secondary seamless-button" style="display:none;" data-v-5681bde8><span aria-hidden="true" class="glyphicon glyphicon-new-window" data-v-5681bde8></span></button></div></div> <div class="card-collapse" data-v-5681bde8><!----> <hr style="display:;" data-v-5681bde8></div> <!----></div></div></div> <!----></div></div></div> <div><div expanded="" no-close="" class="card-container" data-v-5681bde8><!----> <div class="card expandable-card border-danger" data-v-5681bde8><div class="card-header header-toggle bg-danger border-danger" data-v-5681bde8><div class="caret-wrapper" data-v-5681bde8><!----></div> <div class="header-wrapper card-title bg-danger text-white" data-v-5681bde8><p data-v-5681bde8><span aria-hidden="true" class="fas fa-dumbbell" data-v-5681bde8></span> Exercise: Vending Machine - Add Loop</p></div> <div class="button-wrapper" data-v-5681bde8><button type="button" class="collapse-button btn btn-outline-light" data-v-5681bde8><span aria-hidden="true" class="collapse-icon glyphicon glyphicon-menu-down opened"></span></button> <button type="button" class="close-button btn btn-outline-light" style="display:none;" data-v-5681bde8><span aria-hidden="true" class="glyphicon glyphicon-remove" data-v-5681bde8></span></button> <button type="button" class="popup-button btn btn-outline-light" style="display:none;" data-v-5681bde8><span aria-hidden="true" class="glyphicon glyphicon-new-window" data-v-5681bde8></span></button></div></div> <div class="card-collapse" data-v-5681bde8><div class="card-body" data-v-5681bde8> <div data-v-5681bde8><h4 id="exercise-vending-machine-add-loop" data-v-5681bde8><span id="exercise-vending-machine-add-loop" class="anchor" data-v-5681bde8></span>Exercise - Vending Machine - Add Loop<a href="#exercise-vending-machine-add-loop" onclick="event.stopPropagation()" class="fa fa-anchor" data-v-5681bde8></a></h4> <p data-v-5681bde8>The code below simulates a vending machine that asks for a coin and gives out the product and the balance.</p> <pre data-v-5681bde8><code class="line-numbers hljs python" data-v-5681bde8><span data-v-5681bde8>price = <span class="hljs-number" data-v-5681bde8>100</span>
+</span><span data-v-5681bde8>coin_value = <span class="hljs-number" data-v-5681bde8>0</span>
+</span><span data-v-5681bde8>
+</span><span data-v-5681bde8><span class="hljs-built_in" data-v-5681bde8>print</span>(<span class="hljs-string" data-v-5681bde8>'Price:'</span>, price)
+</span><span data-v-5681bde8>
+</span><span data-v-5681bde8>coin_value = <span class="hljs-built_in" data-v-5681bde8>int</span>(<span class="hljs-built_in" data-v-5681bde8>input</span>(<span class="hljs-string" data-v-5681bde8>'Enter a coin:'</span>))
+</span><span data-v-5681bde8><span class="hljs-built_in" data-v-5681bde8>print</span>(<span class="hljs-string" data-v-5681bde8>'You have entered:'</span>, coin_value)
+</span><span data-v-5681bde8>
+</span><span data-v-5681bde8><span class="hljs-built_in" data-v-5681bde8>print</span>(<span class="hljs-string" data-v-5681bde8>'Here is the product'</span>)
+</span><span data-v-5681bde8><span class="hljs-built_in" data-v-5681bde8>print</span>(<span class="hljs-string" data-v-5681bde8>'Your balance:'</span>, coin_value - price)
+</span></code><div class="function-btn-container" data-v-5681bde8><button onclick="copyCodeBlock(this)" class="function-btn" data-v-5681bde8>
+    <div class="function-btn-body" data-v-5681bde8>
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1" data-v-5681bde8>
+    <g id="surface1" data-v-5681bde8>
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 " data-v-5681bde8></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre><p data-v-5681bde8><span class="badge rounded-pill bg-success text-white" data-v-5681bde8><span aria-hidden="true" class="fas fa-lightbulb" data-v-5681bde8></span></span> Note how the above code uses <code class="line-numbers hljs inline no-lang" data-v-5681bde8>input</code> function with a string argument e.g., <code class="line-numbers hljs inline no-lang" data-v-5681bde8>input('Enter a coin:')</code> to show the string to the user and read the input from the user at the same time.</p> <table data-v-5681bde8><tbody data-v-5681bde8><tr data-v-5681bde8><td data-v-5681bde8><pre data-v-5681bde8><code class="line-numbers hljs python" data-v-5681bde8><span data-v-5681bde8>name = <span class="hljs-built_in" data-v-5681bde8>input</span>(<span class="hljs-string" data-v-5681bde8>'Input a name:'</span>)
+</span></code><div class="function-btn-container" data-v-5681bde8><button onclick="copyCodeBlock(this)" class="function-btn" data-v-5681bde8>
+    <div class="function-btn-body" data-v-5681bde8>
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1" data-v-5681bde8>
+    <g id="surface1" data-v-5681bde8>
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 " data-v-5681bde8></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre></td> <td data-v-5681bde8> → </td> <td data-v-5681bde8><pre data-v-5681bde8><code class="line-numbers hljs" data-v-5681bde8><span data-v-5681bde8>Input a name: John
+</span></code><div class="function-btn-container" data-v-5681bde8><button onclick="copyCodeBlock(this)" class="function-btn" data-v-5681bde8>
+    <div class="function-btn-body" data-v-5681bde8>
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1" data-v-5681bde8>
+    <g id="surface1" data-v-5681bde8>
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 " data-v-5681bde8></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre></td></tr> <tr data-v-5681bde8><td data-v-5681bde8><pre data-v-5681bde8><code class="line-numbers hljs python" data-v-5681bde8><span data-v-5681bde8><span class="hljs-built_in" data-v-5681bde8>print</span>(<span class="hljs-string" data-v-5681bde8>'Input a name:'</span>)
+</span><span data-v-5681bde8>name = <span class="hljs-built_in" data-v-5681bde8>input</span>()
+</span></code><div class="function-btn-container" data-v-5681bde8><button onclick="copyCodeBlock(this)" class="function-btn" data-v-5681bde8>
+    <div class="function-btn-body" data-v-5681bde8>
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1" data-v-5681bde8>
+    <g id="surface1" data-v-5681bde8>
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 " data-v-5681bde8></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre></td> <td data-v-5681bde8> → </td> <td data-v-5681bde8><pre data-v-5681bde8><code class="line-numbers hljs" data-v-5681bde8><span data-v-5681bde8>Input a name:
+</span><span data-v-5681bde8>John
+</span></code><div class="function-btn-container" data-v-5681bde8><button onclick="copyCodeBlock(this)" class="function-btn" data-v-5681bde8>
+    <div class="function-btn-body" data-v-5681bde8>
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1" data-v-5681bde8>
+    <g id="surface1" data-v-5681bde8>
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 " data-v-5681bde8></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre></td></tr></tbody></table> <p data-v-5681bde8><span class="badge rounded-pill bg-success text-white" data-v-5681bde8><span aria-hidden="true" class="fas fa-lightbulb" data-v-5681bde8></span></span> Also note how the above code uses <code class="line-numbers hljs inline no-lang" data-v-5681bde8>print()</code> with two arguments, one an integer and one a string. The <code class="line-numbers hljs inline no-lang" data-v-5681bde8>print()</code> method can take multiple arguments and the arguments can be of different types. Note that the <mark data-v-5681bde8>output will have a space between each argument</mark>.</p> <table data-v-5681bde8><tbody data-v-5681bde8><tr data-v-5681bde8><td data-v-5681bde8><pre data-v-5681bde8><code class="line-numbers hljs python" data-v-5681bde8><span data-v-5681bde8><span class="hljs-built_in" data-v-5681bde8>print</span>(<span class="hljs-string" data-v-5681bde8>'ABC'</span>, <span class="hljs-number" data-v-5681bde8>3</span>, <span class="hljs-number" data-v-5681bde8>4.50</span>)
+</span><span data-v-5681bde8><span class="hljs-built_in" data-v-5681bde8>print</span>(<span class="hljs-string" data-v-5681bde8>'ABC'</span> + <span class="hljs-built_in" data-v-5681bde8>str</span>(<span class="hljs-number" data-v-5681bde8>3</span>) + <span class="hljs-built_in" data-v-5681bde8>str</span>(<span class="hljs-number" data-v-5681bde8>4.50</span>))
+</span><span data-v-5681bde8><span class="hljs-built_in" data-v-5681bde8>print</span>(<span class="hljs-string" data-v-5681bde8>'ABC'</span> + <span class="hljs-string" data-v-5681bde8>' '</span> + <span class="hljs-built_in" data-v-5681bde8>str</span>(<span class="hljs-number" data-v-5681bde8>3</span>) + <span class="hljs-string" data-v-5681bde8>' '</span> + <span class="hljs-built_in" data-v-5681bde8>str</span>(<span class="hljs-number" data-v-5681bde8>4.50</span>))
+</span></code><div class="function-btn-container" data-v-5681bde8><button onclick="copyCodeBlock(this)" class="function-btn" data-v-5681bde8>
+    <div class="function-btn-body" data-v-5681bde8>
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1" data-v-5681bde8>
+    <g id="surface1" data-v-5681bde8>
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 " data-v-5681bde8></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre></td> <td data-v-5681bde8> → </td> <td data-v-5681bde8><pre data-v-5681bde8><code class="line-numbers hljs" data-v-5681bde8><span data-v-5681bde8>
+</span><span data-v-5681bde8>ABC 3 4.50
+</span><span data-v-5681bde8>ABC34.50
+</span><span data-v-5681bde8>ABC 3 4.50
+</span></code><div class="function-btn-container" data-v-5681bde8><button onclick="copyCodeBlock(this)" class="function-btn" data-v-5681bde8>
+    <div class="function-btn-body" data-v-5681bde8>
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1" data-v-5681bde8>
+    <g id="surface1" data-v-5681bde8>
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 " data-v-5681bde8></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre></td></tr></tbody></table> <p data-v-5681bde8>Example output from the code:</p> <pre data-v-5681bde8><code class="line-numbers hljs" data-v-5681bde8><span data-v-5681bde8>Price: 100
+</span><span data-v-5681bde8>Enter a coin: 200
+</span><span data-v-5681bde8>You have entered: 200
+</span><span data-v-5681bde8>Here is the product
+</span><span data-v-5681bde8>Your balance: 100
+</span></code><div class="function-btn-container" data-v-5681bde8><button onclick="copyCodeBlock(this)" class="function-btn" data-v-5681bde8>
+    <div class="function-btn-body" data-v-5681bde8>
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1" data-v-5681bde8>
+    <g id="surface1" data-v-5681bde8>
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 " data-v-5681bde8></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre><p data-v-5681bde8>As you can see, this code does not consider the case where the inserted coin is less than the price of the product, resulting in the following incorrect behavior.</p> <pre data-v-5681bde8><code class="line-numbers hljs" data-v-5681bde8><span data-v-5681bde8>Price: 100
+</span><span data-v-5681bde8>Enter a coin: 50
+</span><span data-v-5681bde8>You have entered: 50
+</span><span data-v-5681bde8>Here is the product
+</span><span data-v-5681bde8>Your balance: -50
+</span></code><div class="function-btn-container" data-v-5681bde8><button onclick="copyCodeBlock(this)" class="function-btn" data-v-5681bde8>
+    <div class="function-btn-body" data-v-5681bde8>
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1" data-v-5681bde8>
+    <g id="surface1" data-v-5681bde8>
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 " data-v-5681bde8></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre><p data-v-5681bde8>Modify the code to repeat these two lines until the coin entered is enough to pay for the product. Note that you <mark data-v-5681bde8>don't need to add up all the coins entered.</mark> Instead, assume the vending machine can accept only one coin for a purchase and keeps rejecting coins until a big-enough coin is entered.</p> <pre data-v-5681bde8><code class="line-numbers hljs python" data-v-5681bde8><span data-v-5681bde8>coin_value = <span class="hljs-built_in" data-v-5681bde8>int</span>(<span class="hljs-built_in" data-v-5681bde8>input</span>(<span class="hljs-string" data-v-5681bde8>'Enter a coin:'</span>))
+</span><span data-v-5681bde8><span class="hljs-built_in" data-v-5681bde8>print</span>(<span class="hljs-string" data-v-5681bde8>'You have entered:'</span>, coin_value)
+</span></code><div class="function-btn-container" data-v-5681bde8><button onclick="copyCodeBlock(this)" class="function-btn" data-v-5681bde8>
+    <div class="function-btn-body" data-v-5681bde8>
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1" data-v-5681bde8>
+    <g id="surface1" data-v-5681bde8>
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 " data-v-5681bde8></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre><p data-v-5681bde8>The output should be something like this:</p> <pre data-v-5681bde8><code class="line-numbers hljs" data-v-5681bde8><span data-v-5681bde8>Price: 100
+</span><span data-v-5681bde8>Enter a coin: 50
+</span><span data-v-5681bde8>You have entered: 50
+</span><span data-v-5681bde8>Enter a coin: 100
+</span><span data-v-5681bde8>You have entered: 100
+</span><span data-v-5681bde8>Here is the product
+</span><span data-v-5681bde8>Your balance: 0
+</span></code><div class="function-btn-container" data-v-5681bde8><button onclick="copyCodeBlock(this)" class="function-btn" data-v-5681bde8>
+    <div class="function-btn-body" data-v-5681bde8>
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1" data-v-5681bde8>
+    <g id="surface1" data-v-5681bde8>
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 " data-v-5681bde8></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre></div> <!----> <button type="button" class="collapse-button btn btn-outline-secondary" data-v-5681bde8><span aria-hidden="true" class="collapse-icon glyphicon glyphicon-menu-down opened"></span></button></div> <hr style="display:none;" data-v-5681bde8></div> <!----></div></div><p></p></div> <div><div expanded="" no-close="" class="card-container" data-v-5681bde8><!----> <div class="card expandable-card border-danger" data-v-5681bde8><div class="card-header header-toggle bg-danger border-danger" data-v-5681bde8><div class="caret-wrapper" data-v-5681bde8><!----></div> <div class="header-wrapper card-title bg-danger text-white" data-v-5681bde8><p data-v-5681bde8><span aria-hidden="true" class="fas fa-dumbbell" data-v-5681bde8></span> Exercise: Vending Machine - Accept Multiple Coins</p></div> <div class="button-wrapper" data-v-5681bde8><button type="button" class="collapse-button btn btn-outline-light" data-v-5681bde8><span aria-hidden="true" class="collapse-icon glyphicon glyphicon-menu-down opened"></span></button> <button type="button" class="close-button btn btn-outline-light" style="display:none;" data-v-5681bde8><span aria-hidden="true" class="glyphicon glyphicon-remove" data-v-5681bde8></span></button> <button type="button" class="popup-button btn btn-outline-light" style="display:none;" data-v-5681bde8><span aria-hidden="true" class="glyphicon glyphicon-new-window" data-v-5681bde8></span></button></div></div> <div class="card-collapse" data-v-5681bde8><div class="card-body" data-v-5681bde8> <div data-v-5681bde8><h4 id="exercise-vending-machine-accept-multiple-coins" data-v-5681bde8><span id="exercise-vending-machine-accept-multiple-coins" class="anchor" data-v-5681bde8></span>Exercise - Vending Machine - Accept Multiple Coins<a href="#exercise-vending-machine-accept-multiple-coins" onclick="event.stopPropagation()" class="fa fa-anchor" data-v-5681bde8></a></h4> <p data-v-5681bde8>The vending machine you wrote in the previous exercise (an example solution given below) can accept only one coin as the payment. If the coin is not enough, it rejects the coin and request the user to insert a new coin.</p> <pre data-v-5681bde8><code class="line-numbers hljs python" data-v-5681bde8><span data-v-5681bde8>price = <span class="hljs-number" data-v-5681bde8>100</span>
+</span><span data-v-5681bde8>coin_value = <span class="hljs-number" data-v-5681bde8>0</span>
+</span><span data-v-5681bde8>
+</span><span data-v-5681bde8><span class="hljs-built_in" data-v-5681bde8>print</span>(<span class="hljs-string" data-v-5681bde8>'Price:'</span>, price)
+</span><span data-v-5681bde8>
+</span><span data-v-5681bde8><span class="hljs-keyword" data-v-5681bde8>while</span> price &gt; coin_value:
+</span><span data-v-5681bde8>  coin_value = <span class="hljs-built_in" data-v-5681bde8>int</span>(<span class="hljs-built_in" data-v-5681bde8>input</span>(<span class="hljs-string" data-v-5681bde8>'Enter a coin:'</span>))
+</span><span data-v-5681bde8>  <span class="hljs-built_in" data-v-5681bde8>print</span>(<span class="hljs-string" data-v-5681bde8>'You have entered:'</span>, coin_value)
+</span><span data-v-5681bde8>
+</span><span data-v-5681bde8><span class="hljs-built_in" data-v-5681bde8>print</span>(<span class="hljs-string" data-v-5681bde8>'Here is the product'</span>)
+</span><span data-v-5681bde8><span class="hljs-built_in" data-v-5681bde8>print</span>(<span class="hljs-string" data-v-5681bde8>'Your balance:'</span>, coin_value - price)
+</span></code><div class="function-btn-container" data-v-5681bde8><button onclick="copyCodeBlock(this)" class="function-btn" data-v-5681bde8>
+    <div class="function-btn-body" data-v-5681bde8>
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1" data-v-5681bde8>
+    <g id="surface1" data-v-5681bde8>
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 " data-v-5681bde8></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre><p data-v-5681bde8>Modify the code so that it can accumulate coins until there is enough to pay for the product. An example output is given below:</p> <pre data-v-5681bde8><code class="line-numbers hljs" data-v-5681bde8><span data-v-5681bde8>Price: 100
+</span><span data-v-5681bde8>Enter a coin: 20
+</span><span data-v-5681bde8>You have entered: 20
+</span><span data-v-5681bde8>Enter a coin: 50
+</span><span data-v-5681bde8>You have entered: 70
+</span><span data-v-5681bde8>Enter a coin: 50
+</span><span data-v-5681bde8>You have entered: 120
+</span><span data-v-5681bde8>Here is the product
+</span><span data-v-5681bde8>Your balance: 20
+</span></code><div class="function-btn-container" data-v-5681bde8><button onclick="copyCodeBlock(this)" class="function-btn" data-v-5681bde8>
+    <div class="function-btn-body" data-v-5681bde8>
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1" data-v-5681bde8>
+    <g id="surface1" data-v-5681bde8>
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 " data-v-5681bde8></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre><div data-v-5681bde8><div class="algolia-no-index card-container" data-v-5681bde8><!----> <div class="card expandable-card border-0" data-v-5681bde8><div class="card-header header-toggle bg-white border-0" data-v-5681bde8><div class="caret-wrapper" data-v-5681bde8><span class="glyphicon glyphicon-chevron-right" data-v-5681bde8></span></div> <div class="header-wrapper card-title bg-white" data-v-5681bde8><div data-v-5681bde8><span data-v-5681bde8><span class="badge rounded-pill bg-success text-white" data-v-5681bde8><span aria-hidden="true" class="fas fa-lightbulb" data-v-5681bde8></span></span> see hint</span></div></div> <div class="button-wrapper" data-v-5681bde8><button type="button" class="collapse-button btn btn-outline-secondary" style="display:none;" data-v-5681bde8><span aria-hidden="true" class="collapse-icon glyphicon glyphicon-menu-down"></span></button> <button type="button" class="close-button btn btn-outline-secondary seamless-button" data-v-5681bde8><span aria-hidden="true" class="glyphicon glyphicon-remove" data-v-5681bde8></span></button> <button type="button" class="popup-button btn btn-outline-secondary seamless-button" style="display:none;" data-v-5681bde8><span aria-hidden="true" class="glyphicon glyphicon-new-window" data-v-5681bde8></span></button></div></div> <div class="card-collapse" data-v-5681bde8><!----> <hr style="display:;" data-v-5681bde8></div> <!----></div></div></div></div> <!----> <button type="button" class="collapse-button btn btn-outline-secondary" data-v-5681bde8><span aria-hidden="true" class="collapse-icon glyphicon glyphicon-menu-down opened"></span></button></div> <hr style="display:none;" data-v-5681bde8></div> <!----></div></div><p></p></div> <p><strong>You can use a <code class="line-numbers hljs inline no-lang">break</code> statement to break out of a loop.</strong></p> <div class="alert box-container alert-default" data-v-7d17494f><!----> <div class="header-and-body" data-v-7d17494f><!----> <div class="box-body-wrapper" data-v-7d17494f><!----> <!----> <div class="contents" data-v-7d17494f><p data-v-7d17494f><span data-v-7d17494f><span aria-hidden="true" class="fas fa-cube" data-v-7d17494f></span></span> The code below uses the <code class="line-numbers hljs inline no-lang" data-v-7d17494f>break</code> statement to break out of the loop when the password given is <code class="line-numbers hljs inline no-lang" data-v-7d17494f>abcd</code>. Without the <code class="line-numbers hljs inline no-lang" data-v-7d17494f>break</code> statement, the loop will repeat forever because the condition in <code class="line-numbers hljs inline no-lang" data-v-7d17494f>while True:</code> is always <code class="line-numbers hljs inline no-lang" data-v-7d17494f>True</code>.</p> <pre data-v-7d17494f><code class="line-numbers hljs python" data-v-7d17494f><span data-v-7d17494f><span class="hljs-keyword" data-v-7d17494f>while</span> <span class="hljs-literal" data-v-7d17494f>True</span>:
+</span><span data-v-7d17494f>  password = <span class="hljs-built_in" data-v-7d17494f>input</span>(<span class="hljs-string" data-v-7d17494f>'What is the password?'</span>)
+</span><span data-v-7d17494f>  <span class="hljs-keyword" data-v-7d17494f>if</span> password == <span class="hljs-string" data-v-7d17494f>'abcd'</span>:
+</span><span data-v-7d17494f>    <span class="hljs-keyword" data-v-7d17494f>break</span> <span class="hljs-comment" data-v-7d17494f># exit the loop</span>
+</span><span data-v-7d17494f>  <span class="hljs-keyword" data-v-7d17494f>else</span>:
+</span><span data-v-7d17494f>    <span class="hljs-built_in" data-v-7d17494f>print</span>(<span class="hljs-string" data-v-7d17494f>'Password incorrect. Try again.'</span>)
+</span><span data-v-7d17494f><span class="hljs-built_in" data-v-7d17494f>print</span>(<span class="hljs-string" data-v-7d17494f>'Password correct. You may proceed.'</span>)
+</span></code><div class="function-btn-container" data-v-7d17494f><button onclick="copyCodeBlock(this)" class="function-btn" data-v-7d17494f>
+    <div class="function-btn-body" data-v-7d17494f>
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1" data-v-7d17494f>
+    <g id="surface1" data-v-7d17494f>
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 " data-v-7d17494f></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre><div class="algolia-no-index card-container" data-v-5681bde8><!----> <div class="card expandable-card border-0" data-v-5681bde8><div class="card-header header-toggle bg-white border-0" data-v-5681bde8><div class="caret-wrapper" data-v-5681bde8><span class="glyphicon glyphicon-chevron-right" data-v-5681bde8></span></div> <div class="header-wrapper card-title bg-white" data-v-5681bde8><p data-v-5681bde8><span class="dimmed" data-v-5681bde8><span aria-hidden="true" class="fas fa-laptop" data-v-5681bde8></span> Try your own</span></p></div> <div class="button-wrapper" data-v-5681bde8><button type="button" class="collapse-button btn btn-outline-secondary" style="display:none;" data-v-5681bde8><span aria-hidden="true" class="collapse-icon glyphicon glyphicon-menu-down"></span></button> <button type="button" class="close-button btn btn-outline-secondary seamless-button" data-v-5681bde8><span aria-hidden="true" class="glyphicon glyphicon-remove" data-v-5681bde8></span></button> <button type="button" class="popup-button btn btn-outline-secondary seamless-button" style="display:none;" data-v-5681bde8><span aria-hidden="true" class="glyphicon glyphicon-new-window" data-v-5681bde8></span></button></div></div> <div class="card-collapse" data-v-5681bde8><!----> <hr style="display:;" data-v-5681bde8></div> <!----></div></div><p data-v-7d17494f></p></div> <!----></div></div></div> <div class="algolia-no-index card-container" data-v-5681bde8><!----> <div class="card expandable-card border-0" data-v-5681bde8><div class="card-header header-toggle bg-white border-0" data-v-5681bde8><div class="caret-wrapper" data-v-5681bde8><span class="glyphicon glyphicon-chevron-right" data-v-5681bde8></span></div> <div class="header-wrapper card-title bg-white" data-v-5681bde8><p data-v-5681bde8><span class="dimmed" data-v-5681bde8><span data-v-5681bde8><span aria-hidden="true" class="glyphicon glyphicon-facetime-video" data-v-5681bde8></span></span> <code class="line-numbers hljs inline no-lang" data-v-5681bde8>break</code> inside <code class="line-numbers hljs inline no-lang" data-v-5681bde8>while</code> loops</span></p></div> <div class="button-wrapper" data-v-5681bde8><button type="button" class="collapse-button btn btn-outline-secondary" style="display:none;" data-v-5681bde8><span aria-hidden="true" class="collapse-icon glyphicon glyphicon-menu-down"></span></button> <button type="button" class="close-button btn btn-outline-secondary seamless-button" data-v-5681bde8><span aria-hidden="true" class="glyphicon glyphicon-remove" data-v-5681bde8></span></button> <button type="button" class="popup-button btn btn-outline-secondary seamless-button" style="display:none;" data-v-5681bde8><span aria-hidden="true" class="glyphicon glyphicon-new-window" data-v-5681bde8></span></button></div></div> <div class="card-collapse" data-v-5681bde8><!----> <hr style="display:;" data-v-5681bde8></div> <!----></div></div> <div><div expanded="" no-close="" class="card-container" data-v-5681bde8><!----> <div class="card expandable-card border-danger" data-v-5681bde8><div class="card-header header-toggle bg-danger border-danger" data-v-5681bde8><div class="caret-wrapper" data-v-5681bde8><!----></div> <div class="header-wrapper card-title bg-danger text-white" data-v-5681bde8><p data-v-5681bde8><span aria-hidden="true" class="fas fa-dumbbell" data-v-5681bde8></span> Exercise: Vending Machine - Allow Abort</p></div> <div class="button-wrapper" data-v-5681bde8><button type="button" class="collapse-button btn btn-outline-light" data-v-5681bde8><span aria-hidden="true" class="collapse-icon glyphicon glyphicon-menu-down opened"></span></button> <button type="button" class="close-button btn btn-outline-light" style="display:none;" data-v-5681bde8><span aria-hidden="true" class="glyphicon glyphicon-remove" data-v-5681bde8></span></button> <button type="button" class="popup-button btn btn-outline-light" style="display:none;" data-v-5681bde8><span aria-hidden="true" class="glyphicon glyphicon-new-window" data-v-5681bde8></span></button></div></div> <div class="card-collapse" data-v-5681bde8><div class="card-body" data-v-5681bde8> <div data-v-5681bde8><h4 id="exercise-vending-machine-allow-abort" data-v-5681bde8><span id="exercise-vending-machine-allow-abort" class="anchor" data-v-5681bde8></span>Exercise - Vending Machine - Allow Abort<a href="#exercise-vending-machine-allow-abort" onclick="event.stopPropagation()" class="fa fa-anchor" data-v-5681bde8></a></h4> <p data-v-5681bde8>The vending machine you wrote in the previous exercise (an example solution given below) does not allow the user to abort the purchase and get the money back.</p> <pre data-v-5681bde8><code class="line-numbers hljs python" data-v-5681bde8><span data-v-5681bde8>price = <span class="hljs-number" data-v-5681bde8>100</span>
+</span><span data-v-5681bde8>coin_sum = <span class="hljs-number" data-v-5681bde8>0</span>
+</span><span data-v-5681bde8>
+</span><span data-v-5681bde8><span class="hljs-built_in" data-v-5681bde8>print</span>(<span class="hljs-string" data-v-5681bde8>'Price:'</span>, price)
+</span><span data-v-5681bde8>
+</span><span data-v-5681bde8><span class="hljs-keyword" data-v-5681bde8>while</span> price &gt; coin_sum:
+</span><span data-v-5681bde8>  coin_value = <span class="hljs-built_in" data-v-5681bde8>int</span>(<span class="hljs-built_in" data-v-5681bde8>input</span>(<span class="hljs-string" data-v-5681bde8>'Enter a coin:'</span>))
+</span><span data-v-5681bde8>  coin_sum = coin_sum + coin_value
+</span><span data-v-5681bde8>  <span class="hljs-built_in" data-v-5681bde8>print</span>(<span class="hljs-string" data-v-5681bde8>'You have entered:'</span>, coin_sum)
+</span><span data-v-5681bde8>
+</span><span data-v-5681bde8><span class="hljs-built_in" data-v-5681bde8>print</span>(<span class="hljs-string" data-v-5681bde8>'Here is the product'</span>)
+</span><span data-v-5681bde8><span class="hljs-built_in" data-v-5681bde8>print</span>(<span class="hljs-string" data-v-5681bde8>'Your balance:'</span>, coin_sum - price)
+</span></code><div class="function-btn-container" data-v-5681bde8><button onclick="copyCodeBlock(this)" class="function-btn" data-v-5681bde8>
+    <div class="function-btn-body" data-v-5681bde8>
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1" data-v-5681bde8>
+    <g id="surface1" data-v-5681bde8>
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 " data-v-5681bde8></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre><p data-v-5681bde8>Modify the code so that the user can abort the purchase by entering <code class="line-numbers hljs inline no-lang" data-v-5681bde8>0</code> as the coin value:</p> <pre data-v-5681bde8><code class="line-numbers hljs" data-v-5681bde8><span data-v-5681bde8>Price: 100
+</span><span data-v-5681bde8>Enter a coin: 20
+</span><span data-v-5681bde8>You have entered: 20
+</span><span data-v-5681bde8>Enter a coin: 0
+</span><span data-v-5681bde8>Your balance: 20
+</span></code><div class="function-btn-container" data-v-5681bde8><button onclick="copyCodeBlock(this)" class="function-btn" data-v-5681bde8>
+    <div class="function-btn-body" data-v-5681bde8>
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1" data-v-5681bde8>
+    <g id="surface1" data-v-5681bde8>
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 " data-v-5681bde8></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre><div data-v-5681bde8><div class="algolia-no-index card-container" data-v-5681bde8><!----> <div class="card expandable-card border-0" data-v-5681bde8><div class="card-header header-toggle bg-white border-0" data-v-5681bde8><div class="caret-wrapper" data-v-5681bde8><span class="glyphicon glyphicon-chevron-right" data-v-5681bde8></span></div> <div class="header-wrapper card-title bg-white" data-v-5681bde8><div data-v-5681bde8><span data-v-5681bde8><span class="badge rounded-pill bg-success text-white" data-v-5681bde8><span aria-hidden="true" class="fas fa-lightbulb" data-v-5681bde8></span></span> see hint</span></div></div> <div class="button-wrapper" data-v-5681bde8><button type="button" class="collapse-button btn btn-outline-secondary" style="display:none;" data-v-5681bde8><span aria-hidden="true" class="collapse-icon glyphicon glyphicon-menu-down"></span></button> <button type="button" class="close-button btn btn-outline-secondary seamless-button" data-v-5681bde8><span aria-hidden="true" class="glyphicon glyphicon-remove" data-v-5681bde8></span></button> <button type="button" class="popup-button btn btn-outline-secondary seamless-button" style="display:none;" data-v-5681bde8><span aria-hidden="true" class="glyphicon glyphicon-new-window" data-v-5681bde8></span></button></div></div> <div class="card-collapse" data-v-5681bde8><!----> <hr style="display:;" data-v-5681bde8></div> <!----></div></div></div></div> <!----> <button type="button" class="collapse-button btn btn-outline-secondary" data-v-5681bde8><span aria-hidden="true" class="collapse-icon glyphicon glyphicon-menu-down opened"></span></button></div> <hr style="display:none;" data-v-5681bde8></div> <!----></div></div><p></p></div> <p><strong>You can use a <code class="line-numbers hljs inline no-lang">continue</code> statement to skip the remainder of the current iteration</strong> and go back to the <code class="line-numbers hljs inline no-lang">while</code> condition.</p> <div class="alert box-container alert-default" data-v-7d17494f><!----> <div class="header-and-body" data-v-7d17494f><!----> <div class="box-body-wrapper" data-v-7d17494f><!----> <!----> <div class="contents" data-v-7d17494f><p data-v-7d17494f><span data-v-7d17494f><span aria-hidden="true" class="fas fa-cube" data-v-7d17494f></span></span> The code below is for reading three words from the user and printing all three at the end. It uses the <code class="line-numbers hljs inline no-lang" data-v-7d17494f>continue</code> statement to skip the remainder of the iteration if the word entered is too short (i.e., shorter than 4 letters).</p> <pre data-v-7d17494f><code class="line-numbers hljs python" data-v-7d17494f><span data-v-7d17494f>accepted_words = <span class="hljs-string" data-v-7d17494f>''</span>
+</span><span data-v-7d17494f>count = <span class="hljs-number" data-v-7d17494f>0</span>
+</span><span data-v-7d17494f><span class="hljs-keyword" data-v-7d17494f>while</span> count &lt; <span class="hljs-number" data-v-7d17494f>3</span>:
+</span><span data-v-7d17494f>  word = <span class="hljs-built_in" data-v-7d17494f>input</span>(<span class="hljs-string" data-v-7d17494f>'Enter a word (with 4 letters or more):'</span>)
+</span><span data-v-7d17494f>  <span class="hljs-keyword" data-v-7d17494f>if</span> <span class="hljs-built_in" data-v-7d17494f>len</span>(word) &lt; <span class="hljs-number" data-v-7d17494f>4</span>:
+</span><span data-v-7d17494f>    <span class="hljs-built_in" data-v-7d17494f>print</span>(<span class="hljs-string" data-v-7d17494f>'Too short. Ignored.'</span>)
+</span><span data-v-7d17494f>    <span class="hljs-keyword" data-v-7d17494f>continue</span> <span class="hljs-comment" data-v-7d17494f># skip the remainder of the iteration</span>
+</span><span data-v-7d17494f>  accepted_words = accepted_words + <span class="hljs-string" data-v-7d17494f>' '</span> + word
+</span><span data-v-7d17494f>  count = count + <span class="hljs-number" data-v-7d17494f>1</span>
+</span><span data-v-7d17494f><span class="hljs-built_in" data-v-7d17494f>print</span>(<span class="hljs-string" data-v-7d17494f>'Accepted words: '</span> + accepted_words)
+</span></code><div class="function-btn-container" data-v-7d17494f><button onclick="copyCodeBlock(this)" class="function-btn" data-v-7d17494f>
+    <div class="function-btn-body" data-v-7d17494f>
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1" data-v-7d17494f>
+    <g id="surface1" data-v-7d17494f>
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 " data-v-7d17494f></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre><div class="algolia-no-index card-container" data-v-5681bde8><!----> <div class="card expandable-card border-0" data-v-5681bde8><div class="card-header header-toggle bg-white border-0" data-v-5681bde8><div class="caret-wrapper" data-v-5681bde8><span class="glyphicon glyphicon-chevron-right" data-v-5681bde8></span></div> <div class="header-wrapper card-title bg-white" data-v-5681bde8><p data-v-5681bde8><span class="dimmed" data-v-5681bde8><span aria-hidden="true" class="fas fa-laptop" data-v-5681bde8></span> Try your own</span></p></div> <div class="button-wrapper" data-v-5681bde8><button type="button" class="collapse-button btn btn-outline-secondary" style="display:none;" data-v-5681bde8><span aria-hidden="true" class="collapse-icon glyphicon glyphicon-menu-down"></span></button> <button type="button" class="close-button btn btn-outline-secondary seamless-button" data-v-5681bde8><span aria-hidden="true" class="glyphicon glyphicon-remove" data-v-5681bde8></span></button> <button type="button" class="popup-button btn btn-outline-secondary seamless-button" style="display:none;" data-v-5681bde8><span aria-hidden="true" class="glyphicon glyphicon-new-window" data-v-5681bde8></span></button></div></div> <div class="card-collapse" data-v-5681bde8><!----> <hr style="display:;" data-v-5681bde8></div> <!----></div></div><p data-v-7d17494f></p></div> <!----></div></div></div> <div class="algolia-no-index card-container" data-v-5681bde8><!----> <div class="card expandable-card border-0" data-v-5681bde8><div class="card-header header-toggle bg-white border-0" data-v-5681bde8><div class="caret-wrapper" data-v-5681bde8><span class="glyphicon glyphicon-chevron-right" data-v-5681bde8></span></div> <div class="header-wrapper card-title bg-white" data-v-5681bde8><p data-v-5681bde8><span class="dimmed" data-v-5681bde8><span data-v-5681bde8><span aria-hidden="true" class="glyphicon glyphicon-facetime-video" data-v-5681bde8></span></span> <code class="line-numbers hljs inline no-lang" data-v-5681bde8>continue</code> inside <code class="line-numbers hljs inline no-lang" data-v-5681bde8>while</code> loops</span></p></div> <div class="button-wrapper" data-v-5681bde8><button type="button" class="collapse-button btn btn-outline-secondary" style="display:none;" data-v-5681bde8><span aria-hidden="true" class="collapse-icon glyphicon glyphicon-menu-down"></span></button> <button type="button" class="close-button btn btn-outline-secondary seamless-button" data-v-5681bde8><span aria-hidden="true" class="glyphicon glyphicon-remove" data-v-5681bde8></span></button> <button type="button" class="popup-button btn btn-outline-secondary seamless-button" style="display:none;" data-v-5681bde8><span aria-hidden="true" class="glyphicon glyphicon-new-window" data-v-5681bde8></span></button></div></div> <div class="card-collapse" data-v-5681bde8><!----> <hr style="display:;" data-v-5681bde8></div> <!----></div></div><p></p> <div><div expanded="" no-close="" class="card-container" data-v-5681bde8><!----> <div class="card expandable-card border-danger" data-v-5681bde8><div class="card-header header-toggle bg-danger border-danger" data-v-5681bde8><div class="caret-wrapper" data-v-5681bde8><!----></div> <div class="header-wrapper card-title bg-danger text-white" data-v-5681bde8><p data-v-5681bde8><span aria-hidden="true" class="fas fa-dumbbell" data-v-5681bde8></span> Exercise: Vending Machine - Legit Coins</p></div> <div class="button-wrapper" data-v-5681bde8><button type="button" class="collapse-button btn btn-outline-light" data-v-5681bde8><span aria-hidden="true" class="collapse-icon glyphicon glyphicon-menu-down opened"></span></button> <button type="button" class="close-button btn btn-outline-light" style="display:none;" data-v-5681bde8><span aria-hidden="true" class="glyphicon glyphicon-remove" data-v-5681bde8></span></button> <button type="button" class="popup-button btn btn-outline-light" style="display:none;" data-v-5681bde8><span aria-hidden="true" class="glyphicon glyphicon-new-window" data-v-5681bde8></span></button></div></div> <div class="card-collapse" data-v-5681bde8><div class="card-body" data-v-5681bde8> <div data-v-5681bde8><h4 id="exercise-vending-machine-legit-coins" data-v-5681bde8><span id="exercise-vending-machine-legit-coins" class="anchor" data-v-5681bde8></span>Exercise - Vending Machine - Legit Coins<a href="#exercise-vending-machine-legit-coins" onclick="event.stopPropagation()" class="fa fa-anchor" data-v-5681bde8></a></h4> <p data-v-5681bde8>The vending machine you wrote in the previous exercise (an example solution given below) accepts any value as the coin value. However, coins come in only certain values only.</p> <pre data-v-5681bde8><code class="line-numbers hljs python" data-v-5681bde8><span data-v-5681bde8>price = <span class="hljs-number" data-v-5681bde8>100</span>
+</span><span data-v-5681bde8>coin_sum = <span class="hljs-number" data-v-5681bde8>0</span>
+</span><span data-v-5681bde8>is_aborting = <span class="hljs-literal" data-v-5681bde8>False</span>
+</span><span data-v-5681bde8>
+</span><span data-v-5681bde8><span class="hljs-built_in" data-v-5681bde8>print</span>(<span class="hljs-string" data-v-5681bde8>'Price:'</span>, price)
+</span><span data-v-5681bde8>
+</span><span data-v-5681bde8><span class="hljs-keyword" data-v-5681bde8>while</span> price &gt; coin_sum:
+</span><span data-v-5681bde8>  coin_value = <span class="hljs-built_in" data-v-5681bde8>int</span>(<span class="hljs-built_in" data-v-5681bde8>input</span>(<span class="hljs-string" data-v-5681bde8>'Enter a coin:'</span>))
+</span><span data-v-5681bde8>  <span class="hljs-keyword" data-v-5681bde8>if</span> coin_value == <span class="hljs-number" data-v-5681bde8>0</span>:
+</span><span data-v-5681bde8>    is_aborting = <span class="hljs-literal" data-v-5681bde8>True</span>
+</span><span data-v-5681bde8>    <span class="hljs-keyword" data-v-5681bde8>break</span>
+</span><span data-v-5681bde8>  coin_sum = coin_sum + coin_value
+</span><span data-v-5681bde8>  <span class="hljs-built_in" data-v-5681bde8>print</span>(<span class="hljs-string" data-v-5681bde8>'You have entered:'</span>, coin_sum)
+</span><span data-v-5681bde8>
+</span><span data-v-5681bde8><span class="hljs-keyword" data-v-5681bde8>if</span> is_aborting:
+</span><span data-v-5681bde8>  <span class="hljs-built_in" data-v-5681bde8>print</span>(<span class="hljs-string" data-v-5681bde8>'Your balance:'</span>, coin_sum)
+</span><span data-v-5681bde8><span class="hljs-keyword" data-v-5681bde8>else</span>:
+</span><span data-v-5681bde8>  <span class="hljs-built_in" data-v-5681bde8>print</span>(<span class="hljs-string" data-v-5681bde8>'Here is the product'</span>)
+</span><span data-v-5681bde8>  <span class="hljs-built_in" data-v-5681bde8>print</span>(<span class="hljs-string" data-v-5681bde8>'Your balance:'</span>, coin_sum - price)
+</span></code><div class="function-btn-container" data-v-5681bde8><button onclick="copyCodeBlock(this)" class="function-btn" data-v-5681bde8>
+    <div class="function-btn-body" data-v-5681bde8>
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1" data-v-5681bde8>
+    <g id="surface1" data-v-5681bde8>
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 " data-v-5681bde8></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre><p data-v-5681bde8>Modify the code so that it accepts coins of value 10, 20, 50, 100 only:</p> <pre data-v-5681bde8><code class="line-numbers hljs" data-v-5681bde8><span data-v-5681bde8>Price: 100
+</span><span data-v-5681bde8>Enter a coin: 30
+</span><span data-v-5681bde8>Coin not recognized
+</span><span data-v-5681bde8>Enter a coin: 100
+</span><span data-v-5681bde8>You have entered: 100
+</span><span data-v-5681bde8>Here is the product
+</span><span data-v-5681bde8>Your balance: 0
+</span></code><div class="function-btn-container" data-v-5681bde8><button onclick="copyCodeBlock(this)" class="function-btn" data-v-5681bde8>
+    <div class="function-btn-body" data-v-5681bde8>
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1" data-v-5681bde8>
+    <g id="surface1" data-v-5681bde8>
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 " data-v-5681bde8></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre><div data-v-5681bde8><div class="algolia-no-index card-container" data-v-5681bde8><!----> <div class="card expandable-card border-0" data-v-5681bde8><div class="card-header header-toggle bg-white border-0" data-v-5681bde8><div class="caret-wrapper" data-v-5681bde8><span class="glyphicon glyphicon-chevron-right" data-v-5681bde8></span></div> <div class="header-wrapper card-title bg-white" data-v-5681bde8><div data-v-5681bde8><span data-v-5681bde8><span class="badge rounded-pill bg-success text-white" data-v-5681bde8><span aria-hidden="true" class="fas fa-lightbulb" data-v-5681bde8></span></span> see hint</span></div></div> <div class="button-wrapper" data-v-5681bde8><button type="button" class="collapse-button btn btn-outline-secondary" style="display:none;" data-v-5681bde8><span aria-hidden="true" class="collapse-icon glyphicon glyphicon-menu-down"></span></button> <button type="button" class="close-button btn btn-outline-secondary seamless-button" data-v-5681bde8><span aria-hidden="true" class="glyphicon glyphicon-remove" data-v-5681bde8></span></button> <button type="button" class="popup-button btn btn-outline-secondary seamless-button" style="display:none;" data-v-5681bde8><span aria-hidden="true" class="glyphicon glyphicon-new-window" data-v-5681bde8></span></button></div></div> <div class="card-collapse" data-v-5681bde8><!----> <hr style="display:;" data-v-5681bde8></div> <!----></div></div></div></div> <!----> <button type="button" class="collapse-button btn btn-outline-secondary" data-v-5681bde8><span aria-hidden="true" class="collapse-icon glyphicon glyphicon-menu-down opened"></span></button></div> <hr style="display:none;" data-v-5681bde8></div> <!----></div></div><p></p></div></div><hr style="border-top:3px double #c5c5c5;"> <div><h3 id="for-statements"><span id="for-statements" class="anchor"></span><code class="line-numbers hljs inline no-lang">for</code> Statements<a href="#for-statements" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h3> <p>You can <strong>use a <code class="line-numbers hljs inline no-lang">for</code> statement, together with the <code class="line-numbers hljs inline no-lang">range()</code> function, to repeat a code block a pre-determined number of times.</strong></p> <p>Format:</p> <pre><code class="line-numbers hljs"><span>for variable_used_as_index in range(number_of_times_to_repeat) :
+</span><span>    statements_to_repeat
+</span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn">
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 "></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre><div class="alert box-container alert-default" data-v-7d17494f><!----> <div class="header-and-body" data-v-7d17494f><!----> <div class="box-body-wrapper" data-v-7d17494f><!----> <!----> <div class="contents" data-v-7d17494f><p data-v-7d17494f><span data-v-7d17494f><span aria-hidden="true" class="fas fa-cube" data-v-7d17494f></span></span> the code below use a <code class="line-numbers hljs inline no-lang" data-v-7d17494f>for</code> loop to iterate three times. Note how the variable <code class="line-numbers hljs inline no-lang" data-v-7d17494f>i</code> is used as an indexing variable and how <code class="line-numbers hljs inline no-lang" data-v-7d17494f>i in range(3)</code> causes <code class="line-numbers hljs inline no-lang" data-v-7d17494f>i</code> to take values <code class="line-numbers hljs inline no-lang" data-v-7d17494f>0, 1, 2</code> over the three iterations.</p> <table data-v-7d17494f><tbody data-v-7d17494f><tr data-v-7d17494f><td data-v-7d17494f><pre data-v-7d17494f><code class="line-numbers hljs python" data-v-7d17494f><span data-v-7d17494f><span class="hljs-keyword" data-v-7d17494f>for</span> i <span class="hljs-keyword" data-v-7d17494f>in</span> <span class="hljs-built_in" data-v-7d17494f>range</span>(<span class="hljs-number" data-v-7d17494f>3</span>):
+</span><span data-v-7d17494f>  <span class="hljs-built_in" data-v-7d17494f>print</span>(i, <span class="hljs-string" data-v-7d17494f>'Knock knock, Penny!'</span>)
+</span></code><div class="function-btn-container" data-v-7d17494f><button onclick="copyCodeBlock(this)" class="function-btn" data-v-7d17494f>
+    <div class="function-btn-body" data-v-7d17494f>
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1" data-v-7d17494f>
+    <g id="surface1" data-v-7d17494f>
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 " data-v-7d17494f></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre></td> <td data-v-7d17494f> → </td> <td data-v-7d17494f><pre data-v-7d17494f><code class="line-numbers hljs" data-v-7d17494f><span data-v-7d17494f>0 Knock knock, Penny!
+</span><span data-v-7d17494f>1 Knock knock, Penny!
+</span><span data-v-7d17494f>2 Knock knock, Penny!
+</span></code><div class="function-btn-container" data-v-7d17494f><button onclick="copyCodeBlock(this)" class="function-btn" data-v-7d17494f>
+    <div class="function-btn-body" data-v-7d17494f>
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1" data-v-7d17494f>
+    <g id="surface1" data-v-7d17494f>
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 " data-v-7d17494f></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre></td></tr></tbody></table> <p data-v-7d17494f><span class="badge rounded-pill bg-success text-white" data-v-7d17494f><span aria-hidden="true" class="fas fa-lightbulb" data-v-7d17494f></span></span> Note how the above <code class="line-numbers hljs inline no-lang" data-v-7d17494f>for</code> loop is equivalent to the following <code class="line-numbers hljs inline no-lang" data-v-7d17494f>while</code> loop but more concise.</p> <pre data-v-7d17494f><code class="line-numbers hljs python" data-v-7d17494f><span data-v-7d17494f>i = <span class="hljs-number" data-v-7d17494f>0</span>
+</span><span data-v-7d17494f><span class="hljs-keyword" data-v-7d17494f>while</span> i &lt; <span class="hljs-number" data-v-7d17494f>3</span>:
+</span><span data-v-7d17494f>  <span class="hljs-built_in" data-v-7d17494f>print</span>(i, <span class="hljs-string" data-v-7d17494f>'Knock knock, Penny!'</span>)
+</span><span data-v-7d17494f>  i = i + <span class="hljs-number" data-v-7d17494f>1</span>
+</span></code><div class="function-btn-container" data-v-7d17494f><button onclick="copyCodeBlock(this)" class="function-btn" data-v-7d17494f>
+    <div class="function-btn-body" data-v-7d17494f>
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1" data-v-7d17494f>
+    <g id="surface1" data-v-7d17494f>
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 " data-v-7d17494f></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre><div class="algolia-no-index card-container" data-v-5681bde8><!----> <div class="card expandable-card border-0" data-v-5681bde8><div class="card-header header-toggle bg-white border-0" data-v-5681bde8><div class="caret-wrapper" data-v-5681bde8><span class="glyphicon glyphicon-chevron-right" data-v-5681bde8></span></div> <div class="header-wrapper card-title bg-white" data-v-5681bde8><p data-v-5681bde8><span class="dimmed" data-v-5681bde8><span aria-hidden="true" class="fas fa-laptop" data-v-5681bde8></span> Try your own</span></p></div> <div class="button-wrapper" data-v-5681bde8><button type="button" class="collapse-button btn btn-outline-secondary" style="display:none;" data-v-5681bde8><span aria-hidden="true" class="collapse-icon glyphicon glyphicon-menu-down"></span></button> <button type="button" class="close-button btn btn-outline-secondary seamless-button" data-v-5681bde8><span aria-hidden="true" class="glyphicon glyphicon-remove" data-v-5681bde8></span></button> <button type="button" class="popup-button btn btn-outline-secondary seamless-button" style="display:none;" data-v-5681bde8><span aria-hidden="true" class="glyphicon glyphicon-new-window" data-v-5681bde8></span></button></div></div> <div class="card-collapse" data-v-5681bde8><!----> <hr style="display:;" data-v-5681bde8></div> <!----></div></div><p data-v-7d17494f></p></div> <!----></div></div></div> <div class="algolia-no-index card-container" data-v-5681bde8><!----> <div class="card expandable-card border-0" data-v-5681bde8><div class="card-header header-toggle bg-white border-0" data-v-5681bde8><div class="caret-wrapper" data-v-5681bde8><span class="glyphicon glyphicon-chevron-right" data-v-5681bde8></span></div> <div class="header-wrapper card-title bg-white" data-v-5681bde8><p data-v-5681bde8><span class="dimmed" data-v-5681bde8><span data-v-5681bde8><span aria-hidden="true" class="glyphicon glyphicon-facetime-video" data-v-5681bde8></span></span> Basic <code class="line-numbers hljs inline no-lang" data-v-5681bde8>for</code> statements</span></p></div> <div class="button-wrapper" data-v-5681bde8><button type="button" class="collapse-button btn btn-outline-secondary" style="display:none;" data-v-5681bde8><span aria-hidden="true" class="collapse-icon glyphicon glyphicon-menu-down"></span></button> <button type="button" class="close-button btn btn-outline-secondary seamless-button" data-v-5681bde8><span aria-hidden="true" class="glyphicon glyphicon-remove" data-v-5681bde8></span></button> <button type="button" class="popup-button btn btn-outline-secondary seamless-button" style="display:none;" data-v-5681bde8><span aria-hidden="true" class="glyphicon glyphicon-new-window" data-v-5681bde8></span></button></div></div> <div class="card-collapse" data-v-5681bde8><!----> <hr style="display:;" data-v-5681bde8></div> <!----></div></div><p></p> <div><div expanded="" no-close="" class="card-container" data-v-5681bde8><!----> <div class="card expandable-card border-danger" data-v-5681bde8><div class="card-header header-toggle bg-danger border-danger" data-v-5681bde8><div class="caret-wrapper" data-v-5681bde8><!----></div> <div class="header-wrapper card-title bg-danger text-white" data-v-5681bde8><p data-v-5681bde8><span aria-hidden="true" class="fas fa-dumbbell" data-v-5681bde8></span> Exercise: Multiplication Table</p></div> <div class="button-wrapper" data-v-5681bde8><button type="button" class="collapse-button btn btn-outline-light" data-v-5681bde8><span aria-hidden="true" class="collapse-icon glyphicon glyphicon-menu-down opened"></span></button> <button type="button" class="close-button btn btn-outline-light" style="display:none;" data-v-5681bde8><span aria-hidden="true" class="glyphicon glyphicon-remove" data-v-5681bde8></span></button> <button type="button" class="popup-button btn btn-outline-light" style="display:none;" data-v-5681bde8><span aria-hidden="true" class="glyphicon glyphicon-new-window" data-v-5681bde8></span></button></div></div> <div class="card-collapse" data-v-5681bde8><div class="card-body" data-v-5681bde8> <div data-v-5681bde8><h4 id="exercise-multiplication-table" data-v-5681bde8><span id="exercise-multiplication-table" class="anchor" data-v-5681bde8></span>Exercise - Multiplication Table<a href="#exercise-multiplication-table" onclick="event.stopPropagation()" class="fa fa-anchor" data-v-5681bde8></a></h4> <p data-v-5681bde8>Write a program to read in an integer and generate the multiplication table (for <code class="line-numbers hljs inline no-lang" data-v-5681bde8>1</code> to <code class="line-numbers hljs inline no-lang" data-v-5681bde8>10</code>) for that number. An example is given below:</p> <pre data-v-5681bde8><code class="line-numbers hljs python" data-v-5681bde8><span data-v-5681bde8>Enter a number: <span class="hljs-number" data-v-5681bde8>7</span>
+</span><span data-v-5681bde8><span class="hljs-number" data-v-5681bde8>7</span> x <span class="hljs-number" data-v-5681bde8>1</span> = <span class="hljs-number" data-v-5681bde8>7</span>
+</span><span data-v-5681bde8><span class="hljs-number" data-v-5681bde8>7</span> x <span class="hljs-number" data-v-5681bde8>2</span> = <span class="hljs-number" data-v-5681bde8>14</span>
+</span><span data-v-5681bde8><span class="hljs-number" data-v-5681bde8>7</span> x <span class="hljs-number" data-v-5681bde8>3</span> = <span class="hljs-number" data-v-5681bde8>21</span>
+</span><span data-v-5681bde8><span class="hljs-number" data-v-5681bde8>7</span> x <span class="hljs-number" data-v-5681bde8>4</span> = <span class="hljs-number" data-v-5681bde8>28</span>
+</span><span data-v-5681bde8><span class="hljs-number" data-v-5681bde8>7</span> x <span class="hljs-number" data-v-5681bde8>5</span> = <span class="hljs-number" data-v-5681bde8>35</span>
+</span><span data-v-5681bde8><span class="hljs-number" data-v-5681bde8>7</span> x <span class="hljs-number" data-v-5681bde8>6</span> = <span class="hljs-number" data-v-5681bde8>42</span>
+</span><span data-v-5681bde8><span class="hljs-number" data-v-5681bde8>7</span> x <span class="hljs-number" data-v-5681bde8>7</span> = <span class="hljs-number" data-v-5681bde8>49</span>
+</span><span data-v-5681bde8><span class="hljs-number" data-v-5681bde8>7</span> x <span class="hljs-number" data-v-5681bde8>8</span> = <span class="hljs-number" data-v-5681bde8>56</span>
+</span><span data-v-5681bde8><span class="hljs-number" data-v-5681bde8>7</span> x <span class="hljs-number" data-v-5681bde8>9</span> = <span class="hljs-number" data-v-5681bde8>63</span>
+</span><span data-v-5681bde8><span class="hljs-number" data-v-5681bde8>7</span> x <span class="hljs-number" data-v-5681bde8>10</span> = <span class="hljs-number" data-v-5681bde8>70</span>
+</span></code><div class="function-btn-container" data-v-5681bde8><button onclick="copyCodeBlock(this)" class="function-btn" data-v-5681bde8>
+    <div class="function-btn-body" data-v-5681bde8>
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1" data-v-5681bde8>
+    <g id="surface1" data-v-5681bde8>
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 " data-v-5681bde8></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre><div data-v-5681bde8><div class="algolia-no-index card-container" data-v-5681bde8><!----> <div class="card expandable-card border-0" data-v-5681bde8><div class="card-header header-toggle bg-white border-0" data-v-5681bde8><div class="caret-wrapper" data-v-5681bde8><span class="glyphicon glyphicon-chevron-right" data-v-5681bde8></span></div> <div class="header-wrapper card-title bg-white" data-v-5681bde8><div data-v-5681bde8><span data-v-5681bde8><span class="badge rounded-pill bg-success text-white" data-v-5681bde8><span aria-hidden="true" class="fas fa-lightbulb" data-v-5681bde8></span></span> see hint</span></div></div> <div class="button-wrapper" data-v-5681bde8><button type="button" class="collapse-button btn btn-outline-secondary" style="display:none;" data-v-5681bde8><span aria-hidden="true" class="collapse-icon glyphicon glyphicon-menu-down"></span></button> <button type="button" class="close-button btn btn-outline-secondary seamless-button" data-v-5681bde8><span aria-hidden="true" class="glyphicon glyphicon-remove" data-v-5681bde8></span></button> <button type="button" class="popup-button btn btn-outline-secondary seamless-button" style="display:none;" data-v-5681bde8><span aria-hidden="true" class="glyphicon glyphicon-new-window" data-v-5681bde8></span></button></div></div> <div class="card-collapse" data-v-5681bde8><!----> <hr style="display:;" data-v-5681bde8></div> <!----></div></div></div></div> <!----> <button type="button" class="collapse-button btn btn-outline-secondary" data-v-5681bde8><span aria-hidden="true" class="collapse-icon glyphicon glyphicon-menu-down opened"></span></button></div> <hr style="display:none;" data-v-5681bde8></div> <!----></div></div><p></p></div> <p><strong>You can use <code class="line-numbers hljs inline no-lang">break</code> and <code class="line-numbers hljs inline no-lang">continue</code> in <code class="line-numbers hljs inline no-lang">for</code> loops as well</strong>, with similar effects as in <code class="line-numbers hljs inline no-lang">while</code> loops.</p> <div class="alert box-container alert-default" data-v-7d17494f><!----> <div class="header-and-body" data-v-7d17494f><!----> <div class="box-body-wrapper" data-v-7d17494f><!----> <!----> <div class="contents" data-v-7d17494f><p data-v-7d17494f><span data-v-7d17494f><span aria-hidden="true" class="fas fa-cube" data-v-7d17494f></span></span> The code below totals the numbers entered by the user. It uses <code class="line-numbers hljs inline no-lang" data-v-7d17494f>range(5)</code> to limit the number of entries to 5. It uses a <code class="line-numbers hljs inline no-lang" data-v-7d17494f>break</code> to exit the loop if user hits <kbd data-v-7d17494f>Enter</kbd> without entering a value. It uses a <code class="line-numbers hljs inline no-lang" data-v-7d17494f>continue</code> statement to skip negative numbers entered by the user.</p> <pre data-v-7d17494f><code class="line-numbers hljs python" data-v-7d17494f><span data-v-7d17494f>total = <span class="hljs-number" data-v-7d17494f>0</span>
+</span><span data-v-7d17494f><span class="hljs-keyword" data-v-7d17494f>for</span> n <span class="hljs-keyword" data-v-7d17494f>in</span> <span class="hljs-built_in" data-v-7d17494f>range</span> (<span class="hljs-number" data-v-7d17494f>5</span>):
+</span><span data-v-7d17494f>  number_as_string = <span class="hljs-built_in" data-v-7d17494f>input</span>(<span class="hljs-string" data-v-7d17494f>'Enter a number (press enter to exit):'</span>)
+</span><span data-v-7d17494f>
+</span><span data-v-7d17494f>  <span class="hljs-comment" data-v-7d17494f># exit if user input is empty</span>
+</span><span data-v-7d17494f>  <span class="hljs-keyword" data-v-7d17494f>if</span> number_as_string == <span class="hljs-string" data-v-7d17494f>''</span>:
+</span><span data-v-7d17494f>    <span class="hljs-built_in" data-v-7d17494f>print</span>(<span class="hljs-string" data-v-7d17494f>'Exiting as per user request...'</span>)
+</span><span data-v-7d17494f>    <span class="hljs-keyword" data-v-7d17494f>break</span>
+</span><span data-v-7d17494f>
+</span><span data-v-7d17494f>  <span class="hljs-comment" data-v-7d17494f># convert the input into an integer</span>
+</span><span data-v-7d17494f>  number_as_int = <span class="hljs-built_in" data-v-7d17494f>int</span>(number_as_string)
+</span><span data-v-7d17494f>
+</span><span data-v-7d17494f>  <span class="hljs-comment" data-v-7d17494f># skip if the number is negative</span>
+</span><span data-v-7d17494f>  <span class="hljs-keyword" data-v-7d17494f>if</span> number_as_int &lt; <span class="hljs-number" data-v-7d17494f>0</span> :
+</span><span data-v-7d17494f>    <span class="hljs-built_in" data-v-7d17494f>print</span>(<span class="hljs-string" data-v-7d17494f>'Negative number, skipped'</span>)
+</span><span data-v-7d17494f>    <span class="hljs-keyword" data-v-7d17494f>continue</span>
+</span><span data-v-7d17494f>
+</span><span data-v-7d17494f>  <span class="hljs-comment" data-v-7d17494f># update the total and print the running total</span>
+</span><span data-v-7d17494f>  total = total + number_as_int
+</span><span data-v-7d17494f>  <span class="hljs-built_in" data-v-7d17494f>print</span>(<span class="hljs-string" data-v-7d17494f>'Running total:'</span> + <span class="hljs-built_in" data-v-7d17494f>str</span>(total))
+</span><span data-v-7d17494f>
+</span><span data-v-7d17494f><span class="hljs-built_in" data-v-7d17494f>print</span>(<span class="hljs-string" data-v-7d17494f>'Grand total of non-negative numbers:'</span>, <span class="hljs-built_in" data-v-7d17494f>str</span>(total))
+</span></code><div class="function-btn-container" data-v-7d17494f><button onclick="copyCodeBlock(this)" class="function-btn" data-v-7d17494f>
+    <div class="function-btn-body" data-v-7d17494f>
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1" data-v-7d17494f>
+    <g id="surface1" data-v-7d17494f>
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 " data-v-7d17494f></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre><div class="algolia-no-index card-container" data-v-5681bde8><!----> <div class="card expandable-card border-0" data-v-5681bde8><div class="card-header header-toggle bg-white border-0" data-v-5681bde8><div class="caret-wrapper" data-v-5681bde8><span class="glyphicon glyphicon-chevron-right" data-v-5681bde8></span></div> <div class="header-wrapper card-title bg-white" data-v-5681bde8><p data-v-5681bde8><span class="dimmed" data-v-5681bde8><span aria-hidden="true" class="fas fa-laptop" data-v-5681bde8></span> Try your own</span></p></div> <div class="button-wrapper" data-v-5681bde8><button type="button" class="collapse-button btn btn-outline-secondary" style="display:none;" data-v-5681bde8><span aria-hidden="true" class="collapse-icon glyphicon glyphicon-menu-down"></span></button> <button type="button" class="close-button btn btn-outline-secondary seamless-button" data-v-5681bde8><span aria-hidden="true" class="glyphicon glyphicon-remove" data-v-5681bde8></span></button> <button type="button" class="popup-button btn btn-outline-secondary seamless-button" style="display:none;" data-v-5681bde8><span aria-hidden="true" class="glyphicon glyphicon-new-window" data-v-5681bde8></span></button></div></div> <div class="card-collapse" data-v-5681bde8><!----> <hr style="display:;" data-v-5681bde8></div> <!----></div></div><p data-v-7d17494f></p></div> <!----></div></div></div> <div><div expanded="" no-close="" class="card-container" data-v-5681bde8><!----> <div class="card expandable-card border-danger" data-v-5681bde8><div class="card-header header-toggle bg-danger border-danger" data-v-5681bde8><div class="caret-wrapper" data-v-5681bde8><!----></div> <div class="header-wrapper card-title bg-danger text-white" data-v-5681bde8><p data-v-5681bde8><span aria-hidden="true" class="fas fa-dumbbell" data-v-5681bde8></span> Exercise: Multiplication Table (Extended)</p></div> <div class="button-wrapper" data-v-5681bde8><button type="button" class="collapse-button btn btn-outline-light" data-v-5681bde8><span aria-hidden="true" class="collapse-icon glyphicon glyphicon-menu-down opened"></span></button> <button type="button" class="close-button btn btn-outline-light" style="display:none;" data-v-5681bde8><span aria-hidden="true" class="glyphicon glyphicon-remove" data-v-5681bde8></span></button> <button type="button" class="popup-button btn btn-outline-light" style="display:none;" data-v-5681bde8><span aria-hidden="true" class="glyphicon glyphicon-new-window" data-v-5681bde8></span></button></div></div> <div class="card-collapse" data-v-5681bde8><div class="card-body" data-v-5681bde8> <div data-v-5681bde8><h4 id="exercise-multiplication-table-extended" data-v-5681bde8><span id="exercise-multiplication-table-extended" class="anchor" data-v-5681bde8></span>Exercise - Multiplication Table (Extended)<a href="#exercise-multiplication-table-extended" onclick="event.stopPropagation()" class="fa fa-anchor" data-v-5681bde8></a></h4> <p data-v-5681bde8>Modify the code a program to,</p> <ul data-v-5681bde8><li data-v-5681bde8>print multiplication values of up to <code class="line-numbers hljs inline no-lang" data-v-5681bde8>x 20</code> (not up to <code class="line-numbers hljs inline no-lang" data-v-5681bde8>x 10</code> as before)</li> <li data-v-5681bde8>omit squares (i.e. <code class="line-numbers hljs inline no-lang" data-v-5681bde8>n*n</code>). Note how <code class="line-numbers hljs inline no-lang" data-v-5681bde8>8 x 8</code> has been omitted in the example below. Recommended: use a <code class="line-numbers hljs inline no-lang" data-v-5681bde8>continue</code> statement to achieve this.</li> <li data-v-5681bde8>not print rows that has a value higher than 100. Note how the printing stops after <code class="line-numbers hljs inline no-lang" data-v-5681bde8>8 x 12 = 96</code> in the example below. Recommended: use a <code class="line-numbers hljs inline no-lang" data-v-5681bde8>break</code> statement for this.</li></ul> <pre data-v-5681bde8><code class="line-numbers hljs" data-v-5681bde8><span data-v-5681bde8>Enter a number: 8
+</span><span data-v-5681bde8>8 x 1 = 8
+</span><span data-v-5681bde8>8 x 2 = 16
+</span><span data-v-5681bde8>8 x 3 = 24
+</span><span data-v-5681bde8>8 x 4 = 32
+</span><span data-v-5681bde8>8 x 5 = 40
+</span><span data-v-5681bde8>8 x 6 = 48
+</span><span data-v-5681bde8>8 x 7 = 56
+</span><span data-v-5681bde8>8 x 9 = 72
+</span><span data-v-5681bde8>8 x 10 = 80
+</span><span data-v-5681bde8>8 x 11 = 88
+</span><span data-v-5681bde8>8 x 12 = 96
+</span></code><div class="function-btn-container" data-v-5681bde8><button onclick="copyCodeBlock(this)" class="function-btn" data-v-5681bde8>
+    <div class="function-btn-body" data-v-5681bde8>
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1" data-v-5681bde8>
+    <g id="surface1" data-v-5681bde8>
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 " data-v-5681bde8></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre></div> <!----> <button type="button" class="collapse-button btn btn-outline-secondary" data-v-5681bde8><span aria-hidden="true" class="collapse-icon glyphicon glyphicon-menu-down opened"></span></button></div> <hr style="display:none;" data-v-5681bde8></div> <!----></div></div><p></p></div> <p>While a range normally starts from <code class="line-numbers hljs inline no-lang">0</code> and goes until the specified end number, <strong>you <em>can</em> specify a starting number for a <code class="line-numbers hljs inline no-lang">range</code></strong> e.g., <code class="line-numbers hljs inline no-lang">range(5, 8)</code> gives you <code class="line-numbers hljs inline no-lang">5 6 7</code>.</p> <p><strong>Loops can be nested.</strong></p> <div class="alert box-container alert-default" data-v-7d17494f><!----> <div class="header-and-body" data-v-7d17494f><!----> <div class="box-body-wrapper" data-v-7d17494f><!----> <!----> <div class="contents" data-v-7d17494f><p data-v-7d17494f><span data-v-7d17494f><span aria-hidden="true" class="fas fa-cube" data-v-7d17494f></span></span> The code below use two nested <code class="line-numbers hljs inline no-lang" data-v-7d17494f>for</code> loops to print multiplication tables for 2, 3, and 4.</p> <pre data-v-7d17494f><code class="line-numbers hljs python" data-v-7d17494f><span data-v-7d17494f><span class="hljs-keyword" data-v-7d17494f>for</span> i <span class="hljs-keyword" data-v-7d17494f>in</span> <span class="hljs-built_in" data-v-7d17494f>range</span>(<span class="hljs-number" data-v-7d17494f>2</span>, <span class="hljs-number" data-v-7d17494f>5</span>):
+</span><span data-v-7d17494f>  <span class="hljs-built_in" data-v-7d17494f>print</span>(<span class="hljs-string" data-v-7d17494f>'Multiplication table for'</span>, i)
+</span><span data-v-7d17494f>  <span class="hljs-keyword" data-v-7d17494f>for</span> j <span class="hljs-keyword" data-v-7d17494f>in</span> <span class="hljs-built_in" data-v-7d17494f>range</span>(<span class="hljs-number" data-v-7d17494f>1</span>, <span class="hljs-number" data-v-7d17494f>11</span>):
+</span><span data-v-7d17494f>    <span class="hljs-built_in" data-v-7d17494f>print</span>(i, <span class="hljs-string" data-v-7d17494f>'x'</span>, j, <span class="hljs-string" data-v-7d17494f>'='</span>, i*j)
+</span></code><div class="function-btn-container" data-v-7d17494f><button onclick="copyCodeBlock(this)" class="function-btn" data-v-7d17494f>
+    <div class="function-btn-body" data-v-7d17494f>
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1" data-v-7d17494f>
+    <g id="surface1" data-v-7d17494f>
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 " data-v-7d17494f></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre><div class="algolia-no-index card-container" data-v-5681bde8><!----> <div class="card expandable-card border-0" data-v-5681bde8><div class="card-header header-toggle bg-white border-0" data-v-5681bde8><div class="caret-wrapper" data-v-5681bde8><span class="glyphicon glyphicon-chevron-right" data-v-5681bde8></span></div> <div class="header-wrapper card-title bg-white" data-v-5681bde8><p data-v-5681bde8><span class="dimmed" data-v-5681bde8><span aria-hidden="true" class="fas fa-laptop" data-v-5681bde8></span> Try your own</span></p></div> <div class="button-wrapper" data-v-5681bde8><button type="button" class="collapse-button btn btn-outline-secondary" style="display:none;" data-v-5681bde8><span aria-hidden="true" class="collapse-icon glyphicon glyphicon-menu-down"></span></button> <button type="button" class="close-button btn btn-outline-secondary seamless-button" data-v-5681bde8><span aria-hidden="true" class="glyphicon glyphicon-remove" data-v-5681bde8></span></button> <button type="button" class="popup-button btn btn-outline-secondary seamless-button" style="display:none;" data-v-5681bde8><span aria-hidden="true" class="glyphicon glyphicon-new-window" data-v-5681bde8></span></button></div></div> <div class="card-collapse" data-v-5681bde8><!----> <hr style="display:;" data-v-5681bde8></div> <!----></div></div><p data-v-7d17494f></p></div> <!----></div></div></div> <div><div expanded="" no-close="" class="card-container" data-v-5681bde8><!----> <div class="card expandable-card border-danger" data-v-5681bde8><div class="card-header header-toggle bg-danger border-danger" data-v-5681bde8><div class="caret-wrapper" data-v-5681bde8><!----></div> <div class="header-wrapper card-title bg-danger text-white" data-v-5681bde8><p data-v-5681bde8><span aria-hidden="true" class="fas fa-dumbbell" data-v-5681bde8></span> Exercise: Three Dice Throws</p></div> <div class="button-wrapper" data-v-5681bde8><button type="button" class="collapse-button btn btn-outline-light" data-v-5681bde8><span aria-hidden="true" class="collapse-icon glyphicon glyphicon-menu-down opened"></span></button> <button type="button" class="close-button btn btn-outline-light" style="display:none;" data-v-5681bde8><span aria-hidden="true" class="glyphicon glyphicon-remove" data-v-5681bde8></span></button> <button type="button" class="popup-button btn btn-outline-light" style="display:none;" data-v-5681bde8><span aria-hidden="true" class="glyphicon glyphicon-new-window" data-v-5681bde8></span></button></div></div> <div class="card-collapse" data-v-5681bde8><div class="card-body" data-v-5681bde8> <div data-v-5681bde8><h4 id="exercise-three-dice-throws" data-v-5681bde8><span id="exercise-three-dice-throws" class="anchor" data-v-5681bde8></span>Exercise - Three Dice Throws<a href="#exercise-three-dice-throws" onclick="event.stopPropagation()" class="fa fa-anchor" data-v-5681bde8></a></h4> <p data-v-5681bde8>Write a program to generate all possible results you can get by throwing a <span tabindex="0" class="trigger"><span>6-sided dice</span></span> three times. The expected result (partial) is given below.</p> <pre data-v-5681bde8><code class="line-numbers hljs" data-v-5681bde8><span data-v-5681bde8>1 1 1
+</span><span data-v-5681bde8>1 1 2
+</span><span data-v-5681bde8>1 1 3
+</span><span data-v-5681bde8>1 1 4
+</span><span data-v-5681bde8>1 1 5
+</span><span data-v-5681bde8>1 1 6
+</span><span data-v-5681bde8>1 2 1
+</span><span data-v-5681bde8>1 2 2
+</span><span data-v-5681bde8>...
+</span></code><div class="function-btn-container" data-v-5681bde8><button onclick="copyCodeBlock(this)" class="function-btn" data-v-5681bde8>
+    <div class="function-btn-body" data-v-5681bde8>
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1" data-v-5681bde8>
+    <g id="surface1" data-v-5681bde8>
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 " data-v-5681bde8></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre><span data-mb-component-type="popover" tabindex="0" id="pop:exerciseThreeDiceThrows-dice" class="trigger"><!----> <!----></span><p data-v-5681bde8></p> <div data-v-5681bde8><div class="algolia-no-index card-container" data-v-5681bde8><!----> <div class="card expandable-card border-0" data-v-5681bde8><div class="card-header header-toggle bg-white border-0" data-v-5681bde8><div class="caret-wrapper" data-v-5681bde8><span class="glyphicon glyphicon-chevron-right" data-v-5681bde8></span></div> <div class="header-wrapper card-title bg-white" data-v-5681bde8><div data-v-5681bde8><span data-v-5681bde8><span class="badge rounded-pill bg-success text-white" data-v-5681bde8><span aria-hidden="true" class="fas fa-lightbulb" data-v-5681bde8></span></span> see hint</span></div></div> <div class="button-wrapper" data-v-5681bde8><button type="button" class="collapse-button btn btn-outline-secondary" style="display:none;" data-v-5681bde8><span aria-hidden="true" class="collapse-icon glyphicon glyphicon-menu-down"></span></button> <button type="button" class="close-button btn btn-outline-secondary seamless-button" data-v-5681bde8><span aria-hidden="true" class="glyphicon glyphicon-remove" data-v-5681bde8></span></button> <button type="button" class="popup-button btn btn-outline-secondary seamless-button" style="display:none;" data-v-5681bde8><span aria-hidden="true" class="glyphicon glyphicon-new-window" data-v-5681bde8></span></button></div></div> <div class="card-collapse" data-v-5681bde8><!----> <hr style="display:;" data-v-5681bde8></div> <!----></div></div></div></div> <!----> <button type="button" class="collapse-button btn btn-outline-secondary" data-v-5681bde8><span aria-hidden="true" class="collapse-icon glyphicon glyphicon-menu-down opened"></span></button></div> <hr style="display:none;" data-v-5681bde8></div> <!----></div></div><p></p></div></div><hr style="border-top:3px double #c5c5c5;"> <div><h3 id="importing-modules"><span id="importing-modules" class="anchor"></span>Importing Modules<a href="#importing-modules" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h3> <p>In addition to <em>built-in</em> functions such as <code class="line-numbers hljs inline no-lang">print()</code>, <code class="line-numbers hljs inline no-lang">input()</code>, and <code class="line-numbers hljs inline no-lang">len()</code>, <strong>Python has a set of functions called the <em>standard library</em>.</strong> Functions in the standard library are divided into modules. <strong>A <em>module</em> is a python program that contains a related group of functions</strong>. You can think of it as a file containing some python functions.</p> <div class="alert box-container alert-default" data-v-7d17494f><!----> <div class="header-and-body" data-v-7d17494f><!----> <div class="box-body-wrapper" data-v-7d17494f><!----> <!----> <div class="contents" data-v-7d17494f><p data-v-7d17494f><span data-v-7d17494f><span aria-hidden="true" class="fas fa-cube" data-v-7d17494f></span></span> Some example modules in the Python standard library:</p> <div class="table-responsive" data-v-7d17494f><table class="markbind-table table table-bordered table-striped" data-v-7d17494f><thead data-v-7d17494f><tr data-v-7d17494f><th data-v-7d17494f>Name</th> <th data-v-7d17494f>What it contains</th></tr></thead> <tbody data-v-7d17494f><tr data-v-7d17494f><td data-v-7d17494f><code class="line-numbers hljs inline no-lang" data-v-7d17494f>math</code></td> <td data-v-7d17494f>mathematics-related functions</td></tr> <tr data-v-7d17494f><td data-v-7d17494f><code class="line-numbers hljs inline no-lang" data-v-7d17494f>random</code></td> <td data-v-7d17494f>random number–related functions</td></tr> <tr data-v-7d17494f><td data-v-7d17494f><code class="line-numbers hljs inline no-lang" data-v-7d17494f>sys</code></td> <td data-v-7d17494f>provides ways to interact with the Python interpreter</td></tr></tbody></table></div></div> <!----></div></div></div> <p>Unlike built-in functions which you can directly use in your code as if the function is already in your code file, <strong>to use a function in the standard library you need to <em>import</em> the corresponding module first.</strong></p> <p>Format: <code class="line-numbers hljs inline no-lang">import module_name(s)</code></p> <p><span><span aria-hidden="true" class="fas fa-cube"></span></span> Some examples:</p> <ul><li><code class="line-numbers hljs inline no-lang">import math</code> (imports the <code class="line-numbers hljs inline no-lang">math</code> module)</li> <li><code class="line-numbers hljs inline no-lang">import math, sys, random</code> (imports all three modules in one statement)</li></ul> <p>Furthermore, to use a function from an imported module, you should use the <code class="line-numbers hljs inline no-lang">module_name.function_name()</code> format.</p> <div class="alert box-container alert-default" data-v-7d17494f><!----> <div class="header-and-body" data-v-7d17494f><!----> <div class="box-body-wrapper" data-v-7d17494f><!----> <!----> <div class="contents" data-v-7d17494f><p data-v-7d17494f><span data-v-7d17494f><span aria-hidden="true" class="fas fa-cube" data-v-7d17494f></span></span> the code below imports the <code class="line-numbers hljs inline no-lang" data-v-7d17494f>random</code> module and uses its <code class="line-numbers hljs inline no-lang" data-v-7d17494f>randint()</code> function to generate a number between 1 and 10.</p> <pre data-v-7d17494f><code class="line-numbers hljs python" data-v-7d17494f><span data-v-7d17494f><span class="hljs-keyword" data-v-7d17494f>import</span> random
+</span><span data-v-7d17494f>
+</span><span data-v-7d17494f><span class="hljs-built_in" data-v-7d17494f>print</span>(<span class="hljs-string" data-v-7d17494f>'Going to print 5 random numbers between 1 and 10'</span>)
+</span><span data-v-7d17494f><span class="hljs-keyword" data-v-7d17494f>for</span> i <span class="hljs-keyword" data-v-7d17494f>in</span> <span class="hljs-built_in" data-v-7d17494f>range</span>(<span class="hljs-number" data-v-7d17494f>5</span>):
+</span><span data-v-7d17494f>    <span class="hljs-built_in" data-v-7d17494f>print</span>(random.randint(<span class="hljs-number" data-v-7d17494f>1</span>, <span class="hljs-number" data-v-7d17494f>10</span>))
+</span></code><div class="function-btn-container" data-v-7d17494f><button onclick="copyCodeBlock(this)" class="function-btn" data-v-7d17494f>
+    <div class="function-btn-body" data-v-7d17494f>
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1" data-v-7d17494f>
+    <g id="surface1" data-v-7d17494f>
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 " data-v-7d17494f></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre><div class="algolia-no-index card-container" data-v-5681bde8><!----> <div class="card expandable-card border-0" data-v-5681bde8><div class="card-header header-toggle bg-white border-0" data-v-5681bde8><div class="caret-wrapper" data-v-5681bde8><span class="glyphicon glyphicon-chevron-right" data-v-5681bde8></span></div> <div class="header-wrapper card-title bg-white" data-v-5681bde8><p data-v-5681bde8><span class="dimmed" data-v-5681bde8><span aria-hidden="true" class="fas fa-laptop" data-v-5681bde8></span> Try your own</span></p></div> <div class="button-wrapper" data-v-5681bde8><button type="button" class="collapse-button btn btn-outline-secondary" style="display:none;" data-v-5681bde8><span aria-hidden="true" class="collapse-icon glyphicon glyphicon-menu-down"></span></button> <button type="button" class="close-button btn btn-outline-secondary seamless-button" data-v-5681bde8><span aria-hidden="true" class="glyphicon glyphicon-remove" data-v-5681bde8></span></button> <button type="button" class="popup-button btn btn-outline-secondary seamless-button" style="display:none;" data-v-5681bde8><span aria-hidden="true" class="glyphicon glyphicon-new-window" data-v-5681bde8></span></button></div></div> <div class="card-collapse" data-v-5681bde8><!----> <hr style="display:;" data-v-5681bde8></div> <!----></div></div><p data-v-7d17494f></p></div> <!----></div></div></div> <p><span class="badge rounded-pill bg-success text-white"><span aria-hidden="true" class="fas fa-lightbulb"></span></span> It is common practice to put the <code class="line-numbers hljs inline no-lang">import</code> statements at the top of the program code.</p> <div class="algolia-no-index card-container" data-v-5681bde8><!----> <div class="card expandable-card border-0" data-v-5681bde8><div class="card-header header-toggle bg-white border-0" data-v-5681bde8><div class="caret-wrapper" data-v-5681bde8><span class="glyphicon glyphicon-chevron-right" data-v-5681bde8></span></div> <div class="header-wrapper card-title bg-white" data-v-5681bde8><p data-v-5681bde8><span class="dimmed" data-v-5681bde8><span data-v-5681bde8><span aria-hidden="true" class="glyphicon glyphicon-facetime-video" data-v-5681bde8></span></span> Importing modules</span></p></div> <div class="button-wrapper" data-v-5681bde8><button type="button" class="collapse-button btn btn-outline-secondary" style="display:none;" data-v-5681bde8><span aria-hidden="true" class="collapse-icon glyphicon glyphicon-menu-down"></span></button> <button type="button" class="close-button btn btn-outline-secondary seamless-button" data-v-5681bde8><span aria-hidden="true" class="glyphicon glyphicon-remove" data-v-5681bde8></span></button> <button type="button" class="popup-button btn btn-outline-secondary seamless-button" style="display:none;" data-v-5681bde8><span aria-hidden="true" class="glyphicon glyphicon-new-window" data-v-5681bde8></span></button></div></div> <div class="card-collapse" data-v-5681bde8><!----> <hr style="display:;" data-v-5681bde8></div> <!----></div></div><p></p> <div><div expanded="" no-close="" class="card-container" data-v-5681bde8><!----> <div class="card expandable-card border-danger" data-v-5681bde8><div class="card-header header-toggle bg-danger border-danger" data-v-5681bde8><div class="caret-wrapper" data-v-5681bde8><!----></div> <div class="header-wrapper card-title bg-danger text-white" data-v-5681bde8><p data-v-5681bde8><span aria-hidden="true" class="fas fa-dumbbell" data-v-5681bde8></span> Exercise: Circle Area</p></div> <div class="button-wrapper" data-v-5681bde8><button type="button" class="collapse-button btn btn-outline-light" data-v-5681bde8><span aria-hidden="true" class="collapse-icon glyphicon glyphicon-menu-down opened"></span></button> <button type="button" class="close-button btn btn-outline-light" style="display:none;" data-v-5681bde8><span aria-hidden="true" class="glyphicon glyphicon-remove" data-v-5681bde8></span></button> <button type="button" class="popup-button btn btn-outline-light" style="display:none;" data-v-5681bde8><span aria-hidden="true" class="glyphicon glyphicon-new-window" data-v-5681bde8></span></button></div></div> <div class="card-collapse" data-v-5681bde8><div class="card-body" data-v-5681bde8> <div data-v-5681bde8><h4 id="exercise-circle-area" data-v-5681bde8><span id="exercise-circle-area" class="anchor" data-v-5681bde8></span>Exercise - Circle Area<a href="#exercise-circle-area" onclick="event.stopPropagation()" class="fa fa-anchor" data-v-5681bde8></a></h4> <p data-v-5681bde8>Write a program to read the radius of a circle (a float number) from the input and print the area of the circle, rounded to five decimal places.</p> <p data-v-5681bde8><span class="badge rounded-pill bg-success text-white" data-v-5681bde8><span aria-hidden="true" class="fas fa-lightbulb" data-v-5681bde8></span></span> some useful hints:</p> <ul data-v-5681bde8><li data-v-5681bde8>Area = PI * radius<sup data-v-5681bde8>2</sup></li> <li data-v-5681bde8>You can use <code class="line-numbers hljs inline no-lang" data-v-5681bde8>math.pi</code> as the value of PI.</li> <li data-v-5681bde8>You can use the built-in function <code class="line-numbers hljs inline no-lang" data-v-5681bde8>round</code> to round off a number to a specified number of decimal places. e.g., <code class="line-numbers hljs inline no-lang" data-v-5681bde8>round(1.12345, 2)</code> returns <code class="line-numbers hljs inline no-lang" data-v-5681bde8>1.12</code></li></ul> <pre data-v-5681bde8><code class="line-numbers hljs" data-v-5681bde8><span data-v-5681bde8>Enter radius: 4.5
+</span><span data-v-5681bde8>Area: 63.61725
+</span></code><div class="function-btn-container" data-v-5681bde8><button onclick="copyCodeBlock(this)" class="function-btn" data-v-5681bde8>
+    <div class="function-btn-body" data-v-5681bde8>
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1" data-v-5681bde8>
+    <g id="surface1" data-v-5681bde8>
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 " data-v-5681bde8></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre><div data-v-5681bde8><div class="algolia-no-index card-container" data-v-5681bde8><!----> <div class="card expandable-card border-0" data-v-5681bde8><div class="card-header header-toggle bg-white border-0" data-v-5681bde8><div class="caret-wrapper" data-v-5681bde8><span class="glyphicon glyphicon-chevron-right" data-v-5681bde8></span></div> <div class="header-wrapper card-title bg-white" data-v-5681bde8><div data-v-5681bde8><span data-v-5681bde8><span class="badge rounded-pill bg-success text-white" data-v-5681bde8><span aria-hidden="true" class="fas fa-lightbulb" data-v-5681bde8></span></span> see hint</span></div></div> <div class="button-wrapper" data-v-5681bde8><button type="button" class="collapse-button btn btn-outline-secondary" style="display:none;" data-v-5681bde8><span aria-hidden="true" class="collapse-icon glyphicon glyphicon-menu-down"></span></button> <button type="button" class="close-button btn btn-outline-secondary seamless-button" data-v-5681bde8><span aria-hidden="true" class="glyphicon glyphicon-remove" data-v-5681bde8></span></button> <button type="button" class="popup-button btn btn-outline-secondary seamless-button" style="display:none;" data-v-5681bde8><span aria-hidden="true" class="glyphicon glyphicon-new-window" data-v-5681bde8></span></button></div></div> <div class="card-collapse" data-v-5681bde8><!----> <hr style="display:;" data-v-5681bde8></div> <!----></div></div></div></div> <!----> <button type="button" class="collapse-button btn btn-outline-secondary" data-v-5681bde8><span aria-hidden="true" class="collapse-icon glyphicon glyphicon-menu-down opened"></span></button></div> <hr style="display:none;" data-v-5681bde8></div> <!----></div></div><p></p></div></div><hr style="border-top:3px double #c5c5c5;"> <div><h3 id="early-termination"><span id="early-termination" class="anchor"></span>Early Termination<a href="#early-termination" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h3> <p>At times you may need to terminate a program execution early <span class="dimmed"> i.e., without reaching the end of the code</span>. <strong>You can use the <code class="line-numbers hljs inline no-lang">exit()</code> function in the <code class="line-numbers hljs inline no-lang">system</code> module to terminate a program early.</strong></p> <div class="alert box-container alert-default" data-v-7d17494f><!----> <div class="header-and-body" data-v-7d17494f><!----> <div class="box-body-wrapper" data-v-7d17494f><!----> <!----> <div class="contents" data-v-7d17494f><p data-v-7d17494f><span data-v-7d17494f><span aria-hidden="true" class="fas fa-cube" data-v-7d17494f></span></span> The code below prints out the factorials of <code class="line-numbers hljs inline no-lang" data-v-7d17494f>1</code> to <code class="line-numbers hljs inline no-lang" data-v-7d17494f>n</code> where <code class="line-numbers hljs inline no-lang" data-v-7d17494f>n</code> is specified by the user. If <code class="line-numbers hljs inline no-lang" data-v-7d17494f>n</code> is <code class="line-numbers hljs inline no-lang" data-v-7d17494f>0</code>, it uses <code class="line-numbers hljs inline no-lang" data-v-7d17494f>sys.exit()</code> to terminate the program immediately.</p> <pre data-v-7d17494f><code class="line-numbers hljs python" data-v-7d17494f><span data-v-7d17494f><span class="hljs-keyword" data-v-7d17494f>import</span> math, sys
+</span><span data-v-7d17494f>
+</span><span data-v-7d17494f>n = <span class="hljs-built_in" data-v-7d17494f>int</span>(<span class="hljs-built_in" data-v-7d17494f>input</span>(<span class="hljs-string" data-v-7d17494f>'Number of factorials (0 to exit):'</span>))
+</span><span data-v-7d17494f>
+</span><span data-v-7d17494f><span class="hljs-keyword" data-v-7d17494f>if</span> n == <span class="hljs-number" data-v-7d17494f>0</span>:
+</span><span data-v-7d17494f>  <span class="hljs-built_in" data-v-7d17494f>print</span>(<span class="hljs-string" data-v-7d17494f>'Terminating as requested...'</span>)
+</span><span data-v-7d17494f>  sys.exit()
+</span><span data-v-7d17494f>  
+</span><span data-v-7d17494f><span class="hljs-keyword" data-v-7d17494f>for</span> i <span class="hljs-keyword" data-v-7d17494f>in</span> <span class="hljs-built_in" data-v-7d17494f>range</span>(n):
+</span><span data-v-7d17494f>    <span class="hljs-built_in" data-v-7d17494f>print</span>(math.factorial(i+<span class="hljs-number" data-v-7d17494f>1</span>)) <span class="hljs-comment" data-v-7d17494f># use i+1 because i starts from 0</span>
+</span></code><div class="function-btn-container" data-v-7d17494f><button onclick="copyCodeBlock(this)" class="function-btn" data-v-7d17494f>
+    <div class="function-btn-body" data-v-7d17494f>
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1" data-v-7d17494f>
+    <g id="surface1" data-v-7d17494f>
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 " data-v-7d17494f></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre><div class="algolia-no-index card-container" data-v-5681bde8><!----> <div class="card expandable-card border-0" data-v-5681bde8><div class="card-header header-toggle bg-white border-0" data-v-5681bde8><div class="caret-wrapper" data-v-5681bde8><span class="glyphicon glyphicon-chevron-right" data-v-5681bde8></span></div> <div class="header-wrapper card-title bg-white" data-v-5681bde8><p data-v-5681bde8><span class="dimmed" data-v-5681bde8><span aria-hidden="true" class="fas fa-laptop" data-v-5681bde8></span> Try your own</span></p></div> <div class="button-wrapper" data-v-5681bde8><button type="button" class="collapse-button btn btn-outline-secondary" style="display:none;" data-v-5681bde8><span aria-hidden="true" class="collapse-icon glyphicon glyphicon-menu-down"></span></button> <button type="button" class="close-button btn btn-outline-secondary seamless-button" data-v-5681bde8><span aria-hidden="true" class="glyphicon glyphicon-remove" data-v-5681bde8></span></button> <button type="button" class="popup-button btn btn-outline-secondary seamless-button" style="display:none;" data-v-5681bde8><span aria-hidden="true" class="glyphicon glyphicon-new-window" data-v-5681bde8></span></button></div></div> <div class="card-collapse" data-v-5681bde8><!----> <hr style="display:;" data-v-5681bde8></div> <!----></div></div><p data-v-7d17494f></p></div> <!----></div></div></div> <div class="algolia-no-index card-container" data-v-5681bde8><!----> <div class="card expandable-card border-0" data-v-5681bde8><div class="card-header header-toggle bg-white border-0" data-v-5681bde8><div class="caret-wrapper" data-v-5681bde8><span class="glyphicon glyphicon-chevron-right" data-v-5681bde8></span></div> <div class="header-wrapper card-title bg-white" data-v-5681bde8><p data-v-5681bde8><span class="dimmed" data-v-5681bde8><span data-v-5681bde8><span aria-hidden="true" class="glyphicon glyphicon-facetime-video" data-v-5681bde8></span></span> Early termination</span></p></div> <div class="button-wrapper" data-v-5681bde8><button type="button" class="collapse-button btn btn-outline-secondary" style="display:none;" data-v-5681bde8><span aria-hidden="true" class="collapse-icon glyphicon glyphicon-menu-down"></span></button> <button type="button" class="close-button btn btn-outline-secondary seamless-button" data-v-5681bde8><span aria-hidden="true" class="glyphicon glyphicon-remove" data-v-5681bde8></span></button> <button type="button" class="popup-button btn btn-outline-secondary seamless-button" style="display:none;" data-v-5681bde8><span aria-hidden="true" class="glyphicon glyphicon-new-window" data-v-5681bde8></span></button></div></div> <div class="card-collapse" data-v-5681bde8><!----> <hr style="display:;" data-v-5681bde8></div> <!----></div></div></div><hr style="border-top:3px double #c5c5c5;"></div></div> <i id="scroll-top-button" onclick="handleScrollTop()" aria-hidden="true" class="fa fa-arrow-circle-up fa-lg d-print-none"></i></div> <nav id="page-nav" class="fixed-header-padding" data-v-e8c82f88><div class="nav-component slim-scroll" data-v-e8c82f88><nav id="mb-page-nav" class="nav nav-pills flex-column my-0 small no-flex-wrap" data-v-e8c82f88><a class="nav-link py-1" href="#program-flow-control" data-v-e8c82f88>Program Flow Control‎</a> <nav class="nav nav-pills flex-column my-0 nested no-flex-wrap" data-v-e8c82f88><a class="nav-link py-1" href="#booleans" data-v-e8c82f88>Booleans‎</a> <a class="nav-link py-1" href="#if-statements" data-v-e8c82f88>if Statements‎</a> <nav class="nav nav-pills flex-column my-0 nested no-flex-wrap" data-v-e8c82f88><a class="nav-link py-1" href="#exercise-even-numbers" data-v-e8c82f88>Exercise - Even Numbers‎</a> <a class="nav-link py-1" href="#exercise-grade-analyzer" data-v-e8c82f88>Exercise - Grade Analyzer‎</a> <a class="nav-link py-1" href="#exercise-grade-analyzer-extended" data-v-e8c82f88>Exercise - Grade Analyzer (Extended)‎</a></nav> <a class="nav-link py-1" href="#while-statements" data-v-e8c82f88>while Statements‎</a> <nav class="nav nav-pills flex-column my-0 nested no-flex-wrap" data-v-e8c82f88><a class="nav-link py-1" href="#exercise-vending-machine-add-loop" data-v-e8c82f88>Exercise - Vending Machine - Add Loop‎</a> <a class="nav-link py-1" href="#exercise-vending-machine-accept-multiple-coins" data-v-e8c82f88>Exercise - Vending Machine - Accept Multiple Coins‎</a> <a class="nav-link py-1" href="#exercise-vending-machine-allow-abort" data-v-e8c82f88>Exercise - Vending Machine - Allow Abort‎</a> <a class="nav-link py-1" href="#exercise-vending-machine-legit-coins" data-v-e8c82f88>Exercise - Vending Machine - Legit Coins‎</a></nav> <a class="nav-link py-1" href="#for-statements" data-v-e8c82f88>for Statements‎</a> <nav class="nav nav-pills flex-column my-0 nested no-flex-wrap" data-v-e8c82f88><a class="nav-link py-1" href="#exercise-multiplication-table" data-v-e8c82f88>Exercise - Multiplication Table‎</a> <a class="nav-link py-1" href="#exercise-multiplication-table-extended" data-v-e8c82f88>Exercise - Multiplication Table (Extended)‎</a> <a class="nav-link py-1" href="#exercise-three-dice-throws" data-v-e8c82f88>Exercise - Three Dice Throws‎</a></nav> <a class="nav-link py-1" href="#importing-modules" data-v-e8c82f88>Importing Modules‎</a> <nav class="nav nav-pills flex-column my-0 nested no-flex-wrap" data-v-e8c82f88><a class="nav-link py-1" href="#exercise-circle-area" data-v-e8c82f88>Exercise - Circle Area‎</a></nav> <a class="nav-link py-1" href="#early-termination" data-v-e8c82f88>Early Termination‎</a></nav> <!----></nav></div> <!----></nav></div> <footer><div class="text-center"><small>[<span><strong>Powered by</strong></span> <img src="https://markbind.org/favicon.ico" width="30"> <a href="https://markbind.org/">MarkBind 4.0.2</a>, generated on Wed, 21 Dec 2022, 22:21:42 GMT+8]</small></div></footer></div>
+</body><script src="../../markbind/js/bootstrap-utility.min.js"></script>
+<script>
+  MarkBind.setupWithSearch()
+</script>
+    <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3.2.0/dist/umd/index.js"></script>
+    <script>
+    docsearch({
+      container: "#algolia-search-input",
+      appId: "3DU4XTBX4T",
+      apiKey: "3e2fd3c3b12a363309307794dce54969",
+      indexName: "nus-tic-cs",
+      searchParameters: {"facetFilters":[["site:nus-tee3201.github.io"],["tags:admin","tags:se-book-adapted","tags:schedule"]]}
+    });
+  </script>
+    <script>
+    const style = document.createElement('style');
+    style.innerHTML = ".DocSearch-Container { z-index: 1002; position: fixed; }";
+    document.getElementsByTagName('head')[0].appendChild(style);
+  </script>
+  
+    <script>
+    function copyCodeBlock(element) {
+        const pre = element.parentElement.parentElement;
+        const codeElement = pre.querySelector('code');
+
+        // create dummy text element to select() the text field
+        const textElement = document.createElement('textarea');
+        textElement.value = codeElement.textContent;
+        document.body.appendChild(textElement);
+        textElement.select();
+
+        document.execCommand('copy');
+        document.body.removeChild(textElement);
+    }
+    </script>
+</html>

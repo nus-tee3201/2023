@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="generator" content="MarkBind 4.0.2">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>TEE3201 - Week 11 - Programming Topics</title>
+    <link rel="stylesheet" href="../../markbind/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../markbind/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="../../markbind/glyphicons/css/bootstrap-glyphicons.min.css">
+    <link rel="stylesheet" href="../../markbind/css/octicons.css">
+    <link rel="stylesheet" href="../../markbind/material-icons/material-icons.css">
+    <link rel="stylesheet" href="../../markbind/css/codeblock-light.min.css"><link rel="stylesheet" href="../../markbind/css/markbind.min.css"><script src="../../markbind/js/polyfill.min.js"></script>
+    <script src="../../markbind/js/vue.min.js"></script>
+    <script src="../../markbind/js/markbind.min.js"></script>
+    <script src="topics-py.page-vue-render.js"></script>
+    <script src="../../markbind/js/jquery.min.js"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3.2.0/dist/style.css"><link rel="stylesheet" href="/2023/plugins/markbind-plugin-anchors/markbind-plugin-anchors.css"><link rel="stylesheet" href="/2023/plugins/markbind-plugin-tree/markbind-plugin-tree.css">
+    
+<link rel="stylesheet" href="/2023/css/main.css">
+<link rel="icon" href="/2023/favicon.ico"></head>
+<script>
+  const baseUrl = '/2023'
+</script>
+<body  data-bs-spy="scroll" data-bs-target="#mb-page-nav" data-bs-offset="100" >
+<div id="app" data-server-rendered="true"><div class="w-100 p-1 bg-warning text-center d-print-none"><span><strong>This is a draft version of the website! The final version will be available near the start of the semester.</strong></span></div> <div class="w-100 p-1 bg-success text-white text-center d-print-none"><span>This module will be delivered in <em>blended learning</em> mode (i.e., a mix of online and F2F activities) this semester.</span></div> <header sticky=""><div placement="top" data-v-15113a2f><nav class="navbar navbar-expand-md d-print-none navbar-dark bg-dark" data-v-15113a2f><div class="container-fluid" data-v-15113a2f><div class="navbar-left" data-v-15113a2f><a href="/2023/index.html" title="Home" class="navbar-brand" data-v-15113a2f><span class="badge rounded-pill bg-danger" data-v-15113a2f>TEE3201 <small data-v-15113a2f>2023</small></span></a></div> <div class="navbar-default" data-v-15113a2f><ul class="navbar-nav me-auto mt-2 mt-lg-0" data-v-15113a2f> <li class="nav-link algolia-no-index dropdown" data-v-2e98b3f0><a role="button" data-bs-toggle="dropdown" class="dropdown-toggle" data-v-2e98b3f0><strong data-v-2e98b3f0>Schedule</strong></a> <ul class="dropdown-menu" data-v-2e98b3f0> <li data-v-2e98b3f0><a href="/2023/schedule/timeline.html" class="dropdown-item" data-v-2e98b3f0><span data-v-2e98b3f0><strong data-v-2e98b3f0>Full Timeline</strong></span></a></li> <li data-v-2e98b3f0><a href="/2023/schedule/week1/index.html" class="dropdown-item" data-v-2e98b3f0><span data-v-2e98b3f0><strong data-v-2e98b3f0>Week 1</strong> [Sun, Jan 9th] </span></a></li> <li data-v-2e98b3f0><a href="/2023/schedule/week2/index.html" class="dropdown-item" data-v-2e98b3f0><span data-v-2e98b3f0><strong data-v-2e98b3f0>Week 2</strong> [Sun, Jan 16th] </span></a></li> <li data-v-2e98b3f0><a href="/2023/schedule/week3/index.html" class="dropdown-item" data-v-2e98b3f0><span data-v-2e98b3f0><strong data-v-2e98b3f0>Week 3</strong> [Sun, Jan 23rd] </span></a></li> <li data-v-2e98b3f0><a href="/2023/schedule/week4/index.html" class="dropdown-item" data-v-2e98b3f0><span data-v-2e98b3f0><strong data-v-2e98b3f0>Week 4</strong> [Sun, Jan 30th] </span></a></li> <li data-v-2e98b3f0><a href="/2023/schedule/week5/index.html" class="dropdown-item" data-v-2e98b3f0><span data-v-2e98b3f0><strong data-v-2e98b3f0>Week 5</strong> [Sun, Feb 6th] </span></a></li> <li data-v-2e98b3f0><a href="/2023/schedule/week6/index.html" class="dropdown-item" data-v-2e98b3f0><span data-v-2e98b3f0><strong data-v-2e98b3f0>Week 6</strong> [Sun, Feb 13th] </span></a></li> <li data-v-2e98b3f0><a href="/2023/schedule/week7/index.html" class="dropdown-item" data-v-2e98b3f0><span data-v-2e98b3f0><strong data-v-2e98b3f0>Week 7</strong> [Sun, Feb 20th] </span></a></li> <li data-v-2e98b3f0><a href="/2023/schedule/week8/index.html" class="dropdown-item" data-v-2e98b3f0><span data-v-2e98b3f0><strong data-v-2e98b3f0>Week 8</strong> [Sun, Mar 6th] </span></a></li> <li data-v-2e98b3f0><a href="/2023/schedule/week9/index.html" class="dropdown-item" data-v-2e98b3f0><span data-v-2e98b3f0><strong data-v-2e98b3f0>Week 9</strong> [Sun, Mar 13th] </span></a></li> <li data-v-2e98b3f0><a href="/2023/schedule/week10/index.html" class="dropdown-item" data-v-2e98b3f0><span data-v-2e98b3f0><strong data-v-2e98b3f0>Week 10</strong> [Sun, Mar 20th] </span></a></li> <li data-v-2e98b3f0><a href="/2023/schedule/week11/index.html" class="dropdown-item" data-v-2e98b3f0><span data-v-2e98b3f0><strong data-v-2e98b3f0>Week 11</strong> [Sun, Mar 27th] </span></a></li> <li data-v-2e98b3f0><a href="/2023/schedule/week12/index.html" class="dropdown-item" data-v-2e98b3f0><span data-v-2e98b3f0><strong data-v-2e98b3f0>Week 12</strong> [Sun, Apr 3rd] </span></a></li> <li data-v-2e98b3f0><a href="/2023/schedule/week13/index.html" class="dropdown-item" data-v-2e98b3f0><span data-v-2e98b3f0><strong data-v-2e98b3f0>Week 13</strong> [Sun, Apr 10th] </span></a></li></ul></li> <li class="nav-link algolia-no-index dropdown" data-v-2e98b3f0><a role="button" data-bs-toggle="dropdown" class="dropdown-toggle" data-v-2e98b3f0><strong data-v-2e98b3f0>Textbook</strong></a> <ul class="dropdown-menu" data-v-2e98b3f0> <li data-v-2e98b3f0><a href="/2023/se-book-adapted/index.html" class="dropdown-item" data-v-2e98b3f0>SE Textbook</a></li> <li data-v-2e98b3f0><a href="/2023/programming/index.html" class="dropdown-item" data-v-2e98b3f0>Programming Textbook</a></li></ul></li> <li data-v-15113a2f><a href="/2023/admin/index.html" class="nav-link" data-v-15113a2f><span data-v-15113a2f><strong data-v-15113a2f>Admin Info</strong></span></a></li> <li class="nav-link algolia-no-index dropdown" data-v-2e98b3f0><a role="button" data-bs-toggle="dropdown" class="dropdown-toggle" data-v-2e98b3f0><strong data-v-2e98b3f0>Other Links</strong></a> <ul class="dropdown-menu" data-v-2e98b3f0> <li data-v-2e98b3f0><a href="https://luminus.nus.edu.sg/modules//forum" target="_blank" class="dropdown-item" data-v-2e98b3f0><span data-v-2e98b3f0><span aria-hidden="true" class="fas fa-comment" data-v-2e98b3f0></span> Forum</span></a></li> <li data-v-2e98b3f0><a href="/2023/admin/index.html#instructors" class="dropdown-item" data-v-2e98b3f0><span data-v-2e98b3f0><span aria-hidden="true" class="fas fa-user-tie" data-v-2e98b3f0></span> Instructors</span></a></li> <li data-v-2e98b3f0><a href="https://canvas.nus.edu.sg/courses/38821/announcements" target="_blank" class="dropdown-item" data-v-2e98b3f0><span data-v-2e98b3f0><span aria-hidden="true" class="glyphicon glyphicon-bullhorn" data-v-2e98b3f0></span> Announcements</span></a></li> <li data-v-2e98b3f0><a href="https://luminus.nus.edu.sg/modules//files" target="_blank" class="dropdown-item" data-v-2e98b3f0><span data-v-2e98b3f0><span aria-hidden="true" class="fas fa-file-upload" data-v-2e98b3f0></span> Files (handouts, submissions etc.)</span></a></li> <li tags="m--tic2002 m--tee3201" data-v-2e98b3f0><a href="/2023/admin/index.html#project" class="dropdown-item" data-v-2e98b3f0><span data-v-2e98b3f0><span data-v-2e98b3f0><span aria-hidden="true" class="fas fa-drafting-compass" data-v-2e98b3f0></span></span></span> Project Info</a></li> <li tags="m--cs2113 m--tic2002 m--tee3201" data-v-2e98b3f0><a href="/2023/_markbind/layouts/2423" target="_blank" class="dropdown-item" data-v-2e98b3f0><span data-v-2e98b3f0><span data-v-2e98b3f0><span aria-hidden="true" class="fas fa-dumbbell" data-v-2e98b3f0></span></span></span> Coursemology link</a></li> <li data-v-2e98b3f0><a href="/2023/_markbind/layouts/tbd" target="_blank" class="dropdown-item" data-v-2e98b3f0><span data-v-2e98b3f0><span aria-hidden="true" class="fas fa-users-cog" data-v-2e98b3f0></span> MS Teams link</span></a></li></ul></li></ul></div> <ul class="navbar-nav navbar-right" data-v-15113a2f><li class="nav-link" data-v-15113a2f><form class="navbar-form" data-v-15113a2f><div class="dropdown" style="position:relative;" data-v-2955e59c><div id="algolia-search-input" data-v-2955e59c></div> <ul class="dropdown-menu search-dropdown-menu d-none dropdown-menu-end" data-v-2955e59c></ul></div></form></li></ul></div></nav> <div class="lower-navbar-container" style="display:none;" data-v-15113a2f><!----> <!----></div></div></header> <div id="flex-body"><div id="content-wrapper" class="fixed-header-padding"><div class="website-content"><nav><ul class="pagination mt-2"><li class="page-item"><a href="/2023/schedule/week10/index.html" class="page-link"><span><span aria-hidden="true" class="glyphicon glyphicon-chevron-left"></span> <strong>Prev. Week</strong></span></a></li> <li class="page-item">   </li> <li class="page-item"><a href="/2023/schedule/week11/index.html" class="page-link"><span><span><span aria-hidden="true" class="fas fa-bell"></span></span></span> Summary</a></li> <li class="page-item active"><a href="/2023/schedule/week11/topics-py.html" class="page-link"><span><span><span aria-hidden="true" class="fas fa-code"></span></span></span> Programming Topics</a></li> <li class="page-item"><a href="/2023/schedule/week11/topics.html" class="page-link"><span><span><span aria-hidden="true" class="fas fa-book"></span></span></span> SE Topics</a></li> <li class="page-item"><a href="/2023/schedule/week11/admin.html" class="page-link"><span><span><span aria-hidden="true" class="glyphicon glyphicon-check"></span></span></span> Tasks</a></li> <li class="page-item">   </li><li class="page-item"><a href="/2023/schedule/week12/index.html" class="page-link"><span><strong>Next Week</strong> <span aria-hidden="true" class="glyphicon glyphicon-chevron-right"></span></span></a></li></ul></nav> <p></p> <h1 id="week-11-sun-mar-27th-programming-topics"><span id="week-11-sun-mar-27th-programming-topics" class="anchor"></span>Week 11 <small><small><span class="dimmed">[Sun, Mar 27th]</span> - Programming Topics</small></small><a href="#week-11-sun-mar-27th-programming-topics" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h1> <div><div id="week11-toc"><ul><li><a href="/2023/programming/chapters/gui.html"><strong>GUIs</strong></a> <ul><li><a href="/2023/programming/chapters/gui.html#gui-basics">GUI Basics</a></li></ul></li></ul></div> <h2 id="guis"><span id="guis" class="anchor"></span><strong>GUIs</strong><a href="#guis" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h2> <div><h3 id="gui-basics"><span id="gui-basics" class="anchor"></span>GUI Basics<a href="#gui-basics" onclick="event.stopPropagation()" class="fa fa-anchor"></a></h3> <div class="alert box-container alert-warning" data-v-7d17494f><!----> <div class="header-and-body" data-v-7d17494f><!----> <div class="box-body-wrapper" data-v-7d17494f><div class="icon-wrapper" data-v-7d17494f><i class="fas fa-exclamation" data-v-7d17494f></i></div> <!----> <div class="contents" data-v-7d17494f><p data-v-7d17494f>Writing <em data-v-7d17494f>Graphical User Interfaces (GUIs)</em> is relatively more complicated than writing regular code. Here, we give a very small peek into GUI programming in Python.</p></div> <!----></div></div></div> <p><strong>There are different frameworks that you can use to write Python graphical user interfaces (GUIs)</strong> <span class="dimmed">e.g., Tkinter, KIVY, PyQT, WxPython</span>. The one we'll be using here is Tkinter, which is a way to use the popular Tk GUI framework <span data-mb-component-type="tooltip" tabindex="0" class="trigger"><!----> <!----></span>.</p> <p><strong>Tkinter comes with the Python installation</strong>; you can start writing Tkinter GUIs right away without having to install anything extra.</p> <p>Here is the code for the simplest GUI:</p> <div><table><tbody><tr><td valign="top"><pre><code class="line-numbers hljs python"><span><span class="hljs-keyword">from</span> tkinter <span class="hljs-keyword">import</span> *
+</span><span>
+</span><span><span class="hljs-comment"># create a Window</span>
+</span><span>window = Tk()
+</span><span>
+</span><span><span class="hljs-comment"># set Window title</span>
+</span><span>window.title(<span class="hljs-string">'Hello World!'</span>)
+</span><span>
+</span><span><span class="hljs-comment"># start the Window</span>
+</span><span>window.mainloop()
+</span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn">
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 "></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre></td> <td valign="bottom"> → <br><br></td> <td valign="bottom"><img src="/2023/programming/gui/images/helloworld.png"></td></tr></tbody></table></div> <p></p> <p><strong>A GUI typically contains <span data-mb-component-type="tooltip" tabindex="0" class="trigger"><!----> <!----></span>.</strong> The example GUI below not only has some widgets but also has some dynamic behavior i.e., clicking the button increments the displayed number by the amount in the text box.</p> <div><table><tbody><tr><td valign="top"><img src="/2023/programming/gui/images/increment1.png"></td> <td valign="bottom"> → <br><br></td> <td valign="bottom"><img src="/2023/programming/gui/images/increment2.png"></td></tr></tbody></table></div> <p></p> <p>Here's the full code for the above example:</p> <pre><code class="line-numbers hljs python"><span><span class="hljs-keyword">from</span> tkinter <span class="hljs-keyword">import</span> *
+</span><span>
+</span><span><span class="highlighted"><span class="hljs-comment"># create a window</span></span>
+</span><span>window = Tk()
+</span><span>window.title(<span class="hljs-string">'Increment!'</span>)
+</span><span>window.geometry(<span class="hljs-string">'250x150'</span>)
+</span><span>
+</span><span><span class="highlighted"><span class="hljs-comment"># create a label</span></span>
+</span><span>label = Label(window, text=<span class="hljs-string">'0'</span>, font=(<span class="hljs-string">&quot;Arial Bold&quot;</span>, <span class="hljs-number">50</span>))
+</span><span>label.grid(column=<span class="hljs-number">0</span>, row=<span class="hljs-number">0</span>)
+</span><span>
+</span><span><span class="highlighted"><span class="hljs-comment"># create a text box</span></span>
+</span><span>textbox = Entry(window, width=<span class="hljs-number">2</span>)
+</span><span>textbox.grid(column=<span class="hljs-number">0</span>, row=<span class="hljs-number">1</span>)
+</span><span>textbox.insert(<span class="hljs-number">0</span>, <span class="hljs-string">'2'</span>)
+</span><span>
+</span><span>
+</span><span><span class="highlighted"><span class="hljs-comment"># define a function to be called when the button is clicked</span></span>
+</span><span><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">button_clicked</span>():</span>
+</span><span>    label_value = <span class="hljs-built_in">int</span>(label[<span class="hljs-string">'text'</span>])  <span class="hljs-comment"># get int value of the label text</span>
+</span><span>    textbox_value = <span class="hljs-built_in">int</span>(textbox.get())  <span class="hljs-comment"># get int value of the textbox text</span>
+</span><span>    label.configure(text=<span class="hljs-built_in">str</span>(label_value + textbox_value))  <span class="hljs-comment"># set label text to the sum of above two</span>
+</span><span>
+</span><span>
+</span><span><span class="highlighted"><span class="hljs-comment"># add a button, bind it to the function</span></span>
+</span><span>button_ok = Button(window, text=<span class="hljs-string">&quot;Add&quot;</span>, command=button_clicked)
+</span><span>button_ok.grid(column=<span class="hljs-number">1</span>, row=<span class="hljs-number">1</span>)
+</span><span>
+</span><span><span class="highlighted"><span class="hljs-comment"># start the window</span></span>
+</span><span>window.mainloop()
+</span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn">
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 "></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre><p>Let's go through the code to see how it works.</p> <ul><li><pre><code class="line-numbers hljs python"><span>window.geometry(<span class="hljs-string">'250x150'</span>)
+</span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn">
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 "></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre><p>Sets the size of the Window.</p><p></p><p></p></li> <li><pre><code class="line-numbers hljs python"><span>label = Label(window, text=<span class="hljs-string">'0'</span>, font=(<span class="hljs-string">&quot;Arial Bold&quot;</span>, <span class="hljs-number">50</span>))
+</span><span>label.grid(column=<span class="hljs-number">0</span>, row=<span class="hljs-number">0</span>)
+</span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn">
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 "></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre><ul><li><strong>Creates a <a href="https://www.python-course.eu/tkinter_labels.php"><em>Label</em> widget</a></strong> to show the current total. Sets its value to <code class="line-numbers hljs inline no-lang">0</code>. Sets the font to <code class="line-numbers hljs inline no-lang">Arial Bold</code> and font size to <code class="line-numbers hljs inline no-lang">50</code>.</li> <li>There are <a href="https://www.python-course.eu/tkinter_layout_management.php">different ways to define the <span data-mb-component-type="tooltip" tabindex="0" class="trigger"><!----> <!----></span> of the GUI</a>. In this case we are using a <span data-mb-component-type="tooltip" tabindex="0" class="trigger"><!----> <!----></span>. This statement places the label at <code class="line-numbers hljs inline no-lang">0,0</code> cell of the grid.<p></p></li></ul></li> <li><pre><code class="line-numbers hljs python"><span>textbox = Entry(window, width=<span class="hljs-number">2</span>)
+</span><span>textbox.grid(column=<span class="hljs-number">0</span>, row=<span class="hljs-number">1</span>)
+</span><span>textbox.insert(<span class="hljs-number">0</span>, <span class="hljs-string">'2'</span>)
+</span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn">
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 "></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre><ul><li><strong>Creates an <a href="https://www.python-course.eu/tkinter_entry_widgets.php"><em>Entry</em> widget</a></strong> for the user to enter the increment size. Sets its width to <code class="line-numbers hljs inline no-lang">2</code> characters.</li> <li>Places it at the <code class="line-numbers hljs inline no-lang">0,1</code> cell <span class="dimmed">(i.e., first column, 2nd row)</span>.</li> <li>Sets the initial value of the widget to <code class="line-numbers hljs inline no-lang">2</code>. The value it placed at the <code class="line-numbers hljs inline no-lang">0</code>th character position.<p></p></li></ul></li> <li><pre><code class="line-numbers hljs python"><span><span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">button_clicked</span>():</span>
+</span><span>    label_value = <span class="hljs-built_in">int</span>(label[<span class="hljs-string">'text'</span>])
+</span><span>    textbox_value = <span class="hljs-built_in">int</span>(textbox.get())
+</span><span>    label.configure(text=<span class="hljs-built_in">str</span>(label_value + textbox_value))
+</span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn">
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 "></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre><ul><li><strong>Creates a function to be called when the button is clicked.</strong> It will increment the value shown in the label by the amount shown in the entry widget.</li> <li>line <span class="dimmed">#20</span>: Reads the <code class="line-numbers hljs inline no-lang">text</code> property of the label widget and converts it to an <code class="line-numbers hljs inline no-lang">int</code></li> <li>line <span class="dimmed">#21</span>: Reads the value of the entry widget and converts it to an <code class="line-numbers hljs inline no-lang">int</code></li> <li>line <span class="dimmed">#22</span>: Sums the two values, converts the sum into a <code class="line-numbers hljs inline no-lang">str</code>, and sets it as the value of the label widget.<p></p></li></ul></li> <li><pre><code class="line-numbers hljs python"><span>button_ok = Button(window, text=<span class="hljs-string">&quot;Add&quot;</span>, command=button_clicked)
+</span><span>button_ok.grid(column=<span class="hljs-number">1</span>, row=<span class="hljs-number">1</span>)
+</span></code><div class="function-btn-container"><button onclick="copyCodeBlock(this)" class="function-btn">
+    <div class="function-btn-body">
+    
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="18" height="18" viewBox="0 0 18 18" version="1.1">
+    <g id="surface1">
+      <path d="M 11.273438 0 L 2.546875 0 C 1.746094 0 1.089844 0.613281 1.089844
+      1.363281 L 1.089844 10.910156 L 2.546875 10.910156 L 2.546875 1.363281 L 11.273438
+      1.363281 Z M 13.453125 2.726562 L 5.453125 2.726562 C 4.65625 2.726562 4 3.339844 4
+      4.089844 L 4 13.636719 C 4 14.386719 4.65625 15 5.453125 15 L 13.453125 15 C 14.253906
+      15 14.910156 14.386719 14.910156 13.636719 L 14.910156 4.089844 C 14.910156 3.339844
+      14.253906 2.726562 13.453125 2.726562 Z M 13.453125 13.636719 L 5.453125 13.636719 L
+      5.453125 4.089844 L 13.453125 4.089844 Z M 13.453125 13.636719 "></path>
+    </g>
+</svg>
+
+    </div>
+    </button></div></pre><ul><li><strong>Creates a <a href="https://www.python-course.eu/tkinter_buttons.php"><em>Button</em> widget</a></strong> for the user to click. Sets its display text to <code class="line-numbers hljs inline no-lang">Add</code>. Sets its command to the function <code class="line-numbers hljs inline no-lang">button_clicked</code> i.e., when the button is clicked, the specified function will be called.</li> <li>Places the button in the <code class="line-numbers hljs inline no-lang">1,1</code> cell of the grid.</li></ul></li></ul> <p><span><span aria-hidden="true" class="fas fa-paperclip"></span></span> Resources:</p> <ul><li><a href="https://techsore.com/best-python-gui/">Best Python GUI Framework/Toolkits 2019</a></li> <li><a href="https://www.python-course.eu/python_tkinter.php">Python Tkinter Course</a> from python-course.eu</li></ul></div></div></div> <i id="scroll-top-button" onclick="handleScrollTop()" aria-hidden="true" class="fa fa-arrow-circle-up fa-lg d-print-none"></i></div> <nav id="page-nav" class="fixed-header-padding" data-v-e8c82f88><div class="nav-component slim-scroll" data-v-e8c82f88><nav id="mb-page-nav" class="nav nav-pills flex-column my-0 small no-flex-wrap" data-v-e8c82f88><a class="nav-link py-1" href="#week-11-sun-mar-27th-programming-topics" data-v-e8c82f88>Week 11 [Sun, Mar 27th] - Programming Topics‎</a> <nav class="nav nav-pills flex-column my-0 nested no-flex-wrap" data-v-e8c82f88><a class="nav-link py-1" href="#guis" data-v-e8c82f88>GUIs‎</a> <nav class="nav nav-pills flex-column my-0 nested no-flex-wrap" data-v-e8c82f88><a class="nav-link py-1" href="#gui-basics" data-v-e8c82f88>GUI Basics‎</a></nav></nav> <!----></nav></div> <!----></nav></div> <footer><div class="text-center"><small>[<span><strong>Powered by</strong></span> <img src="https://markbind.org/favicon.ico" width="30"> <a href="https://markbind.org/">MarkBind 4.0.2</a>, generated on Wed, 21 Dec 2022, 22:21:42 GMT+8]</small></div></footer></div>
+</body><script src="../../markbind/js/bootstrap-utility.min.js"></script>
+<script>
+  MarkBind.setupWithSearch()
+</script>
+    <script src="https://cdn.jsdelivr.net/npm/@docsearch/js@3.2.0/dist/umd/index.js"></script>
+    <script>
+    docsearch({
+      container: "#algolia-search-input",
+      appId: "3DU4XTBX4T",
+      apiKey: "3e2fd3c3b12a363309307794dce54969",
+      indexName: "nus-tic-cs",
+      searchParameters: {"facetFilters":[["site:nus-tee3201.github.io"],["tags:admin","tags:se-book-adapted","tags:schedule"]]}
+    });
+  </script>
+    <script>
+    const style = document.createElement('style');
+    style.innerHTML = ".DocSearch-Container { z-index: 1002; position: fixed; }";
+    document.getElementsByTagName('head')[0].appendChild(style);
+  </script>
+  
+    <script>
+    function copyCodeBlock(element) {
+        const pre = element.parentElement.parentElement;
+        const codeElement = pre.querySelector('code');
+
+        // create dummy text element to select() the text field
+        const textElement = document.createElement('textarea');
+        textElement.value = codeElement.textContent;
+        document.body.appendChild(textElement);
+        textElement.select();
+
+        document.execCommand('copy');
+        document.body.removeChild(textElement);
+    }
+    </script>
+</html>
