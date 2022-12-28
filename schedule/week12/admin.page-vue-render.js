@@ -26,6 +26,6 @@ with(this){return _c('ul',[_c('li',[_v("If you chose option 1 in the previous we
 with(this){return _c('ul',[_c('li',[_c('mark',[_v("Note that you can get prof's feedback for your project report before the final submission")]),_v(". See the panel below for more details.")])])}
 },function anonymous(
 ) {
-with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("["),_c('span',[_c('strong',[_v("Powered by")])]),_v(" "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 4.0.2")]),_v(", generated on Wed, 21 Dec 2022, 22:21:42 GMT+8]")])])])}
+with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("["),_c('span',[_c('strong',[_v("Powered by")])]),_v(" "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 4.0.2")]),_v(", generated on Wed, 28 Dec 2022, 22:34:20 GMT+8]")])])])}
 }];
   
