@@ -1,0 +1,124 @@
+2023-01-01T17:02:46.824Z - info: Website generation (lazy) started at 1:02:41 am
+2023-01-01T17:02:59.517Z - info: Building assets...
+2023-01-01T17:03:07.480Z - info: Assets built
+2023-01-01T17:03:07.481Z - info: Generating landing page...
+2023-01-01T17:03:09.305Z - info: Landing page built, other pages will be built as you navigate to them!
+2023-01-01T17:03:10.308Z - info: Site data built
+2023-01-01T17:03:10.308Z - info: Website generation (lazy) complete! Total build time: 28.469s
+2023-01-01T17:03:11.207Z - info: Serving "C:\repos\nus-cs2103\cs2103-website-base\_site" at http://127.0.0.1:8080
+2023-01-01T17:03:11.207Z - info: Press CTRL+C to stop ...
+2023-01-01T17:10:38.287Z - info: [1:10:38 am] Reload for file change: C:\repos\nus-cs2103\cs2103-website-base\admin\index-tee3201-fragment.md
+2023-01-01T17:10:38.287Z - info: Synchronizing opened pages list before reload
+2023-01-01T17:10:38.287Z - info: Current opened pages, from most-to-least recent:
+2023-01-01T17:10:38.288Z - info: 1. index
+2023-01-01T17:10:39.301Z - info: Rebuilding 1 pages
+2023-01-01T17:10:40.674Z - info: Site data built
+2023-01-01T17:10:40.674Z - info: Pages rebuilt
+2023-01-01T17:10:40.675Z - info: Website regeneration complete! Total build time: 1.375s
+2023-01-01T17:10:59.161Z - info: [1:10:59 am] Reload for file change: C:\repos\nus-cs2103\cs2103-website-base\admin\index-tee3201-fragment.md
+2023-01-01T17:10:59.162Z - info: Synchronizing opened pages list before reload
+2023-01-01T17:10:59.162Z - info: Current opened pages, from most-to-least recent:
+2023-01-01T17:10:59.162Z - info: 1. index
+2023-01-01T17:11:00.182Z - info: Rebuilding 1 pages
+2023-01-01T17:11:01.487Z - info: Site data built
+2023-01-01T17:11:01.487Z - info: Pages rebuilt
+2023-01-01T17:11:01.488Z - info: Website regeneration complete! Total build time: 1.307s
+2023-01-01T17:13:08.988Z - info: [1:13:08 am] Reload for file change: C:\repos\nus-cs2103\cs2103-website-base\admin\index-tee3201-fragment.md
+2023-01-01T17:13:08.988Z - info: Synchronizing opened pages list before reload
+2023-01-01T17:13:08.989Z - info: Current opened pages, from most-to-least recent:
+2023-01-01T17:13:08.989Z - info: 1. index
+2023-01-01T17:13:10.001Z - info: Rebuilding 1 pages
+2023-01-01T17:13:11.344Z - info: Site data built
+2023-01-01T17:13:11.344Z - info: Pages rebuilt
+2023-01-01T17:13:11.344Z - info: Website regeneration complete! Total build time: 1.344s
+2023-01-01T17:18:08.901Z - info: [1:18:08 am] Reload for file change: C:\repos\nus-cs2103\cs2103-website-base\admin\index-tee3201-fragment.md
+2023-01-01T17:18:08.901Z - info: Synchronizing opened pages list before reload
+2023-01-01T17:18:08.902Z - info: Current opened pages, from most-to-least recent:
+2023-01-01T17:18:08.902Z - info: 1. index
+2023-01-01T17:18:09.909Z - info: Rebuilding 1 pages
+2023-01-01T17:18:11.478Z - info: Site data built
+2023-01-01T17:18:11.478Z - info: Pages rebuilt
+2023-01-01T17:18:11.478Z - info: Website regeneration complete! Total build time: 1.57s
+2023-01-01T17:18:12.380Z - info: Building C:\repos\nus-cs2103\cs2103-website-base\se-book-adapted\index as some of its dependencies were changed since the last visit
+2023-01-01T17:18:12.641Z - info: Site data built
+2023-01-01T17:18:12.642Z - info: Lazy website regeneration complete! Total build time: 0.262s
+2023-01-01T17:18:22.614Z - info: Building C:\repos\nus-cs2103\cs2103-website-base\programming\index as some of its dependencies were changed since the last visit
+2023-01-01T17:18:22.808Z - info: Site data built
+2023-01-01T17:18:22.808Z - info: Lazy website regeneration complete! Total build time: 0.194s
+2023-01-01T17:18:35.639Z - info: Building C:\repos\nus-cs2103\cs2103-website-base\programming\chapters\oop as some of its dependencies were changed since the last visit
+2023-01-01T17:18:36.400Z - info: Site data built
+2023-01-01T17:18:36.400Z - info: Lazy website regeneration complete! Total build time: 0.762s
+2023-01-01T17:26:25.427Z - info: [1:26:25 am] Reload for file change: C:\repos\nus-cs2103\cs2103-website-base\programming\oop-inheritance\text.md
+2023-01-01T17:26:25.427Z - info: Synchronizing opened pages list before reload
+2023-01-01T17:26:25.427Z - info: Current opened pages, from most-to-least recent:
+2023-01-01T17:26:25.427Z - info: 1. programming/chapters/oop
+2023-01-01T17:26:26.433Z - info: Rebuilding 1 pages
+2023-01-01T17:26:26.913Z - info: Site data built
+2023-01-01T17:26:26.913Z - info: Pages rebuilt
+2023-01-01T17:26:26.914Z - info: Website regeneration complete! Total build time: 0.482s
+2023-01-01T17:26:44.316Z - info: [1:26:44 am] Reload for file change: C:\repos\nus-cs2103\cs2103-website-base\programming\oop-inheritance\text.md
+2023-01-01T17:26:44.316Z - info: Synchronizing opened pages list before reload
+2023-01-01T17:26:44.316Z - info: Current opened pages, from most-to-least recent:
+2023-01-01T17:26:44.316Z - info: 1. programming/chapters/oop
+2023-01-01T17:26:45.332Z - info: Rebuilding 1 pages
+2023-01-01T17:26:45.898Z - info: Site data built
+2023-01-01T17:26:45.899Z - info: Pages rebuilt
+2023-01-01T17:26:45.899Z - info: Website regeneration complete! Total build time: 0.568s
+2023-01-01T17:27:31.967Z - info: [1:27:31 am] Reload for file change: C:\repos\nus-cs2103\cs2103-website-base\programming\oop-inheritance\text.md
+2023-01-01T17:27:31.967Z - info: Synchronizing opened pages list before reload
+2023-01-01T17:27:31.967Z - info: Current opened pages, from most-to-least recent:
+2023-01-01T17:27:31.967Z - info: 1. programming/chapters/oop
+2023-01-01T17:27:32.975Z - info: Rebuilding 1 pages
+2023-01-01T17:27:33.471Z - info: Site data built
+2023-01-01T17:27:33.472Z - info: Pages rebuilt
+2023-01-01T17:27:33.472Z - info: Website regeneration complete! Total build time: 0.498s
+2023-01-01T17:27:38.394Z - info: [1:27:38 am] Reload for file change: C:\repos\nus-cs2103\cs2103-website-base\programming\oop-inheritance\text.md
+2023-01-01T17:27:38.395Z - info: Synchronizing opened pages list before reload
+2023-01-01T17:27:38.395Z - info: Current opened pages, from most-to-least recent:
+2023-01-01T17:27:38.395Z - info: 1. programming/chapters/oop
+2023-01-01T17:27:39.401Z - info: Rebuilding 1 pages
+2023-01-01T17:27:39.800Z - info: Site data built
+2023-01-01T17:27:39.800Z - info: Pages rebuilt
+2023-01-01T17:27:39.800Z - info: Website regeneration complete! Total build time: 0.4s
+2023-01-01T17:31:10.316Z - info: [1:31:10 am] Reload for file change: C:\repos\nus-cs2103\cs2103-website-base\programming\oop-inheritance\text.md
+2023-01-01T17:31:10.316Z - info: Synchronizing opened pages list before reload
+2023-01-01T17:31:10.316Z - info: Current opened pages, from most-to-least recent:
+2023-01-01T17:31:10.316Z - info: 1. programming/chapters/oop
+2023-01-01T17:31:11.323Z - info: Rebuilding 1 pages
+2023-01-01T17:31:11.934Z - info: Site data built
+2023-01-01T17:31:11.934Z - info: Pages rebuilt
+2023-01-01T17:31:11.934Z - info: Website regeneration complete! Total build time: 0.611s
+2023-01-01T17:31:37.720Z - info: [1:31:37 am] Reload for file change: C:\repos\nus-cs2103\cs2103-website-base\programming\oop-inheritance\text.md
+2023-01-01T17:31:37.720Z - info: Synchronizing opened pages list before reload
+2023-01-01T17:31:37.720Z - info: Current opened pages, from most-to-least recent:
+2023-01-01T17:31:37.720Z - info: 1. programming/chapters/oop
+2023-01-01T17:31:38.737Z - info: Rebuilding 1 pages
+2023-01-01T17:31:39.211Z - info: Site data built
+2023-01-01T17:31:39.212Z - info: Pages rebuilt
+2023-01-01T17:31:39.212Z - info: Website regeneration complete! Total build time: 0.475s
+2023-01-01T17:32:10.973Z - info: [1:32:10 am] Reload for file change: C:\repos\nus-cs2103\cs2103-website-base\programming\oop-inheritance\text.md
+2023-01-01T17:32:10.974Z - info: Synchronizing opened pages list before reload
+2023-01-01T17:32:10.974Z - info: Current opened pages, from most-to-least recent:
+2023-01-01T17:32:10.974Z - info: 1. programming/chapters/oop
+2023-01-01T17:32:11.978Z - info: Rebuilding 1 pages
+2023-01-01T17:32:12.543Z - info: Site data built
+2023-01-01T17:32:12.544Z - info: Pages rebuilt
+2023-01-01T17:32:12.544Z - info: Website regeneration complete! Total build time: 0.567s
+2023-01-01T17:32:22.913Z - info: [1:32:22 am] Reload for file change: C:\repos\nus-cs2103\cs2103-website-base\programming\oop-inheritance\text.md
+2023-01-01T17:32:22.914Z - info: Synchronizing opened pages list before reload
+2023-01-01T17:32:22.914Z - info: Current opened pages, from most-to-least recent:
+2023-01-01T17:32:22.914Z - info: 1. programming/chapters/oop
+2023-01-01T17:32:23.919Z - info: Rebuilding 1 pages
+2023-01-01T17:32:24.364Z - info: Site data built
+2023-01-01T17:32:24.364Z - info: Pages rebuilt
+2023-01-01T17:32:24.365Z - info: Website regeneration complete! Total build time: 0.447s
+2023-01-01T17:37:15.472Z - info: [1:37:15 am] Reload for file change: C:\repos\nus-cs2103\cs2103-website-base\programming\oop-inheritance\text.md
+2023-01-01T17:37:15.473Z - info: Synchronizing opened pages list before reload
+2023-01-01T17:37:15.473Z - info: Current opened pages, from most-to-least recent:
+2023-01-01T17:37:15.473Z - info: 1. programming/chapters/oop
+2023-01-01T17:37:16.490Z - info: Rebuilding 1 pages
+2023-01-01T17:37:17.085Z - info: Site data built
+2023-01-01T17:37:17.085Z - info: Pages rebuilt
+2023-01-01T17:37:17.085Z - info: Website regeneration complete! Total build time: 0.596s
+2023-01-01T17:46:19.094Z - info: Website generation started at 1:46:16 am
+2023-01-01T17:46:32.508Z - info: Building assets...
