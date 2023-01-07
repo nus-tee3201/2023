@@ -35,6 +35,6 @@ with(this){return _c('p',[_c('strong',[_v("Casting to an incompatible type can r
 with(this){return _c('p',[_v("You can use the "),_c('code',{pre:true,attrs:{"class":"line-numbers hljs inline no-lang"}},[_v("instanceof")]),_v(" operator to check if a cast is safe to perform.")])}
 },function anonymous(
 ) {
-with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("["),_c('span',[_c('strong',[_v("Powered by")])]),_v(" "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 4.0.2")]),_v(", generated on Sat, 7 Jan 2023, 0:00:20 GMT+8]")])])])}
+with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("["),_c('span',[_c('strong',[_v("Powered by")])]),_v(" "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 4.0.2")]),_v(", generated on Sun, 8 Jan 2023, 1:56:34 GMT+8]")])])])}
 }];
   

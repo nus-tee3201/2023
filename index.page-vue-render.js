@@ -155,13 +155,13 @@ with(this){return _c('div',{staticClass:"indented"},[_c('h4',{attrs:{"id":"lectu
 with(this){return _c('h1',{attrs:{"id":"lectures-tutorials"}},[_c('span',{staticClass:"anchor",attrs:{"id":"lectures-tutorials"}}),_v("Lectures + Tutorials"),_c('a',{staticClass:"fa fa-anchor",attrs:{"href":"#lectures-tutorials","onclick":"event.stopPropagation()"}})])}
 },function anonymous(
 ) {
-with(this){return _c('p',[_c('span',{staticClass:"dimmed"},[_c('span',{staticClass:"far fa-clock",attrs:{"aria-hidden":"true"}})]),_v(" Tuesdays 1800-2130"),_c('br'),_v(" "),_c('span',{staticClass:"dimmed"},[_c('span',{staticClass:"fas fa-map-marker-alt",attrs:{"aria-hidden":"true"}})]),_v(" Venue: online (optional E4-04-02)"),_c('br')])}
+with(this){return _c('p',[_c('span',{staticClass:"dimmed"},[_c('span',{staticClass:"far fa-clock",attrs:{"aria-hidden":"true"}})]),_v(" Tuesdays 1800-2130"),_c('br'),_v(" "),_c('span',{staticClass:"dimmed"},[_c('span',{staticClass:"fas fa-map-marker-alt",attrs:{"aria-hidden":"true"}})]),_v(" Venue: E4-04-02"),_c('br')])}
 },function anonymous(
 ) {
 with(this){return _c('p',[_c('strong',[_v("A TEE3201 lecture + tutorial time is divided into three parts")]),_v(", as follows:")])}
 },function anonymous(
 ) {
-with(this){return _c('ul',[_c('li',[_v("1800-1900: Do exercises related to previous week topics. Consult prof (via MS Teams) if you encounter problems.")]),_v(" "),_c('li',[_v("1900-2000: Short Zoom lecture, introducing topics for the current week. After that, watch the pre-recorded videos and the textbook sections provided.")]),_v(" "),_c('li',[_v("2000-2130: You can stay back and do exercises for the current week. Consult prof/TA (F2F or using MS Teams) for help as needed."),_c('br')])])}
+with(this){return _c('ul',[_c('li',[_v("1800-1900: Do exercises related to previous week topics. Consult prof (via MS Teams) if you encounter problems.")]),_v(" "),_c('li',[_v("1900-2000: Short lecture/briefing, introducing topics for the current week."),_c('br'),_v("\nDelivered in "),_c('mark',[_v("hybrid mode (i.e., you can attend F2F, join via Zoom, or watch the recording later)")]),_v(". After that, watch the pre-recorded videos and follow the textbook sections provided.")]),_v(" "),_c('li',[_v("2000-2130: Optionally, you can stay back and do exercises for the current week. Consult prof/TA (F2F or using MS Teams) for help, as needed."),_c('br')])])}
 },function anonymous(
 ) {
 with(this){return _c('strong',[_c('span',[_c('span',{staticClass:"far fa-images",attrs:{"aria-hidden":"true"}})]),_v(" Lecture slides will be uploaded to Canvas after the lecture")])}
@@ -278,6 +278,6 @@ with(this){return _c('h2',{attrs:{"id":"exam-briefing-mock-exam-practice-exam-pa
 with(this){return _c('ul',[_c('li',[_v("There will be an exam briefing in the penultimate lecture. It will include a minimal mock exam, just to help you understand the structure.")]),_v(" "),_c('li',[_v("You will be given a practice exam paper (at least half the size of the full paper) to help you practice timing. That practice paper will be released at least one week before the exam.")])])}
 },function anonymous(
 ) {
-with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("["),_c('span',[_c('strong',[_v("Powered by")])]),_v(" "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 4.0.2")]),_v(", generated on Sat, 7 Jan 2023, 0:00:20 GMT+8]")])])])}
+with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("["),_c('span',[_c('strong',[_v("Powered by")])]),_v(" "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 4.0.2")]),_v(", generated on Sun, 8 Jan 2023, 1:56:34 GMT+8]")])])])}
 }];
   

@@ -1,0 +1,27 @@
+2023-01-07T17:46:20.334Z - info: Website generation (lazy) started at 1:46:14 am
+2023-01-07T17:46:33.138Z - info: Building assets...
+2023-01-07T17:46:41.488Z - info: Assets built
+2023-01-07T17:46:41.489Z - info: Generating landing page...
+2023-01-07T17:46:43.567Z - info: Landing page built, other pages will be built as you navigate to them!
+2023-01-07T17:46:44.643Z - info: Site data built
+2023-01-07T17:46:44.643Z - info: Website generation (lazy) complete! Total build time: 30.009s
+2023-01-07T17:46:45.524Z - info: Serving "C:\repos\nus-cs2103\cs2103-website-base\_site" at http://127.0.0.1:8080
+2023-01-07T17:46:45.524Z - info: Press CTRL+C to stop ...
+2023-01-07T17:50:17.428Z - info: [1:50:17 am] Reload for file change: C:\repos\nus-cs2103\cs2103-website-base\admin\index-tee3201-fragment.md
+2023-01-07T17:50:17.429Z - info: Synchronizing opened pages list before reload
+2023-01-07T17:50:17.429Z - info: Current opened pages, from most-to-least recent:
+2023-01-07T17:50:17.430Z - info: 1. index
+2023-01-07T17:50:18.441Z - info: Rebuilding 1 pages
+2023-01-07T17:50:19.926Z - info: Site data built
+2023-01-07T17:50:19.926Z - info: Pages rebuilt
+2023-01-07T17:50:19.926Z - info: Website regeneration complete! Total build time: 1.486s
+2023-01-07T17:55:02.539Z - info: [1:55:02 am] Reload for file change: C:\repos\nus-cs2103\cs2103-website-base\admin\index-tee3201-fragment.md
+2023-01-07T17:55:02.539Z - info: Synchronizing opened pages list before reload
+2023-01-07T17:55:02.540Z - info: Current opened pages, from most-to-least recent:
+2023-01-07T17:55:02.540Z - info: 1. index
+2023-01-07T17:55:03.552Z - info: Rebuilding 1 pages
+2023-01-07T17:55:04.996Z - info: Site data built
+2023-01-07T17:55:04.996Z - info: Pages rebuilt
+2023-01-07T17:55:04.997Z - info: Website regeneration complete! Total build time: 1.446s
+2023-01-07T17:56:15.160Z - info: Website generation started at 1:56:13 am
+2023-01-07T17:56:26.443Z - info: Building assets...
