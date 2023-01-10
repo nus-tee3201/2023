@@ -26,6 +26,6 @@ with(this){return _c('ul',[_c('li',[_v("As usual")])])}
 with(this){return _c('ul',[_c('li',[_c('mark',[_v("After submitting the above increment, there is no need to submit subsequent project increments (i.e., Level 11 onwards) on Coursemology.")])])])}
 },function anonymous(
 ) {
-with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("["),_c('span',[_c('strong',[_v("Powered by")])]),_v(" "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 4.0.2")]),_v(", generated on Tue, 10 Jan 2023, 20:34:31 GMT+8]")])])])}
+with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("["),_c('span',[_c('strong',[_v("Powered by")])]),_v(" "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 4.0.2")]),_v(", generated on Tue, 10 Jan 2023, 23:22:45 GMT+8]")])])])}
 }];
   

@@ -26,6 +26,6 @@ with(this){return _c('ul',[_c('li',[_v("After learning the "),_c('a',{attrs:{"hr
 with(this){return _c('ul',[_c('li',[_v("Add the following increment to your project. As before (and also in future weeks), copy-paste-submit the updated code via the weekly exercise named "),_c('code',{pre:true,attrs:{"class":"line-numbers hljs inline no-lang"}},[_v("WeekN - Project Submission")]),_v(" where "),_c('code',{pre:true,attrs:{"class":"line-numbers hljs inline no-lang"}},[_v("N")]),_v(" is the week number "),_c('span',{staticClass:"dimmed"},[_v("e.g., submit this week's project code via the Coursemology exercise named "),_c('code',{pre:true,attrs:{"class":"line-numbers hljs inline no-lang"}},[_v("Week2 - Project Submission")])]),_v(".")])])}
 },function anonymous(
 ) {
-with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("["),_c('span',[_c('strong',[_v("Powered by")])]),_v(" "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 4.0.2")]),_v(", generated on Tue, 10 Jan 2023, 20:34:31 GMT+8]")])])])}
+with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("["),_c('span',[_c('strong',[_v("Powered by")])]),_v(" "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 4.0.2")]),_v(", generated on Tue, 10 Jan 2023, 23:22:45 GMT+8]")])])])}
 }];
   
