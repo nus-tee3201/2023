@@ -23,6 +23,6 @@ with(this){return _c('p',[_c('strong',[_v("PyCharm's own documentation on settin
 with(this){return _c('p',[_c('strong',[_v("PyCharm's own documentation on debugging code")]),_v(" in PyCharm is given "),_c('a',{attrs:{"href":"https://www.jetbrains.com/help/pycharm/debugging-your-first-python-application.html"}},[_v("here")]),_v(".")])}
 },function anonymous(
 ) {
-with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("["),_c('span',[_c('strong',[_v("Powered by")])]),_v(" "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 4.0.2")]),_v(", generated on Sun, 8 Jan 2023, 2:09:46 GMT+8]")])])])}
+with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("["),_c('span',[_c('strong',[_v("Powered by")])]),_v(" "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 4.0.2")]),_v(", generated on Tue, 10 Jan 2023, 16:31:14 GMT+8]")])])])}
 }];
   
