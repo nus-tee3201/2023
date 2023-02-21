@@ -23,6 +23,6 @@ with(this){return _c('p',[_c('span',{staticClass:"text-success"},[_c('small',[_c
 with(this){return _c('ol',[_c('li',[_c('strong',[_v("Attempt this week's Canvas quiz.")]),_v(" It will help you solidify your knowledge of the UML notation covered so far.")]),_v(" "),_c('li',[_c('strong',[_v("Watch the video given below.")]),_v(". It contains a step-by-step example of drawing UML diagrams.")])])}
 },function anonymous(
 ) {
-with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("["),_c('span',[_c('strong',[_v("Powered by")])]),_v(" "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 4.1.0")]),_v(", generated on Tue, 14 Feb 2023, 20:23:43 GMT+8]")])])])}
+with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("["),_c('span',[_c('strong',[_v("Powered by")])]),_v(" "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 4.1.0")]),_v(", generated on Tue, 21 Feb 2023, 20:25:49 GMT+8]")])])])}
 }];
   

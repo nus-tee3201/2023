@@ -33,3 +33,30 @@
 2023-02-13T17:38:47.043Z - info: The website has been deployed at: https://nus-cs2103-ay2223s2.github.io/website
 2023-02-14T12:23:26.195Z - info: Website generation started at 8:23:21 pm
 2023-02-14T12:23:35.586Z - info: Building assets...
+2023-02-14T12:23:43.077Z - info: Assets built
+2023-02-14T12:23:43.079Z - info: Generating pages...
+2023-02-14T12:23:47.658Z - warn: panel has a header slot, 'header' attribute has no effect.
+2023-02-14T12:23:55.809Z - debug:  
+2023-02-14T12:23:55.810Z - debug:  
+2023-02-14T12:23:55.811Z - debug:  
+2023-02-14T12:23:55.811Z - debug:  
+2023-02-14T12:23:55.991Z - debug:  
+2023-02-14T12:23:56.931Z - debug:  
+2023-02-14T12:23:56.931Z - debug:  
+2023-02-14T12:23:56.932Z - debug:  
+2023-02-14T12:24:02.024Z - debug:  
+2023-02-14T12:24:02.024Z - debug:  
+2023-02-14T12:24:03.684Z - debug:  
+2023-02-14T12:24:06.590Z - warn: panel has a header slot, 'header' attribute has no effect.
+2023-02-14T12:24:06.698Z - warn: panel has a header slot, 'header' attribute has no effect.
+2023-02-14T12:24:07.270Z - warn: panel has a header slot, 'header' attribute has no effect.
+2023-02-14T12:24:18.374Z - debug:  
+2023-02-14T12:24:35.866Z - debug:  
+2023-02-14T12:24:52.080Z - warn: panel has a header slot, 'header' attribute has no effect.
+2023-02-14T12:24:57.048Z - warn: panel has a header slot, 'header' attribute has no effect.
+2023-02-14T12:25:06.035Z - warn: panel has a header slot, 'header' attribute has no effect.
+2023-02-14T12:25:15.073Z - info: Pages built
+2023-02-14T12:25:16.286Z - info: Site data built
+2023-02-14T12:25:16.287Z - info: Website generation complete! Total build time: 114.638s
+2023-02-14T12:25:16.287Z - info: Build success!
+2023-02-14T12:27:37.127Z - info: The website has been deployed at: https://nus-tee3201.github.io/2023
