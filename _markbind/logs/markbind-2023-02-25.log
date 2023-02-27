@@ -1,0 +1,407 @@
+2023-02-25T06:08:33.301Z - info: Website generation (lazy) started at 2:08:22 pm
+2023-02-25T06:08:49.327Z - info: Building assets...
+2023-02-25T06:09:00.656Z - info: Assets built
+2023-02-25T06:09:00.657Z - info: Generating landing page...
+2023-02-25T06:09:03.833Z - info: Landing page built, other pages will be built as you navigate to them!
+2023-02-25T06:09:05.265Z - info: Site data built
+2023-02-25T06:09:05.265Z - info: Website generation (lazy) complete! Total build time: 43.025s
+2023-02-25T06:09:06.353Z - info: Serving "C:\repos\nus-cs2103\cs2103-website-base\_site" at http://127.0.0.1:8080
+2023-02-25T06:09:06.354Z - info: Press CTRL+C to stop ...
+2023-02-25T06:12:13.598Z - info: Building C:\repos\nus-cs2103\cs2103-website-base\admin\mid-semester-survey-results as some of its dependencies were changed since the last visit
+2023-02-25T06:12:16.779Z - info: Site data built
+2023-02-25T06:12:16.780Z - info: Lazy website regeneration complete! Total build time: 3.182s
+2023-02-25T06:12:16.783Z - info: Building C:\repos\nus-cs2103\cs2103-website-base\admin\mid-semester-survey-results as some of its dependencies were changed since the last visit
+2023-02-25T06:12:17.089Z - info: Site data built
+2023-02-25T06:12:17.090Z - info: Lazy website regeneration complete! Total build time: 0.308s
+2023-02-25T06:14:14.001Z - info: [2:14:14 pm] Reload for file change: C:\repos\nus-cs2103\cs2103-website-base\_module-CS2103\mid-semester-survey-results.md
+2023-02-25T06:14:14.001Z - info: Synchronizing opened pages list before reload
+2023-02-25T06:14:14.002Z - info: Current opened pages, from most-to-least recent:
+2023-02-25T06:14:14.002Z - info: 1. admin/mid-semester-survey-results
+2023-02-25T06:14:15.006Z - info: Rebuilding 1 pages
+2023-02-25T06:14:15.220Z - info: Site data built
+2023-02-25T06:14:15.220Z - info: Pages rebuilt
+2023-02-25T06:14:15.220Z - info: Website regeneration complete! Total build time: 0.215s
+2023-02-25T06:18:51.864Z - info: [2:18:51 pm] Reload for file change: C:\repos\nus-cs2103\cs2103-website-base\_module-CS2103\mid-semester-survey-results.md
+2023-02-25T06:18:51.864Z - info: Synchronizing opened pages list before reload
+2023-02-25T06:18:51.865Z - info: Current opened pages, from most-to-least recent:
+2023-02-25T06:18:51.865Z - info: 1. admin/mid-semester-survey-results
+2023-02-25T06:18:52.870Z - info: Rebuilding 1 pages
+2023-02-25T06:18:53.093Z - info: Site data built
+2023-02-25T06:18:53.094Z - info: Pages rebuilt
+2023-02-25T06:18:53.094Z - info: Website regeneration complete! Total build time: 0.224s
+2023-02-25T07:07:42.162Z - info: [3:07:42 pm] Reload for file change: C:\repos\nus-cs2103\cs2103-website-base\_module-CS2103\mid-semester-survey-results.md
+2023-02-25T07:07:42.172Z - info: Synchronizing opened pages list before reload
+2023-02-25T07:07:42.175Z - info: Current opened pages, from most-to-least recent:
+2023-02-25T07:07:42.175Z - info: 1. admin/mid-semester-survey-results
+2023-02-25T07:07:43.200Z - info: Rebuilding 1 pages
+2023-02-25T07:07:43.681Z - info: Site data built
+2023-02-25T07:07:43.682Z - info: Pages rebuilt
+2023-02-25T07:07:43.682Z - info: Website regeneration complete! Total build time: 0.497s
+2023-02-25T07:08:30.104Z - info: [3:08:30 pm] Reload for file change: C:\repos\nus-cs2103\cs2103-website-base\_module-CS2103\mid-semester-survey-results.md
+2023-02-25T07:08:30.104Z - info: Synchronizing opened pages list before reload
+2023-02-25T07:08:30.105Z - info: Current opened pages, from most-to-least recent:
+2023-02-25T07:08:30.105Z - info: 1. admin/mid-semester-survey-results
+2023-02-25T07:08:31.113Z - info: Rebuilding 1 pages
+2023-02-25T07:08:31.357Z - info: Site data built
+2023-02-25T07:08:31.358Z - info: Pages rebuilt
+2023-02-25T07:08:31.358Z - info: Website regeneration complete! Total build time: 0.246s
+2023-02-25T07:13:30.648Z - info: [3:13:30 pm] Reload for file change: C:\repos\nus-cs2103\cs2103-website-base\_module-CS2103\mid-semester-survey-results.md
+2023-02-25T07:13:30.649Z - info: Synchronizing opened pages list before reload
+2023-02-25T07:13:30.649Z - info: Current opened pages, from most-to-least recent:
+2023-02-25T07:13:30.649Z - info: 1. admin/mid-semester-survey-results
+2023-02-25T07:13:31.650Z - info: Rebuilding 1 pages
+2023-02-25T07:13:31.925Z - info: Site data built
+2023-02-25T07:13:31.925Z - info: Pages rebuilt
+2023-02-25T07:13:31.925Z - info: Website regeneration complete! Total build time: 0.276s
+2023-02-25T07:15:17.277Z - info: [3:15:17 pm] Reload for file change: C:\repos\nus-cs2103\cs2103-website-base\_module-CS2103\mid-semester-survey-results.md
+2023-02-25T07:15:17.277Z - info: Synchronizing opened pages list before reload
+2023-02-25T07:15:17.277Z - info: Current opened pages, from most-to-least recent:
+2023-02-25T07:15:17.277Z - info: 1. admin/mid-semester-survey-results
+2023-02-25T07:15:18.281Z - info: Rebuilding 1 pages
+2023-02-25T07:15:18.617Z - info: Site data built
+2023-02-25T07:15:18.617Z - info: Pages rebuilt
+2023-02-25T07:15:18.617Z - info: Website regeneration complete! Total build time: 0.337s
+2023-02-25T07:17:18.650Z - info: [3:17:18 pm] Reload for file change: C:\repos\nus-cs2103\cs2103-website-base\_module-CS2103\mid-semester-survey-results.md
+2023-02-25T07:17:18.650Z - info: Synchronizing opened pages list before reload
+2023-02-25T07:17:18.651Z - info: Current opened pages, from most-to-least recent:
+2023-02-25T07:17:18.651Z - info: 1. admin/mid-semester-survey-results
+2023-02-25T07:17:19.668Z - info: Rebuilding 1 pages
+2023-02-25T07:17:20.040Z - info: Site data built
+2023-02-25T07:17:20.041Z - info: Pages rebuilt
+2023-02-25T07:17:20.041Z - info: Website regeneration complete! Total build time: 0.375s
+2023-02-25T07:22:11.649Z - info: [3:22:11 pm] Reload for file change: C:\repos\nus-cs2103\cs2103-website-base\_module-CS2103\mid-semester-survey-results.md
+2023-02-25T07:22:11.649Z - info: Synchronizing opened pages list before reload
+2023-02-25T07:22:11.649Z - info: Current opened pages, from most-to-least recent:
+2023-02-25T07:22:11.649Z - info: 1. admin/mid-semester-survey-results
+2023-02-25T07:22:12.660Z - info: Rebuilding 1 pages
+2023-02-25T07:22:12.872Z - info: Site data built
+2023-02-25T07:22:12.873Z - info: Pages rebuilt
+2023-02-25T07:22:12.873Z - info: Website regeneration complete! Total build time: 0.214s
+2023-02-25T07:25:24.409Z - info: [3:25:24 pm] Reload for file change: C:\repos\nus-cs2103\cs2103-website-base\_module-CS2103\mid-semester-survey-results.md
+2023-02-25T07:25:24.409Z - info: Synchronizing opened pages list before reload
+2023-02-25T07:25:24.409Z - info: Current opened pages, from most-to-least recent:
+2023-02-25T07:25:24.409Z - info: 1. admin/mid-semester-survey-results
+2023-02-25T07:25:25.416Z - info: Rebuilding 1 pages
+2023-02-25T07:25:25.647Z - info: Site data built
+2023-02-25T07:25:25.647Z - info: Pages rebuilt
+2023-02-25T07:25:25.647Z - info: Website regeneration complete! Total build time: 0.232s
+2023-02-25T07:26:02.546Z - info: [3:26:02 pm] Reload for file change: C:\repos\nus-cs2103\cs2103-website-base\_module-CS2103\mid-semester-survey-results.md
+2023-02-25T07:26:02.546Z - info: Synchronizing opened pages list before reload
+2023-02-25T07:26:02.546Z - info: Current opened pages, from most-to-least recent:
+2023-02-25T07:26:02.547Z - info: 1. admin/mid-semester-survey-results
+2023-02-25T07:26:03.558Z - info: Rebuilding 1 pages
+2023-02-25T07:26:03.776Z - info: Site data built
+2023-02-25T07:26:03.777Z - info: Pages rebuilt
+2023-02-25T07:26:03.777Z - info: Website regeneration complete! Total build time: 0.22s
+2023-02-25T07:55:11.957Z - info: [3:55:11 pm] Reload for file change: C:\repos\nus-cs2103\cs2103-website-base\_module-CS2103\mid-semester-survey-results.md
+2023-02-25T07:55:11.969Z - info: Synchronizing opened pages list before reload
+2023-02-25T07:55:11.984Z - info: Current opened pages, from most-to-least recent:
+2023-02-25T07:55:11.984Z - info: 1. admin/mid-semester-survey-results
+2023-02-25T07:55:13.040Z - info: Rebuilding 1 pages
+2023-02-25T07:55:13.608Z - info: Site data built
+2023-02-25T07:55:13.609Z - info: Pages rebuilt
+2023-02-25T07:55:13.609Z - info: Website regeneration complete! Total build time: 0.595s
+2023-02-25T07:55:49.632Z - info: [3:55:49 pm] Reload for file change: C:\repos\nus-cs2103\cs2103-website-base\_module-CS2103\mid-semester-survey-results.md
+2023-02-25T07:55:49.633Z - info: Synchronizing opened pages list before reload
+2023-02-25T07:55:49.633Z - info: Current opened pages, from most-to-least recent:
+2023-02-25T07:55:49.633Z - info: 1. admin/mid-semester-survey-results
+2023-02-25T07:55:50.651Z - info: Rebuilding 1 pages
+2023-02-25T07:55:50.883Z - info: Site data built
+2023-02-25T07:55:50.883Z - info: Pages rebuilt
+2023-02-25T07:55:50.883Z - info: Website regeneration complete! Total build time: 0.234s
+2023-02-25T07:58:02.923Z - info: [3:58:02 pm] Reload for file change: C:\repos\nus-cs2103\cs2103-website-base\_module-CS2103\mid-semester-survey-results.md
+2023-02-25T07:58:02.923Z - info: Synchronizing opened pages list before reload
+2023-02-25T07:58:02.923Z - info: Current opened pages, from most-to-least recent:
+2023-02-25T07:58:02.924Z - info: 1. admin/mid-semester-survey-results
+2023-02-25T07:58:03.935Z - info: Rebuilding 1 pages
+2023-02-25T07:58:04.206Z - info: Site data built
+2023-02-25T07:58:04.206Z - info: Pages rebuilt
+2023-02-25T07:58:04.207Z - info: Website regeneration complete! Total build time: 0.272s
+2023-02-25T07:58:30.859Z - info: [3:58:30 pm] Reload for file change: C:\repos\nus-cs2103\cs2103-website-base\_module-CS2103\mid-semester-survey-results.md
+2023-02-25T07:58:30.860Z - info: Synchronizing opened pages list before reload
+2023-02-25T07:58:30.860Z - info: Current opened pages, from most-to-least recent:
+2023-02-25T07:58:30.860Z - info: 1. admin/mid-semester-survey-results
+2023-02-25T07:58:31.885Z - info: Rebuilding 1 pages
+2023-02-25T07:58:32.128Z - info: Site data built
+2023-02-25T07:58:32.128Z - info: Pages rebuilt
+2023-02-25T07:58:32.128Z - info: Website regeneration complete! Total build time: 0.245s
+2023-02-25T08:00:26.534Z - info: [4:00:26 pm] Reload for file change: C:\repos\nus-cs2103\cs2103-website-base\_module-CS2103\mid-semester-survey-results.md
+2023-02-25T08:00:26.534Z - info: Synchronizing opened pages list before reload
+2023-02-25T08:00:26.534Z - info: Current opened pages, from most-to-least recent:
+2023-02-25T08:00:26.534Z - info: 1. admin/mid-semester-survey-results
+2023-02-25T08:00:27.541Z - info: Rebuilding 1 pages
+2023-02-25T08:00:27.773Z - info: Site data built
+2023-02-25T08:00:27.773Z - info: Pages rebuilt
+2023-02-25T08:00:27.773Z - info: Website regeneration complete! Total build time: 0.233s
+2023-02-25T08:05:48.979Z - info: [4:05:48 pm] Reload for file change: C:\repos\nus-cs2103\cs2103-website-base\_module-CS2103\mid-semester-survey-results.md
+2023-02-25T08:05:48.979Z - info: Synchronizing opened pages list before reload
+2023-02-25T08:05:48.979Z - info: Current opened pages, from most-to-least recent:
+2023-02-25T08:05:48.980Z - info: 1. admin/mid-semester-survey-results
+2023-02-25T08:05:49.995Z - info: Rebuilding 1 pages
+2023-02-25T08:05:50.434Z - info: Site data built
+2023-02-25T08:05:50.434Z - info: Pages rebuilt
+2023-02-25T08:05:50.435Z - info: Website regeneration complete! Total build time: 0.441s
+2023-02-25T08:07:07.554Z - info: [4:07:07 pm] Reload for file change: C:\repos\nus-cs2103\cs2103-website-base\_module-CS2103\mid-semester-survey-results.md
+2023-02-25T08:07:07.554Z - info: Synchronizing opened pages list before reload
+2023-02-25T08:07:07.554Z - info: Current opened pages, from most-to-least recent:
+2023-02-25T08:07:07.554Z - info: 1. admin/mid-semester-survey-results
+2023-02-25T08:07:08.564Z - info: Rebuilding 1 pages
+2023-02-25T08:07:08.859Z - info: Site data built
+2023-02-25T08:07:08.859Z - info: Pages rebuilt
+2023-02-25T08:07:08.859Z - info: Website regeneration complete! Total build time: 0.296s
+2023-02-25T08:15:28.654Z - info: [4:15:28 pm] Reload for file change: C:\repos\nus-cs2103\cs2103-website-base\_module-CS2103\mid-semester-survey-results.md
+2023-02-25T08:15:28.675Z - info: Synchronizing opened pages list before reload
+2023-02-25T08:15:28.685Z - info: Current opened pages, from most-to-least recent:
+2023-02-25T08:15:28.686Z - info: 1. admin/mid-semester-survey-results
+2023-02-25T08:15:29.722Z - info: Rebuilding 1 pages
+2023-02-25T08:15:30.111Z - info: Site data built
+2023-02-25T08:15:30.111Z - info: Pages rebuilt
+2023-02-25T08:15:30.111Z - info: Website regeneration complete! Total build time: 0.408s
+2023-02-25T08:24:35.899Z - info: [4:24:35 pm] Reload for file change: C:\repos\nus-cs2103\cs2103-website-base\_module-CS2103\mid-semester-survey-results.md
+2023-02-25T08:24:35.908Z - info: Synchronizing opened pages list before reload
+2023-02-25T08:24:35.913Z - info: Current opened pages, from most-to-least recent:
+2023-02-25T08:24:35.913Z - info: 1. admin/mid-semester-survey-results
+2023-02-25T08:24:36.955Z - info: Rebuilding 1 pages
+2023-02-25T08:24:37.395Z - info: Site data built
+2023-02-25T08:24:37.396Z - info: Pages rebuilt
+2023-02-25T08:24:37.396Z - info: Website regeneration complete! Total build time: 0.466s
+2023-02-25T08:25:04.074Z - info: [4:25:04 pm] Reload for file change: C:\repos\nus-cs2103\cs2103-website-base\_module-CS2103\mid-semester-survey-results.md
+2023-02-25T08:25:04.075Z - info: Synchronizing opened pages list before reload
+2023-02-25T08:25:04.075Z - info: Current opened pages, from most-to-least recent:
+2023-02-25T08:25:04.075Z - info: 1. admin/mid-semester-survey-results
+2023-02-25T08:25:05.086Z - info: Rebuilding 1 pages
+2023-02-25T08:25:05.490Z - info: Site data built
+2023-02-25T08:25:05.490Z - info: Pages rebuilt
+2023-02-25T08:25:05.490Z - info: Website regeneration complete! Total build time: 0.405s
+2023-02-25T08:25:57.841Z - info: [4:25:57 pm] Reload for file change: C:\repos\nus-cs2103\cs2103-website-base\_module-CS2103\mid-semester-survey-results.md
+2023-02-25T08:25:57.841Z - info: Synchronizing opened pages list before reload
+2023-02-25T08:25:57.842Z - info: Current opened pages, from most-to-least recent:
+2023-02-25T08:25:57.842Z - info: 1. admin/mid-semester-survey-results
+2023-02-25T08:25:58.851Z - info: Rebuilding 1 pages
+2023-02-25T08:25:59.052Z - info: Site data built
+2023-02-25T08:25:59.053Z - info: Pages rebuilt
+2023-02-25T08:25:59.053Z - info: Website regeneration complete! Total build time: 0.203s
+2023-02-25T08:26:37.277Z - info: [4:26:37 pm] Reload for file change: C:\repos\nus-cs2103\cs2103-website-base\_module-CS2103\mid-semester-survey-results.md
+2023-02-25T08:26:37.277Z - info: Synchronizing opened pages list before reload
+2023-02-25T08:26:37.277Z - info: Current opened pages, from most-to-least recent:
+2023-02-25T08:26:37.277Z - info: 1. admin/mid-semester-survey-results
+2023-02-25T08:26:38.291Z - info: Rebuilding 1 pages
+2023-02-25T08:26:38.518Z - info: Site data built
+2023-02-25T08:26:38.518Z - info: Pages rebuilt
+2023-02-25T08:26:38.518Z - info: Website regeneration complete! Total build time: 0.227s
+2023-02-25T08:27:59.271Z - info: [4:27:59 pm] Reload for file change: C:\repos\nus-cs2103\cs2103-website-base\_module-CS2103\mid-semester-survey-results.md
+2023-02-25T08:27:59.272Z - info: Synchronizing opened pages list before reload
+2023-02-25T08:27:59.272Z - info: Current opened pages, from most-to-least recent:
+2023-02-25T08:27:59.272Z - info: 1. admin/mid-semester-survey-results
+2023-02-25T08:28:00.273Z - info: Rebuilding 1 pages
+2023-02-25T08:28:00.433Z - info: Site data built
+2023-02-25T08:28:00.433Z - info: Pages rebuilt
+2023-02-25T08:28:00.434Z - info: Website regeneration complete! Total build time: 0.161s
+2023-02-25T08:36:50.140Z - info: [4:36:50 pm] Reload for file change: C:\repos\nus-cs2103\cs2103-website-base\_module-CS2103\mid-semester-survey-results.md
+2023-02-25T08:36:50.140Z - info: Synchronizing opened pages list before reload
+2023-02-25T08:36:50.140Z - info: Current opened pages, from most-to-least recent:
+2023-02-25T08:36:50.140Z - info: 1. admin/mid-semester-survey-results
+2023-02-25T08:36:51.155Z - info: Rebuilding 1 pages
+2023-02-25T08:36:51.406Z - info: Site data built
+2023-02-25T08:36:51.406Z - info: Pages rebuilt
+2023-02-25T08:36:51.406Z - info: Website regeneration complete! Total build time: 0.252s
+2023-02-25T08:41:27.194Z - info: [4:41:27 pm] Reload for file change: C:\repos\nus-cs2103\cs2103-website-base\_module-CS2103\mid-semester-survey-results.md
+2023-02-25T08:41:27.194Z - info: Synchronizing opened pages list before reload
+2023-02-25T08:41:27.194Z - info: Current opened pages, from most-to-least recent:
+2023-02-25T08:41:27.194Z - info: 1. admin/mid-semester-survey-results
+2023-02-25T08:41:28.210Z - info: Rebuilding 1 pages
+2023-02-25T08:41:28.530Z - info: Site data built
+2023-02-25T08:41:28.530Z - info: Pages rebuilt
+2023-02-25T08:41:28.530Z - info: Website regeneration complete! Total build time: 0.322s
+2023-02-25T08:43:41.830Z - info: [4:43:41 pm] Reload for file change: C:\repos\nus-cs2103\cs2103-website-base\_module-CS2103\mid-semester-survey-results.md
+2023-02-25T08:43:41.830Z - info: Synchronizing opened pages list before reload
+2023-02-25T08:43:41.830Z - info: Current opened pages, from most-to-least recent:
+2023-02-25T08:43:41.830Z - info: 1. admin/mid-semester-survey-results
+2023-02-25T08:43:42.835Z - info: Rebuilding 1 pages
+2023-02-25T08:43:43.026Z - info: Site data built
+2023-02-25T08:43:43.026Z - info: Pages rebuilt
+2023-02-25T08:43:43.027Z - info: Website regeneration complete! Total build time: 0.192s
+2023-02-25T08:45:57.558Z - info: [4:45:57 pm] Reload for file change: C:\repos\nus-cs2103\cs2103-website-base\_module-CS2103\mid-semester-survey-results.md
+2023-02-25T08:45:57.558Z - info: Synchronizing opened pages list before reload
+2023-02-25T08:45:57.558Z - info: Current opened pages, from most-to-least recent:
+2023-02-25T08:45:57.558Z - info: 1. admin/mid-semester-survey-results
+2023-02-25T08:45:58.566Z - info: Rebuilding 1 pages
+2023-02-25T08:45:58.763Z - info: Site data built
+2023-02-25T08:45:58.763Z - info: Pages rebuilt
+2023-02-25T08:45:58.763Z - info: Website regeneration complete! Total build time: 0.198s
+2023-02-25T08:47:10.988Z - info: [4:47:10 pm] Reload for file change: C:\repos\nus-cs2103\cs2103-website-base\_module-CS2103\mid-semester-survey-results.md
+2023-02-25T08:47:10.988Z - info: Synchronizing opened pages list before reload
+2023-02-25T08:47:10.988Z - info: Current opened pages, from most-to-least recent:
+2023-02-25T08:47:10.988Z - info: 1. admin/mid-semester-survey-results
+2023-02-25T08:47:11.993Z - info: Rebuilding 1 pages
+2023-02-25T08:47:12.130Z - info: Site data built
+2023-02-25T08:47:12.130Z - info: Pages rebuilt
+2023-02-25T08:47:12.130Z - info: Website regeneration complete! Total build time: 0.137s
+2023-02-25T08:48:12.618Z - info: [4:48:12 pm] Reload for file change: C:\repos\nus-cs2103\cs2103-website-base\_module-CS2103\mid-semester-survey-results.md
+2023-02-25T08:48:12.618Z - info: Synchronizing opened pages list before reload
+2023-02-25T08:48:12.618Z - info: Current opened pages, from most-to-least recent:
+2023-02-25T08:48:12.618Z - info: 1. admin/mid-semester-survey-results
+2023-02-25T08:48:13.621Z - info: Rebuilding 1 pages
+2023-02-25T08:48:13.881Z - info: Site data built
+2023-02-25T08:48:13.881Z - info: Pages rebuilt
+2023-02-25T08:48:13.881Z - info: Website regeneration complete! Total build time: 0.261s
+2023-02-25T08:48:25.039Z - info: [4:48:25 pm] Reload for file change: C:\repos\nus-cs2103\cs2103-website-base\_module-CS2103\mid-semester-survey-results.md
+2023-02-25T08:48:25.039Z - info: Synchronizing opened pages list before reload
+2023-02-25T08:48:25.039Z - info: Current opened pages, from most-to-least recent:
+2023-02-25T08:48:25.039Z - info: 1. admin/mid-semester-survey-results
+2023-02-25T08:48:26.056Z - info: Rebuilding 1 pages
+2023-02-25T08:48:26.383Z - info: Site data built
+2023-02-25T08:48:26.383Z - info: Pages rebuilt
+2023-02-25T08:48:26.383Z - info: Website regeneration complete! Total build time: 0.329s
+2023-02-25T08:53:11.827Z - info: [4:53:11 pm] Reload for file change: C:\repos\nus-cs2103\cs2103-website-base\_module-CS2103\mid-semester-survey-results.md
+2023-02-25T08:53:11.827Z - info: Synchronizing opened pages list before reload
+2023-02-25T08:53:11.827Z - info: Current opened pages, from most-to-least recent:
+2023-02-25T08:53:11.827Z - info: 1. admin/mid-semester-survey-results
+2023-02-25T08:53:12.832Z - info: Rebuilding 1 pages
+2023-02-25T08:53:13.045Z - info: Site data built
+2023-02-25T08:53:13.045Z - info: Pages rebuilt
+2023-02-25T08:53:13.045Z - info: Website regeneration complete! Total build time: 0.214s
+2023-02-25T09:03:48.293Z - info: [5:03:48 pm] Reload for file change: C:\repos\nus-cs2103\cs2103-website-base\_module-CS2103\mid-semester-survey-results.md
+2023-02-25T09:03:48.293Z - info: Synchronizing opened pages list before reload
+2023-02-25T09:03:48.293Z - info: Current opened pages, from most-to-least recent:
+2023-02-25T09:03:48.293Z - info: 1. admin/mid-semester-survey-results
+2023-02-25T09:03:49.306Z - info: Rebuilding 1 pages
+2023-02-25T09:03:49.586Z - info: Site data built
+2023-02-25T09:03:49.586Z - info: Pages rebuilt
+2023-02-25T09:03:49.586Z - info: Website regeneration complete! Total build time: 0.281s
+2023-02-25T09:22:08.534Z - info: [5:22:08 pm] Reload for file change: C:\repos\nus-cs2103\cs2103-website-base\_module-CS2103\mid-semester-survey-results.md
+2023-02-25T09:22:08.544Z - info: Synchronizing opened pages list before reload
+2023-02-25T09:22:08.547Z - info: Current opened pages, from most-to-least recent:
+2023-02-25T09:22:08.548Z - info: 1. admin/mid-semester-survey-results
+2023-02-25T09:22:09.592Z - info: Rebuilding 1 pages
+2023-02-25T09:22:10.057Z - info: Site data built
+2023-02-25T09:22:10.057Z - info: Pages rebuilt
+2023-02-25T09:22:10.058Z - info: Website regeneration complete! Total build time: 0.493s
+2023-02-25T09:23:28.024Z - info: [5:23:28 pm] Reload for file change: C:\repos\nus-cs2103\cs2103-website-base\_module-CS2103\mid-semester-survey-results.md
+2023-02-25T09:23:28.025Z - info: Synchronizing opened pages list before reload
+2023-02-25T09:23:28.025Z - info: Current opened pages, from most-to-least recent:
+2023-02-25T09:23:28.025Z - info: 1. admin/mid-semester-survey-results
+2023-02-25T09:23:29.034Z - info: Rebuilding 1 pages
+2023-02-25T09:23:29.235Z - info: Site data built
+2023-02-25T09:23:29.236Z - info: Pages rebuilt
+2023-02-25T09:23:29.236Z - info: Website regeneration complete! Total build time: 0.203s
+2023-02-25T09:27:43.218Z - info: [5:27:43 pm] Reload for file change: C:\repos\nus-cs2103\cs2103-website-base\_module-CS2103\mid-semester-survey-results.md
+2023-02-25T09:27:43.219Z - info: Synchronizing opened pages list before reload
+2023-02-25T09:27:43.219Z - info: Current opened pages, from most-to-least recent:
+2023-02-25T09:27:43.219Z - info: 1. admin/mid-semester-survey-results
+2023-02-25T09:27:44.229Z - info: Rebuilding 1 pages
+2023-02-25T09:27:44.465Z - info: Site data built
+2023-02-25T09:27:44.465Z - info: Pages rebuilt
+2023-02-25T09:27:44.466Z - info: Website regeneration complete! Total build time: 0.238s
+2023-02-25T09:30:25.771Z - info: [5:30:25 pm] Reload for file change: C:\repos\nus-cs2103\cs2103-website-base\_module-CS2103\mid-semester-survey-results.md
+2023-02-25T09:30:25.771Z - info: Synchronizing opened pages list before reload
+2023-02-25T09:30:25.772Z - info: Current opened pages, from most-to-least recent:
+2023-02-25T09:30:25.772Z - info: 1. admin/mid-semester-survey-results
+2023-02-25T09:30:26.777Z - info: Rebuilding 1 pages
+2023-02-25T09:30:27.118Z - info: Site data built
+2023-02-25T09:30:27.119Z - info: Pages rebuilt
+2023-02-25T09:30:27.119Z - info: Website regeneration complete! Total build time: 0.343s
+2023-02-25T09:36:42.576Z - info: [5:36:42 pm] Reload for file change: C:\repos\nus-cs2103\cs2103-website-base\_module-CS2103\mid-semester-survey-results.md
+2023-02-25T09:36:42.577Z - info: Synchronizing opened pages list before reload
+2023-02-25T09:36:42.577Z - info: Current opened pages, from most-to-least recent:
+2023-02-25T09:36:42.577Z - info: 1. admin/mid-semester-survey-results
+2023-02-25T09:36:43.585Z - info: Rebuilding 1 pages
+2023-02-25T09:36:43.777Z - info: Site data built
+2023-02-25T09:36:43.777Z - info: Pages rebuilt
+2023-02-25T09:36:43.777Z - info: Website regeneration complete! Total build time: 0.193s
+2023-02-25T09:37:31.092Z - info: [5:37:31 pm] Reload for file change: C:\repos\nus-cs2103\cs2103-website-base\_module-CS2103\mid-semester-survey-results.md
+2023-02-25T09:37:31.093Z - info: Synchronizing opened pages list before reload
+2023-02-25T09:37:31.093Z - info: Current opened pages, from most-to-least recent:
+2023-02-25T09:37:31.093Z - info: 1. admin/mid-semester-survey-results
+2023-02-25T09:37:32.098Z - info: Rebuilding 1 pages
+2023-02-25T09:37:32.322Z - info: Site data built
+2023-02-25T09:37:32.322Z - info: Pages rebuilt
+2023-02-25T09:37:32.322Z - info: Website regeneration complete! Total build time: 0.225s
+2023-02-25T09:39:28.590Z - info: [5:39:28 pm] Reload for file change: C:\repos\nus-cs2103\cs2103-website-base\_module-CS2103\mid-semester-survey-results.md
+2023-02-25T09:39:28.590Z - info: Synchronizing opened pages list before reload
+2023-02-25T09:39:28.590Z - info: Current opened pages, from most-to-least recent:
+2023-02-25T09:39:28.590Z - info: 1. admin/mid-semester-survey-results
+2023-02-25T09:39:29.606Z - info: Rebuilding 1 pages
+2023-02-25T09:39:29.996Z - info: Site data built
+2023-02-25T09:39:29.996Z - info: Pages rebuilt
+2023-02-25T09:39:29.996Z - info: Website regeneration complete! Total build time: 0.391s
+2023-02-25T09:48:47.392Z - info: [5:48:47 pm] Reload for file change: C:\repos\nus-cs2103\cs2103-website-base\_module-CS2103\mid-semester-survey-results.md
+2023-02-25T09:48:47.392Z - info: Synchronizing opened pages list before reload
+2023-02-25T09:48:47.393Z - info: Current opened pages, from most-to-least recent:
+2023-02-25T09:48:47.393Z - info: 1. admin/mid-semester-survey-results
+2023-02-25T09:48:48.406Z - info: Rebuilding 1 pages
+2023-02-25T09:48:48.727Z - info: Site data built
+2023-02-25T09:48:48.727Z - info: Pages rebuilt
+2023-02-25T09:48:48.727Z - info: Website regeneration complete! Total build time: 0.322s
+2023-02-25T09:49:20.161Z - info: [5:49:20 pm] Reload for file change: C:\repos\nus-cs2103\cs2103-website-base\_module-CS2103\mid-semester-survey-results.md
+2023-02-25T09:49:20.161Z - info: Synchronizing opened pages list before reload
+2023-02-25T09:49:20.161Z - info: Current opened pages, from most-to-least recent:
+2023-02-25T09:49:20.161Z - info: 1. admin/mid-semester-survey-results
+2023-02-25T09:49:21.180Z - info: Rebuilding 1 pages
+2023-02-25T09:49:21.452Z - info: Site data built
+2023-02-25T09:49:21.453Z - info: Pages rebuilt
+2023-02-25T09:49:21.453Z - info: Website regeneration complete! Total build time: 0.275s
+2023-02-25T09:50:53.100Z - info: [5:50:53 pm] Reload for file change: C:\repos\nus-cs2103\cs2103-website-base\_module-CS2103\mid-semester-survey-results.md
+2023-02-25T09:50:53.100Z - info: Synchronizing opened pages list before reload
+2023-02-25T09:50:53.101Z - info: Current opened pages, from most-to-least recent:
+2023-02-25T09:50:53.101Z - info: 1. admin/mid-semester-survey-results
+2023-02-25T09:50:54.109Z - info: Rebuilding 1 pages
+2023-02-25T09:50:54.410Z - info: Site data built
+2023-02-25T09:50:54.410Z - info: Pages rebuilt
+2023-02-25T09:50:54.410Z - info: Website regeneration complete! Total build time: 0.301s
+2023-02-25T09:55:35.838Z - info: [5:55:35 pm] Reload for file change: C:\repos\nus-cs2103\cs2103-website-base\_module-CS2103\mid-semester-survey-results.md
+2023-02-25T09:55:35.838Z - info: Synchronizing opened pages list before reload
+2023-02-25T09:55:35.838Z - info: Current opened pages, from most-to-least recent:
+2023-02-25T09:55:35.838Z - info: 1. admin/mid-semester-survey-results
+2023-02-25T09:55:36.850Z - info: Rebuilding 1 pages
+2023-02-25T09:55:37.137Z - info: Site data built
+2023-02-25T09:55:37.137Z - info: Pages rebuilt
+2023-02-25T09:55:37.138Z - info: Website regeneration complete! Total build time: 0.288s
+2023-02-25T09:57:02.956Z - info: [5:57:02 pm] Reload for file change: C:\repos\nus-cs2103\cs2103-website-base\_module-CS2103\mid-semester-survey-results.md
+2023-02-25T09:57:02.957Z - info: Synchronizing opened pages list before reload
+2023-02-25T09:57:02.957Z - info: Current opened pages, from most-to-least recent:
+2023-02-25T09:57:02.957Z - info: 1. admin/mid-semester-survey-results
+2023-02-25T09:57:03.963Z - info: Rebuilding 1 pages
+2023-02-25T09:57:04.584Z - info: Site data built
+2023-02-25T09:57:04.585Z - info: Pages rebuilt
+2023-02-25T09:57:04.585Z - info: Website regeneration complete! Total build time: 0.623s
+2023-02-25T09:59:02.514Z - info: [5:59:02 pm] Reload for file change: C:\repos\nus-cs2103\cs2103-website-base\_module-CS2103\mid-semester-survey-results.md
+2023-02-25T09:59:02.514Z - info: Synchronizing opened pages list before reload
+2023-02-25T09:59:02.515Z - info: Current opened pages, from most-to-least recent:
+2023-02-25T09:59:02.515Z - info: 1. admin/mid-semester-survey-results
+2023-02-25T09:59:03.529Z - info: Rebuilding 1 pages
+2023-02-25T09:59:03.768Z - info: Site data built
+2023-02-25T09:59:03.769Z - info: Pages rebuilt
+2023-02-25T09:59:03.769Z - info: Website regeneration complete! Total build time: 0.241s
+2023-02-25T10:03:05.074Z - info: [6:03:05 pm] Reload for file change: C:\repos\nus-cs2103\cs2103-website-base\_module-CS2103\mid-semester-survey-results.md
+2023-02-25T10:03:05.092Z - info: Synchronizing opened pages list before reload
+2023-02-25T10:03:05.102Z - info: Current opened pages, from most-to-least recent:
+2023-02-25T10:03:05.103Z - info: 1. admin/mid-semester-survey-results
+2023-02-25T10:03:06.176Z - info: Rebuilding 1 pages
+2023-02-25T10:03:06.802Z - info: Site data built
+2023-02-25T10:03:06.802Z - info: Pages rebuilt
+2023-02-25T10:03:06.803Z - info: Website regeneration complete! Total build time: 0.673s
+2023-02-25T10:08:52.409Z - info: [6:08:52 pm] Reload for file change: C:\repos\nus-cs2103\cs2103-website-base\_module-CS2103\mid-semester-survey-results.md
+2023-02-25T10:08:52.422Z - info: Synchronizing opened pages list before reload
+2023-02-25T10:08:52.427Z - info: Current opened pages, from most-to-least recent:
+2023-02-25T10:08:52.428Z - info: 1. admin/mid-semester-survey-results
+2023-02-25T10:08:53.479Z - info: Rebuilding 1 pages
+2023-02-25T10:08:54.026Z - info: Site data built
+2023-02-25T10:08:54.027Z - info: Pages rebuilt
+2023-02-25T10:08:54.028Z - info: Website regeneration complete! Total build time: 0.573s
+2023-02-25T10:11:45.370Z - info: [6:11:45 pm] Reload for file change: C:\repos\nus-cs2103\cs2103-website-base\_module-CS2103\mid-semester-survey-results.md
+2023-02-25T10:11:45.371Z - info: Synchronizing opened pages list before reload
+2023-02-25T10:11:45.371Z - info: Current opened pages, from most-to-least recent:
+2023-02-25T10:11:45.371Z - info: 1. admin/mid-semester-survey-results
+2023-02-25T10:11:46.381Z - info: Rebuilding 1 pages
+2023-02-25T10:11:46.757Z - info: Site data built
+2023-02-25T10:11:46.757Z - info: Pages rebuilt
+2023-02-25T10:11:46.757Z - info: Website regeneration complete! Total build time: 0.376s
+2023-02-25T10:17:28.289Z - info: [6:17:28 pm] Reload for file change: C:\repos\nus-cs2103\cs2103-website-base\_module-CS2103\mid-semester-survey-results.md
+2023-02-25T10:17:28.289Z - info: Synchronizing opened pages list before reload
+2023-02-25T10:17:28.289Z - info: Current opened pages, from most-to-least recent:
+2023-02-25T10:17:28.289Z - info: 1. admin/mid-semester-survey-results
+2023-02-25T10:17:29.306Z - info: Rebuilding 1 pages
+2023-02-25T10:17:29.554Z - info: Site data built
+2023-02-25T10:17:29.555Z - info: Pages rebuilt
+2023-02-25T10:17:29.555Z - info: Website regeneration complete! Total build time: 0.251s
