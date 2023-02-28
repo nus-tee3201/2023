@@ -233,3 +233,121 @@
 2023-02-27T13:18:40.357Z - info: Lazy website regeneration complete! Total build time: 0.181s
 2023-02-27T13:19:34.784Z - info: Website generation started at 9:19:30 pm
 2023-02-27T13:19:49.186Z - info: Building assets...
+2023-02-27T13:19:59.665Z - info: Assets built
+2023-02-27T13:19:59.667Z - info: Generating pages...
+2023-02-27T13:20:17.850Z - debug:  
+2023-02-27T13:20:17.851Z - debug:  
+2023-02-27T13:20:17.852Z - debug:  
+2023-02-27T13:20:17.853Z - debug:  
+2023-02-27T13:20:17.853Z - debug:  
+2023-02-27T13:20:17.854Z - debug:  
+2023-02-27T13:20:17.855Z - debug:  
+2023-02-27T13:20:17.951Z - debug:  
+2023-02-27T13:20:26.620Z - debug:  
+2023-02-27T13:20:26.621Z - debug:  
+2023-02-27T13:20:29.690Z - debug:  
+2023-02-27T13:20:49.653Z - debug:  
+2023-02-27T13:21:08.860Z - debug:  
+2023-02-27T13:22:00.689Z - info: Pages built
+2023-02-27T13:22:02.058Z - info: Site data built
+2023-02-27T13:22:02.058Z - info: Website generation complete! Total build time: 151.659s
+2023-02-27T13:22:02.059Z - info: Build success!
+2023-02-27T13:24:47.968Z - info: The website has been deployed at: https://nus-tee3201.github.io/2023
+2023-02-27T14:26:21.467Z - info: Website generation (lazy) started at 10:26:13 pm
+2023-02-27T14:26:40.553Z - info: Building assets...
+2023-02-27T14:26:50.570Z - info: Assets built
+2023-02-27T14:26:50.571Z - info: Generating landing page...
+2023-02-27T14:26:51.649Z - info: Landing page built, other pages will be built as you navigate to them!
+2023-02-27T14:26:53.879Z - info: Site data built
+2023-02-27T14:26:53.880Z - info: Website generation (lazy) complete! Total build time: 40.403s
+2023-02-27T14:26:55.149Z - info: Serving "C:\repos\nus-cs2103\cs2103-website-base\_site" at http://127.0.0.1:8080
+2023-02-27T14:26:55.150Z - info: Press CTRL+C to stop ...
+2023-02-27T14:41:07.380Z - info: [10:41:07 pm] Reload for file change: C:\repos\nus-cs2103\cs2103-website-base\_module-TIC2002\mid-semester-survey-results.md
+2023-02-27T14:41:07.382Z - info: Synchronizing opened pages list before reload
+2023-02-27T14:41:07.382Z - info: Current opened pages, from most-to-least recent:
+2023-02-27T14:41:07.382Z - info: 1. index
+2023-02-27T14:41:08.396Z - info: Assets built
+2023-02-27T14:42:08.980Z - info: Building C:\repos\nus-cs2103\cs2103-website-base\admin\mid-semester-survey-results as some of its dependencies were changed since the last visit
+2023-02-27T14:42:09.603Z - info: Site data built
+2023-02-27T14:42:09.604Z - info: Lazy website regeneration complete! Total build time: 0.624s
+2023-02-27T14:43:57.736Z - info: [10:43:57 pm] Reload for file change: C:\repos\nus-cs2103\cs2103-website-base\_module-TIC2002\mid-semester-survey-results.md
+2023-02-27T14:43:57.740Z - info: Synchronizing opened pages list before reload
+2023-02-27T14:43:57.741Z - info: Current opened pages, from most-to-least recent:
+2023-02-27T14:43:57.741Z - info: 1. admin/mid-semester-survey-results
+2023-02-27T14:43:58.753Z - info: Rebuilding 1 pages
+2023-02-27T14:43:58.874Z - info: Site data built
+2023-02-27T14:43:58.874Z - info: Pages rebuilt
+2023-02-27T14:43:58.875Z - info: Website regeneration complete! Total build time: 0.124s
+2023-02-27T14:44:29.531Z - info: [10:44:29 pm] Reload for file change: C:\repos\nus-cs2103\cs2103-website-base\_module-TIC2002\mid-semester-survey-results.md
+2023-02-27T14:44:29.533Z - info: Synchronizing opened pages list before reload
+2023-02-27T14:44:29.533Z - info: Current opened pages, from most-to-least recent:
+2023-02-27T14:44:29.533Z - info: 1. admin/mid-semester-survey-results
+2023-02-27T14:44:30.547Z - info: Rebuilding 1 pages
+2023-02-27T14:44:30.721Z - info: Site data built
+2023-02-27T14:44:30.722Z - info: Pages rebuilt
+2023-02-27T14:44:30.723Z - info: Website regeneration complete! Total build time: 0.176s
+2023-02-27T14:47:41.771Z - info: [10:47:41 pm] Reload for file change: C:\repos\nus-cs2103\cs2103-website-base\_module-TIC2002\mid-semester-survey-results.md
+2023-02-27T14:47:41.772Z - info: Synchronizing opened pages list before reload
+2023-02-27T14:47:41.772Z - info: Current opened pages, from most-to-least recent:
+2023-02-27T14:47:41.773Z - info: 1. admin/mid-semester-survey-results
+2023-02-27T14:47:42.777Z - info: Rebuilding 1 pages
+2023-02-27T14:47:42.893Z - info: Site data built
+2023-02-27T14:47:42.894Z - info: Pages rebuilt
+2023-02-27T14:47:42.894Z - info: Website regeneration complete! Total build time: 0.118s
+2023-02-27T14:51:03.636Z - info: [10:51:03 pm] Reload for file change: C:\repos\nus-cs2103\cs2103-website-base\_module-TIC2002\mid-semester-survey-results.md
+2023-02-27T14:51:03.642Z - info: Synchronizing opened pages list before reload
+2023-02-27T14:51:03.646Z - info: Current opened pages, from most-to-least recent:
+2023-02-27T14:51:03.647Z - info: 1. admin/mid-semester-survey-results
+2023-02-27T14:51:04.695Z - info: Rebuilding 1 pages
+2023-02-27T14:51:05.012Z - info: Site data built
+2023-02-27T14:51:05.012Z - info: Pages rebuilt
+2023-02-27T14:51:05.013Z - info: Website regeneration complete! Total build time: 0.349s
+2023-02-27T14:53:45.491Z - info: [10:53:45 pm] Reload for file change: C:\repos\nus-cs2103\cs2103-website-base\_module-TIC2002\mid-semester-survey-results.md
+2023-02-27T14:53:45.492Z - info: Synchronizing opened pages list before reload
+2023-02-27T14:53:45.492Z - info: Current opened pages, from most-to-least recent:
+2023-02-27T14:53:45.493Z - info: 1. admin/mid-semester-survey-results
+2023-02-27T14:53:46.506Z - info: Rebuilding 1 pages
+2023-02-27T14:53:46.701Z - info: Site data built
+2023-02-27T14:53:46.702Z - info: Pages rebuilt
+2023-02-27T14:53:46.702Z - info: Website regeneration complete! Total build time: 0.198s
+2023-02-27T14:55:49.113Z - info: Building C:\repos\nus-cs2103\cs2103-website-base\schedule\week7\index as some of its dependencies were changed since the last visit
+2023-02-27T14:55:50.284Z - info: Site data built
+2023-02-27T14:55:50.285Z - info: Lazy website regeneration complete! Total build time: 1.172s
+2023-02-27T14:55:54.356Z - info: Building C:\repos\nus-cs2103\cs2103-website-base\schedule\week7\topics as some of its dependencies were changed since the last visit
+2023-02-27T14:56:01.245Z - info: Site data built
+2023-02-27T14:56:01.247Z - info: Lazy website regeneration complete! Total build time: 6.89s
+2023-02-27T14:56:04.053Z - debug:  
+2023-02-27T14:56:04.082Z - debug:  
+2023-02-27T15:05:28.187Z - info: Building C:\repos\nus-cs2103\cs2103-website-base\schedule\week7\admin as some of its dependencies were changed since the last visit
+2023-02-27T15:05:28.868Z - info: Site data built
+2023-02-27T15:05:28.868Z - info: Lazy website regeneration complete! Total build time: 0.681s
+2023-02-27T15:08:09.412Z - info: [11:08:09 pm] Reload for file change: C:\repos\nus-cs2103\cs2103-website-base\_module-TIC2002\mid-semester-survey-results.md
+2023-02-27T15:08:09.413Z - info: Synchronizing opened pages list before reload
+2023-02-27T15:08:09.414Z - info: Current opened pages, from most-to-least recent:
+2023-02-27T15:08:09.414Z - info: 1. schedule/week7/admin
+2023-02-27T15:08:10.435Z - info: No pages needed to be rebuilt
+2023-02-27T15:08:16.306Z - info: Building C:\repos\nus-cs2103\cs2103-website-base\admin\mid-semester-survey-results as some of its dependencies were changed since the last visit
+2023-02-27T15:08:16.488Z - info: Site data built
+2023-02-27T15:08:16.489Z - info: Lazy website regeneration complete! Total build time: 0.183s
+2023-02-27T15:09:20.246Z - info: Website generation started at 11:09:16 pm
+2023-02-27T15:09:39.033Z - info: Building assets...
+2023-02-27T15:09:49.092Z - info: Assets built
+2023-02-27T15:09:49.093Z - info: Generating pages...
+2023-02-27T15:10:11.126Z - debug:  
+2023-02-27T15:10:11.128Z - debug:  
+2023-02-27T15:10:11.128Z - debug:  
+2023-02-27T15:10:13.488Z - debug:  
+2023-02-27T15:10:13.489Z - debug:  
+2023-02-27T15:10:13.493Z - debug:  
+2023-02-27T15:10:13.494Z - debug:  
+2023-02-27T15:10:14.094Z - debug:  
+2023-02-27T15:10:14.096Z - debug:  
+2023-02-27T15:10:14.126Z - debug:  
+2023-02-27T15:10:14.137Z - debug:  
+2023-02-27T15:10:20.056Z - debug:  
+2023-02-27T15:11:16.004Z - debug:  
+2023-02-27T15:12:34.312Z - info: Pages built
+2023-02-27T15:12:35.958Z - info: Site data built
+2023-02-27T15:12:35.959Z - info: Website generation complete! Total build time: 199.03s
+2023-02-27T15:12:35.959Z - info: Build success!
+2023-02-27T15:15:06.759Z - info: The website has been deployed at: https://nus-tic2002-ay2223s2.github.io/website
