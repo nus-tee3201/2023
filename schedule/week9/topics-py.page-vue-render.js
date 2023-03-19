@@ -71,6 +71,6 @@ with(this){return _c('p',[_c('strong',[_v("You can organize files into sub-direc
 with(this){return _c('p',[_v("To prevent execution of statements in an imported module, nest such statements under a "),_c('code',{pre:true,attrs:{"class":"line-numbers hljs inline python"}},[_c('span',{pre:true,attrs:{"class":"hljs-keyword"}},[_v("if")]),_v(" __name__ == "),_c('span',{pre:true,attrs:{"class":"hljs-string"}},[_v("\"__main__\"")]),_v(":")]),_v(" block.")])}
 },function anonymous(
 ) {
-with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("["),_c('span',[_c('strong',[_v("Powered by")])]),_v(" "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 4.1.0")]),_v(", generated on Tue, 14 Mar 2023, 19:58:31 GMT+8]")])])])}
+with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("["),_c('span',[_c('strong',[_v("Powered by")])]),_v(" "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 4.1.0")]),_v(", generated on Sun, 19 Mar 2023, 16:31:22 GMT+8]")])])])}
 }];
   
