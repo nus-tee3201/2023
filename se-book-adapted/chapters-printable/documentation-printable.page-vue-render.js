@@ -62,6 +62,6 @@ with(this){return _c('div',{staticClass:"indented-less"},[_c('div',[_c('p',[_c('
 with(this){return _c('div',{staticClass:"indented-less"},[_c('div',[_c('p',[_v("Anything that is already clear in the code need not be described in words. Instead, "),_c('strong',[_v("focus on providing higher level information that is not readily visible in the code or comments")]),_v(".")]),_v(" "),_c('p',[_v("Refrain from duplicating chunks of text. When describing several similar algorithms/designs/APIs, etc., do not simply duplicate large chunks of text. Instead, "),_c('strong',[_v("describe the similarities in one place and emphasize only the differences in other places.")]),_v(" It is very annoying to see pages and pages of similar text without any indication as to how they differ from each other.")])])])}
 },function anonymous(
 ) {
-with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("["),_c('span',[_c('strong',[_v("Powered by")])]),_v(" "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 4.1.0")]),_v(", generated on Sun, 19 Mar 2023, 16:31:22 GMT+8]")])])])}
+with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("["),_c('span',[_c('strong',[_v("Powered by")])]),_v(" "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 4.1.0")]),_v(", generated on Tue, 21 Mar 2023, 18:43:53 GMT+8]")])])])}
 }];
   

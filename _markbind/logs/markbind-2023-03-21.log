@@ -1,0 +1,49 @@
+2023-03-21T10:38:26.032Z - info: Website generation (lazy) started at 6:38:21 pm
+2023-03-21T10:38:36.122Z - info: Building assets...
+2023-03-21T10:38:43.138Z - info: Assets built
+2023-03-21T10:38:43.138Z - info: Generating landing page...
+2023-03-21T10:38:43.892Z - info: Landing page built, other pages will be built as you navigate to them!
+2023-03-21T10:38:44.942Z - info: Site data built
+2023-03-21T10:38:44.943Z - info: Website generation (lazy) complete! Total build time: 23.382s
+2023-03-21T10:38:45.724Z - info: Serving "C:\repos\nus-cs2103\cs2103-website-base\_site" at http://127.0.0.1:8080
+2023-03-21T10:38:45.724Z - info: Press CTRL+C to stop ...
+2023-03-21T10:38:55.704Z - info: Building C:\repos\nus-cs2103\cs2103-website-base\schedule\week10\index as some of its dependencies were changed since the last visit
+2023-03-21T10:39:04.213Z - info: Site data built
+2023-03-21T10:39:04.214Z - info: Lazy website regeneration complete! Total build time: 8.511s
+2023-03-21T10:39:43.169Z - info: Building C:\repos\nus-cs2103\cs2103-website-base\schedule\week10\topics-py as some of its dependencies were changed since the last visit
+2023-03-21T10:39:44.131Z - info: Site data built
+2023-03-21T10:39:44.131Z - info: Lazy website regeneration complete! Total build time: 0.963s
+2023-03-21T10:40:51.939Z - info: [6:40:51 pm] Reload for file change: C:\repos\nus-cs2103\cs2103-website-base\programming\oop-inheritance\text.md
+2023-03-21T10:40:51.940Z - info: Synchronizing opened pages list before reload
+2023-03-21T10:40:51.940Z - info: Current opened pages, from most-to-least recent:
+2023-03-21T10:40:51.941Z - info: 1. schedule/week10/topics-py
+2023-03-21T10:40:52.952Z - info: Rebuilding 1 pages
+2023-03-21T10:40:53.596Z - info: Site data built
+2023-03-21T10:40:53.597Z - info: Pages rebuilt
+2023-03-21T10:40:53.597Z - info: Website regeneration complete! Total build time: 0.645s
+2023-03-21T10:41:13.483Z - info: [6:41:13 pm] Reload for file change: C:\repos\nus-cs2103\cs2103-website-base\programming\oop-inheritance\text.md
+2023-03-21T10:41:13.483Z - info: Synchronizing opened pages list before reload
+2023-03-21T10:41:13.484Z - info: Current opened pages, from most-to-least recent:
+2023-03-21T10:41:13.484Z - info: 1. schedule/week10/topics-py
+2023-03-21T10:41:14.490Z - info: Rebuilding 1 pages
+2023-03-21T10:41:15.071Z - info: Site data built
+2023-03-21T10:41:15.071Z - info: Pages rebuilt
+2023-03-21T10:41:15.072Z - info: Website regeneration complete! Total build time: 0.582s
+2023-03-21T10:42:20.493Z - info: [6:42:20 pm] Reload for file change: C:\repos\nus-cs2103\cs2103-website-base\programming\oop-inheritance\text.md
+2023-03-21T10:42:20.493Z - info: Synchronizing opened pages list before reload
+2023-03-21T10:42:20.494Z - info: Current opened pages, from most-to-least recent:
+2023-03-21T10:42:20.494Z - info: 1. schedule/week10/topics-py
+2023-03-21T10:42:21.504Z - info: Rebuilding 1 pages
+2023-03-21T10:42:22.109Z - info: Site data built
+2023-03-21T10:42:22.110Z - info: Pages rebuilt
+2023-03-21T10:42:22.110Z - info: Website regeneration complete! Total build time: 0.607s
+2023-03-21T10:42:50.601Z - info: [6:42:50 pm] Reload for file change: C:\repos\nus-cs2103\cs2103-website-base\programming\oop-inheritance\text.md
+2023-03-21T10:42:50.601Z - info: Synchronizing opened pages list before reload
+2023-03-21T10:42:50.601Z - info: Current opened pages, from most-to-least recent:
+2023-03-21T10:42:50.601Z - info: 1. schedule/week10/topics-py
+2023-03-21T10:42:51.611Z - info: Rebuilding 1 pages
+2023-03-21T10:42:52.144Z - info: Site data built
+2023-03-21T10:42:52.144Z - info: Pages rebuilt
+2023-03-21T10:42:52.144Z - info: Website regeneration complete! Total build time: 0.534s
+2023-03-21T10:43:33.212Z - info: Website generation started at 6:43:30 pm
+2023-03-21T10:43:45.610Z - info: Building assets...
