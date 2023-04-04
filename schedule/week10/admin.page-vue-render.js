@@ -23,6 +23,6 @@ with(this){return _c('ul',[_c('li',[_v("As usual")])])}
 with(this){return _c('ul',[_c('li',[_v("As mentioned in the previous week, there is "),_c('mark',[_v("no need to submit these project increments on Coursemology this week")]),_v(".")])])}
 },function anonymous(
 ) {
-with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("["),_c('span',[_c('strong',[_v("Powered by")])]),_v(" "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 4.1.0")]),_v(", generated on Tue, 4 Apr 2023, 20:10:36 GMT+8]")])])])}
+with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("["),_c('span',[_c('strong',[_v("Powered by")])]),_v(" "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 4.1.0")]),_v(", generated on Wed, 5 Apr 2023, 1:34:45 GMT+8]")])])])}
 }];
   

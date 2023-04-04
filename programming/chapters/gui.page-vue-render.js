@@ -65,6 +65,6 @@ with(this){return _c('p',[_c('span',[_c('span',{staticClass:"fas fa-paperclip",a
 with(this){return _c('ul',[_c('li',[_c('a',{attrs:{"href":"https://techsore.com/best-python-gui/"}},[_v("Best Python GUI Framework/Toolkits 2019")])]),_v(" "),_c('li',[_c('a',{attrs:{"href":"https://www.python-course.eu/python_tkinter.php"}},[_v("Python Tkinter Course")]),_v(" from python-course.eu")])])}
 },function anonymous(
 ) {
-with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("["),_c('span',[_c('strong',[_v("Powered by")])]),_v(" "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 4.1.0")]),_v(", generated on Tue, 4 Apr 2023, 20:10:36 GMT+8]")])])])}
+with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("["),_c('span',[_c('strong',[_v("Powered by")])]),_v(" "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 4.1.0")]),_v(", generated on Wed, 5 Apr 2023, 1:34:45 GMT+8]")])])])}
 }];
   
